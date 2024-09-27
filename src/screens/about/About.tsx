@@ -1,9 +1,10 @@
-import 'animate.css';
-import "../../index.css"
-import "./About.css"
+import { ScreenWrapper } from '../../App.styled';
+import 'animate.css'; 
 
 export const About = () => {
   return (
-    <div className="screen animate__animated animate__zoomIn">About</div>
+    <ScreenWrapper className="animate__animated animate__zoomIn">
+      About
+    </ScreenWrapper>
   )
 }

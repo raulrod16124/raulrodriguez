@@ -5,7 +5,6 @@ import { About } from './screens/about/About'
 import { Projects } from './screens/projects/Projects'
 import { Contact } from './screens/contact/Contact'
 import { Navbar } from './components/navigation/Navbar'
-import "./App.css"
 
 export const AppWrapper = () => {
   return (
@@ -27,7 +26,7 @@ export const App = () => {
   }
 
   return (
-    <div className='app' data-testid="app">
+    <div data-testid="app">
       {screens[screenType]}
     </div>
   )
