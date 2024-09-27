@@ -13,14 +13,14 @@ export const Navigation = () => {
                     <span className="nav-logo">logo</span>
                 </div>
                 <ul className="nav-items">
-                    <li className="nav-item" onClick={() => setScreenType("home")}>home</li>
-                    <li className="nav-item" onClick={() => setScreenType("about")}>about</li>
-                    <li className="nav-item" onClick={() => setScreenType("projects")}>projects</li>
-                    <li className="nav-item" onClick={() => setScreenType("contact")}>contact</li>
+                    <button className="nav-item" onClick={() => setScreenType("home")}>home</button>
+                    <button className="nav-item" onClick={() => setScreenType("about")}>about</button>
+                    <button className="nav-item" onClick={() => setScreenType("projects")}>projects</button>
+                    <button className="nav-item" onClick={() => setScreenType("contact")}>contact</button>
                 </ul>
                 <div className="nav-language-items">
-                    <li className="nav-language-item">es</li>
-                    <li className="nav-language-item">en</li>
+                    <button className="nav-language-item">es</button>
+                    <button className="nav-language-item">en</button>
                 </div>
             </div>
         </div>
