@@ -3,7 +3,7 @@ import 'animate.css';
 
 export const Contact = () => {
   return (
-    <ScreenWrapper className="animate__animated animate__zoomIn">
+    <ScreenWrapper className="animate__animated animate__fadeIn">
       Contact
     </ScreenWrapper>
   )

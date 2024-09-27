@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../theme/theme.json"
 
 export const NavbarWrapper = styled.div`
     position: absolute;
@@ -16,8 +17,11 @@ export const NavbarContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 5px 20px;
-    background-color: rgb(69, 77, 93);
+    padding: 5px 20px; 
+    backdrop-filter: blur(10px);          
+    -webkit-backdrop-filter: blur(10px);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgba(69, 77, 93, 0.2);
     border-radius: 50px;
 `;
 
@@ -29,35 +33,29 @@ export const NavbarLogo= styled.span`
     color: white;
     letter-spacing: 3px;              
     text-transform: uppercase;        
-    cursor: pointer;                  
-    transition: color 0.3s ease, transform 0.3s ease;
-
-    &:hover {
-        color: #f0a500;    
-        transform: scale(1.1); 
-    }
+    cursor: pointer;
 `;
 
 /* navbar button */
-export const NavbarButtons= styled.div`
+export const NavButtons= styled.div`
     display: flex;
     justify-content: space-between;
 `;
 
-export const NavbarButton= styled.div`
-    background: none; 
+export const NavButton= styled.div<{active:boolean}>`
+    background: ${props => props.active ? `2px solid ${theme.colors.primary.main}` : "none"}; 
     border: 2px solid transparent;     
-    color: white;     
-    font-size: 12px;  
-    font-weight: 600;
+    color: ${props => props.active ? `${theme.colors.primary.light}` : "white"};     
+    font-size: ${theme.font.fontSize};  
+    font-family: ${theme.font.fontFamily};
     padding: 5px 10px;
     cursor: pointer;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    transition: 0.3s ease all;
     text-transform: uppercase;
     letter-spacing: 1px;
 
     &:hover {  
-        border-bottom: 2px solid #f0a500;
+        border-bottom: 2px solid ${theme.colors.primary.main};
     }
     &:focus, &:active {  
         outline: none;

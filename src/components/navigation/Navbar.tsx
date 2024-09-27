@@ -1,48 +1,40 @@
 import { useContext } from "react"
 import { ScreenContext } from "../../context/ScreenContext"
-import { NavbarButton, NavbarButtons, NavbarContainer, NavbarLanguageButton, NavbarLanguages, NavbarLogo, NavbarWrapper } from "./Navbar.styled";
+import { NavButton, NavButtons, NavbarContainer, NavbarLanguageButton, NavbarLanguages, NavbarLogo, NavbarWrapper } from "./Navbar.styled";
 
 export const Navbar = () => {
     const { screenType, setScreenType } = useContext(ScreenContext);
-
-    const getActiveButtonStyles = (screen: string) => {
-        return screenType === screen ? {
-            color: "#f0a500",
-            backgroundColor: "2px solid #f0a500",
-            transition: "0.5s ease-out all"
-        } : {}
-    }
 
     return (
         <NavbarWrapper data-testid="Navbar">
             <NavbarContainer>
                 <NavbarLogo onClick={() => setScreenType("home")}>RR</NavbarLogo>
-                <NavbarButtons>
-                    <NavbarButton
+                <NavButtons>
+                    <NavButton
                         onClick={() => setScreenType("home")}
-                        style={getActiveButtonStyles("home")}
+                        active={screenType === "home"}
                     >
                         home
-                    </NavbarButton>
-                    <NavbarButton
+                    </NavButton>
+                    <NavButton
                         onClick={() => setScreenType("about")}
-                        style={getActiveButtonStyles("about")}
+                        active={screenType === "about"}
                     >
                         about
-                    </NavbarButton>
-                    <NavbarButton
+                    </NavButton>
+                    <NavButton
                         onClick={() => setScreenType("projects")}
-                        style={getActiveButtonStyles("projects")}
+                        active={screenType === "projects"}
                     >
                         projects
-                    </NavbarButton>
-                    <NavbarButton
+                    </NavButton>
+                    <NavButton
                         onClick={() => setScreenType("contact")}
-                        style={getActiveButtonStyles("contact")}
+                        active={screenType === "contact"}
                     >
                         contact
-                    </NavbarButton>
-                </NavbarButtons>
+                    </NavButton>
+                </NavButtons>
                 <NavbarLanguages>
                     <NavbarLanguageButton>es</NavbarLanguageButton>
                     <NavbarLanguageButton>en</NavbarLanguageButton>
