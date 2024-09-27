@@ -1,15 +1,15 @@
 import { useContext } from 'react'
-import { Navigation } from './components/navigation/Navigation'
 import { ScreenContext, ScreenProvider } from './context/ScreenContext'
 import { Home } from './screens/home/Home'
 import { About } from './screens/about/About'
 import { Projects } from './screens/projects/Projects'
 import { Contact } from './screens/contact/Contact'
+import { Navbar } from './components/navigation/Navbar'
 
 export const AppWrapper = () => {
   return (
     <ScreenProvider>
-      <Navigation />
+      <Navbar />
       <App />
     </ScreenProvider>
   )
