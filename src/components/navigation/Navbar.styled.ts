@@ -44,14 +44,6 @@ export const NavbarContainer = styled.div`
     border-radius: 50px;
 `;
 
-/* nav name */
-export const NavName = styled.div`
-  font-family: ${theme.font.secondary.fontFamily};
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-`;
-
 /* navbar button */
 export const NavButtons= styled.div`
     display: flex;
@@ -116,21 +108,4 @@ export const NavButtonNewText = styled.span`
   align-items: center;
   transform: translateY(100%);
   transition: transform 0.4s ease-in-out;
-`;
-
-/* nav languages */
-export const NavLanguages= styled.div`
-    display: flex;
-    justify-content: space-between;
-`;
-
-export const NavLanguage= styled.div`
-    margin: 0 5px;
-    color: white;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    &:hover {  
-        color: ${theme.colors.secondary.light};
-    }
 `;

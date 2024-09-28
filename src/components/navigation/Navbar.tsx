@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { ScreenContext } from "../../context/ScreenContext"
-import { NavButton, NavButtons, NavbarContainer, NavLanguage, NavLanguages, NavbarWrapper, NavButtonCurrentText, NavButtonNewText, NavName } from "./Navbar.styled";
+import { NavButton, NavButtons, NavbarContainer, NavbarWrapper, NavButtonCurrentText, NavButtonNewText } from "./Navbar.styled";
 
 export const Navbar = () => {
     const { screenType, setScreenType } = useContext(ScreenContext);
@@ -8,7 +8,6 @@ export const Navbar = () => {
     return (
         <NavbarWrapper data-testid="Navbar">
             <NavbarContainer>
-                <NavName onClick={() => setScreenType("home")}>Raúl Rodríguez</NavName>
                 <NavButtons>
                     <NavButton
                         onClick={() => setScreenType("home")}
@@ -39,10 +38,6 @@ export const Navbar = () => {
                         <NavButtonNewText className="text-new">Contact</NavButtonNewText>
                     </NavButton>
                 </NavButtons>
-                <NavLanguages>
-                    <NavLanguage>es</NavLanguage>
-                    <NavLanguage>en</NavLanguage>
-                </NavLanguages>
             </NavbarContainer>
         </NavbarWrapper>
     )
