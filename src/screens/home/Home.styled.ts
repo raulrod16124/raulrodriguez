@@ -64,7 +64,7 @@ export const NormalText = styled.span`
   margin: 0;
   padding-left: 10px;
   display: block;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 600;
   line-height: 1;
   color: ${theme.colors.neutral.darkGrey};

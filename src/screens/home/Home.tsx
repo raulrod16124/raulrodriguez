@@ -7,7 +7,7 @@ export const Home = () => {
     <HomeSection className="animate__animated animate__fadeIn">
       <TextImageContainer>
         <TitleContainer>
-          <NormalText>I’m a</NormalText>
+          <NormalText>I'm Raúl Rodríguez</NormalText>
           <FirstBigText>Frontend</FirstBigText>
           <SecondBigText>Developer</SecondBigText>
         </TitleContainer>
