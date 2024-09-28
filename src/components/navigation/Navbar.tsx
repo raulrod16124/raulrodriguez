@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { ScreenContext } from "../../context/ScreenContext"
-import { Avatar, NavButton, NavButtons, NavbarContainer, NavLanguage, NavLanguages, NavbarWrapper } from "./Navbar.styled";
+import { Avatar, NavButton, NavButtons, NavbarContainer, NavLanguage, NavLanguages, NavbarWrapper, NavButtonCurrentText, NavButtonNewText } from "./Navbar.styled";
 import avatar from "../../assets/images/me.png";
 
 export const Navbar = () => {
@@ -15,25 +15,29 @@ export const Navbar = () => {
                         onClick={() => setScreenType("home")}
                         active={screenType === "home"}
                     >
-                        home
+                        <NavButtonCurrentText className="text-current">Home</NavButtonCurrentText>
+                        <NavButtonNewText className="text-new">Home</NavButtonNewText>
                     </NavButton>
                     <NavButton
                         onClick={() => setScreenType("about")}
                         active={screenType === "about"}
                     >
-                        about
+                        <NavButtonCurrentText className="text-current">About</NavButtonCurrentText>
+                        <NavButtonNewText className="text-new">About</NavButtonNewText>
                     </NavButton>
                     <NavButton
                         onClick={() => setScreenType("projects")}
                         active={screenType === "projects"}
                     >
-                        projects
+                        <NavButtonCurrentText className="text-current">Projects</NavButtonCurrentText>
+                        <NavButtonNewText className="text-new">Projects</NavButtonNewText>
                     </NavButton>
                     <NavButton
                         onClick={() => setScreenType("contact")}
                         active={screenType === "contact"}
                     >
-                        contact
+                        <NavButtonCurrentText className="text-current">Contact</NavButtonCurrentText>
+                        <NavButtonNewText className="text-new">Contact</NavButtonNewText>
                     </NavButton>
                 </NavButtons>
                 <NavLanguages>

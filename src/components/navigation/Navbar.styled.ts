@@ -1,5 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import theme from "../../theme/theme.json"
+
+const slideUp = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+`;
+
+const slideDown = keyframes`
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
 
 export const NavbarWrapper = styled.div`
     position: absolute;
@@ -41,23 +59,56 @@ export const NavButtons= styled.div`
 `;
 
 export const NavButton= styled.div<{active:boolean}>`
+    position: relative;
     background: ${props => props.active ? `2px solid ${theme.colors.secondary.main}` : "none"}; 
-    border: 2px solid transparent;     
     color: ${props => props.active ? `${theme.colors.secondary.light}` : "white"};     
-    font-size: ${theme.font.fontSize};  
     font-family: ${theme.font.fontFamily};
-    padding: 5px 10px;
+    font-size: ${theme.font.fontSize};  
+    padding: 15px 35px;
     cursor: pointer;
-    transition: 0.3s ease all;
+    transition: 0.3s ease-in-out all;
     text-transform: uppercase;
     letter-spacing: 1px;
+    overflow: hidden;
 
-    &:hover {  
-        border-bottom: 2px solid ${theme.colors.secondary.main};
+    &:hover .text-current {
+        animation: ${props => props.active ? keyframes`` : slideUp} 0.4s forwards;
     }
+
+    &:hover .text-new {
+        animation:  ${props => props.active ? keyframes`` : slideDown} 0.4s forwards;
+        color: ${theme.colors.secondary.light};
+    }
+
     &:focus, &:active {  
         outline: none;
     }
+`;
+
+export const NavButtonCurrentText = styled.span`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(0);
+  transition: transform 0.4s ease-in-out;
+`;
+
+export const NavButtonNewText = styled.span`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
 `;
 
 /* nav languages */
