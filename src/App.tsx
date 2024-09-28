@@ -5,12 +5,15 @@ import { About } from './screens/about/About'
 import { Projects } from './screens/projects/Projects'
 import { Contact } from './screens/contact/Contact'
 import { Navbar } from './components/navigation/Navbar'
+import { GradientBackground } from './App.styled'
 
 export const AppWrapper = () => {
   return (
     <ScreenProvider>
-      <Navbar />
-      <App />
+      <GradientBackground>
+        <Navbar />
+        <App />
+      </GradientBackground>
     </ScreenProvider>
   )
 }
