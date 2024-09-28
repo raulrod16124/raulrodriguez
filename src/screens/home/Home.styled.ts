@@ -64,7 +64,7 @@ export const PresentationContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 3rem;
+  font-size: ${theme.font.headings.h1.fontSize};
   font-weight: 700;
   margin-bottom: 10px;
   color: ${theme.colors.neutral.darkGrey};
