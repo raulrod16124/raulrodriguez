@@ -25,15 +25,13 @@ export const NavbarContainer = styled.div`
     border-radius: 50px;
 `;
 
-/* navbar logo */
-export const NavbarLogo= styled.span`
-    font-family: 'Arial', sans-serif; 
-    font-size: 24px;                  
-    font-weight: bold;                
-    color: white;
-    letter-spacing: 3px;              
-    text-transform: uppercase;        
-    cursor: pointer;
+/* nav avatar */
+export const Avatar = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 `;
 
 /* navbar button */
@@ -43,9 +41,9 @@ export const NavButtons= styled.div`
 `;
 
 export const NavButton= styled.div<{active:boolean}>`
-    background: ${props => props.active ? `2px solid ${theme.colors.primary.main}` : "none"}; 
+    background: ${props => props.active ? `2px solid ${theme.colors.secondary.main}` : "none"}; 
     border: 2px solid transparent;     
-    color: ${props => props.active ? `${theme.colors.primary.light}` : "white"};     
+    color: ${props => props.active ? `${theme.colors.secondary.light}` : "white"};     
     font-size: ${theme.font.fontSize};  
     font-family: ${theme.font.fontFamily};
     padding: 5px 10px;
@@ -55,21 +53,26 @@ export const NavButton= styled.div<{active:boolean}>`
     letter-spacing: 1px;
 
     &:hover {  
-        border-bottom: 2px solid ${theme.colors.primary.main};
+        border-bottom: 2px solid ${theme.colors.secondary.main};
     }
     &:focus, &:active {  
         outline: none;
     }
 `;
 
-/* navbar languages */
-export const NavbarLanguages= styled.div`
+/* nav languages */
+export const NavLanguages= styled.div`
     display: flex;
     justify-content: space-between;
 `;
 
-export const NavbarLanguageButton= styled.button`
+export const NavLanguage= styled.div`
     margin: 0 5px;
-    list-style: none;
     color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {  
+        color: ${theme.colors.secondary.light};
+    }
 `;
