@@ -1,10 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 import theme from "../../theme/theme.json"
 
-const fadeIn = keyframes`
+const fadeInUp = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
@@ -12,10 +12,10 @@ const fadeIn = keyframes`
   }
 `;
 
-const slideInFromLeft = keyframes`
+const fadeInRight = keyframes`
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(50px);
   }
   100% {
     opacity: 1;
@@ -23,84 +23,109 @@ const slideInFromLeft = keyframes`
   }
 `;
 
-const scaleUp = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
+const typing = keyframes`
+  from {
+    width: 0;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+  to {
+    width: 100%;
   }
 `;
 
-const bounceUp = keyframes`
+const blink = keyframes`
   0% {
-    opacity: 0;
-    transform: translateY(50px);
+    border-right-color: rgba(0, 0, 0, 0.75);
   }
-  70% {
-    transform: translateY(-10px);
+  50% {
+    border-right-color: transparent;
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    border-right-color: rgba(0, 0, 0, 0.75);
   }
 `;
 
 export const HomeSection = styled.section`
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 20px;
+  max-width: 1270px;
 `;
 
-export const PresentationContainer = styled.div`
-  text-align: center;
-  margin-bottom: 20px;
-  animation: ${slideInFromLeft} 1s ease-out forwards;
-`;
-
-export const Title = styled.h1`
-  font-size: ${theme.font.headings.h1.fontSize};
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: ${theme.colors.neutral.darkGrey};
-  animation: ${fadeIn} 1.2s ease forwards;
-`;
-
-export const SubTitle = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: ${theme.colors.neutral.white};
-  margin-bottom: 20px;
-  animation: ${fadeIn} 1.5s ease forwards;
-`;
-
-export const Avatar = styled.img`
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  animation: ${scaleUp} 1.3s ease forwards;
-`;
-
-export const CTAButton = styled.button`
-  background-color: ${theme.colors.secondary.main};
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+export const TitleContainer = styled.div`
+  margin: 0;
+  margin-left: -150px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  z-index: 1;
+`
+export const NormalText = styled.span`
+  margin: 0;
+  padding-left: 10px;
+  display: block;
+  font-size: 4rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 30px;
-  animation: ${bounceUp} 1.8s ease forwards;
+  line-height: 1;
+  color: ${theme.colors.neutral.darkGrey};
+  animation: ${fadeInUp} 1.2s ease-out forwards;
+`;
 
-  &:hover {
-    background-color: ${theme.colors.secondary.dark};
+export const FirstBigText = styled.span`
+  margin: 0;
+  font-size: 12rem;
+  font-weight: bolder;
+  color: ${theme.colors.neutral.white};
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 
+    2px 2px 0 ${theme.colors.tertiary.main},  /* Top-right */
+    -2px -2px 0 ${theme.colors.tertiary.main}, /* Bottom-left */
+    -2px 2px 0 ${theme.colors.tertiary.main},  /* Top-left */
+    2px -2px 0 ${theme.colors.tertiary.main};  /* Bottom-right */
+  animation: ${fadeInUp} 1.2s ease-out forwards;
+`;
+
+export const SecondBigText = styled.span`
+  margin: 0;
+  font-size: 12rem;
+  font-weight: bolder;
+  line-height: 1;
+  text-transform: uppercase;
+  color: ${theme.colors.tertiary.main};
+  text-shadow: 
+    2px 2px 0 ${theme.colors.neutral.white},  /* Top-right */
+    -2px -2px 0 ${theme.colors.neutral.white}, /* Bottom-left */
+    -2px 2px 0 ${theme.colors.neutral.white},  /* Top-left */
+    2px -2px 0 ${theme.colors.neutral.white};  /* Bottom-right */
+  width: 0;
+  overflow: hidden;
+  animation: 
+    ${fadeInUp} 1.2s ease-out forwards,
+    ${typing} 1.2s steps(30, end) forwards,
+    ${blink} 0.75s step-end infinite;
+`;
+
+export const Image = styled.img`
+  position: absolute;
+  top: -50px;
+  right: -200px;
+  width: 400px;
+  height: auto;
+  z-index: 0;
+  animation: ${fadeInRight} 1.5s ease-out forwards;
+  border-radius: 50%;
+  border: 2px solid ${theme.colors.secondary.main};
+
+  @media (max-width: 768px) {
+    width: 150px;
+    bottom: -10px;
+    right: -10px;
   }
+`;
+
+export const TextImageContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: flex-start;
 `;
