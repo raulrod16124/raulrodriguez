@@ -6,6 +6,7 @@ import { Projects } from './screens/projects/Projects'
 import { Contact } from './screens/contact/Contact'
 import { Navbar } from './components/navigation/Navbar'
 import { GradientBackground } from './App.styled'
+import { Footer } from './components/footer/Footer'
 
 export const AppWrapper = () => {
   return (
@@ -13,6 +14,7 @@ export const AppWrapper = () => {
       <GradientBackground>
         <Navbar />
         <App />
+        <Footer />
       </GradientBackground>
     </ScreenProvider>
   )
