@@ -18,5 +18,5 @@ export const GradientBackground = styled.div`
   justify-content: center;
   align-items: center;
   color: ${theme.colors.neutral.white};
-  font-family: ${theme.font.fontFamily};
+  font-family: ${theme.font.primary.fontFamily};
 `;

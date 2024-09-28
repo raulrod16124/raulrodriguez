@@ -34,8 +34,9 @@ export const NavbarWrapper = styled.div`
 export const NavbarContainer = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
-    padding: 5px 20px; 
+    padding: 0 20px 0 10px; 
     backdrop-filter: blur(10px);          
     -webkit-backdrop-filter: blur(10px);  
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -43,12 +44,11 @@ export const NavbarContainer = styled.div`
     border-radius: 50px;
 `;
 
-/* nav avatar */
-export const Avatar = styled.img`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* nav name */
+export const NavName = styled.div`
+  font-family: ${theme.font.secondary.fontFamily};
+  font-weight: 700;
+  letter-spacing: 1.5px;
   cursor: pointer;
 `;
 
@@ -60,16 +60,23 @@ export const NavButtons= styled.div`
 
 export const NavButton= styled.div<{active:boolean}>`
     position: relative;
-    background: ${props => props.active ? `2px solid ${theme.colors.secondary.main}` : "none"}; 
-    color: ${props => props.active ? `${theme.colors.secondary.light}` : "white"};     
-    font-family: ${theme.font.fontFamily};
-    font-size: ${theme.font.fontSize};  
-    padding: 15px 35px;
+    font-family: ${theme.font.primary.fontFamily};
+    font-size: ${props => props.active ? `18px` : `${theme.font.fontSize}`};
+    margin: 0 1px;
+    padding: 15px ${props => props.active ? `40px` : `35px`};
     cursor: pointer;
     transition: 0.3s ease-in-out all;
     text-transform: uppercase;
     letter-spacing: 1px;
     overflow: hidden;
+    color: ${props => props.active ? `${theme.colors.secondary.main}` : "white"}; 
+    text-shadow: 
+    ${props => props.active ? `
+       0.8px 0.8px 0 ${theme.colors.neutral.white}}, 
+      -0.8px -0.8px 0 ${theme.colors.neutral.white}},
+      -0.8px 0.8px 0 ${theme.colors.neutral.white}}, 
+      0.8px -0.8px 0 ${theme.colors.neutral.white}} 
+    ` : "none"};
 
     &:hover .text-current {
         animation: ${props => props.active ? keyframes`` : slideUp} 0.4s forwards;
