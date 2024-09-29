@@ -190,7 +190,7 @@ export const DownloadCVButton = styled.a`
   border: 2px solid ${theme.colors.secondary.main};
   color: ${theme.colors.secondary.main};
   padding: 50px 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;

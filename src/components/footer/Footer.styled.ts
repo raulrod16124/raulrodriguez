@@ -28,6 +28,7 @@ export const CopyrightText = styled.p`
 export const IconContainer = styled.div`
   display: flex;
   gap: 20px;
+  transition: all 0.3s ease;
 
   a {
     color: ${theme.colors.neutral.lightGrey};
