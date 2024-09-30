@@ -3,7 +3,7 @@ import { CopyrightText, FooterContainer, IconContainer } from './Footer.styled';
 
 export const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer data-testid="footer">
       <CopyrightText>
         © {new Date().getFullYear()} All rights reserved.
       </CopyrightText>
