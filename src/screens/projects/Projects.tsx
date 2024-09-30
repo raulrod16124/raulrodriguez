@@ -18,6 +18,7 @@ export const Projects = () => {
 
           return (
             <ProjectCard
+              className='animate__animated animate__zoomIn'
               key={index} 
               onClick={() => setProjectSelected(project)}
               selected={project.title === projectSelected.title}
