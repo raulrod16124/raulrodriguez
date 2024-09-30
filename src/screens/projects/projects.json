@@ -35,10 +35,16 @@
       },
     {
         "title": "Pokedex",
-        "description": "A responsive website built with React and Styled-components. The project includes complex UI elements with smooth animations.",
-        "technologies": ["React", "Styled-components", "JavaScript", "CSS"],
-        "image": "",
-        "carouselImages": ["", "", ""],
+        "description": "Mobile application created to develop mobile programming skills while creating a fun mobile application to pass the time with.",
+        "technologies": ["React Nartive", "Typescript", "Github"],
+        "image": "src/assets/images/projects/pokedex/pokdex.png",
+        "carouselImages": [
+          "src/assets/images/projects/pokedex/image1.png",
+          "src/assets/images/projects/pokedex/image2.png",
+          "src/assets/images/projects/pokedex/image3.png",
+          "src/assets/images/projects/pokedex/image4.png",
+          "src/assets/images/projects/pokedex/image5.png"
+        ],
         "repoLink": "https://github.com/raulrod16124/pokedex"
       },
       {

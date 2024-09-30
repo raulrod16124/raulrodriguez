@@ -54,8 +54,10 @@ export const ProjectCard = styled.div<{selected: boolean}>`
 `;
 
 export const ProjectImage = styled.img`
-    width: 120px;
+    width: auto;
+    max-width: 120px;
     height: 120px;
+    align-self: center;
     border-radius: 5px;
 `;
 
