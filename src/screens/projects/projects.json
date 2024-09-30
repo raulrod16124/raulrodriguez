@@ -1,38 +1,41 @@
 [
     {
-        "title": "Matchup",
-        "description": "Matchup is a card-matching game. It tests your mental skills as you progress through increasingly complex levels, unlocking new content and collecting cards and items.",
-        "technologies": ["React Native", "Typescript", "Github", "Firebase", "Figma"],
-        "image": "src/assets/images/projects/matchup/matchup.png",
-        "carouselImages": [
-            "src/assets/images/projects/matchup/image1.jpg", 
-            "src/assets/images/projects/matchup/image2.jpg", 
-            "src/assets/images/projects/matchup/image3.jpg",
-            "src/assets/images/projects/matchup/image4.jpg",
-            "src/assets/images/projects/matchup/image5.jpg"
-        ],
-        "demoLink": "https://play.google.com/store/apps/details?id=com.matchupcardgame2023"
-      },
-      {
-        "title": "Raúl Rodríguez",
-        "description": "A cross-platform mobile app developed using React Native. It features real-time updates and cloud synchronization.",
-        "technologies": ["React Native", "Firebase", "JavaScript"],
-        "image": "",
-        "carouselImages": [""],
-        "repoLink": "https://github.com/raulrod16124/raulrodriguez"
-      },
-      {
-        "title": "Chicmouse",
-        "description": "Website to display the mobile applications created and offer users contact information, terms and conditions and privacy policy.",
-        "technologies": ["React", "Typescript", "Styled-components", "Firebase", "Vite", "Vitest", "CI/CD", "Github", "Jest", "Testing-library", "Figma"],
-        "image": "src/assets/images/projects/chicmouse/chicmouse.png",
-        "carouselImages": [
-            "src/assets/images/projects/chicmouse/image1.png", 
-            "src/assets/images/projects/chicmouse/image2.png"
-        ],
-        "demoLink": "https://chicmouse.com",
-        "repoLink": "https://github.com/raulrod16124/chicmouse"
-      },
+      "title": "Matchup",
+      "description": "Matchup is a card-matching game. It tests your mental skills as you progress through increasingly complex levels, unlocking new content and collecting cards and items.",
+      "technologies": ["React Native", "Typescript", "Github", "Firebase", "Figma"],
+      "image": "src/assets/images/projects/matchup/matchup.png",
+      "carouselImages": [
+          "src/assets/images/projects/matchup/image1.jpg", 
+          "src/assets/images/projects/matchup/image2.jpg", 
+          "src/assets/images/projects/matchup/image3.jpg",
+          "src/assets/images/projects/matchup/image4.jpg",
+          "src/assets/images/projects/matchup/image5.jpg"
+      ],
+      "demoLink": "https://play.google.com/store/apps/details?id=com.matchupcardgame2023"
+    },
+    {
+      "title": "Chicmouse",
+      "description": "Website to display the mobile applications created and offer users contact information, terms and conditions and privacy policy.",
+      "technologies": ["React", "Typescript", "Styled-components", "Firebase", "Vite", "Vitest", "CI/CD", "Github", "Jest", "Testing-library", "Figma"],
+      "image": "src/assets/images/projects/chicmouse/chicmouse.png",
+      "carouselImages": [
+          "src/assets/images/projects/chicmouse/image1.png", 
+          "src/assets/images/projects/chicmouse/image2.png"
+      ],
+      "demoLink": "https://chicmouse.com",
+      "repoLink": "https://github.com/raulrod16124/chicmouse"
+    },
+    {
+      "title": "Raúl Rodríguez",
+      "description": "I've built my personal portfolio to showcase my projects and share more about myself with those interested in my work. The site highlights key projects I've developed, providing detailed descriptions and technologies used.",
+      "technologies": ["React Native", "Firebase", "JavaScript"],
+      "image": "src/assets/images/projects/raulrodriguez/logoRR.png",
+      "carouselImages": [
+        "src/assets/images/projects/raulrodriguez/image1.png",
+        "src/assets/images/projects/raulrodriguez/image2.png"
+      ],
+      "repoLink": "https://github.com/raulrod16124/raulrodriguez"
+    },
     {
         "title": "Pokedex",
         "description": "Mobile application created to develop mobile programming skills while creating a fun mobile application to pass the time with.",

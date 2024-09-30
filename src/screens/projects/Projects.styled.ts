@@ -17,6 +17,7 @@ export const ProjectsContainer = styled.section`
   gap: 20px;
   padding: 20px;
   text-align: center;
+  min-height: 600px;
   animation: ${slideInLeft} 1s ease-out;
 `;
 
