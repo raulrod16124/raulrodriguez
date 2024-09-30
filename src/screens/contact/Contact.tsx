@@ -34,12 +34,12 @@ export const Contact = () => {
   }
 
   const submit = async () => {
-    setSendingEmail(true);
     checkInput(name, setError);
     checkInput(email, setError);
     checkInput(message, setError);
-
+    
     if(!error && name.length > 3 && email.length > 3 && message.length > 3){
+      setSendingEmail(true);
       const templateParams = {
         from_name: name,
         reply_to: email,
@@ -91,7 +91,7 @@ export const Contact = () => {
       )}
 
       <ContactInfo>
-        <p>Email: raul.rod16124@gmail.com</p>
+        <p>raul.rod16124@gmail.com</p>
       </ContactInfo>
 
       <SocialIcons>

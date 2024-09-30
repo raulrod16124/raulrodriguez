@@ -25,6 +25,7 @@ export const Form = styled.form`
   flex-direction: column;
   width: 100%;
   max-width: 300px;
+  min-height: 300px;
   background: white;
   padding: 20px;
   border-radius: 5px;
@@ -49,10 +50,13 @@ export const Button = styled.button`
 export const ContactInfo = styled.div`
   margin-top: 30px;
   animation: ${fadeIn} 2s ease-in-out;
+
+  & p{
+    color: ${theme.colors.neutral.darkGrey};
+  }
 `;
 
 export const SocialIcons = styled.div`
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 20px;
