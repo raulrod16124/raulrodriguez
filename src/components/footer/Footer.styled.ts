@@ -32,7 +32,7 @@ export const IconContainer = styled.div`
 
   a {
     color: ${theme.colors.neutral.lightGrey};
-    font-size: 1.5rem;
+    font-size: ${theme.font.icons.fontSize};
     transition: color 0.3s ease;
 
     &:hover {

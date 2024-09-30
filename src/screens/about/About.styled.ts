@@ -72,7 +72,7 @@ export const InfoContainer = styled.div`
   flex-direction: row;
   max-width: 800px;
   text-align: left;
-  font-size: 1.2rem;
+  font-size: ${theme.font.text.fontSize};
   color: ${theme.colors.neutral.darkGrey};
   line-height: 1.4;
   margin-bottom: 50px;
@@ -122,7 +122,7 @@ export const SkillItem = styled.div`
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
-    font-size: 1.1rem;
+    font-size: ${theme.font.tagText.fontSize};
     font-weight: 400;
     color: ${theme.colors.neutral.white};
     animation: ${slideInLeft} 1s ease-out forwards;

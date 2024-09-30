@@ -45,7 +45,7 @@ export const About = () => {
           <SkillItem>React Native</SkillItem>
           <SkillItem>Kotlin</SkillItem>
           <SkillItem>JetPack Compose</SkillItem>
-          <SkillItem>GitHub</SkillItem>
+          <SkillItem>Github</SkillItem>
           <SkillItem>Google Cloud</SkillItem>
           <SkillItem>Firebase</SkillItem>
           <SkillItem>Nodejs</SkillItem>
