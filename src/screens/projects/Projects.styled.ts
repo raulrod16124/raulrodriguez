@@ -13,11 +13,11 @@ const slideInLeft = keyframes`
 `;
 
 export const ProjectsContainer = styled.section`
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    text-align: center;
-    animation: ${slideInLeft} 1s ease-out;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  animation: ${slideInLeft} 1s ease-out;
 `;
 
 export const ProjectGrid = styled.div`
@@ -48,15 +48,15 @@ export const ProjectCard = styled.div<{selected: boolean}>`
     transition: all 0.2s ease-in-out;
 
     &:hover {
-        border: 2px solid ${theme.colors.secondary.main}
+      border: 2px solid ${theme.colors.secondary.main};
+      border: ${props => props.selected ? `2px solid` : `2px solid ${theme.colors.secondary.main}`};;
     }
 `;
 
-export const ProjectImage = styled.image`
+export const ProjectImage = styled.img`
     width: 120px;
     height: 120px;
     border-radius: 5px;
-    border: 1px solid black;
 `;
 
 export const ProjectTitle = styled.h3<{selected: boolean}>`
