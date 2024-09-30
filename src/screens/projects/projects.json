@@ -1,42 +1,55 @@
 [
     {
         "title": "Matchup",
-        "description": "A responsive website built with React and Styled-components. The project includes complex UI elements with smooth animations.",
-        "technologies": ["React", "Styled-components", "JavaScript", "CSS"],
-        "image": "",
-        "demoLink": "https://project1.demo",
-        "repoLink": "https://github.com/username/project1"
+        "description": "Matchup is a card-matching game. It tests your mental skills as you progress through increasingly complex levels, unlocking new content and collecting cards and items.",
+        "technologies": ["React Native", "Typescript", "Github", "Firebase", "Figma"],
+        "image": "src/assets/images/projects/matchup/matchup.png",
+        "carouselImages": [
+            "src/assets/images/projects/matchup/image1.jpg", 
+            "src/assets/images/projects/matchup/image2.jpg", 
+            "src/assets/images/projects/matchup/image3.jpg",
+            "src/assets/images/projects/matchup/image4.jpg",
+            "src/assets/images/projects/matchup/image5.jpg"
+        ],
+        "demoLink": "https://play.google.com/store/apps/details?id=com.matchupcardgame2023"
       },
       {
         "title": "Raúl Rodríguez",
         "description": "A cross-platform mobile app developed using React Native. It features real-time updates and cloud synchronization.",
         "technologies": ["React Native", "Firebase", "JavaScript"],
         "image": "",
-        "demoLink": "",
-        "repoLink": "https://github.com/username/mobile-app"
+        "carouselImages": [""],
+        "repoLink": "https://github.com/raulrod16124/raulrodriguez"
       },
       {
         "title": "Chicmouse",
-        "description": "A full-stack e-commerce platform built with MERN stack, integrating a payment gateway and user authentication.",
-        "technologies": ["MongoDB", "Express", "React", "Node.js"],
-        "image": "",
-        "demoLink": "https://ecommerce.demo",
-        "repoLink": "https://github.com/username/ecommerce-platform"
+        "description": "Website to display the mobile applications created and offer users contact information, terms and conditions and privacy policy.",
+        "technologies": ["React", "Typescript", "Styled-components", "Firebase", "Vite", "Vitest", "CI/CD", "Github", "Jest", "Testing-library", "Figma"],
+        "image": "src/assets/images/projects/chicmouse/chicmouse.png",
+        "carouselImages": [
+            "src/assets/images/projects/chicmouse/image1.png", 
+            "src/assets/images/projects/chicmouse/image2.png"
+        ],
+        "demoLink": "https://chicmouse.com",
+        "repoLink": "https://github.com/raulrod16124/chicmouse"
       },
     {
         "title": "Pokedex",
         "description": "A responsive website built with React and Styled-components. The project includes complex UI elements with smooth animations.",
         "technologies": ["React", "Styled-components", "JavaScript", "CSS"],
         "image": "",
-        "demoLink": "https://project1.demo",
-        "repoLink": "https://github.com/username/project1"
+        "carouselImages": ["", "", ""],
+        "repoLink": "https://github.com/raulrod16124/pokedex"
       },
       {
         "title": "Telamón Box",
-        "description": "A cross-platform mobile app developed using React Native. It features real-time updates and cloud synchronization.",
-        "technologies": ["React Native", "Firebase", "JavaScript"],
-        "image": "",
-        "demoLink": "",
-        "repoLink": "https://github.com/username/mobile-app"
+        "description": "Website created for a crossfit gym that needed a website to show both the information about the center and the competitions that it carries out.",
+        "technologies": ["Wordpress", "Elementor", "CSS"],
+        "image": "src/assets/images/projects/telamonbox/telamonbox.png",
+        "carouselImages": [
+            "src/assets/images/projects/telamonbox/image1.png",
+            "src/assets/images/projects/telamonbox/image2.png"
+        ],
+        "demoLink": "https://telamon.es/"
       }
 ]
