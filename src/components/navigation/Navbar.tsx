@@ -17,8 +17,8 @@ export const Navbar = () => {
                         <NavButtonNewText className="text-new">home</NavButtonNewText>
                     </NavButton>
                     <NavButton
-                        onClick={() => setScreenType("aboutme")}
-                        active={screenType === "aboutme"}
+                        onClick={() => setScreenType("about_me")}
+                        active={screenType === "about_me"}
                     >
                         <NavButtonCurrentText className="text-current">about me</NavButtonCurrentText>
                         <NavButtonNewText className="text-new">about me</NavButtonNewText>

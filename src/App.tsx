@@ -25,7 +25,7 @@ export const App = () => {
 
   const screens: Record<string, JSX.Element> = {
     home: <Home />,
-    aboutme: <AboutMe />,
+    about_me: <AboutMe />,
     projects: <Projects />,
     contact: <Contact />
   }

@@ -16,8 +16,8 @@ describe("Navbar tests", () => {
     })
     test("should find the text 'about me' twice in the document", () => {
         render(<Navbar />)
-        const aboutmeText = screen.getAllByText("about me");
-        expect(aboutmeText).toHaveLength(2);
+        const about_meText = screen.getAllByText("about me");
+        expect(about_meText).toHaveLength(2);
     })
     test("should find the text 'projects' twice in the document", () => {
         render(<Navbar />)

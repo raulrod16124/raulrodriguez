@@ -5,7 +5,7 @@ import 'animate.css';
 
 export const AboutMe = () => {
   return (
-    <AboutMeContainer className="animate__animated animate__fadeIn">
+    <AboutMeContainer className="animate__animated animate__fadeIn" data-testid="about-me">
       <MyInfoContainer>
         <ProfileImageContainer>
           <ProfileImage src={me} alt="Profile Image" />
