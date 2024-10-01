@@ -1,38 +1,43 @@
-import { useContext } from "react"
-import { ScreenContext } from "../../context/ScreenContext"
-import { NavButton, NavButtons, NavbarContainer, NavbarWrapper, NavButtonCurrentText, NavButtonNewText } from "./Navbar.styled";
+import { useLocation } from "react-router-dom";
+import { 
+    NavButton,
+    NavButtons, 
+    NavbarContainer, 
+    NavbarWrapper, 
+    NavButtonCurrentText, 
+    NavButtonNewText 
+} from "./Navbar.styled";
 
 export const Navbar = () => {
-    const { screenType, setScreenType } = useContext(ScreenContext);
-
+    const { pathname } = useLocation();
     return (
         <NavbarWrapper data-testid="Navbar">
             <NavbarContainer>
                 <NavButtons>
                     <NavButton
-                        onClick={() => setScreenType("home")}
-                        active={screenType === "home"}
+                        to={"home"}
+                        active={pathname === "/home" || pathname === "/"}
                     >
                         <NavButtonCurrentText className="text-current">home</NavButtonCurrentText>
                         <NavButtonNewText className="text-new">home</NavButtonNewText>
                     </NavButton>
                     <NavButton
-                        onClick={() => setScreenType("about_me")}
-                        active={screenType === "about_me"}
+                        to={"about-me"}
+                        active={pathname.split("/")[1] === "about-me"}
                     >
                         <NavButtonCurrentText className="text-current">about me</NavButtonCurrentText>
                         <NavButtonNewText className="text-new">about me</NavButtonNewText>
                     </NavButton>
                     <NavButton
-                        onClick={() => setScreenType("projects")}
-                        active={screenType === "projects"}
+                        to={"projects"}
+                        active={pathname.split("/")[1] === "projects"}
                     >
                         <NavButtonCurrentText className="text-current">projects</NavButtonCurrentText>
                         <NavButtonNewText className="text-new">projects</NavButtonNewText>
                     </NavButton>
                     <NavButton
-                        onClick={() => setScreenType("contact")}
-                        active={screenType === "contact"}
+                        to={"contact"}
+                        active={pathname.split("/")[1] === "contact"}
                     >
                         <NavButtonCurrentText className="text-current">contact</NavButtonCurrentText>
                         <NavButtonNewText className="text-new">contact</NavButtonNewText>

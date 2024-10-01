@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import theme from "../../theme/theme.json"
+import { Link } from "react-router-dom";
 
 const slideUp = keyframes`
   0% {
@@ -51,7 +52,7 @@ export const NavButtons= styled.div`
   justify-content: space-between;
 `;
 
-export const NavButton= styled.div<{active:boolean}>`
+export const NavButton= styled(Link)<{active:boolean}>`
   position: relative;
   font-family: ${theme.font.primary.fontFamily};
   font-size: ${props => props.active ? `18px` : `${theme.font.fontSize}`};
