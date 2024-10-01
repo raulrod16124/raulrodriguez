@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 
-// const ScreenType = ["home", "about", "projects", "contact"]
+// const ScreenType = ["home", "aboutme", "projects", "contact"]
 // type ScreenType = typeof ScreenType;
 
 interface IScreenContextProps {

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ScreenContext, ScreenProvider } from './context/ScreenContext'
 import { Home } from './screens/home/Home'
-import { About } from './screens/about/About'
+import { AboutMe } from './screens/about/AboutMe'
 import { Projects } from './screens/projects/Projects'
 import { Contact } from './screens/contact/Contact'
 import { Navbar } from './components/navigation/Navbar'
@@ -25,7 +25,7 @@ export const App = () => {
 
   const screens: Record<string, JSX.Element> = {
     home: <Home />,
-    about: <About />,
+    aboutme: <AboutMe />,
     projects: <Projects />,
     contact: <Contact />
   }
