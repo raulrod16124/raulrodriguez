@@ -1,4 +1,5 @@
 import { AboutMeContainer, Description, FloatingCVButton, MyInfoContainer, ProfileImage, ProfileImageContainer, SectionTitle, TechnologyItem, TechnologyList } from "./AboutMe.styled";
+import { increaseExperience } from "./helper";
 import cv from "../../assets/cv/CV-Raúl-Rodríguez.pdf";
 import me from "../../assets/images/me.png";
 import 'animate.css';
@@ -16,7 +17,7 @@ export const AboutMe = () => {
         
         <Description>
           <p>
-          👋 Hi, I'm Raúl Rodríguez, a passionate Frontend Developer with over 5 years of experience in creating dynamic, user-friendly websites 💻 and mobile apps 📱.
+          👋 Hi, I'm Raúl Rodríguez, a passionate Frontend Developer with over {increaseExperience()} years of experience in creating dynamic, user-friendly websites 💻 and mobile apps 📱.
 
           💪 I'm highly motivated, love working in teams 👥, and always eager to take on new challenges.
 
