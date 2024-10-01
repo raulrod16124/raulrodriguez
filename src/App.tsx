@@ -5,7 +5,7 @@ import { AboutMe } from './screens/about/AboutMe'
 import { Projects } from './screens/projects/Projects'
 import { Contact } from './screens/contact/Contact'
 import { Navbar } from './components/navigation/Navbar'
-import { GradientBackground } from './App.styled'
+import { AppContainer, GradientBackground } from './App.styled'
 import { Footer } from './components/footer/Footer'
 
 export const AppWrapper = () => {
@@ -31,9 +31,9 @@ export const App = () => {
   }
 
   return (
-    <div data-testid="app">
+    <AppContainer data-testid="app">
       {screens[screenType]}
-    </div>
+    </AppContainer>
   )
 }
 

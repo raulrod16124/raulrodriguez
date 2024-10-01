@@ -31,15 +31,13 @@ const bounce = keyframes`
 
 export const SuccessMessageContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   padding: 20px;
-  background-color: ${theme.colors.successBackground};
   border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: auto 0;
   animation: ${fadeInAndScale} 0.8s ease-in-out forwards;
-  margin: 0 auto;
 `;
 
 export const CheckIcon = styled(FaCheck)`

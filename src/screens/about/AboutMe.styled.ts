@@ -33,17 +33,8 @@ export const AboutMeContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  position: relative;
   animation: ${fadeIn} 1s ease-in-out;
-
-  @media (max-width: ${theme.responsive.laptops}) {
-    padding-top: 150px;
-  }
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    overflow: scroll;
-    margin-bottom: 100px;
-  }
+  padding-top: 100px;
 `;
 
 export const ProfileImageContainer = styled.div`
@@ -75,8 +66,13 @@ export const MyInfoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 50px;
+
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     flex-direction: column;
+    max-width: 80%;
+  }
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    max-width: 95%;
   }
 `;
 
@@ -91,9 +87,6 @@ export const Description = styled.div`
   }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     max-width: 80%;
-  }
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    max-width: 95%;
   }
 `;
 

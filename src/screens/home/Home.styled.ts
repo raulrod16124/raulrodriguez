@@ -49,9 +49,10 @@ export const HomeSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-@media (max-width: ${theme.responsive.laptops}) {
-  padding-top: 200px;
-}
+  padding-top: 100px;
+  @media (max-width: ${theme.responsive.laptops}) {
+    padding-top: 200px;
+  }
 `;
 
 export const TitleContainer = styled.div`

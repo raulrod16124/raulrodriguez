@@ -18,12 +18,13 @@ export const ContactContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 100px;
 `;
 
 export const Form = styled.form`
+  position: relative;
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: column;;
   max-width: 300px;
   min-height: 300px;
   background: white;
@@ -31,6 +32,11 @@ export const Form = styled.form`
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} 1s ease-in-out;
+
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    max-width: 80%;
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`

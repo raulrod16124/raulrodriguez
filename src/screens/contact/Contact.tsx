@@ -65,7 +65,9 @@ export const Contact = () => {
   return (
     <ContactContainer className="animate__animated animate__fadeIn">
       { formSubmitted && (
-        <SuccessAnimation />
+        <Form>
+          <SuccessAnimation />
+        </Form>
       )}
       { !formSubmitted && sendingEmail && (
         <LoadingSpinner />

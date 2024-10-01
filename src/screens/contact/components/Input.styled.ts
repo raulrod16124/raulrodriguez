@@ -4,11 +4,11 @@ import theme from "../../../theme/theme.json";
 export const InputContainer = styled.div`
   position: relative;
   margin-bottom: 30px;
-  width: 90%;
+  width: 100%;
 `;
 
 export const SharedInputStyles = css`
-  width: 100%;
+  width: 85%;
   padding: 15px;
   padding-top: 20px;
   font-size: 1rem;

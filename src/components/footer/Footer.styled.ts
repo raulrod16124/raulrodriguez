@@ -2,11 +2,11 @@ import styled from 'styled-components'
 import theme from "../../theme/theme.json";
 
 export const FooterContainer = styled.footer`
-    position: absolute;
-    bottom: 0;
-    padding: 20px 0;
+    flex: 0 0 10vh;
+    position: relative;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 30px;
     flex-wrap: wrap;
