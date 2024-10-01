@@ -7,9 +7,19 @@ export const ProjectContainer = styled.div`
   align-items: flex-start;
   padding: 20px;
   padding-top: 0;
-  width: 700px;
+  width: 600px;
   margin: 0 auto;
   border-left: 2px solid rgba(255,255,255,0.2);
+
+  @media (max-width: ${theme.responsive.tablets}) {
+    flex-direction: column;
+    padding-top: 40px;
+    border-left: none;
+    border-top: 2px solid rgba(255,255,255,0.2);
+  }
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    width: 90%;
+  }
 `;
 
 export const Header = styled.div`
@@ -23,6 +33,10 @@ export const ProjectImage = styled.img`
   object-fit: contain;
   border-radius: 10px;
   margin-right: 20px;
+  @media (max-width: ${theme.responsive.tablets}) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 export const NameAndLinksContainer = styled.div`
@@ -38,6 +52,9 @@ export const ProjectName = styled.h1`
   text-transform: uppercase;
   height: 100%;
   margin: 0;
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    font-size: 1rem;
+  }
 `;
 
 export const IconContainer = styled.div`
@@ -63,6 +80,10 @@ export const ProjectDescription = styled.p`
   line-height: 1.6;
   margin: 20px;
   margin-left: 0;
+
+  @media (max-width: ${theme.responsive.tablets}) {
+    text-align: justify;
+  }
 `;
 
 export const TechList = styled.div`
@@ -70,6 +91,10 @@ export const TechList = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
+  @media (max-width: ${theme.responsive.tablets}) {
+    width: 100%;
+    justify-content: left;
+  }
 `;
 
 export const TechItem = styled.span`
@@ -85,35 +110,12 @@ export const CarouselContainer = styled.div`
   align-items: center;
   padding: 10px 0;
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
 
-  scrollbar-width: thin; 
-  scrollbar-color: ${theme.colors.secondary.main} ${theme.colors.tertiary.dark};
-
-  &::-webkit-scrollbar {
-    width: 12px;
-    height: 10px;
+  @media (max-width: ${theme.responsive.tablets}) {
+    width: 100%;
   }
-
-  &::-webkit-scrollbar-track {
-    background-color: ${theme.colors.tertiary.dark};
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${theme.colors.secondary.main};
-    border-radius: 10px;
-    border: 3px solid ${theme.colors.tertiary.dark};
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: ${theme.colors.secondary.light};
-  }
-
-  &::-webkit-scrollbar-thumb:active {
-    background-color: ${theme.colors.secondary.light};
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    flex-wrap: wrap;
   }
 `;
 
@@ -121,12 +123,16 @@ export const CarouselImage = styled.img`
   width: auto;
   height: 200px;
   object-fit: cover;
-  margin: 0 5px;
+  margin: 5px;
   border-radius: 10px;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
 
   &:hover {
     border-color: ${theme.colors.secondary.main};
+  }
+
+  @media (max-width: ${theme.responsive.tablets}) {
+    height: 150px;
   }
 `;

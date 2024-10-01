@@ -18,7 +18,15 @@ export const ProjectsContainer = styled.section`
   padding: 20px;
   text-align: center;
   min-height: 600px;
+  max-width: 980px;
+  padding-top: 80px;
+  margin: 0 auto;
   animation: ${slideInLeft} 1s ease-out;
+
+  @media (max-width: ${theme.responsive.tablets}) {
+    flex-direction: column;
+    padding-top: 40px;
+  }
 `;
 
 export const ProjectGrid = styled.div`
@@ -28,6 +36,16 @@ export const ProjectGrid = styled.div`
   flex-wrap: wrap;
   max-width: 300px;
   gap: 10px;
+  @media (max-width: ${theme.responsive.tablets}) {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 0;
+  }
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    column-gap: 10px;
+  }
 `;
 
 export const ProjectCard = styled.div<{selected: boolean}>`
@@ -52,6 +70,19 @@ export const ProjectCard = styled.div<{selected: boolean}>`
       border: 2px solid ${theme.colors.secondary.main};
       border: ${props => props.selected ? `2px solid` : `2px solid ${theme.colors.secondary.main}`};;
     }
+
+    @media (max-width: ${theme.responsive.tablets}) {
+      width: 80px;
+      height: 110px;
+    }
+    @media (max-width: ${theme.responsive.largeMobileDevices}) {
+      width: 60px;
+      height: 90px;
+    }
+    @media (max-width: ${theme.responsive.smallMobileDevices}) {
+      width: 30px;
+      height: 50px;
+    }
 `;
 
 export const ProjectImage = styled.img`
@@ -60,6 +91,18 @@ export const ProjectImage = styled.img`
     height: 120px;
     align-self: center;
     border-radius: 5px;
+    @media (max-width: ${theme.responsive.tablets}) {
+      max-width: 80px;
+      height: 80px;
+    }
+    @media (max-width: ${theme.responsive.largeMobileDevices}) {
+      max-width: 60px;
+      height: 60px;
+    }
+    @media (max-width: ${theme.responsive.smallMobileDevices}) {
+      max-width: 30px;
+      height: 30px;
+    }
 `;
 
 export const ProjectTitle = styled.h3<{selected: boolean}>`
@@ -68,4 +111,16 @@ export const ProjectTitle = styled.h3<{selected: boolean}>`
   margin: 0;
   text-align: left;
   text-transform: uppercase;
+  @media (max-width: ${theme.responsive.tablets}) {
+    width: 80px;
+    height: 100px;
+    font-size: 0.8rem;
+    text-align: left;
+    padding-top: 10px;
+  }
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    font-size: 0.5rem;
+    text-align: left;
+    padding-top: 10px
+  }
 `;
