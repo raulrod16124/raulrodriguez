@@ -15,6 +15,5 @@ export const GradientBackground = styled.div`
 
   @media (max-width: ${theme.responsive.laptops}) {
     align-items: flex-start;
-    padding-top: 200px;
   }
 `;
