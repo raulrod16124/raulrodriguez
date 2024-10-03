@@ -1,19 +1,3 @@
-function sanitizeInput(input: string): string {
-  const dangerousChars = /[<>{}[\]'"`/\\]/g;
-
-  return input.replace(dangerousChars, (match) => {
-    switch (match) {
-      case '<': return '&lt;';
-      case '>': return '&gt;';
-      case '"': return '&quot;';
-      case "'": return '&#39;';
-      case '/': return '&#x2F;';
-      case '\\': return '&#92;';
-      default: return '';
-    }
-  });
-}
-
 function isInputSafe(input: string): boolean {
   const dangerousPatterns = /(<script.*?>|javascript:|on\w+=|['"]\s*=\s*['"]|--|#|;|\/\*|\*\/|%0A|%0D|%27|%22|%3C|%3E|%26)/gi;
 
