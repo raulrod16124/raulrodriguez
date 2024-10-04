@@ -5,8 +5,7 @@ export const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
-  padding-top: 0;
+  padding: 0 20px;
   width: 600px;
   margin: 0 auto;
   border-left: 2px solid rgba(255,255,255,0.2);
@@ -90,7 +89,6 @@ export const TechList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
   @media (max-width: ${theme.responsive.tablets}) {
     width: 100%;
     justify-content: left;
