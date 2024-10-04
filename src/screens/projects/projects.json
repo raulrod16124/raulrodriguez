@@ -3,7 +3,7 @@
       "title": "Matchup",
       "description": "Matchup is a card-matching game. It tests your mental skills as you progress through increasingly complex levels, unlocking new content and collecting cards and items.",
       "technologies": ["React Native", "Typescript", "Github", "Firebase", "Figma"],
-      "image": "src/assets/images/matchup.png",
+      "image": "src/assets/images/projects/matchup/matchup.png",
       "carouselImages": [
           "src/assets/images/projects/matchup/image1.jpg", 
           "src/assets/images/projects/matchup/image2.jpg", 
