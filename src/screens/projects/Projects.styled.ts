@@ -15,11 +15,11 @@ const slideInLeft = keyframes`
 export const ProjectsContainer = styled.section`
   display: flex;
   gap: 20px;
-  padding: 20px;
+  padding: 0 20px;
   text-align: center;
   min-height: 600px;
   max-width: 980px;
-  padding-top: 80px;
+  padding-top: 50px;
   margin: 0 auto;
   animation: ${slideInLeft} 1s ease-out;
 
@@ -35,7 +35,7 @@ export const ProjectGrid = styled.div`
   align-items: self-start;
   flex-wrap: wrap;
   max-width: 300px;
-  gap: 10px;
+  column-gap: 5px;
   @media (max-width: ${theme.responsive.tablets}) {
     flex-wrap: nowrap;
     max-width: 100%;
@@ -63,7 +63,7 @@ export const ProjectCard = styled.div<{selected: boolean}>`
     padding: 10px;
     cursor: pointer;
     width: 120px;
-    height: 160px;
+    height: 140px;
     transition: all 0.2s ease-in-out;
 
     &:hover {
@@ -87,8 +87,8 @@ export const ProjectCard = styled.div<{selected: boolean}>`
 
 export const ProjectImage = styled.img`
     width: auto;
-    max-width: 120px;
-    height: 120px;
+    max-width: 110px;
+    height: 110px;
     align-self: center;
     border-radius: 5px;
     @media (max-width: ${theme.responsive.tablets}) {
@@ -109,8 +109,9 @@ export const ProjectTitle = styled.h3<{selected: boolean}>`
   font-size: 1.2rem;
   color: ${props => props.selected ? `${theme.colors.neutral.black}` : `${theme.colors.neutral.white}`};
   margin: 0;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
+  width: 100%;
   @media (max-width: ${theme.responsive.tablets}) {
     width: 80px;
     height: 100px;

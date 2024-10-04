@@ -34,7 +34,7 @@ export const AboutMeContainer = styled.section`
   flex-direction: column;
   align-items: center;
   animation: ${fadeIn} 1s ease-in-out;
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 
 export const ProfileImageContainer = styled.div`
@@ -104,7 +104,7 @@ export const TechnologyList = styled.ul`
   gap: 10px;
   list-style: none;
   padding: 0;
-  margin: 10px 0;
+  margin: 0;
   max-width: 700px;
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     max-width: 80%;
