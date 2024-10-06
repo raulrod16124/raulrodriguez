@@ -35,6 +35,7 @@ export const AboutMeContainer = styled.section`
   align-items: center;
   animation: ${fadeIn} 1s ease-in-out;
   padding-top: 50px;
+  flex: 1;
 `;
 
 export const ProfileImageContainer = styled.div`
@@ -118,7 +119,7 @@ export const TechnologyList = styled.ul`
   }
 `;
 
-export const TechnologyItem = styled.li<{reduceFontSize?: boolean}>`
+export const TechnologyItem = styled.li<{reducefontsize?: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,12 +129,12 @@ export const TechnologyItem = styled.li<{reduceFontSize?: boolean}>`
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  font-size: ${({reduceFontSize}) => reduceFontSize ? `${theme.font.navText.fontSize}` :`${theme.font.tagText.fontSize}` };
+  font-size: ${({reducefontsize}) => reducefontsize ? `${theme.font.navText.fontSize}` :`${theme.font.tagText.fontSize}` };
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     padding: 5px;
   }
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    font-size: ${({reduceFontSize}) => reduceFontSize ? `12px` :`15px` };
+    font-size: ${({reducefontsize}) => reducefontsize ? `12px` :`15px` };
     padding: 2px 5px;
   }
 `;
