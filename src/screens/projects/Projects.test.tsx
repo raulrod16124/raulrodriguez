@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, test, vi, beforeEach, expect } from 'vitest';
 import { Projects } from './Projects';
-import projects from './projects.json';
+import { projects } from './ProjectsList';
 import "@testing-library/jest-dom";
 import { truncateTitle } from '../../helpers';
 
