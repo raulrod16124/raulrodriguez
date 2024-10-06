@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, Navigate } from "react-router-dom"
 import { Home } from "../screens/home/Home"
 import { AboutMe } from "../screens/about/AboutMe"
 import { Projects } from "../screens/projects/Projects"
@@ -20,6 +20,7 @@ export const Root = () => {
             <Route path={"/about-me"} element={<AboutMe />} />
             <Route path={"/projects"} element={<Projects />} />
             <Route path={"/contact"} element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     )
 }

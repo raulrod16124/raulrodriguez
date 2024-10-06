@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ProjectCard, ProjectGrid, ProjectImage, ProjectsContainer, ProjectTitle } from './Projects.styled';
 import { ProjectType, Sidebar } from './components/Sidebar';
-import projects from "./projects.json";
+import { projects } from "./ProjectsList";
 import { truncateTitle } from '../../helpers';
 import 'animate.css';
 
