@@ -3,13 +3,13 @@
       "title": "Matchup",
       "description": "Matchup is a card-matching game. It tests your mental skills as you progress through increasingly complex levels, unlocking new content and collecting cards and items.",
       "technologies": ["React Native", "Typescript", "Github", "Firebase", "Figma"],
-      "image": "src/assets/images/matchup.png",
+      "image": "assets/images/matchup.png",
       "carouselImages": [
-          "src/assets/images/matchup_image1.jpg", 
-          "src/assets/images/matchup_image2.jpg", 
-          "src/assets/images/matchup_image3.jpg",
-          "src/assets/images/matchup_image4.jpg",
-          "src/assets/images/matchup_image5.jpg"
+          "assets/images/matchup_image1.jpg", 
+          "assets/images/matchup_image2.jpg", 
+          "assets/images/matchup_image3.jpg",
+          "assets/images/matchup_image4.jpg",
+          "assets/images/matchup_image5.jpg"
       ],
       "demoLink": "https://play.google.com/store/apps/details?id=com.matchupcardgame2023"
     },
@@ -17,10 +17,10 @@
       "title": "Chicmouse",
       "description": "Website to display the mobile applications created and offer users contact information, terms and conditions and privacy policy.",
       "technologies": ["React", "Typescript", "Styled-components", "Firebase", "Vite", "Vitest", "CI/CD", "Github", "Jest", "Testing-library", "Figma"],
-      "image": "src/assets/images/chicmouse.png",
+      "image": "assets/images/chicmouse.png",
       "carouselImages": [
-          "src/assets/images/chicmouse_image1.png", 
-          "src/assets/images/chicmouse_image2.png"
+          "assets/images/chicmouse_image1.png", 
+          "assets/images/chicmouse_image2.png"
       ],
       "demoLink": "https://chicmouse.com",
       "repoLink": "https://github.com/raulrod16124/chicmouse"
@@ -29,10 +29,10 @@
       "title": "Raúl Rodríguez",
       "description": "I've built my personal portfolio to showcase my projects and share more about myself with those interested in my work. The site highlights key projects I've developed, providing detailed descriptions and technologies used.",
       "technologies": ["React Native", "Firebase", "JavaScript"],
-      "image": "src/assets/images/raulrodriguez.png",
+      "image": "assets/images/raulrodriguez.png",
       "carouselImages": [
-        "src/assets/images/raulrodriguez_image1.png",
-        "src/assets/images/raulrodriguez_image2.png"
+        "assets/images/raulrodriguez_image1.png",
+        "assets/images/raulrodriguez_image2.png"
       ],
       "repoLink": "https://github.com/raulrod16124/raulrodriguez"
     },
@@ -40,13 +40,13 @@
         "title": "Pokedex",
         "description": "Mobile application created to develop mobile programming skills while creating a fun mobile application to pass the time with.",
         "technologies": ["React Nartive", "Typescript", "Github"],
-        "image": "src/assets/images/pokedex.png",
+        "image": "assets/images/pokedex.png",
         "carouselImages": [
-          "src/assets/images/pokedex_image1.png",
-          "src/assets/images/pokedex_image2.png",
-          "src/assets/images/pokedex_image3.png",
-          "src/assets/images/pokedex_image4.png",
-          "src/assets/images/pokedex_image5.png"
+          "assets/images/pokedex_image1.png",
+          "assets/images/pokedex_image2.png",
+          "assets/images/pokedex_image3.png",
+          "assets/images/pokedex_image4.png",
+          "assets/images/pokedex_image5.png"
         ],
         "repoLink": "https://github.com/raulrod16124/pokedex"
       },
@@ -54,10 +54,10 @@
         "title": "Telamón Box",
         "description": "Website created for a crossfit gym that needed a website to show both the information about the center and the competitions that it carries out.",
         "technologies": ["Wordpress", "Elementor", "CSS"],
-        "image": "src/assets/images/telamonbox.png",
+        "image": "assets/images/telamonbox.png",
         "carouselImages": [
-            "src/assets/images/telamonbox_image1.png",
-            "src/assets/images/telamonbox_image2.png"
+            "assets/images/telamonbox_image1.png",
+            "assets/images/telamonbox_image2.png"
         ],
         "demoLink": "https://telamon.es/"
       }
