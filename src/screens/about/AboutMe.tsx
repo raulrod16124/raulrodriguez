@@ -33,7 +33,7 @@ export const AboutMe = () => {
         <TechnologyItem>CSS</TechnologyItem>
         <TechnologyItem>HTML5</TechnologyItem>
         <TechnologyItem>Sass</TechnologyItem>
-        <TechnologyItem reduceFontSize={true}>Styled-components</TechnologyItem>
+        <TechnologyItem reducefontsize={true}>Styled-components</TechnologyItem>
         <TechnologyItem>JavaScript</TechnologyItem>
         <TechnologyItem>React Native</TechnologyItem>
         <TechnologyItem>Jest</TechnologyItem>

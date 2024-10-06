@@ -38,7 +38,8 @@ export const ProjectGrid = styled.div`
   column-gap: 5px;
   @media (max-width: ${theme.responsive.tablets}) {
     flex-wrap: nowrap;
-    max-width: 100%;
+    margin: 0 auto;
+    max-width: 90%;
     justify-content: center;
     column-gap: 20px;
     row-gap: 0;
@@ -77,11 +78,12 @@ export const ProjectCard = styled.div<{selected: boolean}>`
     }
     @media (max-width: ${theme.responsive.largeMobileDevices}) {
       width: 60px;
-      height: 90px;
+      height: 80px;
+      padding-bottom: 0;
     }
     @media (max-width: ${theme.responsive.smallMobileDevices}) {
-      width: 30px;
-      height: 50px;
+      width: 50px;
+      height: 60px;
     }
 `;
 
@@ -100,8 +102,8 @@ export const ProjectImage = styled.img`
       height: 60px;
     }
     @media (max-width: ${theme.responsive.smallMobileDevices}) {
-      max-width: 30px;
-      height: 30px;
+      max-width: 40px;
+      height: 40px;
     }
 `;
 
@@ -111,17 +113,20 @@ export const ProjectTitle = styled.h3<{selected: boolean}>`
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+  display: flex;
+  align-items: flex-end;
   width: 100%;
   @media (max-width: ${theme.responsive.tablets}) {
-    width: 80px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     font-size: 0.8rem;
     text-align: left;
-    padding-top: 10px;
+  }
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    font-size: 0.6rem;
   }
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     font-size: 0.5rem;
     text-align: left;
-    padding-top: 10px
   }
 `;

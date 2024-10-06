@@ -12,12 +12,15 @@ export const ProjectContainer = styled.div`
 
   @media (max-width: ${theme.responsive.tablets}) {
     flex-direction: column;
+    padding: 0;
     padding-top: 40px;
     border-left: none;
     border-top: 2px solid rgba(255,255,255,0.2);
   }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    padding-top: 40px;
     width: 90%;
+    overflow-x: hidden;
   }
 `;
 
