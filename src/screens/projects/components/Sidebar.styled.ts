@@ -18,8 +18,9 @@ export const ProjectContainer = styled.div`
     border-top: 2px solid rgba(255,255,255,0.2);
   }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    padding: 0;
+    padding-top: 40px;
     width: 90%;
+    overflow-x: hidden;
   }
 `;
 

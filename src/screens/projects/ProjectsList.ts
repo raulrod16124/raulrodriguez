@@ -73,7 +73,7 @@ export const projects = [
         repoLink: "https://github.com/raulrod16124/pokedex"
       },
       {
-        title: "Telamón Box",
+        title: "Telamón",
         description: "Website created for a crossfit gym that needed a website to show both the information about the center and the competitions that it carries out.",
         technologies: ["Wordpress", "Elementor", "CSS"],
         image: telamonbox,
