@@ -84,6 +84,7 @@ export const ProjectCard = styled.div<{selected: boolean}>`
     @media (max-width: ${theme.responsive.smallMobileDevices}) {
       width: 50px;
       height: 60px;
+      padding: 10px 5px;
     }
 `;
 
