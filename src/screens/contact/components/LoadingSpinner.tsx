@@ -2,7 +2,7 @@ import { LoaderContainer, Spinner } from "./LoadingSpinner.styled";
 
 export const LoadingSpinner= () => {
   return (
-    <LoaderContainer>
+    <LoaderContainer data-testid="loading-spinner">
       <Spinner />
     </LoaderContainer>
   );
