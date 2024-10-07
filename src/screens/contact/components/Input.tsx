@@ -20,6 +20,7 @@ export const Input = ({ label, value, onChange, isTextarea, error }: IProps) => 
     >
       {isTextarea ? (
         <StyledTextarea
+          data-testid={label}
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onFocus={() => setIsFocused(true)}
@@ -28,6 +29,7 @@ export const Input = ({ label, value, onChange, isTextarea, error }: IProps) => 
         />
       ) : (
         <StyledInput
+            data-testid={label}
             type='text'
             value={value}
             onChange={(e) => onChange(e.target.value)}
