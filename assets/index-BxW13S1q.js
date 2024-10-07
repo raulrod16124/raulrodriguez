@@ -606,6 +606,7 @@ Error generating stack: `+i.message+`
     @media (max-width: ${y.responsive.smallMobileDevices}) {
       width: 50px;
       height: 60px;
+      padding: 10px 5px;
     }
 `,H1=N.img`
     width: auto;
