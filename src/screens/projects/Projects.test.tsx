@@ -3,7 +3,7 @@ import { describe, test, vi, beforeEach, expect } from 'vitest';
 import { Projects } from './Projects';
 import { projects } from './ProjectsList';
 import "@testing-library/jest-dom";
-import { truncateTitle } from '../../helpers';
+import { truncateTitle } from '../../helpers/TruncateTitle';
 
 // Mock de Sidebar
 vi.mock('./components/Sidebar', () => ({

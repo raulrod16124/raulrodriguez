@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ProjectCard, ProjectGrid, ProjectImage, ProjectsContainer, ProjectTitle } from './Projects.styled';
 import { ProjectType, Sidebar } from './components/Sidebar';
 import { projects } from "./ProjectsList";
-import { truncateTitle } from '../../helpers';
+import { truncateTitle } from '../../helpers/TruncateTitle';
 import 'animate.css';
 
 export const Projects = () => {
