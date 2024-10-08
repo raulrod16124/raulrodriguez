@@ -20,7 +20,7 @@ export const ModalContent = styled.div`
   position: relative;
   width: fit-content;
   height: fit-content;
-  max-width: auto;
+  max-width: 800px;
   max-height: 600px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
