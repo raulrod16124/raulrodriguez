@@ -86,7 +86,7 @@ Error generating stack: `+i.message+`
   z-index: 1;
 `,q1=z.div`
   border-radius: 50px;
-  margin: 0 auto;
+  margin: 10px auto;
   width: 300px;
   display: flex;
   align-items: center;
