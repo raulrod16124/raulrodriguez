@@ -1,16 +1,11 @@
 {
     "colors": {
       "primary": {
-        "light": "#6ec1e4",
-        "main": "#3498db",
-        "dark": "#2c82c9"
-      },
-      "secondary": {
         "light": "#f7b86a",
         "main": "#f0a500",
         "dark": "#d88a00"
       },
-      "tertiary": {
+      "secondary": {
         "light": "#74b49b",
         "main": "#58a18f",
         "dark": "#3a7d6a"

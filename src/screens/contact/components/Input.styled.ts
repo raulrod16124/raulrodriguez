@@ -18,7 +18,7 @@ export const SharedInputStyles = css`
   transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: ${theme.colors.secondary.main};
+    border-color: ${theme.colors.primary.main};
   }
 `;
 
@@ -47,6 +47,6 @@ export const FloatingLabel = styled.label<{isfocusedorfilled: boolean}>`
       top: 5px;
       left: 10px;
       font-size: 0.85rem;
-      color: ${theme.colors.secondary.main};
+      color: ${theme.colors.primary.main};
     `}
 `;

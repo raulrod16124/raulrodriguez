@@ -42,14 +42,14 @@ export const Form = styled.form`
 export const Button = styled.button`
   padding: 15px 20px;
   font-size: ${theme.font.text.fontSize};
-  background-color: ${theme.colors.secondary.main};
+  background-color: ${theme.colors.primary.main};
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: ${theme.colors.secondary.light};
+    background-color: ${theme.colors.primary.light};
   }
 `;
 
@@ -73,7 +73,7 @@ export const IconLink = styled.a`
   font-size: ${theme.font.icons.fontSize};
   transition: color 0.3s ease;
   &:hover {
-    color: ${theme.colors.secondary.main};
+    color: ${theme.colors.primary.main};
   }
 `;
 

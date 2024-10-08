@@ -96,10 +96,10 @@ export const FirstBigText = styled.span`
   line-height: 1;
   text-transform: uppercase;
   text-shadow: 
-    2px 2px 0 ${theme.colors.tertiary.main},  /* Top-right */
-    -2px -2px 0 ${theme.colors.tertiary.main}, /* Bottom-left */
-    -2px 2px 0 ${theme.colors.tertiary.main},  /* Top-left */
-    2px -2px 0 ${theme.colors.tertiary.main};  /* Bottom-right */
+    2px 2px 0 ${theme.colors.secondary.main},  /* Top-right */
+    -2px -2px 0 ${theme.colors.secondary.main}, /* Bottom-left */
+    -2px 2px 0 ${theme.colors.secondary.main},  /* Top-left */
+    2px -2px 0 ${theme.colors.secondary.main};  /* Bottom-right */
   animation: ${fadeInUp} 1.2s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
@@ -116,7 +116,7 @@ export const SecondBigText = styled.span`
   font-weight: bolder;
   line-height: 1;
   text-transform: uppercase;
-  color: ${theme.colors.tertiary.main};
+  color: ${theme.colors.secondary.main};
   text-shadow: 
     2px 2px 0 ${theme.colors.neutral.white},  /* Top-right */
     -2px -2px 0 ${theme.colors.neutral.white}, /* Bottom-left */
@@ -146,7 +146,7 @@ export const Image = styled.img`
   z-index: 0;
   animation: ${fadeInRight} 1.5s ease-out forwards;
   border-radius: 50%;
-  border: 2px solid ${theme.colors.secondary.main};
+  border: 2px solid ${theme.colors.primary.main};
 
   @media (max-width: ${theme.responsive.laptops}) {
     top: -50px;
