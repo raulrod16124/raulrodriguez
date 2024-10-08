@@ -278,9 +278,9 @@ Error generating stack: `+i.message+`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: calc(100vh - 85vh);
   @media (max-width: ${y.responsive.laptops}) {
-    padding-top: 200px;
+    padding-top: calc(100vh - 80vh);
   }
 `,wg=z.div`
   margin-left: -150px;
@@ -410,7 +410,7 @@ Error generating stack: `+i.message+`
   flex-direction: column;
   align-items: center;
   animation: ${Pg} 1s ease-in-out;
-  padding-top: 50px;
+  padding-top: calc(100vh - 90vh);
   flex: 1;
 `,zg=z.div`
   position: relative;
@@ -780,7 +780,7 @@ Error generating stack: `+i.message+`
   position: relative;
   width: fit-content;
   height: fit-content;
-  max-width: auto;
+  max-width: 800px;
   max-height: 600px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -819,7 +819,7 @@ Error generating stack: `+i.message+`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: calc(100vh - 90vh);
 `,dc=z.form`
   position: relative;
   display: flex;
@@ -849,7 +849,6 @@ Error generating stack: `+i.message+`
     background-color: ${y.colors.secondary.light};
   }
 `,Dv=z.div`
-  margin-top: 30px;
   animation: ${Ta} 2s ease-in-out;
 
   & p{
