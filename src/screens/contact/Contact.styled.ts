@@ -18,7 +18,7 @@ export const ContactContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: calc(100vh - 90vh);
 `;
 
 export const Form = styled.form`
@@ -54,7 +54,6 @@ export const Button = styled.button`
 `;
 
 export const ContactInfo = styled.div`
-  margin-top: 30px;
   animation: ${fadeIn} 2s ease-in-out;
 
   & p{

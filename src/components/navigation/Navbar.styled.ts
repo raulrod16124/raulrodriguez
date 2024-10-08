@@ -29,7 +29,7 @@ export const NavbarWrapper = styled.div`
 
 export const NavbarContainer = styled.div`
   border-radius: 50px;
-  margin: 0 auto;
+  margin: 10px auto;
   width: 300px;
   display: flex;
   align-items: center;
