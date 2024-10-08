@@ -49,9 +49,9 @@ export const HomeSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: calc(100vh - 85vh);
   @media (max-width: ${theme.responsive.laptops}) {
-    padding-top: 200px;
+    padding-top: calc(100vh - 80vh);
   }
 `;
 

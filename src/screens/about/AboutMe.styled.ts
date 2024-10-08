@@ -34,7 +34,7 @@ export const AboutMeContainer = styled.section`
   flex-direction: column;
   align-items: center;
   animation: ${fadeIn} 1s ease-in-out;
-  padding-top: 50px;
+  padding-top: calc(100vh - 90vh);
   flex: 1;
 `;
 
