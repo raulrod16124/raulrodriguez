@@ -1,10 +1,21 @@
 import styled, { keyframes } from 'styled-components';
 import theme from "../../theme/theme.json";
 
-const fadeIn = keyframes`
+const fadeInBottom = keyframes`
   from {
     opacity: 0;
     transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const fadeInTop = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
   }
   to {
     opacity: 1;
@@ -33,7 +44,7 @@ export const AboutMeContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${fadeIn} 1s ease-in-out;
+  animation: ${fadeInBottom} .5s ease-in-out;
   padding-top: calc(100vh - 90vh);
   flex: 1;
 `;
@@ -46,6 +57,7 @@ export const ProfileImageContainer = styled.div`
   width: 300px;
   height: 300px;
   border-radius: 50%;
+  animation: ${fadeInTop} .5s ease-in-out;
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     width: 200px;
     height: 200px;

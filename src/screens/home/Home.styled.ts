@@ -5,6 +5,7 @@ const fadeInUp = keyframes`
   0% {
     opacity: 0;
     transform: translateY(50px);
+    scale: 1.5;
   }
   100% {
     opacity: 1;
@@ -16,6 +17,7 @@ const fadeInRight = keyframes`
   0% {
     opacity: 0;
     transform: translateX(50px);
+    scale: 1.5;
   }
   100% {
     opacity: 1;
@@ -78,7 +80,7 @@ export const NormalText = styled.span`
   font-weight: 600;
   line-height: 1;
   color: ${theme.colors.neutral.darkGrey};
-  animation: ${fadeInUp} 1.2s ease-out forwards;
+  animation: ${fadeInUp} .5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
     font-size: 2rem;
@@ -100,7 +102,7 @@ export const FirstBigText = styled.span`
     -2px -2px 0 ${theme.colors.secondary.main}, /* Bottom-left */
     -2px 2px 0 ${theme.colors.secondary.main},  /* Top-left */
     2px -2px 0 ${theme.colors.secondary.main};  /* Bottom-right */
-  animation: ${fadeInUp} 1.2s ease-out forwards;
+  animation: ${fadeInUp} .5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
     font-size: 8rem;
@@ -125,7 +127,7 @@ export const SecondBigText = styled.span`
   width: 0;
   overflow: hidden;
   animation: 
-    ${fadeInUp} 1.2s ease-out forwards,
+    ${fadeInUp} .5s ease-out forwards,
     ${typing} 1.2s steps(30, end) forwards,
     ${blink} 0.75s step-end infinite;
 
@@ -144,7 +146,7 @@ export const Image = styled.img`
   width: 400px;
   height: auto;
   z-index: 0;
-  animation: ${fadeInRight} 1.5s ease-out forwards;
+  animation: ${fadeInRight} .5s ease-out forwards;
   border-radius: 50%;
   border: 2px solid ${theme.colors.primary.main};
 

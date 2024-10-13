@@ -4,7 +4,7 @@ import theme from "../../theme/theme.json";
 const slideInLeft = keyframes`
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-100px);
   }
   100% {
     opacity: 1;
@@ -21,7 +21,6 @@ export const ProjectsContainer = styled.section`
   max-width: 980px;
   padding-top: 50px;
   margin: 0 auto;
-  animation: ${slideInLeft} 1s ease-out;
 
   @media (max-width: ${theme.responsive.tablets}) {
     flex-direction: column;
@@ -36,6 +35,7 @@ export const ProjectGrid = styled.div`
   flex-wrap: wrap;
   max-width: 300px;
   column-gap: 5px;
+  animation: ${slideInLeft} .5s ease-out;
   @media (max-width: ${theme.responsive.tablets}) {
     flex-wrap: nowrap;
     margin: 0 auto;

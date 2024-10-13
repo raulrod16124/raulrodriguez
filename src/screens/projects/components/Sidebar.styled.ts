@@ -1,5 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from "../../../theme/theme.json";
+
+const slideInRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 export const ProjectContainer = styled.div`
   display: flex;
@@ -9,6 +20,7 @@ export const ProjectContainer = styled.div`
   width: 600px;
   margin: 0 auto;
   border-left: 2px solid rgba(255,255,255,0.2);
+  animation: ${slideInRight} .5s ease-out;
 
   @media (max-width: ${theme.responsive.tablets}) {
     flex-direction: column;
