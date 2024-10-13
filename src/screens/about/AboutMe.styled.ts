@@ -1,10 +1,21 @@
 import styled, { keyframes } from 'styled-components';
 import theme from "../../theme/theme.json";
 
-const fadeIn = keyframes`
+const fadeInBottom = keyframes`
   from {
     opacity: 0;
     transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const fadeInTop = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
   }
   to {
     opacity: 1;
@@ -33,7 +44,7 @@ export const AboutMeContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${fadeIn} 1s ease-in-out;
+  animation: ${fadeInBottom} .5s ease-in-out;
   padding-top: calc(100vh - 90vh);
   flex: 1;
 `;
@@ -46,6 +57,7 @@ export const ProfileImageContainer = styled.div`
   width: 300px;
   height: 300px;
   border-radius: 50%;
+  animation: ${fadeInTop} .5s ease-in-out;
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     width: 200px;
     height: 200px;
@@ -59,7 +71,7 @@ export const ProfileImage = styled.img`
   object-fit: cover;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid ${theme.colors.secondary.main};
+  border: 2px solid ${theme.colors.primary.main};
 `;
 
 export const MyInfoContainer = styled.div`
@@ -94,7 +106,7 @@ export const Description = styled.div`
 export const SectionTitle = styled.h3`
   margin-bottom: 1rem;
   font-size: ${theme.font.headings.h3.fontSize};
-  color: ${theme.colors.secondary.main};
+  color: ${theme.colors.primary.main};
   text-transform: uppercase;
 `;
 
@@ -123,7 +135,7 @@ export const TechnologyItem = styled.li<{reducefontsize?: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.colors.tertiary.dark};
+  background-color: ${theme.colors.secondary.dark};
   color: ${theme.colors.neutral.white};
   padding: 5px 10px;
   text-align: center;
@@ -143,7 +155,7 @@ export const FloatingCVButton = styled.a`
   position: absolute;
   top: 100px;
   right: 120px;
-  background-color: ${theme.colors.secondary.main};
+  background-color: ${theme.colors.primary.main};
   border: 2px solid ${theme.colors.neutral.white};
   color: ${theme.colors.neutral.white};
   width: 60px;

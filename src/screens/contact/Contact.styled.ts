@@ -31,7 +31,7 @@ export const Form = styled.form`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  animation: ${fadeIn} 1s ease-in-out;
+  animation: ${fadeIn} .5s ease-in-out;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     max-width: 80%;
@@ -42,19 +42,19 @@ export const Form = styled.form`
 export const Button = styled.button`
   padding: 15px 20px;
   font-size: ${theme.font.text.fontSize};
-  background-color: ${theme.colors.secondary.main};
+  background-color: ${theme.colors.primary.main};
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: ${theme.colors.secondary.light};
+    background-color: ${theme.colors.primary.light};
   }
 `;
 
 export const ContactInfo = styled.div`
-  animation: ${fadeIn} 2s ease-in-out;
+  animation: ${fadeIn} 1s ease-in-out;
 
   & p{
     color: ${theme.colors.neutral.darkGrey};
@@ -65,7 +65,7 @@ export const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
   gap: 20px;
-  animation: ${fadeIn} 2.5s ease-in-out;
+  animation: ${fadeIn} 1.5s ease-in-out;
 `;
 
 export const IconLink = styled.a`
@@ -73,7 +73,7 @@ export const IconLink = styled.a`
   font-size: ${theme.font.icons.fontSize};
   transition: color 0.3s ease;
   &:hover {
-    color: ${theme.colors.secondary.main};
+    color: ${theme.colors.primary.main};
   }
 `;
 

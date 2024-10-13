@@ -1,5 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from "../../../theme/theme.json";
+
+const slideInRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 export const ProjectContainer = styled.div`
   display: flex;
@@ -9,6 +20,7 @@ export const ProjectContainer = styled.div`
   width: 600px;
   margin: 0 auto;
   border-left: 2px solid rgba(255,255,255,0.2);
+  animation: ${slideInRight} .5s ease-out;
 
   @media (max-width: ${theme.responsive.tablets}) {
     flex-direction: column;
@@ -50,7 +62,7 @@ export const NameAndLinksContainer = styled.div`
 
 export const ProjectName = styled.h1`
   font-size: 2rem;
-  color: ${theme.colors.secondary.main};
+  color: ${theme.colors.primary.main};
   text-transform: uppercase;
   height: 100%;
   margin: 0;
@@ -99,7 +111,7 @@ export const TechList = styled.div`
 `;
 
 export const TechItem = styled.span`
-    background-color: ${theme.colors.tertiary.dark};
+    background-color: ${theme.colors.secondary.dark};
     padding: 5px 10px;
     border-radius: 5px;
     font-size: ${theme.font.tagText.fontSize};
@@ -130,7 +142,7 @@ export const CarouselImage = styled.img`
   transition: border-color 0.3s ease;
 
   &:hover {
-    border-color: ${theme.colors.secondary.main};
+    border-color: ${theme.colors.primary.main};
   }
 
   @media (max-width: ${theme.responsive.tablets}) {

@@ -63,7 +63,7 @@ export const NavButton= styled(Link)<{active:boolean}>`
   text-transform: uppercase;
   letter-spacing: 1px;
   overflow: hidden;
-  color: ${props => props.active ? `${theme.colors.secondary.main}` : "white"}; 
+  color: ${props => props.active ? `${theme.colors.primary.main}` : "white"}; 
   text-shadow: 
   ${props => props.active ? `
      0.8px 0.8px 0 ${theme.colors.neutral.white}}, 
@@ -78,7 +78,7 @@ export const NavButton= styled(Link)<{active:boolean}>`
 
   &:hover .text-new {
       animation:  ${props => props.active ? keyframes`` : slideDown} 0.4s forwards;
-      color: ${theme.colors.secondary.light};
+      color: ${theme.colors.primary.light};
   }
   
   &:focus, &:active {  

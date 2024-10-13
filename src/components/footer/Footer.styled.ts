@@ -36,7 +36,7 @@ export const IconContainer = styled.div`
     transition: color 0.3s ease;
 
     &:hover {
-      color: ${theme.colors.secondary.main};
+      color: ${theme.colors.primary.main};
     }
   }
 `;

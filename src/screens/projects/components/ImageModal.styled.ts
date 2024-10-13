@@ -46,6 +46,6 @@ export const CloseButton = styled.button`
   transition: all 0.3s ease;
   
   &:hover {
-    color: ${theme.colors.secondary.main};
+    color: ${theme.colors.primary.main};
   }
 `;
