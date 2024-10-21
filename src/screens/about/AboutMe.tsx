@@ -1,7 +1,7 @@
 import { AboutMeContainer, Description, FloatingCVButton, MyInfoContainer, ProfileImage, ProfileImageContainer, SectionTitle, TechnologyItem, TechnologyList } from "./AboutMe.styled";
 import { increaseExperience } from "./helper";
 import cv from "../../assets/cv/CV-2024-Raul-Rodriguez.pdf";
-import me from "../../assets/images/me.png";
+import me from "../../assets/images/me2.png";
 import 'animate.css';
 
 export const AboutMe = () => {
