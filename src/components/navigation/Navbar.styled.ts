@@ -77,6 +77,11 @@ export const NavButton= styled(Link)<{active:boolean}>`
   &:focus, &:active {  
       outline: none;
   }
+
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    font-size: ${theme.font.fontSize};
+    padding: 15px 35px;
+  }
 `;
 
 export const NavButtonCurrentText = styled.span`

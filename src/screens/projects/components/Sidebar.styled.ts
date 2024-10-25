@@ -31,7 +31,7 @@ export const ProjectContainer = styled.div`
   }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     padding-top: 40px;
-    width: 90%;
+    width: 100%;
     overflow-x: hidden;
   }
 `;
@@ -98,6 +98,9 @@ export const ProjectDescription = styled.p`
   @media (max-width: ${theme.responsive.tablets}) {
     text-align: justify;
   }
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    margin: 20px 0;
+  }
 `;
 
 export const TechList = styled.div`
@@ -151,5 +154,9 @@ export const CarouselImage = styled.img`
 
   @media (max-width: ${theme.responsive.tablets}) {
     height: 150px;
+  }
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    width: auto;
+    max-width: 250px;
   }
 `;
