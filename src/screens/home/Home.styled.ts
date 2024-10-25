@@ -76,10 +76,10 @@ export const NormalText = styled.span`
   margin: 0;
   padding-left: 10px;
   display: block;
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 1;
-  color: ${theme.colors.neutral.darkGrey};
+  color: ${theme.colors.neutral.white};
   animation: ${fadeInUp} .5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
@@ -92,16 +92,16 @@ export const NormalText = styled.span`
 
 export const FirstBigText = styled.span`
   margin: 0;
-  font-size: 12rem;
+  font-size: 10rem;
   font-weight: bolder;
-  color: ${theme.colors.neutral.white};
+  color: ${theme.colors.secondary.main};
   line-height: 1;
   text-transform: uppercase;
   text-shadow: 
-    2px 2px 0 ${theme.colors.secondary.main},  /* Top-right */
-    -2px -2px 0 ${theme.colors.secondary.main}, /* Bottom-left */
-    -2px 2px 0 ${theme.colors.secondary.main},  /* Top-left */
-    2px -2px 0 ${theme.colors.secondary.main};  /* Bottom-right */
+    1px 1px 0 ${theme.colors.neutral.white},  /* Top-right */
+    -1px -1px 0 ${theme.colors.neutral.white}, /* Bottom-left */
+    -1px 1px 0 ${theme.colors.neutral.white},  /* Top-left */
+    1px -1px 0 ${theme.colors.neutral.white};  /* Bottom-right */
   animation: ${fadeInUp} .5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
@@ -114,16 +114,16 @@ export const FirstBigText = styled.span`
 
 export const SecondBigText = styled.span`
   margin: 0;
-  font-size: 12rem;
+  font-size: 10rem;
   font-weight: bolder;
   line-height: 1;
   text-transform: uppercase;
-  color: ${theme.colors.secondary.main};
+  color: ${theme.colors.primary.main};
   text-shadow: 
-    2px 2px 0 ${theme.colors.neutral.white},  /* Top-right */
-    -2px -2px 0 ${theme.colors.neutral.white}, /* Bottom-left */
-    -2px 2px 0 ${theme.colors.neutral.white},  /* Top-left */
-    2px -2px 0 ${theme.colors.neutral.white};  /* Bottom-right */
+    1px 1px 0 ${theme.colors.neutral.white},  /* Top-right */
+    -1px -1px 0 ${theme.colors.neutral.white}, /* Bottom-left */
+    -1px 1px 0 ${theme.colors.neutral.white},  /* Top-left */
+    1px -1px 0 ${theme.colors.neutral.white};  /* Bottom-right */
   width: 0;
   overflow: hidden;
   animation: 
@@ -148,7 +148,7 @@ export const Image = styled.img`
   z-index: 0;
   animation: ${fadeInRight} .5s ease-out forwards;
   border-radius: 50%;
-  border: 2px solid ${theme.colors.primary.main};
+  border: .2rem solid ${theme.colors.secondary.main};
 
   @media (max-width: ${theme.responsive.laptops}) {
     top: -50px;

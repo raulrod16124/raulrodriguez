@@ -68,8 +68,7 @@ export const ProjectCard = styled.div<{selected: boolean}>`
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      border: 2px solid ${theme.colors.primary.main};
-      border: ${props => props.selected ? `2px solid` : `2px solid ${theme.colors.primary.main}`};;
+      border: ${props => props.selected ? `2px solid` : `2px solid ${theme.colors.secondary.main}`};;
     }
 
     @media (max-width: ${theme.responsive.tablets}) {

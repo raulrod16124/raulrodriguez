@@ -9,6 +9,7 @@ export const FooterContainer = styled.footer`
     justify-content: center;
     align-items: center;
     gap: 30px;
+    padding: 0.2rem 0 1rem 0;
     flex-wrap: wrap;
     color: ${theme.colors.neutral.lightGrey};
     text-align: center;

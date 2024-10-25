@@ -90,7 +90,7 @@ export const IconContainer = styled.div`
 export const ProjectDescription = styled.p`
   font-size: ${theme.font.text.fontSize};
   text-align: left;
-  color: ${theme.colors.neutral.darkGrey};
+  color: ${theme.colors.neutral.white};
   line-height: 1.6;
   margin: 20px;
   margin-left: 0;
@@ -111,8 +111,9 @@ export const TechList = styled.div`
 `;
 
 export const TechItem = styled.span`
-    background-color: ${theme.colors.secondary.dark};
-    padding: 5px 10px;
+    background-color: transparent;
+    padding: 2px 5px;
+    border: 2px solid ${theme.colors.neutral.white};
     border-radius: 5px;
     font-size: ${theme.font.tagText.fontSize};
     color: ${theme.colors.neutral.white};
@@ -142,7 +143,7 @@ export const CarouselImage = styled.img`
   transition: border-color 0.3s ease;
 
   &:hover {
-    border-color: ${theme.colors.primary.main};
+    border-color: ${theme.colors.secondary.main};
   }
 
   @media (max-width: ${theme.responsive.tablets}) {

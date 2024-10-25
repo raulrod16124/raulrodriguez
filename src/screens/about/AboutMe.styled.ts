@@ -71,7 +71,7 @@ export const ProfileImage = styled.img`
   object-fit: cover;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid ${theme.colors.primary.main};
+  border: .2rem solid ${theme.colors.secondary.main};
 `;
 
 export const MyInfoContainer = styled.div`
@@ -94,7 +94,7 @@ export const Description = styled.div`
   text-align: center;
   font-size: ${theme.font.text.fontSize};
   line-height: 1.8;
-  color:${theme.colors.neutral.darkGrey};
+  color:${theme.colors.neutral.white};
   & p {
     text-align: justify;
   }
@@ -135,13 +135,15 @@ export const TechnologyItem = styled.li<{reducefontsize?: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.colors.secondary.dark};
+  background-color: transparent;
   color: ${theme.colors.neutral.white};
-  padding: 5px 10px;
+  padding: 2px 5px;
   text-align: center;
+  border: 2px solid ${theme.colors.neutral.white};
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   font-size: ${({reducefontsize}) => reducefontsize ? `${theme.font.navText.fontSize}` :`${theme.font.tagText.fontSize}` };
+  font-weight: 300;
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     padding: 5px;
   }
@@ -155,7 +157,7 @@ export const FloatingCVButton = styled.a`
   position: absolute;
   top: 100px;
   right: 120px;
-  background-color: ${theme.colors.primary.main};
+  background-color: ${theme.colors.secondary.main};
   border: 2px solid ${theme.colors.neutral.white};
   color: ${theme.colors.neutral.white};
   width: 60px;

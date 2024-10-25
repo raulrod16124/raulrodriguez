@@ -3,14 +3,14 @@ import theme from "./theme/theme.json";
 
 export const GradientBackground = styled.div`
   background: radial-gradient(circle at center, 
-    ${theme.colors.secondary.light} 0%, 
-    ${theme.colors.secondary.main} 40%, 
-    ${theme.colors.secondary.dark} 100%);
-  display: flex;
-  flex-direction: column;
-  color: ${theme.colors.neutral.white};
+    ${theme.colors.neutral.darkGrey} 0%, 
+    ${theme.colors.neutral.darkGrey} 40%, 
+    ${theme.colors.neutral.black} 100%);
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  color: ${theme.colors.neutral.white}; 
   font-family: ${theme.font.primary.fontFamily};
-  height: 100vh;
   flex: 1;
 
   @media (max-width: ${theme.responsive.laptops}) {
