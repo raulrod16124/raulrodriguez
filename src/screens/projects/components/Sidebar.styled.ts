@@ -111,7 +111,10 @@ export const TechList = styled.div`
 `;
 
 export const TechItem = styled.span`
-    background-color: transparent;
+    backdrop-filter: blur(10px);          
+    -webkit-backdrop-filter: blur(10px);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgba(69, 77, 93, 0.2);
     padding: 2px 5px;
     border: 2px solid ${theme.colors.neutral.white};
     border-radius: 5px;
