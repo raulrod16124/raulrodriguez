@@ -461,7 +461,10 @@ Error generating stack: `+i.message+`
     text-align: justify;
   }
   @media (max-width: ${x.responsive.largeMobileDevices}) {
-    max-width: 80%;
+    max-width: 90%;
+  }
+  @media (max-width: ${x.responsive.smallMobileDevices}) {
+    max-width: 95%;
   }
 `,Lg=z.h3`
   margin-bottom: 1rem;
@@ -491,7 +494,10 @@ Error generating stack: `+i.message+`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(69, 77, 93, 0.2);
   color: ${x.colors.neutral.white};
   padding: 2px 5px;
   text-align: center;
@@ -505,7 +511,7 @@ Error generating stack: `+i.message+`
   }
   @media (max-width: ${x.responsive.smallMobileDevices}) {
     font-size: ${({reducefontsize:e})=>e?"12px":"15px"};
-    padding: 2px 5px;
+    padding: .5px 2px;
   }
 `,Dg=z.a`
   position: absolute;
@@ -537,7 +543,7 @@ Error generating stack: `+i.message+`
     right: 70px;
     animation: ${jg} 10s linear infinite;
   }
-`;function Mg(){const t="2024",n=String(new Date().getFullYear());return 4+(Number(n.slice(-1))-Number(t.slice(-1)))}const Fg="/assets/CV-Raul-Rodriguez-D30W8ZHU.pdf",Ag="/assets/me2-DNEqtuuv.png",Ug=()=>v.jsxs(Ng,{className:"animate__animated animate__fadeIn","data-testid":"about-me",children:[v.jsxs(Rg,{children:[v.jsxs(zg,{children:[v.jsx(Tg,{src:Ag,alt:"Profile Image"}),v.jsx(Dg,{href:Fg,download:!0,children:"CV"})]}),v.jsx(Ig,{children:v.jsxs("p",{children:["👋 Hi, I'm Raúl Rodríguez, a passionate Frontend Developer with over ",Mg()," years of experience in creating dynamic, user-friendly websites 💻 and mobile apps 📱. 💪 I'm highly motivated, love working in teams 👥, and always eager to take on new challenges. 🏋️‍♂️ I enjoy working out, spending time with family 👨‍👩‍👧‍👦, and, of course, drinking coffee ☕ while coding 💻!"]})})]}),v.jsx(Lg,{children:"Skills"}),v.jsxs(Og,{children:[v.jsx(ee,{children:"React"}),v.jsx(ee,{children:"TypeScript"}),v.jsx(ee,{children:"CSS"}),v.jsx(ee,{children:"HTML5"}),v.jsx(ee,{children:"Sass"}),v.jsx(ee,{reducefontsize:!0,children:"Styled-components"}),v.jsx(ee,{children:"JavaScript"}),v.jsx(ee,{children:"React Native"}),v.jsx(ee,{children:"Jest"}),v.jsx(ee,{children:"Testing-library"}),v.jsx(ee,{children:"Webpack"}),v.jsx(ee,{children:"Vite"}),v.jsx(ee,{children:"Kotlin"}),v.jsx(ee,{children:"Jetpack compose"}),v.jsx(ee,{children:"Node.js"}),v.jsx(ee,{children:"MongoDB"}),v.jsx(ee,{children:"Google cloud"}),v.jsx(ee,{children:"Firebase"}),v.jsx(ee,{children:"Github"}),v.jsx(ee,{children:"Figma"})]})]}),Bg=ae`
+`;function Mg(){const t="2024",n=String(new Date().getFullYear());return 4+(Number(n.slice(-1))-Number(t.slice(-1)))}const Fg="/assets/CV-Raul-Rodriguez-D30W8ZHU.pdf",Ag="/assets/me2-DNEqtuuv.png",Ug=()=>v.jsxs(Ng,{className:"animate__animated animate__fadeIn","data-testid":"about-me",children:[v.jsxs(Rg,{children:[v.jsxs(zg,{children:[v.jsx(Tg,{src:Ag,alt:"Profile Image"}),v.jsx(Dg,{href:Fg,download:!0,children:"CV"})]}),v.jsx(Ig,{children:v.jsxs("p",{children:["Hi, I'm Raúl Rodríguez, a passionate Frontend Developer with over ",Mg()," years of experience in creating dynamic, user-friendly websites and mobile apps. I'm highly motivated, love working in teams, and always eager to take on new challenges. I enjoy working out, spending time with family, and, of course, drinking coffee while coding!"]})})]}),v.jsx(Lg,{children:"Skills"}),v.jsxs(Og,{children:[v.jsx(ee,{children:"React"}),v.jsx(ee,{children:"TypeScript"}),v.jsx(ee,{children:"CSS"}),v.jsx(ee,{children:"HTML5"}),v.jsx(ee,{children:"Sass"}),v.jsx(ee,{reducefontsize:!0,children:"Styled-components"}),v.jsx(ee,{children:"JavaScript"}),v.jsx(ee,{children:"React Native"}),v.jsx(ee,{children:"Jest"}),v.jsx(ee,{children:"Testing-library"}),v.jsx(ee,{children:"Webpack"}),v.jsx(ee,{children:"Vite"}),v.jsx(ee,{children:"Kotlin"}),v.jsx(ee,{children:"Jetpack compose"}),v.jsx(ee,{children:"Node.js"}),v.jsx(ee,{children:"MongoDB"}),v.jsx(ee,{children:"Google cloud"}),v.jsx(ee,{children:"Firebase"}),v.jsx(ee,{children:"Github"}),v.jsx(ee,{children:"Figma"})]})]}),Bg=ae`
   0% {
     opacity: 0;
     transform: translateX(-100px);
@@ -747,7 +753,10 @@ Error generating stack: `+i.message+`
     justify-content: left;
   }
 `,nv=z.span`
-    background-color: transparent;
+    backdrop-filter: blur(10px);          
+    -webkit-backdrop-filter: blur(10px);  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgba(69, 77, 93, 0.2);
     padding: 2px 5px;
     border: 2px solid ${x.colors.neutral.white};
     border-radius: 5px;
@@ -822,7 +831,7 @@ Error generating stack: `+i.message+`
   &:hover {
     color: ${x.colors.primary.main};
   }
-`;function uv(e){return qr({tag:"svg",attr:{viewBox:"0 0 1024 1024",fill:"currentColor",fillRule:"evenodd"},child:[{tag:"path",attr:{d:"M799.855 166.312c.023.007.043.018.084.059l57.69 57.69c.041.041.052.06.059.084a.118.118 0 0 1 0 .069c-.007.023-.018.042-.059.083L569.926 512l287.703 287.703c.041.04.052.06.059.083a.118.118 0 0 1 0 .07c-.007.022-.018.042-.059.083l-57.69 57.69c-.041.041-.06.052-.084.059a.118.118 0 0 1-.069 0c-.023-.007-.042-.018-.083-.059L512 569.926 224.297 857.629c-.04.041-.06.052-.083.059a.118.118 0 0 1-.07 0c-.022-.007-.042-.018-.083-.059l-57.69-57.69c-.041-.041-.052-.06-.059-.084a.118.118 0 0 1 0-.069c.007-.023.018-.042.059-.083L454.073 512 166.371 224.297c-.041-.04-.052-.06-.059-.083a.118.118 0 0 1 0-.07c.007-.022.018-.042.059-.083l57.69-57.69c.041-.041.06-.052.084-.059a.118.118 0 0 1 .069 0c.023.007.042.018.083.059L512 454.073l287.703-287.702c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"},child:[]}]})(e)}const cv=({imgSrc:e,onClose:t})=>v.jsx(iv,{onClick:t,children:v.jsxs(lv,{onClick:n=>n.stopPropagation(),children:[" ",v.jsx(av,{onClick:t,children:v.jsx(uv,{})}),v.jsx(sv,{src:e,alt:"Selected"})]})}),fv=({project:e})=>{const[t,n]=$.useState();return v.jsxs(Kg,{children:[v.jsxs(Xg,{children:[v.jsx(Jg,{src:e.image,alt:e.title}),v.jsxs(Zg,{children:[v.jsx(qg,{children:e.title}),v.jsxs(bg,{children:[e.demoLink&&v.jsx("a",{href:e.demoLink,target:"_blank",children:v.jsx(ug,{})}),e.repoLink&&v.jsx("a",{href:e.repoLink,target:"_blank",children:v.jsx(cp,{})})]})]})]}),v.jsx(ev,{children:e.description}),v.jsx(tv,{children:e.technologies.map((r,o)=>v.jsx(nv,{children:r},o))}),v.jsx(rv,{children:e.carouselImages.map((r,o)=>v.jsx(ov,{src:r,alt:`Image ${r}`,onClick:()=>n(r)},r+o))}),t&&v.jsx(cv,{imgSrc:t,onClose:()=>n(void 0)})]})},dv="/assets/matchup-BM9VGotJ.png",pv="/assets/matchup_image1-BlqqS-8r.jpg",hv="/assets/matchup_image2-B1jgQ_53.jpg",mv="/assets/matchup_image3-B0v8Bf8y.jpg",gv="/assets/matchup_image4-Cr6DY8F2.jpg",vv="/assets/matchup_image5-Q13YgXEg.jpg",yv="/assets/chicmouse-BRJGKmMU.png",xv="/assets/chicmouse_image1-BmFA5kjA.png",wv="/assets/chicmouse_image2-CxF1OEQl.png",Sv="/assets/raulrodriguez-BQo48PGO.png",kv="/assets/raulrodriguez_image1-B5-Uf_Wg.png",Ev="/assets/raulrodriguez_image2-U7yv7DEj.png",Cv="/assets/pokedex-DDcGEcdx.png",_v="/assets/pokedex_image1-I7tmQDGc.png",Pv="/assets/pokedex_image2-CVCqxj-H.png",$v="/assets/pokedex_image3-CO-9NEYZ.png",jv="/assets/pokedex_image4-Dwhxe4pM.png",Nv="/assets/pokedex_image5-B62_sLXq.png",zv="/assets/telamonbox-Bm1UJFTM.png",Tv="/assets/telamonbox_image1-VAhMcucH.png",Rv="/assets/telamonbox_image2-DaoOunpv.png",Iv=[{title:"Matchup",description:"Matchup is a card-matching game. It tests your mental skills as you progress through increasingly complex levels, unlocking new content and collecting cards and items.",technologies:["React Native","Typescript","Github","Firebase","Figma"],image:dv,carouselImages:[pv,hv,mv,gv,vv],demoLink:"https://play.google.com/store/apps/details?id=com.matchupcardgame2023"},{title:"Chicmouse",description:"Website to display the mobile applications created and offer users contact information, terms and conditions and privacy policy.",technologies:["React","Typescript","Styled-components","Firebase","Vite","Vitest","CI/CD","Github","Jest","Testing-library","Figma"],image:yv,carouselImages:[xv,wv],demoLink:"https://chicmouse.com",repoLink:"https://github.com/raulrod16124/chicmouse"},{title:"Raúl Rodríguez",description:"I've built my personal portfolio to showcase my projects and share more about myself with those interested in my work. The site highlights key projects I've developed, providing detailed descriptions and technologies used.",technologies:["React Native","Firebase","JavaScript"],image:Sv,carouselImages:[kv,Ev],repoLink:"https://github.com/raulrod16124/raulrodriguez"},{title:"Pokedex",description:"Mobile application created to develop mobile programming skills while creating a fun mobile application to pass the time with.",technologies:["React Nartive","Typescript","Github"],image:Cv,carouselImages:[_v,Pv,$v,jv,Nv],repoLink:"https://github.com/raulrod16124/pokedex"},{title:"Telamón",description:"Website created for a crossfit gym that needed a website to show both the information about the center and the competitions that it carries out.",technologies:["Wordpress","Elementor","CSS"],image:zv,carouselImages:[Tv,Rv],demoLink:"https://telamon.es/"}];function Lv(e,t=12){return e.length<=t?e:`${e.substring(0,t-4)}..`}const Ov=()=>{const e=Iv,[t,n]=$.useState(e[0]);return v.jsxs(Vg,{className:"animate__animated animate__fadeIn",children:[v.jsx(Wg,{children:e.map((r,o)=>{const i=Lv(r.title);return v.jsxs(Hg,{className:"animate__animated animate__zoomIn",onClick:()=>n(r),selected:r.title===t.title,children:[v.jsx(Qg,{src:r.image}),v.jsx(Yg,{selected:r.title===t.title,children:i})]},o)})}),v.jsx(fv,{project:t})]})},fp=ae`
+`;function uv(e){return qr({tag:"svg",attr:{viewBox:"0 0 1024 1024",fill:"currentColor",fillRule:"evenodd"},child:[{tag:"path",attr:{d:"M799.855 166.312c.023.007.043.018.084.059l57.69 57.69c.041.041.052.06.059.084a.118.118 0 0 1 0 .069c-.007.023-.018.042-.059.083L569.926 512l287.703 287.703c.041.04.052.06.059.083a.118.118 0 0 1 0 .07c-.007.022-.018.042-.059.083l-57.69 57.69c-.041.041-.06.052-.084.059a.118.118 0 0 1-.069 0c-.023-.007-.042-.018-.083-.059L512 569.926 224.297 857.629c-.04.041-.06.052-.083.059a.118.118 0 0 1-.07 0c-.022-.007-.042-.018-.083-.059l-57.69-57.69c-.041-.041-.052-.06-.059-.084a.118.118 0 0 1 0-.069c.007-.023.018-.042.059-.083L454.073 512 166.371 224.297c-.041-.04-.052-.06-.059-.083a.118.118 0 0 1 0-.07c.007-.022.018-.042.059-.083l57.69-57.69c.041-.041.06-.052.084-.059a.118.118 0 0 1 .069 0c.023.007.042.018.083.059L512 454.073l287.703-287.702c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"},child:[]}]})(e)}const cv=({imgSrc:e,onClose:t})=>v.jsx(iv,{onClick:t,children:v.jsxs(lv,{onClick:n=>n.stopPropagation(),children:[" ",v.jsx(av,{onClick:t,children:v.jsx(uv,{})}),v.jsx(sv,{src:e,alt:"Selected"})]})}),fv=({project:e})=>{const[t,n]=$.useState();return v.jsxs(Kg,{children:[v.jsxs(Xg,{children:[v.jsx(Jg,{src:e.image,alt:e.title}),v.jsxs(Zg,{children:[v.jsx(qg,{children:e.title}),v.jsxs(bg,{children:[e.demoLink&&v.jsx("a",{href:e.demoLink,target:"_blank",children:v.jsx(ug,{})}),e.repoLink&&v.jsx("a",{href:e.repoLink,target:"_blank",children:v.jsx(cp,{})})]})]})]}),v.jsx(ev,{children:e.description}),v.jsx(tv,{children:e.technologies.map((r,o)=>v.jsx(nv,{children:r},o))}),v.jsx(rv,{children:e.carouselImages.map((r,o)=>v.jsx(ov,{src:r,alt:`Image ${r}`,onClick:()=>n(r)},r+o))}),t&&v.jsx(cv,{imgSrc:t,onClose:()=>n(void 0)})]})},dv="/assets/matchup-BM9VGotJ.png",pv="/assets/matchup_image1-BlqqS-8r.jpg",hv="/assets/matchup_image2-B1jgQ_53.jpg",mv="/assets/matchup_image3-B0v8Bf8y.jpg",gv="/assets/matchup_image4-Cr6DY8F2.jpg",vv="/assets/matchup_image5-Q13YgXEg.jpg",yv="/assets/chicmouse-BRJGKmMU.png",xv="/assets/chicmouse_image1-BmFA5kjA.png",wv="/assets/chicmouse_image2-CxF1OEQl.png",Sv="/assets/raulrodriguez-BQo48PGO.png",kv="/assets/raulrodriguez_image1-DUqmuObz.png",Ev="/assets/raulrodriguez_image2-HY1dCMqC.png",Cv="/assets/pokedex-DDcGEcdx.png",_v="/assets/pokedex_image1-I7tmQDGc.png",Pv="/assets/pokedex_image2-CVCqxj-H.png",$v="/assets/pokedex_image3-CO-9NEYZ.png",jv="/assets/pokedex_image4-Dwhxe4pM.png",Nv="/assets/pokedex_image5-B62_sLXq.png",zv="/assets/telamonbox-Bm1UJFTM.png",Tv="/assets/telamonbox_image1-VAhMcucH.png",Rv="/assets/telamonbox_image2-DaoOunpv.png",Iv=[{title:"Matchup",description:"Matchup is a card-matching game. It tests your mental skills as you progress through increasingly complex levels, unlocking new content and collecting cards and items.",technologies:["React Native","Typescript","Github","Firebase","Figma"],image:dv,carouselImages:[pv,hv,mv,gv,vv],demoLink:"https://play.google.com/store/apps/details?id=com.matchupcardgame2023"},{title:"Chicmouse",description:"Website to display the mobile applications created and offer users contact information, terms and conditions and privacy policy.",technologies:["React","Typescript","Styled-components","Firebase","Vite","Vitest","CI/CD","Github","Jest","Testing-library","Figma"],image:yv,carouselImages:[xv,wv],demoLink:"https://chicmouse.com",repoLink:"https://github.com/raulrod16124/chicmouse"},{title:"Raúl Rodríguez",description:"I've built my personal portfolio to showcase my projects and share more about myself with those interested in my work. The site highlights key projects I've developed, providing detailed descriptions and technologies used.",technologies:["React Native","Firebase","JavaScript"],image:Sv,carouselImages:[kv,Ev],repoLink:"https://github.com/raulrod16124/raulrodriguez"},{title:"Pokedex",description:"Mobile application created to develop mobile programming skills while creating a fun mobile application to pass the time with.",technologies:["React Nartive","Typescript","Github"],image:Cv,carouselImages:[_v,Pv,$v,jv,Nv],repoLink:"https://github.com/raulrod16124/pokedex"},{title:"Telamón",description:"Website created for a crossfit gym that needed a website to show both the information about the center and the competitions that it carries out.",technologies:["Wordpress","Elementor","CSS"],image:zv,carouselImages:[Tv,Rv],demoLink:"https://telamon.es/"}];function Lv(e,t=12){return e.length<=t?e:`${e.substring(0,t-4)}..`}const Ov=()=>{const e=Iv,[t,n]=$.useState(e[0]);return v.jsxs(Vg,{className:"animate__animated animate__fadeIn",children:[v.jsx(Wg,{children:e.map((r,o)=>{const i=Lv(r.title);return v.jsxs(Hg,{className:"animate__animated animate__zoomIn",onClick:()=>n(r),selected:r.title===t.title,children:[v.jsx(Qg,{src:r.image}),v.jsx(Yg,{selected:r.title===t.title,children:i})]},o)})}),v.jsx(fv,{project:t})]})},fp=ae`
   from {
     opacity: 0;
     transform: translateY(50px);
@@ -844,13 +853,17 @@ Error generating stack: `+i.message+`
   flex-direction: column;;
   max-width: 300px;
   min-height: 300px;
-  background: white;
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(69, 77, 93, 0.2);
   padding: 20px;
   border-radius: 5px;
+  border: 0.1rem solid ${x.colors.neutral.white};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   animation: ${fp} .5s ease-in-out;
 
-  @media (max-width: ${x.responsive.smallMobileDevices}) {
+  @media (max-width: ${x.responsive.largeMobileDevices}) {
     max-width: 80%;
     width: 100%;
   }
@@ -885,6 +898,8 @@ Error generating stack: `+i.message+`
   padding: 15px;
   padding-top: 20px;
   font-size: 1rem;
+  color: ${x.colors.neutral.white};
+  background-color: transparent;
   border: 1px solid ${x.colors.neutral.grey};
   border-radius: 5px;
   outline: none;
@@ -903,16 +918,18 @@ Error generating stack: `+i.message+`
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  background-color: white;
-  color: ${x.colors.neutral.grey};
+  background-color: transparent;
+  color: ${x.colors.neutral.white};
   font-size: 1rem;
   transition: all 0.3s ease;
 
   ${({isfocusedorfilled:e})=>e&&Bi`
-      top: 5px;
+      top: 0px;
       left: 10px;
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: ${x.colors.primary.main};
+      z-index: 200;
+      background-color: ${x.colors.neutral.darkGrey};
     `}
 `,Sl=({label:e,value:t,onChange:n,isTextarea:r,error:o})=>{const[i,l]=$.useState(!1);return v.jsxs(Uv,{style:o?{marginBottom:0}:{},children:[r?v.jsx(Vv,{"data-testid":e,value:t,onChange:s=>n(s.target.value),onFocus:()=>l(!0),onBlur:()=>l(t.length>0),required:!0}):v.jsx(Bv,{"data-testid":e,type:"text",value:t,onChange:s=>n(s.target.value),onFocus:()=>l(!0),onBlur:()=>l(t.length>0),required:!0}),v.jsx(Wv,{isfocusedorfilled:i||t.length>0,children:e})]})};function Hv(e){return!/(<script.*?>|javascript:|on\w+=|['"]\s*=\s*['"]|--|#|;|\/\*|\*\/|%0A|%0D|%27|%22|%3C|%3E|%26)/gi.test(e)}function Qv(e){return e.length<3?"Short text error, at least 3 characters":"safe"}function Yv(e){return e.length<1?"Empty text error, fill in the fields":"safe"}function Gv(e){return Hv(e)?"safe":"Unsafe input detected!"}function kl(e,t){const n=Yv(e),r=Qv(e),o=Gv(e);t(n!=="safe"?n:r!=="safe"?r:o!=="safe"?o:void 0)}const Qr={_origin:"https://api.emailjs.com"},Kv=(e,t="https://api.emailjs.com")=>{Qr._userID=e,Qr._origin=t},pp=(e,t,n)=>{if(!e)throw"The user ID is required. Visit https://dashboard.emailjs.com/admin/integration";if(!t)throw"The service ID is required. Visit https://dashboard.emailjs.com/admin";if(!n)throw"The template ID is required. Visit https://dashboard.emailjs.com/admin/templates";return!0};class fc{constructor(t){this.status=t.status,this.text=t.responseText}}const hp=(e,t,n={})=>new Promise((r,o)=>{const i=new XMLHttpRequest;i.addEventListener("load",({target:l})=>{const s=new fc(l);s.status===200||s.text==="OK"?r(s):o(s)}),i.addEventListener("error",({target:l})=>{o(new fc(l))}),i.open("POST",Qr._origin+e,!0),Object.keys(n).forEach(l=>{i.setRequestHeader(l,n[l])}),i.send(t)}),Xv=(e,t,n,r)=>{const o=r||Qr._userID;return pp(o,e,t),hp("/api/v1.0/email/send",JSON.stringify({lib_version:"3.2.0",user_id:o,service_id:e,template_id:t,template_params:n}),{"Content-type":"application/json"})},Jv=e=>{let t;if(typeof e=="string"?t=document.querySelector(e):t=e,!t||t.nodeName!=="FORM")throw"The 3rd parameter is expected to be the HTML form element or the style selector of form";return t},Zv=(e,t,n,r)=>{const o=r||Qr._userID,i=Jv(n);pp(o,e,t);const l=new FormData(i);return l.append("lib_version","3.2.0"),l.append("service_id",e),l.append("template_id",t),l.append("user_id",o),hp("/api/v1.0/email/send-form",l)},qv={init:Kv,send:Xv,sendForm:Zv},bv=async(e,t,n,r)=>await qv.send(t,n,e,r).then(o=>(console.log("SUCCESS!",o.status,o.text),"SUCCESS")).catch(o=>(console.error("FAILED...",o),"FAILED")),ey=ae`
   0% {
