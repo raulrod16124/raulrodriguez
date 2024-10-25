@@ -154,8 +154,8 @@ export const TechnologyItem = styled.li<{reducefontsize?: boolean}>`
     padding: 5px;
   }
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    font-size: ${({reducefontsize}) => reducefontsize ? `12px` :`15px` };
-    padding: .5px 2px;
+    font-size: ${({reducefontsize}) => reducefontsize ? `10px` :`12px` };
+    padding: .2px 1px;
   }
 `;
 

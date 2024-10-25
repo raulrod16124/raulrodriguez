@@ -37,7 +37,7 @@ export const Form = styled.form`
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} .5s ease-in-out;
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
     max-width: 80%;
     width: 100%;
   }
