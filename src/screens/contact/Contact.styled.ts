@@ -27,13 +27,17 @@ export const Form = styled.form`
   flex-direction: column;;
   max-width: 300px;
   min-height: 300px;
-  background: white;
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(69, 77, 93, 0.2);
   padding: 20px;
   border-radius: 5px;
+  border: 0.1rem solid ${theme.colors.neutral.white};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} .5s ease-in-out;
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
     max-width: 80%;
     width: 100%;
   }
