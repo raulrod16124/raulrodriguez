@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+<div align="center">
+  <a href="https://raulrodriguez.dev/">
+    <img src="https://github.com/raulrod16124/raulrodriguez/blob/main/src/assets/images/rrLogo.png" alt="raulrodriguez image" style="width: 150px;"/>
+  </a>
+  <h1>Raul Rodriguez</h1>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌟 Description
 
-Currently, two official plugins are available:
+This personal portfolio was created to highlight my skills in frontend development, showcase noteworthy projects, and provide an overview of my professional experience. The interface is designed to offer a visually appealing and smooth experience, featuring key projects and ensuring an intuitive browsing experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This site also serves as a demonstration of my proficiency with **React** and **TypeScript**, as well as modern tools like **Vite** and **Styled-Components**. Automated tests are included to guarantee the quality and robustness of each component.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+- **Frontend**: [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Styled-Components](https://styled-components.com/)
+- **Development**: [Vite](https://vitejs.dev/) - for fast and efficient builds
+- **Testing**: [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/) - for unit and functional tests
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+---
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## ✨ Features
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+- **Modern Interface**: A clean, professional design that highlights projects.
+- **Fully Responsive**: Compatible with both mobile and desktop devices.
+- **Automated Testing**: Ensures site reliability across different browsers.
+- **Modular & Scalable Code**: Organized for easy maintenance and future updates.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+---
+
+## 🔧 Installation & Setup
+
+To run the project locally, follow these steps:
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/raulrod16124/raulrodriguez.git
+   cd raulrodriguez
+   ```
+2. **Install dependencies**
+   
+   ```bash
+   npm install
+   ```
+3. **Start the project**
+   
+   ```bash
+   npm run dev
+   ```
+
+## 📬 Contact
+
+Thank you for visiting my portfolio!
+If you have any questions or would like to connect, feel free to find me on [LinkedIn](https://www.linkedin.com/in/raul-rod/) or reach out via email at raulrod16124@gmail.com.
