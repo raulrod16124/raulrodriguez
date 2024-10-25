@@ -1,5 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Button, ContactContainer, ContactInfo, ErrorText, Form, IconLink, SocialIcons } from './Contact.styled';
+import { Button, ContactContainer, ContactInfo, ErrorText, Form } from './Contact.styled';
 import { Input } from './components/Input';
 import { useEffect, useState } from 'react';
 import { checkInput } from './helper';
@@ -95,15 +94,6 @@ export const Contact = () => {
       <ContactInfo>
         <p>raul.rod16124@gmail.com</p>
       </ContactInfo>
-
-      <SocialIcons>
-        <IconLink href="https://github.com/raulrod16124" target="_blank">
-          <FaGithub />
-        </IconLink>
-        <IconLink href="https://www.linkedin.com/in/raul-rod/" target="_blank">
-          <FaLinkedin />
-        </IconLink>
-      </SocialIcons>
     </ContactContainer>
   );
 };

@@ -30,7 +30,7 @@ export const NavbarWrapper = styled.div`
 export const NavbarContainer = styled.div`
   border-radius: 50px;
   margin: 10px auto;
-  width: 300px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,20 +57,13 @@ export const NavButton= styled(Link)<{active:boolean}>`
   font-family: ${theme.font.primary.fontFamily};
   font-size: ${props => props.active ? `18px` : `${theme.font.fontSize}`};
   margin: 0 1px;
-  padding: 15px ${props => props.active ? `40px` : `35px`};
+  padding: 15px ${props => props.active ? `45px` : `40px`};
   cursor: pointer;
   transition: 0.3s ease-in-out all;
   text-transform: uppercase;
   letter-spacing: 1px;
   overflow: hidden;
-  color: ${props => props.active ? `${theme.colors.primary.main}` : "white"}; 
-  text-shadow: 
-  ${props => props.active ? `
-     0.8px 0.8px 0 ${theme.colors.neutral.white}}, 
-    -0.8px -0.8px 0 ${theme.colors.neutral.white}},
-    -0.8px 0.8px 0 ${theme.colors.neutral.white}}, 
-    0.8px -0.8px 0 ${theme.colors.neutral.white}} 
-  ` : "none"};
+  color: ${props => props.active ? `${theme.colors.primary.main}` : `${theme.colors.neutral.white}`};
 
   &:hover .text-current {
       animation: ${props => props.active ? keyframes`` : slideUp} 0.4s forwards;

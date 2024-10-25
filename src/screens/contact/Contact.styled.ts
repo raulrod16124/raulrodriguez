@@ -42,14 +42,14 @@ export const Form = styled.form`
 export const Button = styled.button`
   padding: 15px 20px;
   font-size: ${theme.font.text.fontSize};
-  background-color: ${theme.colors.primary.main};
+  background-color: ${theme.colors.secondary.main};
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: ${theme.colors.primary.light};
+    background-color: ${theme.colors.secondary.light};
   }
 `;
 
@@ -57,23 +57,7 @@ export const ContactInfo = styled.div`
   animation: ${fadeIn} 1s ease-in-out;
 
   & p{
-    color: ${theme.colors.neutral.darkGrey};
-  }
-`;
-
-export const SocialIcons = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  animation: ${fadeIn} 1.5s ease-in-out;
-`;
-
-export const IconLink = styled.a`
-  color: ${theme.colors.neutral.darkGrey};
-  font-size: ${theme.font.icons.fontSize};
-  transition: color 0.3s ease;
-  &:hover {
-    color: ${theme.colors.primary.main};
+    color: ${theme.colors.neutral.white};
   }
 `;
 
