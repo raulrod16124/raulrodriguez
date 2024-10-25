@@ -17,11 +17,11 @@ export const AboutMe = () => {
         
         <Description>
           <p>
-          👋 Hi, I'm Raúl Rodríguez, a passionate Frontend Developer with over {increaseExperience()} years of experience in creating dynamic, user-friendly websites 💻 and mobile apps 📱.
+            Hi, I'm Raúl Rodríguez, a passionate Frontend Developer with over {increaseExperience()} years of experience in creating dynamic, user-friendly websites and mobile apps.
 
-          💪 I'm highly motivated, love working in teams 👥, and always eager to take on new challenges.
+            I'm highly motivated, love working in teams, and always eager to take on new challenges.
 
-          🏋️‍♂️ I enjoy working out, spending time with family 👨‍👩‍👧‍👦, and, of course, drinking coffee ☕ while coding 💻!
+            I enjoy working out, spending time with family, and, of course, drinking coffee while coding!
           </p>
         </Description>
       </MyInfoContainer>

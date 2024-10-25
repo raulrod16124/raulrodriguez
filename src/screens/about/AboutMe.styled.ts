@@ -99,7 +99,10 @@ export const Description = styled.div`
     text-align: justify;
   }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    max-width: 80%;
+    max-width: 90%;
+  }
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    max-width: 95%;
   }
 `;
 
@@ -135,7 +138,10 @@ export const TechnologyItem = styled.li<{reducefontsize?: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(69, 77, 93, 0.2);
   color: ${theme.colors.neutral.white};
   padding: 2px 5px;
   text-align: center;
@@ -149,7 +155,7 @@ export const TechnologyItem = styled.li<{reducefontsize?: boolean}>`
   }
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     font-size: ${({reducefontsize}) => reducefontsize ? `12px` :`15px` };
-    padding: 2px 5px;
+    padding: .5px 2px;
   }
 `;
 

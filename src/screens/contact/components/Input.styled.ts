@@ -12,6 +12,8 @@ export const SharedInputStyles = css`
   padding: 15px;
   padding-top: 20px;
   font-size: 1rem;
+  color: ${theme.colors.neutral.white};
+  background-color: transparent;
   border: 1px solid ${theme.colors.neutral.grey};
   border-radius: 5px;
   outline: none;
@@ -36,17 +38,19 @@ export const FloatingLabel = styled.label<{isfocusedorfilled: boolean}>`
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  background-color: white;
-  color: ${theme.colors.neutral.grey};
+  background-color: transparent;
+  color: ${theme.colors.neutral.white};
   font-size: 1rem;
   transition: all 0.3s ease;
 
   ${({ isfocusedorfilled }) =>
     isfocusedorfilled &&
     css`
-      top: 5px;
+      top: 0px;
       left: 10px;
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: ${theme.colors.primary.main};
+      z-index: 200;
+      background-color: ${theme.colors.neutral.darkGrey};
     `}
 `;
