@@ -52,6 +52,7 @@ export const HomeSection = styled.section`
   justify-content: center;
   align-items: center;
   padding-top: calc(100vh - 85vh);
+  overflow: hidden;
   @media (max-width: ${theme.responsive.laptops}) {
     padding-top: calc(100vh - 80vh);
   }

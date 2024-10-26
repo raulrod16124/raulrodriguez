@@ -10,13 +10,14 @@ export const FooterContainer = styled.footer`
     align-items: center;
     gap: 30px;
     padding: 0.2rem 0 1rem 0;
+    margin-top: 20px;
     flex-wrap: wrap;
     color: ${theme.colors.neutral.lightGrey};
     text-align: center;
 
     @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 10px;
+      flex-direction: column;
+      gap: 10px;
     }
 `;
 

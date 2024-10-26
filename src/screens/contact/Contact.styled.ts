@@ -19,6 +19,7 @@ export const ContactContainer = styled.section`
   align-items: center;
   justify-content: center;
   padding-top: calc(100vh - 90vh);
+  overflow: hidden;
 `;
 
 export const Form = styled.form`

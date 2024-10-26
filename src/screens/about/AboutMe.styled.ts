@@ -47,6 +47,7 @@ export const AboutMeContainer = styled.section`
   animation: ${fadeInBottom} .5s ease-in-out;
   padding-top: calc(100vh - 90vh);
   flex: 1;
+  overflow: hidden;
 `;
 
 export const ProfileImageContainer = styled.div`
