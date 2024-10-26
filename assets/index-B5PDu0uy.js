@@ -211,13 +211,14 @@ Error generating stack: `+i.message+`
     align-items: center;
     gap: 30px;
     padding: 0.2rem 0 1rem 0;
+    margin-top: 20px;
     flex-wrap: wrap;
     color: ${g.colors.neutral.lightGrey};
     text-align: center;
 
     @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 10px;
+      flex-direction: column;
+      gap: 10px;
     }
 `,fg=z.p`
   font-size: 1rem;
@@ -280,6 +281,7 @@ Error generating stack: `+i.message+`
   justify-content: center;
   align-items: center;
   padding-top: calc(100vh - 85vh);
+  overflow: hidden;
   @media (max-width: ${g.responsive.laptops}) {
     padding-top: calc(100vh - 80vh);
   }
@@ -422,6 +424,7 @@ Error generating stack: `+i.message+`
   animation: ${_g} .5s ease-in-out;
   padding-top: calc(100vh - 90vh);
   flex: 1;
+  overflow: hidden;
 `,zg=z.div`
   position: relative;
   display: flex;
@@ -859,6 +862,7 @@ Error generating stack: `+i.message+`
   align-items: center;
   justify-content: center;
   padding-top: calc(100vh - 90vh);
+  overflow: hidden;
 `,cc=z.form`
   position: relative;
   display: flex;
