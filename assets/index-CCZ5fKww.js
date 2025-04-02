@@ -307,7 +307,7 @@ Error generating stack: `+i.message+`
   font-weight: 600;
   line-height: 1;
   color: ${g.colors.neutral.white};
-  animation: ${Na} .5s ease-out forwards;
+  animation: ${Na} 0.5s ease-out forwards;
 
   @media (max-width: ${g.responsive.laptops}) {
     font-size: 2rem;
@@ -322,12 +322,11 @@ Error generating stack: `+i.message+`
   color: ${g.colors.secondary.main};
   line-height: 1;
   text-transform: uppercase;
-  text-shadow: 
-    1px 1px 0 ${g.colors.neutral.white},  /* Top-right */
-    -1px -1px 0 ${g.colors.neutral.white}, /* Bottom-left */
-    -1px 1px 0 ${g.colors.neutral.white},  /* Top-left */
-    1px -1px 0 ${g.colors.neutral.white};  /* Bottom-right */
-  animation: ${Na} .5s ease-out forwards;
+  text-shadow: 1px 1px 0 ${g.colors.neutral.white},
+    /* Top-right */ -1px -1px 0 ${g.colors.neutral.white},
+    /* Bottom-left */ -1px 1px 0 ${g.colors.neutral.white},
+    /* Top-left */ 1px -1px 0 ${g.colors.neutral.white}; /* Bottom-right */
+  animation: ${Na} 0.5s ease-out forwards;
 
   @media (max-width: ${g.responsive.laptops}) {
     font-size: 8rem;
@@ -342,17 +341,14 @@ Error generating stack: `+i.message+`
   line-height: 1;
   text-transform: uppercase;
   color: ${g.colors.primary.main};
-  text-shadow: 
-    1px 1px 0 ${g.colors.neutral.white},  /* Top-right */
-    -1px -1px 0 ${g.colors.neutral.white}, /* Bottom-left */
-    -1px 1px 0 ${g.colors.neutral.white},  /* Top-left */
-    1px -1px 0 ${g.colors.neutral.white};  /* Bottom-right */
+  text-shadow: 1px 1px 0 ${g.colors.neutral.white},
+    /* Top-right */ -1px -1px 0 ${g.colors.neutral.white},
+    /* Bottom-left */ -1px 1px 0 ${g.colors.neutral.white},
+    /* Top-left */ 1px -1px 0 ${g.colors.neutral.white}; /* Bottom-right */
   width: 0;
   overflow: hidden;
-  animation: 
-    ${Na} .5s ease-out forwards,
-    ${mg} 1.2s steps(30, end) forwards,
-    ${gg} 0.75s step-end infinite;
+  animation: ${Na} 0.5s ease-out forwards,
+    ${mg} 1.2s steps(30, end) forwards, ${gg} 0.75s step-end infinite;
 
   @media (max-width: ${g.responsive.laptops}) {
     font-size: 8rem;
@@ -364,12 +360,13 @@ Error generating stack: `+i.message+`
   position: absolute;
   top: -50px;
   right: -200px;
-  width: 400px;
+  width: 380px;
   height: auto;
   z-index: 0;
-  animation: ${hg} .5s ease-out forwards;
+  animation: ${hg} 0.5s ease-out forwards;
   border-radius: 50%;
-  border: .2rem solid ${g.colors.secondary.main};
+  border: 0.2rem solid ${g.colors.secondary.main};
+  aspect-ratio: 1/1;
 
   @media (max-width: ${g.responsive.laptops}) {
     top: -50px;
