@@ -9,7 +9,7 @@ interface IProps {
 export const ImageModal = ({ imgSrc, onClose }: IProps) => {
   return (
     <ModalOverlay onClick={onClose}>
-      <ModalContent onClick={(e) => e.stopPropagation()}> {/* Evita cerrar cuando se hace clic en la imagen */}
+      <ModalContent onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={onClose}>
           <AiOutlineClose />
         </CloseButton>
