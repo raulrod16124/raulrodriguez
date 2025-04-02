@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import theme from "../../theme/theme.json"
+import styled, {keyframes} from 'styled-components';
+import theme from '../../theme/theme.json';
 
 const fadeInUp = keyframes`
   0% {
@@ -72,7 +72,7 @@ export const TitleContainer = styled.div`
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     margin-left: 0;
   }
-`
+`;
 export const NormalText = styled.span`
   margin: 0;
   padding-left: 10px;
@@ -81,7 +81,7 @@ export const NormalText = styled.span`
   font-weight: 600;
   line-height: 1;
   color: ${theme.colors.neutral.white};
-  animation: ${fadeInUp} .5s ease-out forwards;
+  animation: ${fadeInUp} 0.5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
     font-size: 2rem;
@@ -98,12 +98,11 @@ export const FirstBigText = styled.span`
   color: ${theme.colors.secondary.main};
   line-height: 1;
   text-transform: uppercase;
-  text-shadow: 
-    1px 1px 0 ${theme.colors.neutral.white},  /* Top-right */
-    -1px -1px 0 ${theme.colors.neutral.white}, /* Bottom-left */
-    -1px 1px 0 ${theme.colors.neutral.white},  /* Top-left */
-    1px -1px 0 ${theme.colors.neutral.white};  /* Bottom-right */
-  animation: ${fadeInUp} .5s ease-out forwards;
+  text-shadow: 1px 1px 0 ${theme.colors.neutral.white},
+    /* Top-right */ -1px -1px 0 ${theme.colors.neutral.white},
+    /* Bottom-left */ -1px 1px 0 ${theme.colors.neutral.white},
+    /* Top-left */ 1px -1px 0 ${theme.colors.neutral.white}; /* Bottom-right */
+  animation: ${fadeInUp} 0.5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
     font-size: 8rem;
@@ -120,17 +119,14 @@ export const SecondBigText = styled.span`
   line-height: 1;
   text-transform: uppercase;
   color: ${theme.colors.primary.main};
-  text-shadow: 
-    1px 1px 0 ${theme.colors.neutral.white},  /* Top-right */
-    -1px -1px 0 ${theme.colors.neutral.white}, /* Bottom-left */
-    -1px 1px 0 ${theme.colors.neutral.white},  /* Top-left */
-    1px -1px 0 ${theme.colors.neutral.white};  /* Bottom-right */
+  text-shadow: 1px 1px 0 ${theme.colors.neutral.white},
+    /* Top-right */ -1px -1px 0 ${theme.colors.neutral.white},
+    /* Bottom-left */ -1px 1px 0 ${theme.colors.neutral.white},
+    /* Top-left */ 1px -1px 0 ${theme.colors.neutral.white}; /* Bottom-right */
   width: 0;
   overflow: hidden;
-  animation: 
-    ${fadeInUp} .5s ease-out forwards,
-    ${typing} 1.2s steps(30, end) forwards,
-    ${blink} 0.75s step-end infinite;
+  animation: ${fadeInUp} 0.5s ease-out forwards,
+    ${typing} 1.2s steps(30, end) forwards, ${blink} 0.75s step-end infinite;
 
   @media (max-width: ${theme.responsive.laptops}) {
     font-size: 8rem;
@@ -144,12 +140,13 @@ export const Image = styled.img`
   position: absolute;
   top: -50px;
   right: -200px;
-  width: 400px;
+  width: 380px;
   height: auto;
   z-index: 0;
-  animation: ${fadeInRight} .5s ease-out forwards;
+  animation: ${fadeInRight} 0.5s ease-out forwards;
   border-radius: 50%;
-  border: .2rem solid ${theme.colors.secondary.main};
+  border: 0.2rem solid ${theme.colors.secondary.main};
+  aspect-ratio: 1/1;
 
   @media (max-width: ${theme.responsive.laptops}) {
     top: -50px;
