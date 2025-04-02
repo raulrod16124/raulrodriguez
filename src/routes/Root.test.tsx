@@ -10,49 +10,35 @@ vi.mock("../screens/about/AboutMe", () => ({ AboutMe: () => <div>About Me Page</
 vi.mock("../screens/projects/Projects", () => ({ Projects: () => <div>Projects Page</div> }));
 vi.mock("../screens/contact/Contact", () => ({ Contact: () => <div>Contact Page</div> }));
 
+const RootWrapper = (path:string) => (
+  <MemoryRouter initialEntries={[path]}>
+    <Root />
+  </MemoryRouter>
+)
+
 describe("Root Component Routing", () => {
   test("should render the Home page when at root path", () => {
-    render(
-      <MemoryRouter initialEntries={["/"]}>
-        <Root />
-      </MemoryRouter>
-    );
+    render(RootWrapper("/"));
     expect(screen.getByText("Home Page")).toBeInTheDocument();
   });
 
   test("should render the About Me page when at /about-me", () => {
-    render(
-      <MemoryRouter initialEntries={["/about-me"]}>
-        <Root />
-      </MemoryRouter>
-    );
+    render(RootWrapper("/about-me"));
     expect(screen.getByText("About Me Page")).toBeInTheDocument();
   });
 
   test("should render the Projects page when at /projects", () => {
-    render(
-      <MemoryRouter initialEntries={["/projects"]}>
-        <Root />
-      </MemoryRouter>
-    );
+    render(RootWrapper("/projects"));
     expect(screen.getByText("Projects Page")).toBeInTheDocument();
   });
 
   test("should render the Contact page when at /contact", () => {
-    render(
-      <MemoryRouter initialEntries={["/contact"]}>
-        <Root />
-      </MemoryRouter>
-    );
+    render(RootWrapper("/contact"));
     expect(screen.getByText("Contact Page")).toBeInTheDocument();
   });
 
   test("should redirect to Home when an unknown path is entered", () => {
-    render(
-      <MemoryRouter initialEntries={["/unknown-path"]}>
-        <Root />
-      </MemoryRouter>
-    );
+    render(RootWrapper("/unknown-path"));
     expect(screen.getByText("Home Page")).toBeInTheDocument();
   });
 });
