@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "test": "vitest",
+    "test:coverage": "vitest --coverage",
     "build": "tsc -b && vite build",
     "deploy": "gh-pages -d dist",
     "gh-deploy": "tsc -b && vite build && gh-pages -d dist",
@@ -30,6 +31,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.2",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vitest/coverage-v8": "2.1.2",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
