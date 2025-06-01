@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import theme from "../../theme/theme.json"
-import { Link } from "react-router-dom";
+import styled, {keyframes} from 'styled-components';
+import theme from '../../theme/theme.json';
+import {Link} from 'react-router-dom';
 
 const slideUp = keyframes`
   0% {
@@ -35,8 +35,8 @@ export const NavbarContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  backdrop-filter: blur(10px);          
-  -webkit-backdrop-filter: blur(10px);  
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background-color: rgba(69, 77, 93, 0.2);
   border-radius: 50px;
@@ -47,35 +47,40 @@ export const NavbarContainer = styled.div`
 `;
 
 /* navbar button */
-export const NavButtons= styled.div`
+export const NavButtons = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export const NavButton= styled(Link)<{active:boolean}>`
+export const NavButton = styled(Link)<{active: boolean}>`
   position: relative;
   font-family: ${theme.font.primary.fontFamily};
-  font-size: ${props => props.active ? `18px` : `${theme.font.fontSize}`};
+  font-size: ${props => (props.active ? `0.8rem` : `${theme.font.fontSize}`)};
   margin: 0 1px;
-  padding: 15px ${props => props.active ? `45px` : `40px`};
+  padding: 15px ${props => (props.active ? `45px` : `40px`)};
   cursor: pointer;
   transition: 0.3s ease-in-out all;
   text-transform: uppercase;
   letter-spacing: 1px;
   overflow: hidden;
-  color: ${props => props.active ? `${theme.colors.primary.main}` : `${theme.colors.neutral.white}`};
+  color: ${props =>
+    props.active
+      ? `${theme.colors.primary.main}`
+      : `${theme.colors.neutral.white}`};
 
   &:hover .text-current {
-      animation: ${props => props.active ? keyframes`` : slideUp} 0.4s forwards;
+    animation: ${props => (props.active ? keyframes`` : slideUp)} 0.4s forwards;
   }
 
   &:hover .text-new {
-      animation:  ${props => props.active ? keyframes`` : slideDown} 0.4s forwards;
-      color: ${theme.colors.primary.light};
+    animation: ${props => (props.active ? keyframes`` : slideDown)} 0.4s
+      forwards;
+    color: ${theme.colors.primary.light};
   }
-  
-  &:focus, &:active {  
-      outline: none;
+
+  &:focus,
+  &:active {
+    outline: none;
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
