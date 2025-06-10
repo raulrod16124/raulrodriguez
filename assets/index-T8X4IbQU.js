@@ -865,18 +865,18 @@ Error generating stack: `+i.message+`
 `,cc=z.form`
   position: relative;
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
   max-width: 300px;
   min-height: 300px;
-  backdrop-filter: blur(10px);          
-  -webkit-backdrop-filter: blur(10px);  
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: rgba(69, 77, 93, 0.2);
+  background-color: ${e=>e.formSent?"transparent":"rgba(69, 77, 93, 0.2)"};
   padding: 20px;
   border-radius: 5px;
-  border: 0.1rem solid ${g.colors.neutral.white};
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  animation: ${fp} .5s ease-in-out;
+  border: ${e=>e.formSent?"none":`0.1rem solid ${g.colors.neutral.white}`};
+  box-shadow: ${e=>e.formSent?"none":"0 10px 20px rgba(0, 0, 0, 0.1)"};
+  animation: ${fp} 0.5s ease-in-out;
 
   @media (max-width: ${g.responsive.smallMobileDevices}) {
     max-width: 80%;
@@ -897,7 +897,7 @@ Error generating stack: `+i.message+`
 `,Fv=z.div`
   animation: ${fp} 1s ease-in-out;
 
-  & p{
+  & p {
     color: ${g.colors.neutral.white};
   }
 `,Av=z.p`
@@ -984,7 +984,7 @@ Error generating stack: `+i.message+`
   animation: ${ty} 1.5s ease infinite;
 `,oy=z.p`
   font-size: ${g.font.text.fontSize};
-  color: ${g.colors.neutral.darkGrey};
+  color: ${g.colors.neutral.white};
   margin-top: 10px;
   text-align: center;
 `,iy=()=>y.jsxs(ny,{children:[y.jsx(ry,{}),y.jsx(oy,{children:"Form submitted successfully!"})]}),ly=ae`
@@ -1003,4 +1003,4 @@ Error generating stack: `+i.message+`
   width: 40px;
   height: 40px;
   animation: ${ly} 1s linear infinite;
-`,uy=()=>y.jsx(sy,{"data-testid":"loading-spinner",children:y.jsx(ay,{})}),cy="m7Zpj0ax6Mz4AxFNO",fy="service_83canh9",dy="template_vq7qh9w",py=()=>{const[e,t]=$.useState(""),[n,r]=$.useState(""),[o,i]=$.useState(""),[l,s]=$.useState(),[a,u]=$.useState(!1),[h,d]=$.useState(!1);$.useEffect(()=>{l&&s(void 0)},[e,n,o]);const m=()=>{t(""),r(""),i(""),s(void 0)},v=async()=>{kl(e,s),kl(n,s),kl(o,s),!l&&e.length>3&&n.length>3&&o.length>3&&(u(!0),await bv({from_name:e,reply_to:n,message:o},fy,dy,cy)==="SUCCESS"?(d(!0),m()):s("There was an error on the server, please try again later."))};return y.jsxs(Dv,{className:"animate__animated animate__fadeIn",children:[h&&y.jsx(cc,{children:y.jsx(iy,{})}),!h&&a&&y.jsx(uy,{}),!h&&!a&&y.jsxs(cc,{children:[y.jsx(Sl,{label:"Name",value:e,onChange:t}),y.jsx(Sl,{label:"Email",value:n,onChange:r}),y.jsx(Sl,{label:"Message",value:o,onChange:i,isTextarea:!0,error:!!l}),l&&y.jsx(Av,{children:l}),y.jsx(Mv,{type:"button",onClick:v,children:"Send"})]}),y.jsx(Fv,{children:y.jsx("p",{children:"raul.rod16124@gmail.com"})})]})},hy=()=>y.jsxs(R0,{children:[y.jsx(Jt,{path:"/",element:y.jsx(uc,{})}),y.jsx(Jt,{path:"/home",element:y.jsx(uc,{})}),y.jsx(Jt,{path:"/about-me",element:y.jsx(Ug,{})}),y.jsx(Jt,{path:"/projects",element:y.jsx(Ov,{})}),y.jsx(Jt,{path:"/contact",element:y.jsx(py,{})}),y.jsx(Jt,{path:"*",element:y.jsx(z0,{to:"/",replace:!0})})]}),my=()=>y.jsxs(q1,{children:[y.jsx(Z1,{}),y.jsx(b1,{"data-testid":"app",children:y.jsx(hy,{})}),y.jsx(pg,{})]});_d(document.getElementById("root")).render(y.jsx($.StrictMode,{children:y.jsx(A0,{children:y.jsx(my,{})})}));
+`,uy=()=>y.jsx(sy,{"data-testid":"loading-spinner",children:y.jsx(ay,{})}),cy="m7Zpj0ax6Mz4AxFNO",fy="service_83canh9",dy="template_vq7qh9w",py=()=>{const[e,t]=$.useState(""),[n,r]=$.useState(""),[o,i]=$.useState(""),[l,s]=$.useState(),[a,u]=$.useState(!1),[h,d]=$.useState(!1);$.useEffect(()=>{l&&s(void 0)},[e,n,o]);const m=()=>{t(""),r(""),i(""),s(void 0)},v=async()=>{kl(e,s),kl(n,s),kl(o,s),!l&&e.length>3&&n.length>3&&o.length>3&&(u(!0),await bv({from_name:e,reply_to:n,message:o},fy,dy,cy)==="SUCCESS"?(d(!0),m()):s("There was an error on the server, please try again later."))};return y.jsxs(Dv,{className:"animate__animated animate__fadeIn",children:[h&&y.jsx(cc,{formSent:!0,children:y.jsx(iy,{})}),!h&&a&&y.jsx(uy,{}),!h&&!a&&y.jsxs(cc,{children:[y.jsx(Sl,{label:"Name",value:e,onChange:t}),y.jsx(Sl,{label:"Email",value:n,onChange:r}),y.jsx(Sl,{label:"Message",value:o,onChange:i,isTextarea:!0,error:!!l}),l&&y.jsx(Av,{children:l}),y.jsx(Mv,{type:"button",onClick:v,children:"Send"})]}),y.jsx(Fv,{children:y.jsx("p",{children:"raul.rod16124@gmail.com"})})]})},hy=()=>y.jsxs(R0,{children:[y.jsx(Jt,{path:"/",element:y.jsx(uc,{})}),y.jsx(Jt,{path:"/home",element:y.jsx(uc,{})}),y.jsx(Jt,{path:"/about-me",element:y.jsx(Ug,{})}),y.jsx(Jt,{path:"/projects",element:y.jsx(Ov,{})}),y.jsx(Jt,{path:"/contact",element:y.jsx(py,{})}),y.jsx(Jt,{path:"*",element:y.jsx(z0,{to:"/",replace:!0})})]}),my=()=>y.jsxs(q1,{children:[y.jsx(Z1,{}),y.jsx(b1,{"data-testid":"app",children:y.jsx(hy,{})}),y.jsx(pg,{})]});_d(document.getElementById("root")).render(y.jsx($.StrictMode,{children:y.jsx(A0,{children:y.jsx(my,{})})}));
