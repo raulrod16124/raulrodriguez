@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import theme from "../../theme/theme.json";
+import styled, {keyframes} from 'styled-components';
+import theme from '../../theme/theme.json';
 
 const fadeIn = keyframes`
   from {
@@ -22,21 +22,24 @@ export const ContactContainer = styled.section`
   overflow: hidden;
 `;
 
-export const Form = styled.form`
+export const Form = styled.form<{formSent?: boolean}>`
   position: relative;
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
   max-width: 300px;
   min-height: 300px;
-  backdrop-filter: blur(10px);          
-  -webkit-backdrop-filter: blur(10px);  
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: rgba(69, 77, 93, 0.2);
+  background-color: ${props =>
+    props.formSent ? 'transparent' : 'rgba(69, 77, 93, 0.2)'};
   padding: 20px;
   border-radius: 5px;
-  border: 0.1rem solid ${theme.colors.neutral.white};
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  animation: ${fadeIn} .5s ease-in-out;
+  border: ${props =>
+    props.formSent ? 'none' : `0.1rem solid ${theme.colors.neutral.white}`};
+  box-shadow: ${props =>
+    props.formSent ? 'none' : `0 10px 20px rgba(0, 0, 0, 0.1)`};
+  animation: ${fadeIn} 0.5s ease-in-out;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     max-width: 80%;
@@ -61,7 +64,7 @@ export const Button = styled.button`
 export const ContactInfo = styled.div`
   animation: ${fadeIn} 1s ease-in-out;
 
-  & p{
+  & p {
     color: ${theme.colors.neutral.white};
   }
 `;

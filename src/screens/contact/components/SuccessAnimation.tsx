@@ -1,4 +1,8 @@
-import { CheckIcon, SuccessMessageContainer, SuccessText } from './SuccessAnimation.styled';
+import {
+  CheckIcon,
+  SuccessMessageContainer,
+  SuccessText,
+} from './SuccessAnimation.styled';
 
 export const SuccessAnimation = () => {
   return (

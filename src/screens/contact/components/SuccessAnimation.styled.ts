@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import { FaCheck } from 'react-icons/fa';
-import theme from "../../../theme/theme.json";
+import styled, {keyframes} from 'styled-components';
+import {FaCheck} from 'react-icons/fa';
+import theme from '../../../theme/theme.json';
 
 const fadeInAndScale = keyframes`
   0% {
@@ -48,7 +48,7 @@ export const CheckIcon = styled(FaCheck)`
 
 export const SuccessText = styled.p`
   font-size: ${theme.font.text.fontSize};
-  color: ${theme.colors.neutral.darkGrey};
+  color: ${theme.colors.neutral.white};
   margin-top: 10px;
   text-align: center;
 `;
