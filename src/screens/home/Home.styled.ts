@@ -84,7 +84,7 @@ export const RoleText = styled.h2`
 export const Subtitle = styled.span`
   font-size: 1.125rem;
   font-weight: 400;
-  color: ${theme.colors.secondary.main};
+  color: ${theme.colors.accent.main};
   letter-spacing: ${theme.font.letterSpacing.wider};
 
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
@@ -131,7 +131,7 @@ export const CTAButton = styled.a`
   font-weight: 500;
   font-family: ${theme.font.primary.fontFamily};
   color: ${theme.colors.neutral.black};
-  background-color: ${theme.colors.secondary.main};
+  background-color: ${theme.colors.accent.main};
   border: none;
   border-radius: 4px;
   text-decoration: none;
@@ -139,12 +139,12 @@ export const CTAButton = styled.a`
   transition: background-color 0.2s ease, transform 0.15s ease;
 
   &:hover {
-    background-color: ${theme.colors.secondary.dark};
+    background-color: ${theme.colors.accent.dark};
     transform: translateY(-1px);
   }
 
   &:focus-visible {
-    outline: 2px solid ${theme.colors.secondary.light};
+    outline: 2px solid ${theme.colors.accent.light};
     outline-offset: 2px;
   }
 

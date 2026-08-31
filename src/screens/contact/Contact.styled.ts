@@ -49,11 +49,11 @@ export const ContactLink = styled.a`
   }
 
   &:hover {
-    color: ${theme.colors.primary.main};
+    color: ${theme.colors.accent.main};
   }
 
   &:focus-visible {
-    outline: 2px solid ${theme.colors.primary.main};
+    outline: 2px solid ${theme.colors.accent.main};
     outline-offset: 4px;
     border-radius: 2px;
   }

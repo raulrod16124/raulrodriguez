@@ -43,8 +43,8 @@ export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
   gap: ${theme.spacing['sm']};
   padding: ${theme.spacing['lg']};
   border-radius: 8px;
-  background-color: rgba(69, 77, 93, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: ${theme.colors.semantic.cardBackground};
+  border: 1px solid ${theme.colors.semantic.cardBorder};
   transition:
     border-color 0.2s ease,
     background-color 0.2s ease;
@@ -52,16 +52,16 @@ export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
   ${({$isLatest}) =>
     $isLatest &&
     css`
-      background-color: rgba(69, 77, 93, 0.25);
-      border-color: rgba(255, 255, 255, 0.12);
+      background-color: ${theme.colors.semantic.cardBackgroundHighlight};
+      border-color: ${theme.colors.semantic.cardBorderHighlight};
     `}
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: ${theme.colors.semantic.cardBorderHover};
   }
 
   &:focus-within {
-    outline: 2px solid ${theme.colors.secondary.main};
+    outline: 2px solid ${theme.colors.accent.main};
     outline-offset: 2px;
   }
 
@@ -101,7 +101,7 @@ export const CompanyInfo = styled.div`
 `;
 
 export const CompanyName = styled.span`
-  color: ${theme.colors.secondary.main};
+  color: ${theme.colors.accent.main};
   font-weight: 500;
 `;
 
@@ -133,7 +133,7 @@ export const DescriptionItem = styled.li`
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: ${theme.colors.secondary.main};
+    background-color: ${theme.colors.accent.main};
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
@@ -167,13 +167,13 @@ export const TechTag = styled.span`
   letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
   padding: ${theme.spacing['xxs']} ${theme.spacing['xs']};
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: ${theme.colors.semantic.tagBackground};
   transition: background-color 0.15s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: ${theme.colors.semantic.tagBackgroundHover};
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {

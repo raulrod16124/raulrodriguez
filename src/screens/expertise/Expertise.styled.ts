@@ -44,14 +44,14 @@ export const GroupContainer = styled.article`
   gap: ${theme.spacing['sm']};
   padding: ${theme.spacing['lg']};
   border-radius: 8px;
-  background-color: rgba(69, 77, 93, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: ${theme.colors.semantic.cardBackground};
+  border: 1px solid ${theme.colors.semantic.cardBorder};
   transition:
     border-color 0.2s ease,
     background-color 0.2s ease;
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: ${theme.colors.semantic.cardBorderHover};
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
@@ -65,7 +65,7 @@ export const GroupTitle = styled.h3`
   font-weight: ${theme.font.headings.h3.fontWeight};
   line-height: ${theme.font.headings.h3.lineHeight};
   letter-spacing: ${theme.font.headings.h3.letterSpacing};
-  color: ${theme.colors.secondary.main};
+  color: ${theme.colors.accent.main};
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     font-size: 1rem;
@@ -89,13 +89,13 @@ export const TechTag = styled.span`
   letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
   padding: ${theme.spacing['xxs']} ${theme.spacing['xs']};
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: ${theme.colors.semantic.tagBackground};
   transition: background-color 0.15s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: ${theme.colors.semantic.tagBackgroundHover};
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
@@ -108,7 +108,7 @@ export const Divider = styled.hr`
   width: 100%;
   max-width: 720px;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: ${theme.colors.semantic.divider};
   border: none;
   margin: ${theme.spacing['2xl']} auto 0;
 

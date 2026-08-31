@@ -1,11 +1,6 @@
 {
   "colors": {
-    "primary": {
-      "light": "#f7b86a",
-      "main": "#f0a500",
-      "dark": "#d88a00"
-    },
-    "secondary": {
+    "accent": {
       "light": "#74b49b",
       "main": "#58a18f",
       "dark": "#3a7d6a"
@@ -20,8 +15,22 @@
     "background": "#111111",
     "surface": "#1a1a1a",
     "border": "rgba(255, 255, 255, 0.08)",
-    "success": "#28a745",
-    "successBackground": "#e0ffe0"
+    "semantic": {
+      "cardBackground": "rgba(69, 77, 93, 0.15)",
+      "cardBackgroundHighlight": "rgba(69, 77, 93, 0.25)",
+      "cardBorder": "rgba(255, 255, 255, 0.08)",
+      "cardBorderHighlight": "rgba(255, 255, 255, 0.12)",
+      "cardBorderHover": "rgba(255, 255, 255, 0.2)",
+      "tagBorder": "rgba(255, 255, 255, 0.15)",
+      "tagBackground": "rgba(255, 255, 255, 0.05)",
+      "tagBackgroundHover": "rgba(255, 255, 255, 0.1)",
+      "navActiveBackground": "rgba(255, 255, 255, 0.08)",
+      "navHoverBackground": "rgba(255, 255, 255, 0.05)",
+      "navbarBackdrop": "rgba(17, 17, 17, 0.8)",
+      "divider": "rgba(255, 255, 255, 0.08)",
+      "accentBorder": "rgba(88, 161, 143, 0.4)",
+      "accentBackgroundHover": "rgba(88, 161, 143, 0.1)"
+    }
   },
   "font": {
     "primary": {

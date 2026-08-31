@@ -40,7 +40,7 @@ export const IconContainer = styled.div`
     }
 
     &:focus-visible {
-      outline: 2px solid ${theme.colors.secondary.main};
+      outline: 2px solid ${theme.colors.accent.main};
       outline-offset: 2px;
     }
   }

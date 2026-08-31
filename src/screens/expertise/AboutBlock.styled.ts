@@ -19,7 +19,7 @@ export const Divider = styled.hr`
   width: 100%;
   max-width: 720px;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: ${theme.colors.semantic.divider};
   border: none;
   margin: 0 auto ${theme.spacing['2xl']};
 
@@ -61,9 +61,9 @@ export const CVLink = styled.a`
   font-size: ${theme.font.small.fontSize};
   font-weight: 500;
   font-family: ${theme.font.primary.fontFamily};
-  color: ${theme.colors.secondary.main};
+  color: ${theme.colors.accent.main};
   background-color: transparent;
-  border: 1px solid rgba(88, 161, 143, 0.4);
+  border: 1px solid ${theme.colors.semantic.accentBorder};
   border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
@@ -73,13 +73,13 @@ export const CVLink = styled.a`
     transform 0.15s ease;
 
   &:hover {
-    background-color: rgba(88, 161, 143, 0.1);
-    border-color: ${theme.colors.secondary.main};
+    background-color: ${theme.colors.semantic.accentBackgroundHover};
+    border-color: ${theme.colors.accent.main};
     transform: translateY(-1px);
   }
 
   &:focus-visible {
-    outline: 2px solid ${theme.colors.secondary.light};
+    outline: 2px solid ${theme.colors.accent.light};
     outline-offset: 2px;
   }
 

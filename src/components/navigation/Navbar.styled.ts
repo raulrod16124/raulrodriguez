@@ -23,7 +23,7 @@ export const NavbarContainer = styled.div`
   justify-content: center;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(17, 17, 17, 0.8);
+  background-color: ${theme.colors.semantic.navbarBackdrop};
   border: 1px solid ${theme.colors.border};
   border-radius: 100px;
   padding: ${theme.spacing['xxs']};
@@ -52,16 +52,16 @@ export const NavButton = styled(Link)<{ active: boolean }>`
       : theme.colors.neutral.grey};
   background-color: ${props =>
     props.active
-      ? 'rgba(255, 255, 255, 0.08)'
+      ? theme.colors.semantic.navActiveBackground
       : 'transparent'};
 
   &:hover {
     color: ${theme.colors.neutral.white};
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: ${theme.colors.semantic.navHoverBackground};
   }
 
   &:focus-visible {
-    outline: 2px solid ${theme.colors.secondary.main};
+    outline: 2px solid ${theme.colors.accent.main};
     outline-offset: 2px;
   }
 
