@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 import theme from '../../theme/theme.json';
 
 const fadeIn = keyframes`
@@ -149,6 +150,45 @@ export const CTAContainer = styled.div`
 `;
 
 export const CTAButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${theme.spacing['xs']};
+  padding: ${theme.spacing['xs']} ${theme.spacing['lg']};
+  font-size: ${theme.font.small.fontSize};
+  font-weight: 500;
+  font-family: ${theme.font.primary.fontFamily};
+  color: ${theme.colors.neutral.black};
+  background-color: ${theme.colors.accent.main};
+  border: none;
+  border-radius: ${theme.borderRadius.sm};
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color ${theme.transition.normal},
+    transform ${theme.transition.fast};
+
+  svg {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  ${theme.media.tablet} {
+    width: auto;
+  }
+
+  &:hover {
+    background-color: ${theme.colors.accent.dark};
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${theme.colors.accent.light};
+    outline-offset: 2px;
+  }
+`;
+
+export const CTALink = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;

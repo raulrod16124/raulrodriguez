@@ -1,4 +1,4 @@
-import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5FKzEF.js";const s=r`
+import{m as r,d as i,t as e,j as t,c as s,a as c,e as l,f as d,g}from"./index-jc_1gygL.js";import"./vendor-jt5FKzEF.js";const p=r`
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -7,7 +7,7 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
     opacity: 1;
     transform: translateY(0);
   }
-`,c=i.span`
+`,m=i.span`
   position: absolute;
   width: 1px;
   height: 1px;
@@ -17,17 +17,17 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-`,l=i.section`
+`,x=i.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: ${e.spacing["2xl"]} ${e.spacing.md};
-  animation: ${s} 0.4s ease-out;
+  animation: ${p} 0.4s ease-out;
 
   ${e.media.tablet} {
     padding: ${e.spacing["3xl"]} ${e.spacing.lg};
   }
-`,d=i.div`
+`,h=i.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: ${e.spacing.lg};
@@ -39,7 +39,7 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
     grid-template-columns: repeat(2, 1fr);
     gap: ${e.spacing.xl};
   }
-`,g=i.article`
+`,$=i.article`
   display: flex;
   flex-direction: column;
   gap: ${e.spacing.sm};
@@ -49,27 +49,43 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
   border: 1px solid ${e.colors.semantic.cardBorder};
   transition:
     border-color ${e.transition.normal},
-    background-color ${e.transition.normal};
+    background-color ${e.transition.normal},
+    transform ${e.transition.normal},
+    box-shadow 0.4s ease;
 
   &:hover {
     border-color: ${e.colors.semantic.cardBorderHover};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(88, 161, 143, 0.08);
   }
 
   ${e.media.tablet} {
     padding: ${e.spacing.lg};
   }
-`,p=i.h3`
+`,f=i.h3`
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: ${e.spacing.xs};
   font-size: 1rem;
   font-weight: ${e.font.headings.h3.fontWeight};
   line-height: ${e.font.headings.h3.lineHeight};
   letter-spacing: ${e.font.headings.h3.letterSpacing};
   color: ${e.colors.accent.main};
 
+  svg {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
   ${e.media.tablet} {
     font-size: ${e.font.headings.h3.fontSize};
+
+    svg {
+      font-size: 1.25rem;
+    }
   }
-`,m=i.div`
+`,u=i.div`
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -77,7 +93,7 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
   ${e.media.tablet} {
     gap: ${e.spacing.xs};
   }
-`,x=i.span`
+`,b=i.span`
   font-size: 0.75rem;
   font-weight: ${e.font.tagText.fontWeight};
   line-height: ${e.font.tagText.lineHeight};
@@ -87,17 +103,20 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
   border: 1px solid ${e.colors.semantic.tagBorder};
   border-radius: ${e.borderRadius.sm};
   background-color: ${e.colors.semantic.tagBackground};
-  transition: background-color ${e.transition.fast};
+  transition:
+    background-color ${e.transition.fast},
+    border-color ${e.transition.fast};
 
   &:hover {
     background-color: ${e.colors.semantic.tagBackgroundHover};
+    border-color: ${e.colors.semantic.tagBorderHover};
   }
 
   ${e.media.tablet} {
     font-size: ${e.font.tagText.fontSize};
     padding: ${e.spacing.xxs} ${e.spacing.xs};
   }
-`,h=i.hr`
+`,w=i.hr`
   width: 100%;
   max-width: ${e.maxWidth.content};
   height: 1px;
@@ -108,7 +127,7 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
   ${e.media.tablet} {
     margin: ${e.spacing["2xl"]} auto 0;
   }
-`,$=[{title:"Frontend",technologies:["React","TypeScript","JavaScript","React Native"]},{title:"Architecture & Testing",technologies:["Microfrontends","Hexagonal Architecture","Jest","Vitest","Testing Library","Storybook"]},{title:"Cloud & Tooling",technologies:["Firebase","Google Cloud","GitHub","CI/CD","Jira","Figma"]},{title:"AI & Development Workflow",technologies:["GitHub Copilot","Claude","AI development tools"]}],f=i.div`
+`,y=[{title:"Frontend",technologies:["React","TypeScript","JavaScript","React Native"]},{title:"Architecture & Testing",technologies:["Microfrontends","Hexagonal Architecture","Jest","Vitest","Testing Library","Storybook"]},{title:"Cloud & Tooling",technologies:["Firebase","Google Cloud","GitHub","CI/CD","Jira","Figma"]},{title:"AI & Development Workflow",technologies:["GitHub Copilot","Claude","AI development tools"]}],v=i.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,14 +150,14 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
   ${e.media.tablet} {
     margin-bottom: ${e.spacing["2xl"]};
   }
-`;const u=i.span`
+`;const k=i.span`
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: ${e.font.letterSpacing.wider};
   text-transform: uppercase;
   color: ${e.colors.neutral.grey};
   margin-bottom: ${e.spacing.md};
-`,b=i.p`
+`,j=i.p`
   margin: 0;
   font-size: 0.9375rem;
   font-weight: ${e.font.body.fontWeight};
@@ -151,10 +170,11 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
     font-size: ${e.font.body.fontSize};
     max-width: ${e.maxWidth.about};
   }
-`,w=i.a`
+`,T=i.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: ${e.spacing.xs};
   margin-top: ${e.spacing.lg};
   padding: ${e.spacing.xs} ${e.spacing.lg};
   font-size: ${e.font.small.fontSize};
@@ -170,6 +190,11 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
     background-color ${e.transition.normal},
     border-color ${e.transition.normal},
     transform ${e.transition.fast};
+
+  svg {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
 
   &:hover {
     background-color: ${e.colors.semantic.accentBackgroundHover};
@@ -191,4 +216,4 @@ import{m as r,d as i,t as e,j as t}from"./index-Cr_gHD9F.js";import"./vendor-jt5
     width: 100%;
     max-width: 280px;
   }
-`;function y(){const n="2024",a=String(new Date().getFullYear());return 3+(Number(a.slice(-1))-Number(n.slice(-1)))}const v="/assets/CV-Raul-DosJJbkd.pdf",k=()=>t.jsxs(f,{"data-testid":"about-block",children:[t.jsx(u,{children:"About me"}),t.jsxs(b,{children:["Frontend Engineer with ",y(),"+ years of experience building scalable web applications and reusable frontend systems. I've worked across fintech, e-mobility, and web/mobile products, always focusing on maintainable architecture and code quality."]}),t.jsx(w,{href:v,download:!0,children:"View CV"})]}),z=()=>t.jsxs(l,{"data-testid":"expertise",id:"expertise","aria-labelledby":"expertise-title",children:[t.jsx(c,{as:"h2",id:"expertise-title",children:"Technical Expertise"}),t.jsx(d,{children:$.map(o=>t.jsxs(g,{children:[t.jsx(p,{children:o.title}),t.jsx(m,{"aria-label":`${o.title} technologies`,children:o.technologies.map(n=>t.jsx(x,{children:n},n))})]},o.title))}),t.jsx(h,{"aria-hidden":"true"}),t.jsx(k,{})]});export{z as Expertise};
+`;function C(){const n="2024",a=String(new Date().getFullYear());return 3+(Number(a.slice(-1))-Number(n.slice(-1)))}const H="/assets/CV-Raul-DosJJbkd.pdf",z=()=>t.jsxs(v,{"data-testid":"about-block",children:[t.jsx(k,{children:"About me"}),t.jsxs(j,{children:["Frontend Engineer with ",C(),"+ years of experience building scalable web applications and reusable frontend systems. I've worked across fintech, e-mobility, and web/mobile products, always focusing on maintainable architecture and code quality."]}),t.jsxs(T,{href:H,download:!0,children:[t.jsx(s,{"aria-hidden":"true"}),"View CV"]})]}),S={Frontend:t.jsx(c,{"aria-hidden":"true"}),"Architecture & Testing":t.jsx(l,{"aria-hidden":"true"}),"Cloud & Tooling":t.jsx(d,{"aria-hidden":"true"}),"AI & Development Workflow":t.jsx(g,{"aria-hidden":"true"})},R=()=>t.jsxs(x,{"data-testid":"expertise",id:"expertise","aria-labelledby":"expertise-title",children:[t.jsx(m,{as:"h2",id:"experience-title",children:"Technical Expertise"}),t.jsx(h,{children:y.map(o=>t.jsxs($,{children:[t.jsxs(f,{children:[S[o.title],o.title]}),t.jsx(u,{"aria-label":`${o.title} technologies`,children:o.technologies.map(n=>t.jsx(b,{children:n},n))})]},o.title))}),t.jsx(w,{"aria-hidden":"true"}),t.jsx(z,{})]});export{R as Expertise};

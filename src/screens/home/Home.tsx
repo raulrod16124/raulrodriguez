@@ -1,6 +1,7 @@
 import { HiBriefcase, HiCode, HiMail } from 'react-icons/hi';
 import {
   CTAButton,
+  CTALink,
   CTAContainer,
   HomeSection,
   Image,
@@ -36,10 +37,10 @@ export const Home = () => {
             and reusable frontend systems.
           </ValueProp>
           <CTAContainer>
-            <CTAButton href="/experience">
+            <CTALink to="/experience">
               <HiBriefcase aria-hidden="true" />
               View experience
-            </CTAButton>
+            </CTALink>
             <CTAButton
               href={GITHUB_PROFILE}
               target="_blank"
@@ -48,10 +49,10 @@ export const Home = () => {
               <HiCode aria-hidden="true" />
               GitHub
             </CTAButton>
-            <CTAButton href="/contact">
+            <CTALink to="/contact">
               <HiMail aria-hidden="true" />
               Contact
-            </CTAButton>
+            </CTALink>
           </CTAContainer>
         </TextContainer>
         <ImageContainer>
