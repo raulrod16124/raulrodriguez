@@ -37,8 +37,10 @@ export const NavButtons = styled.div`
 
 export const NavButton = styled(Link)<{ active: boolean }>`
   font-family: ${theme.font.primary.fontFamily};
-  font-size: ${theme.font.fontSize};
-  font-weight: ${props => (props.active ? '500' : '400')};
+  font-size: ${theme.font.navText.fontSize};
+  font-weight: ${props => (props.active ? '500' : `${theme.font.navText.fontWeight}`)};
+  line-height: ${theme.font.navText.lineHeight};
+  letter-spacing: ${theme.font.navText.letterSpacing};
   padding: 8px 16px;
   border-radius: 100px;
   cursor: pointer;

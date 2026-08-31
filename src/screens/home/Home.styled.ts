@@ -68,8 +68,9 @@ export const RoleText = styled.h2`
   margin: 0;
   font-size: ${theme.font.headings.h1.fontSize};
   font-weight: ${theme.font.headings.h1.fontWeight};
+  line-height: ${theme.font.headings.h1.lineHeight};
+  letter-spacing: ${theme.font.headings.h1.letterSpacing};
   color: ${theme.colors.neutral.white};
-  line-height: 1.1;
 
   @media (max-width: ${theme.responsive.tablets}) {
     font-size: 2.25rem;
@@ -84,7 +85,7 @@ export const Subtitle = styled.span`
   font-size: 1.125rem;
   font-weight: 400;
   color: ${theme.colors.secondary.main};
-  letter-spacing: 0.05em;
+  letter-spacing: ${theme.font.letterSpacing.wider};
 
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     font-size: 1rem;
@@ -93,9 +94,9 @@ export const Subtitle = styled.span`
 
 export const ValueProp = styled.p`
   margin: 0;
-  font-size: 1.0625rem;
+  font-size: ${theme.font.body.fontSize};
   font-weight: 300;
-  line-height: 1.7;
+  line-height: ${theme.font.lineHeight.relaxed};
   color: ${theme.colors.neutral.grey};
   max-width: 420px;
 
@@ -126,7 +127,7 @@ export const CTAButton = styled.a`
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  font-size: 0.875rem;
+  font-size: ${theme.font.small.fontSize};
   font-weight: 500;
   font-family: ${theme.font.primary.fontFamily};
   color: ${theme.colors.neutral.black};

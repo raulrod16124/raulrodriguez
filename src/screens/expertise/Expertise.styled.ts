@@ -63,8 +63,9 @@ export const GroupTitle = styled.h3`
   margin: 0;
   font-size: ${theme.font.headings.h3.fontSize};
   font-weight: ${theme.font.headings.h3.fontWeight};
+  line-height: ${theme.font.headings.h3.lineHeight};
+  letter-spacing: ${theme.font.headings.h3.letterSpacing};
   color: ${theme.colors.secondary.main};
-  line-height: 1.3;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     font-size: 1rem;
@@ -83,6 +84,9 @@ export const TechList = styled.div`
 
 export const TechTag = styled.span`
   font-size: ${theme.font.tagText.fontSize};
+  font-weight: ${theme.font.tagText.fontWeight};
+  line-height: ${theme.font.tagText.lineHeight};
+  letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
   padding: 4px 10px;
   border: 1px solid rgba(255, 255, 255, 0.15);

@@ -74,9 +74,10 @@ export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
 export const RoleTitle = styled.h3`
   font-size: ${theme.font.headings.h3.fontSize};
   font-weight: ${theme.font.headings.h3.fontWeight};
+  line-height: ${theme.font.headings.h3.lineHeight};
+  letter-spacing: ${theme.font.headings.h3.letterSpacing};
   color: ${theme.colors.neutral.white};
   margin: 0;
-  line-height: 1.3;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     font-size: 1rem;
@@ -88,9 +89,10 @@ export const CompanyInfo = styled.div`
   align-items: center;
   gap: 8px;
   font-size: ${theme.font.navText.fontSize};
+  font-weight: ${theme.font.navText.fontWeight};
+  line-height: ${theme.font.navText.lineHeight};
   color: ${theme.colors.neutral.grey};
   flex-wrap: wrap;
-  line-height: 1.5;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     font-size: 0.8125rem;
@@ -160,6 +162,9 @@ export const TechTags = styled.div`
 
 export const TechTag = styled.span`
   font-size: ${theme.font.tagText.fontSize};
+  font-weight: ${theme.font.tagText.fontWeight};
+  line-height: ${theme.font.tagText.lineHeight};
+  letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
   padding: 4px 10px;
   border: 1px solid rgba(255, 255, 255, 0.15);

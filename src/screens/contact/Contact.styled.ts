@@ -14,6 +14,8 @@ export const ContactContainer = styled.section`
 export const ContactTitle = styled.h2`
   font-size: ${theme.font.headings.h2.fontSize};
   font-weight: ${theme.font.headings.h2.fontWeight};
+  line-height: ${theme.font.headings.h2.lineHeight};
+  letter-spacing: ${theme.font.headings.h2.letterSpacing};
   color: ${theme.colors.neutral.white};
   margin-bottom: 2.5rem;
 `;
@@ -37,7 +39,9 @@ export const ContactLink = styled.a`
   gap: 0.5rem;
   color: ${theme.colors.neutral.grey};
   text-decoration: none;
-  font-size: ${theme.font.fontSize};
+  font-size: ${theme.font.body.fontSize};
+  font-weight: ${theme.font.body.fontWeight};
+  line-height: ${theme.font.body.lineHeight};
   transition: color 0.2s ease;
 
   svg {

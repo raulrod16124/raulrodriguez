@@ -30,34 +30,64 @@
     "secondary": {
       "fontFamily": "'Inter', 'Helvetica Neue', Arial, sans-serif"
     },
-    "fontSize": "0.875rem",
+    "fontSize": "1rem",
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.7
+    },
+    "letterSpacing": {
+      "tight": "-0.02em",
+      "normal": "0",
+      "wide": "0.02em",
+      "wider": "0.05em"
+    },
     "headings": {
       "h1": {
         "fontSize": "3rem",
-        "fontWeight": 600
+        "fontWeight": 600,
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.02em"
       },
       "h2": {
         "fontSize": "1.5rem",
-        "fontWeight": 600
+        "fontWeight": 600,
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.01em"
       },
       "h3": {
         "fontSize": "1.125rem",
-        "fontWeight": 500
+        "fontWeight": 500,
+        "lineHeight": 1.3,
+        "letterSpacing": "0"
       }
     },
+    "body": {
+      "fontSize": "1rem",
+      "fontWeight": 400,
+      "lineHeight": 1.6,
+      "letterSpacing": "0"
+    },
     "tagText": {
-      "fontSize": "0.8125rem"
-    },
-    "icons": {
-      "fontSize": "1.25rem"
-    },
-    "text": {
-      "fontSize": "1rem"
+      "fontSize": "0.8125rem",
+      "fontWeight": 500,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.02em"
     },
     "navText": {
       "fontSize": "0.875rem",
       "fontWeight": 400,
-      "lineHeight": "1.6"
+      "lineHeight": 1.6,
+      "letterSpacing": "0"
+    },
+    "small": {
+      "fontSize": "0.875rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5,
+      "letterSpacing": "0"
+    },
+    "icons": {
+      "fontSize": "1.25rem"
     }
   },
   "responsive": {

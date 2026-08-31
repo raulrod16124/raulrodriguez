@@ -31,7 +31,7 @@ export const Divider = styled.hr`
 export const AboutLabel = styled.span`
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: ${theme.font.letterSpacing.wider};
   text-transform: uppercase;
   color: ${theme.colors.neutral.grey};
   margin-bottom: 16px;
@@ -39,8 +39,9 @@ export const AboutLabel = styled.span`
 
 export const AboutText = styled.p`
   margin: 0;
-  font-size: ${theme.font.text.fontSize};
-  line-height: 1.7;
+  font-size: ${theme.font.body.fontSize};
+  font-weight: ${theme.font.body.fontWeight};
+  line-height: ${theme.font.lineHeight.relaxed};
   color: ${theme.colors.neutral.lightGrey};
   text-align: center;
   max-width: 560px;
@@ -57,7 +58,7 @@ export const CVLink = styled.a`
   justify-content: center;
   margin-top: 24px;
   padding: 10px 20px;
-  font-size: 0.875rem;
+  font-size: ${theme.font.small.fontSize};
   font-weight: 500;
   font-family: ${theme.font.primary.fontFamily};
   color: ${theme.colors.secondary.main};

@@ -18,7 +18,10 @@ export const FooterContainer = styled.footer`
 `;
 
 export const CopyrightText = styled.p`
-  font-size: 0.8125rem;
+  font-size: ${theme.font.tagText.fontSize};
+  font-weight: ${theme.font.tagText.fontWeight};
+  line-height: ${theme.font.tagText.lineHeight};
+  letter-spacing: ${theme.font.tagText.letterSpacing};
   margin: 0;
   color: ${theme.colors.neutral.grey};
 `;
