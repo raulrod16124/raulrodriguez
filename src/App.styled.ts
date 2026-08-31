@@ -13,8 +13,31 @@ export const GradientBackground = styled.div`
   -moz-osx-font-smoothing: grayscale;
 `;
 
-export const AppContainer = styled.div`
+export const SkipLink = styled.a`
+  position: absolute;
+  top: -100%;
+  left: ${theme.spacing['md']};
+  z-index: 200;
+  padding: ${theme.spacing['xs']} ${theme.spacing['md']};
+  background-color: ${theme.colors.accent.main};
+  color: ${theme.colors.neutral.black};
+  font-size: ${theme.font.small.fontSize};
+  font-weight: 500;
+  font-family: ${theme.font.primary.fontFamily};
+  border-radius: ${theme.borderRadius.sm};
+  text-decoration: none;
+
+  &:focus {
+    top: ${theme.spacing['md']};
+  }
+`;
+
+export const MainContent = styled.main`
   flex: 1;
+  width: 100%;
+`;
+
+export const AppContainer = styled.div`
   width: 100%;
   overflow: auto;
   scrollbar-width: thin;

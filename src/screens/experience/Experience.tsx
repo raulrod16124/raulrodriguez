@@ -10,6 +10,7 @@ import {
   DescriptionItem,
   TechTags,
   TechTag,
+  VisuallyHidden,
 } from './Experience.styled';
 import {EXPERIENCES} from './Experience.constants';
 
@@ -19,6 +20,7 @@ export const Experience = () => {
       data-testid="experience"
       id="experience"
       aria-labelledby="experience-title">
+      <VisuallyHidden as="h2" id="experience-title">Professional Experience</VisuallyHidden>
       <ExperienceList>
         {EXPERIENCES.map((exp, index) => (
           <ExperienceCard

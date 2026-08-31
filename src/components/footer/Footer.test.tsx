@@ -16,8 +16,8 @@ describe("Footer tests", () => {
     })
     test("should display GitHub and LinkedIn links", () => {
         render(<Footer />)
-        const githubLink = screen.getByLabelText("GitHub Profile");
-        const linkedinLink = screen.getByLabelText("LinkedIn Profile");
+        const githubLink = screen.getByLabelText("Raúl's GitHub profile (opens in new tab)");
+        const linkedinLink = screen.getByLabelText("Raúl's LinkedIn profile (opens in new tab)");
         expect(githubLink).toBeInTheDocument();
         expect(linkedinLink).toBeInTheDocument();
     })

@@ -7,6 +7,7 @@ import {
   NavbarContainer,
   NavbarWrapper,
   HamburgerButton,
+  VisuallyHidden,
 } from './Navbar.styled';
 
 export const Navbar = () => {
@@ -33,15 +34,16 @@ export const Navbar = () => {
   }, [isMenuOpen, closeMenu]);
 
   return (
-    <NavbarWrapper data-testid="Navbar">
+    <NavbarWrapper data-testid="Navbar" aria-label="Main navigation">
       <NavbarContainer>
+        <VisuallyHidden>Navigation menu</VisuallyHidden>
         <HamburgerButton
           onClick={() => setIsMenuOpen(prev => !prev)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          {isMenuOpen ? <HiX size={20} /> : <HiMenu size={20} />}
+          {isMenuOpen ? <HiX size={20} aria-hidden="true" /> : <HiMenu size={20} aria-hidden="true" />}
         </HamburgerButton>
         <NavButtons id="mobile-nav" $isOpen={isMenuOpen}>
           <NavButton

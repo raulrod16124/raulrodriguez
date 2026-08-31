@@ -2,7 +2,19 @@ import styled from 'styled-components';
 import theme from '../../theme/theme.json';
 import { Link } from 'react-router-dom';
 
-export const NavbarWrapper = styled.div`
+export const VisuallyHidden = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+`;
+
+export const NavbarWrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;

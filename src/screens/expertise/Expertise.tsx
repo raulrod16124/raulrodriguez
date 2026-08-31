@@ -6,6 +6,7 @@ import {
   TechList,
   TechTag,
   Divider,
+  VisuallyHidden,
 } from './Expertise.styled';
 import {EXPERTISE_GROUPS} from './Expertise.constants';
 import {AboutBlock} from './AboutBlock';
@@ -16,6 +17,7 @@ export const Expertise = () => {
       data-testid="expertise"
       id="expertise"
       aria-labelledby="expertise-title">
+      <VisuallyHidden as="h2" id="expertise-title">Technical Expertise</VisuallyHidden>
       <ExpertiseGrid>
         {EXPERTISE_GROUPS.map(group => (
           <GroupContainer key={group.title}>
