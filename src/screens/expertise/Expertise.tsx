@@ -1,3 +1,4 @@
+import { HiCode, HiCog, HiCloud, HiChip } from 'react-icons/hi';
 import {
   ExpertiseSection,
   ExpertiseGrid,
@@ -11,17 +12,27 @@ import {
 import {EXPERTISE_GROUPS} from './Expertise.constants';
 import {AboutBlock} from './AboutBlock';
 
+const GROUP_ICONS: Record<string, React.ReactNode> = {
+  'Frontend': <HiCode aria-hidden="true" />,
+  'Architecture & Testing': <HiCog aria-hidden="true" />,
+  'Cloud & Tooling': <HiCloud aria-hidden="true" />,
+  'AI & Development Workflow': <HiChip aria-hidden="true" />,
+};
+
 export const Expertise = () => {
   return (
     <ExpertiseSection
       data-testid="expertise"
       id="expertise"
       aria-labelledby="expertise-title">
-      <VisuallyHidden as="h2" id="expertise-title">Technical Expertise</VisuallyHidden>
+      <VisuallyHidden as="h2" id="experience-title">Technical Expertise</VisuallyHidden>
       <ExpertiseGrid>
         {EXPERTISE_GROUPS.map(group => (
           <GroupContainer key={group.title}>
-            <GroupTitle>{group.title}</GroupTitle>
+            <GroupTitle>
+              {GROUP_ICONS[group.title]}
+              {group.title}
+            </GroupTitle>
             <TechList aria-label={`${group.title} technologies`}>
               {group.technologies.map(tech => (
                 <TechTag key={tech}>{tech}</TechTag>

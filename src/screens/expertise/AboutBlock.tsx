@@ -1,3 +1,4 @@
+import { HiDownload } from 'react-icons/hi';
 import {
   AboutContainer,
   AboutLabel,
@@ -18,6 +19,7 @@ export const AboutBlock = () => {
         focusing on maintainable architecture and code quality.
       </AboutText>
       <CVLink href={cv} download>
+        <HiDownload aria-hidden="true" />
         View CV
       </CVLink>
     </AboutContainer>

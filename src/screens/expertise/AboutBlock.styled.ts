@@ -56,6 +56,7 @@ export const CVLink = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: ${theme.spacing['xs']};
   margin-top: ${theme.spacing['lg']};
   padding: ${theme.spacing['xs']} ${theme.spacing['lg']};
   font-size: ${theme.font.small.fontSize};
@@ -71,6 +72,11 @@ export const CVLink = styled.a`
     background-color ${theme.transition.normal},
     border-color ${theme.transition.normal},
     transform ${theme.transition.fast};
+
+  svg {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
 
   &:hover {
     background-color: ${theme.colors.semantic.accentBackgroundHover};

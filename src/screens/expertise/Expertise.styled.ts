@@ -60,10 +60,14 @@ export const GroupContainer = styled.article`
   border: 1px solid ${theme.colors.semantic.cardBorder};
   transition:
     border-color ${theme.transition.normal},
-    background-color ${theme.transition.normal};
+    background-color ${theme.transition.normal},
+    transform ${theme.transition.normal},
+    box-shadow 0.4s ease;
 
   &:hover {
     border-color: ${theme.colors.semantic.cardBorderHover};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(88, 161, 143, 0.08);
   }
 
   ${theme.media.tablet} {
@@ -73,14 +77,26 @@ export const GroupContainer = styled.article`
 
 export const GroupTitle = styled.h3`
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing['xs']};
   font-size: 1rem;
   font-weight: ${theme.font.headings.h3.fontWeight};
   line-height: ${theme.font.headings.h3.lineHeight};
   letter-spacing: ${theme.font.headings.h3.letterSpacing};
   color: ${theme.colors.accent.main};
 
+  svg {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
   ${theme.media.tablet} {
     font-size: ${theme.font.headings.h3.fontSize};
+
+    svg {
+      font-size: 1.25rem;
+    }
   }
 `;
 
@@ -104,10 +120,13 @@ export const TechTag = styled.span`
   border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: ${theme.borderRadius.sm};
   background-color: ${theme.colors.semantic.tagBackground};
-  transition: background-color ${theme.transition.fast};
+  transition:
+    background-color ${theme.transition.fast},
+    border-color ${theme.transition.fast};
 
   &:hover {
     background-color: ${theme.colors.semantic.tagBackgroundHover};
+    border-color: ${theme.colors.semantic.tagBorderHover};
   }
 
   ${theme.media.tablet} {

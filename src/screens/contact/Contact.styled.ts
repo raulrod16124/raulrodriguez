@@ -46,14 +46,22 @@ export const ContactLink = styled.a`
   font-size: ${theme.font.body.fontSize};
   font-weight: ${theme.font.body.fontWeight};
   line-height: ${theme.font.body.lineHeight};
-  transition: color ${theme.transition.normal};
+  transition:
+    color ${theme.transition.normal},
+    transform ${theme.transition.fast};
 
   svg {
     font-size: 1.75rem;
+    transition: transform ${theme.transition.normal};
   }
 
   &:hover {
     color: ${theme.colors.accent.main};
+    transform: translateY(-2px);
+  }
+
+  &:hover svg {
+    transform: scale(1.1);
   }
 
   &:focus-visible {

@@ -59,7 +59,9 @@ export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
   border: 1px solid ${theme.colors.semantic.cardBorder};
   transition:
     border-color ${theme.transition.normal},
-    background-color ${theme.transition.normal};
+    background-color ${theme.transition.normal},
+    transform ${theme.transition.normal},
+    box-shadow 0.4s ease;
 
   ${({ $isLatest }) =>
     $isLatest &&
@@ -70,6 +72,8 @@ export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
 
   &:hover {
     border-color: ${theme.colors.semantic.cardBorderHover};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(88, 161, 143, 0.08);
   }
 
   &:focus-within {
@@ -181,10 +185,13 @@ export const TechTag = styled.span`
   border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: ${theme.borderRadius.sm};
   background-color: ${theme.colors.semantic.tagBackground};
-  transition: background-color ${theme.transition.fast};
+  transition:
+    background-color ${theme.transition.fast},
+    border-color ${theme.transition.fast};
 
   &:hover {
     background-color: ${theme.colors.semantic.tagBackgroundHover};
+    border-color: ${theme.colors.semantic.tagBorderHover};
   }
 
   ${theme.media.tablet} {

@@ -12,12 +12,32 @@ const fadeIn = keyframes`
   }
 `;
 
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const float = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+`;
+
 export const HomeSection = styled.section`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: auto;
   padding: 100px ${theme.spacing['lg']} 60px;
+  overflow: hidden;
 
   ${theme.media.tablet} {
     min-height: calc(100vh - 100px);
@@ -132,6 +152,7 @@ export const CTAButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: ${theme.spacing['xs']};
   padding: ${theme.spacing['xs']} ${theme.spacing['lg']};
   font-size: ${theme.font.small.fontSize};
   font-weight: 500;
@@ -145,6 +166,11 @@ export const CTAButton = styled.a`
   transition:
     background-color ${theme.transition.normal},
     transform ${theme.transition.fast};
+
+  svg {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
 
   ${theme.media.tablet} {
     width: auto;
@@ -161,22 +187,100 @@ export const CTAButton = styled.a`
   }
 `;
 
-export const Image = styled.img`
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid ${theme.colors.border};
+export const ImageContainer = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
   animation: ${fadeIn} 0.6s ease-out;
 
   ${theme.media.tablet} {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
   }
 
   ${theme.media.desktop} {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
+  }
+`;
+
+export const GlowRing = styled.span`
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    ${theme.colors.accent.main},
+    ${theme.colors.accent.light},
+    transparent 40%,
+    ${theme.colors.accent.dark} 70%,
+    ${theme.colors.accent.main}
+  );
+  animation: ${spin} ${theme.animation.ringSpinDuration} linear infinite;
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  pointer-events: none;
+
+  ${theme.media.tablet} {
+    inset: -8px;
+  }
+`;
+
+export const GlowRingAlt = styled.span`
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg,
+    rgba(255, 255, 255, 0.12),
+    transparent 30%,
+    ${theme.colors.accent.main} 50%,
+    transparent 70%,
+    rgba(255, 255, 255, 0.12)
+  );
+  animation: ${spin} 12s linear infinite reverse;
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  pointer-events: none;
+  opacity: 0.7;
+
+  ${theme.media.tablet} {
+    inset: -16px;
+    opacity: 0.8;
+  }
+`;
+
+export const Image = styled.img`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid ${theme.colors.border};
+  z-index: 1;
+  box-shadow: 0 0 30px ${theme.animation.glowColor};
+  transition: box-shadow 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 0 40px ${theme.animation.glowColorHover};
+  }
+`;
+
+export const FloatingDot = styled.span<{ $top: string; $left: string; $size: number; $delay: string }>`
+  position: absolute;
+  top: ${({ $top }) => $top};
+  left: ${({ $left }) => $left};
+  width: ${({ $size }) => `${$size}px`};
+  height: ${({ $size }) => `${$size}px`};
+  border-radius: 50%;
+  background-color: ${theme.colors.accent.main};
+  opacity: 0.08;
+  animation: ${float} ${theme.animation.floatDuration} ease-in-out infinite;
+  animation-delay: ${({ $delay }) => $delay};
+  pointer-events: none;
+
+  ${theme.media.tablet} {
+    opacity: 0.1;
   }
 `;
