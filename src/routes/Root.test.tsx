@@ -8,7 +8,6 @@ import "@testing-library/jest-dom";
 vi.mock("../screens/home/Home", () => ({ Home: () => <div>Home Page</div> }));
 vi.mock("../screens/experience/Experience", () => ({ Experience: () => <div>Experience Page</div> }));
 vi.mock("../screens/expertise/Expertise", () => ({ Expertise: () => <div>Expertise Page</div> }));
-vi.mock("../screens/projects/Projects", () => ({ Projects: () => <div>Projects Page</div> }));
 vi.mock("../screens/contact/Contact", () => ({ Contact: () => <div>Contact Page</div> }));
 
 const RootWrapper = (path:string) => (
@@ -31,11 +30,6 @@ describe("Root Component Routing", () => {
   test("should render the Expertise page when at /expertise", () => {
     render(RootWrapper("/expertise"));
     expect(screen.getByText("Expertise Page")).toBeInTheDocument();
-  });
-
-  test("should render the Projects page when at /projects", () => {
-    render(RootWrapper("/projects"));
-    expect(screen.getByText("Projects Page")).toBeInTheDocument();
   });
 
   test("should render the Contact page when at /contact", () => {
