@@ -9,20 +9,31 @@ describe("Home tests", () => {
         const homeTestid = screen.getByTestId("home");
         expect(homeTestid).toBeInTheDocument();
     })
-    test("should find the text 'I'm Raúl Rodríguez' in the document", () => {
+    test("should display the name 'Raúl Rodríguez'", () => {
         render(<Home />)
-        const nameText = screen.getByText("I'm Raúl Rodríguez");
+        const nameText = screen.getByText("Raúl Rodríguez");
         expect(nameText).toBeInTheDocument();
     })
-    test("should find the text 'frontend' in the document", () => {
+    test("should display the role 'Frontend Engineer'", () => {
         render(<Home />)
-        const frontendText = screen.getByText("frontend");
-        expect(frontendText).toBeInTheDocument();
+        const roleText = screen.getByText("Frontend Engineer");
+        expect(roleText).toBeInTheDocument();
     })
-    test("should find the text 'developer' in the document", () => {
+    test("should display 'React · TypeScript'", () => {
         render(<Home />)
-        const developerText = screen.getByText("developer");
-        expect(developerText).toBeInTheDocument();
+        const subtitleText = screen.getByText("React · TypeScript");
+        expect(subtitleText).toBeInTheDocument();
+    })
+    test("should display the value proposition", () => {
+        render(<Home />)
+        const valueProp = screen.getByText(/Building scalable web applications/);
+        expect(valueProp).toBeInTheDocument();
+    })
+    test("should display CTA links", () => {
+        render(<Home />)
+        expect(screen.getByText("View experience")).toBeInTheDocument();
+        expect(screen.getByText("GitHub")).toBeInTheDocument();
+        expect(screen.getByText("Contact")).toBeInTheDocument();
     })
     test("should find the role img in the document", () => {
         render(<Home />)

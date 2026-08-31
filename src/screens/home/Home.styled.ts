@@ -5,7 +5,6 @@ const fadeInUp = keyframes`
   0% {
     opacity: 0;
     transform: translateY(50px);
-    scale: 1.5;
   }
   100% {
     opacity: 1;
@@ -17,32 +16,10 @@ const fadeInRight = keyframes`
   0% {
     opacity: 0;
     transform: translateX(50px);
-    scale: 1.5;
   }
   100% {
     opacity: 1;
     transform: translateX(0);
-  }
-`;
-
-const typing = keyframes`
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-`;
-
-const blink = keyframes`
-  0% {
-    border-right-color: rgba(0, 0, 0, 0.75);
-  }
-  50% {
-    border-right-color: transparent;
-  }
-  100% {
-    border-right-color: rgba(0, 0, 0, 0.75);
   }
 `;
 
@@ -73,10 +50,10 @@ export const TitleContainer = styled.div`
     margin-left: 0;
   }
 `;
-export const NormalText = styled.span`
+
+export const NameText = styled.h1`
   margin: 0;
   padding-left: 10px;
-  display: block;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1;
@@ -91,48 +68,100 @@ export const NormalText = styled.span`
   }
 `;
 
-export const FirstBigText = styled.span`
+export const RoleText = styled.span`
   margin: 0;
-  font-size: 10rem;
+  font-size: 6rem;
   font-weight: bolder;
   color: ${theme.colors.secondary.main};
   line-height: 1;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 ${theme.colors.neutral.white},
-    /* Top-right */ -1px -1px 0 ${theme.colors.neutral.white},
-    /* Bottom-left */ -1px 1px 0 ${theme.colors.neutral.white},
-    /* Top-left */ 1px -1px 0 ${theme.colors.neutral.white}; /* Bottom-right */
+    -1px -1px 0 ${theme.colors.neutral.white},
+    -1px 1px 0 ${theme.colors.neutral.white},
+    1px -1px 0 ${theme.colors.neutral.white};
   animation: ${fadeInUp} 0.5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
-    font-size: 8rem;
+    font-size: 5rem;
   }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 `;
 
-export const SecondBigText = styled.span`
-  margin: 0;
-  font-size: 10rem;
-  font-weight: bolder;
-  line-height: 1;
-  text-transform: uppercase;
-  color: ${theme.colors.primary.main};
-  text-shadow: 1px 1px 0 ${theme.colors.neutral.white},
-    /* Top-right */ -1px -1px 0 ${theme.colors.neutral.white},
-    /* Bottom-left */ -1px 1px 0 ${theme.colors.neutral.white},
-    /* Top-left */ 1px -1px 0 ${theme.colors.neutral.white}; /* Bottom-right */
-  width: 0;
-  overflow: hidden;
-  animation: ${fadeInUp} 0.5s ease-out forwards,
-    ${typing} 1.2s steps(30, end) forwards, ${blink} 0.75s step-end infinite;
+export const Subtitle = styled.span`
+  margin: 8px 0 0 10px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: ${theme.colors.neutral.grey};
+  letter-spacing: 0.15em;
+  animation: ${fadeInUp} 0.5s ease-out forwards;
 
   @media (max-width: ${theme.responsive.laptops}) {
-    font-size: 8rem;
+    font-size: 1.5rem;
   }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 4rem;
+    font-size: 1.2rem;
+  }
+`;
+
+export const ValueProp = styled.p`
+  margin: 24px 0 0 10px;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: ${theme.colors.neutral.lightGrey};
+  max-width: 480px;
+  animation: ${fadeInUp} 0.5s ease-out forwards;
+
+  @media (max-width: ${theme.responsive.laptops}) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+`;
+
+export const CTAContainer = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  animation: ${fadeInUp} 0.5s ease-out forwards;
+
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+`;
+
+export const CTAButton = styled.a`
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: ${theme.colors.neutral.black};
+  background-color: ${theme.colors.secondary.main};
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: ${theme.colors.secondary.dark};
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: 2px solid ${theme.colors.secondary.light};
+    outline-offset: 2px;
+  }
+
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    width: 100%;
+    text-align: center;
   }
 `;
 
