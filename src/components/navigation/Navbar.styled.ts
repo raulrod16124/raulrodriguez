@@ -1,116 +1,70 @@
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import theme from '../../theme/theme.json';
-import {Link} from 'react-router-dom';
-
-const slideUp = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-`;
-
-const slideDown = keyframes`
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`;
+import { Link } from 'react-router-dom';
 
 export const NavbarWrapper = styled.div`
-  flex: 0 0 5vh;
-  position: relative;
-  width: 100%;
-  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    padding: 12px 16px;
+  }
 `;
 
 export const NavbarContainer = styled.div`
-  border-radius: 50px;
-  margin: 10px auto;
-  width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: rgba(69, 77, 93, 0.2);
-  border-radius: 50px;
-
-  @media (max-width: ${theme.responsive.tablets}) {
-    width: 100%;
-  }
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(17, 17, 17, 0.8);
+  border: 1px solid ${theme.colors.border};
+  border-radius: 100px;
+  padding: 4px;
 `;
 
-/* navbar button */
 export const NavButtons = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
 `;
 
-export const NavButton = styled(Link)<{active: boolean}>`
-  position: relative;
+export const NavButton = styled(Link)<{ active: boolean }>`
   font-family: ${theme.font.primary.fontFamily};
-  font-size: ${props => (props.active ? `0.8rem` : `${theme.font.fontSize}`)};
-  margin: 0 1px;
-  padding: 15px ${props => (props.active ? `45px` : `40px`)};
+  font-size: ${theme.font.fontSize};
+  font-weight: ${props => (props.active ? '500' : '400')};
+  padding: 8px 16px;
+  border-radius: 100px;
   cursor: pointer;
-  transition: 0.3s ease-in-out all;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  overflow: hidden;
+  transition: all 0.2s ease;
+  text-decoration: none;
   color: ${props =>
     props.active
-      ? `${theme.colors.primary.main}`
-      : `${theme.colors.neutral.white}`};
+      ? theme.colors.neutral.white
+      : theme.colors.neutral.grey};
+  background-color: ${props =>
+    props.active
+      ? 'rgba(255, 255, 255, 0.08)'
+      : 'transparent'};
 
-  &:hover .text-current {
-    animation: ${props => (props.active ? keyframes`` : slideUp)} 0.4s forwards;
+  &:hover {
+    color: ${theme.colors.neutral.white};
+    background-color: rgba(255, 255, 255, 0.05);
   }
 
-  &:hover .text-new {
-    animation: ${props => (props.active ? keyframes`` : slideDown)} 0.4s
-      forwards;
-    color: ${theme.colors.primary.light};
-  }
-
-  &:focus,
-  &:active {
-    outline: none;
+  &:focus-visible {
+    outline: 2px solid ${theme.colors.secondary.main};
+    outline-offset: 2px;
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    font-size: ${theme.font.fontSize};
-    padding: 15px 35px;
+    font-size: 0.75rem;
+    padding: 6px 12px;
   }
-`;
-
-export const NavButtonCurrentText = styled.span`
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(0);
-  transition: transform 0.4s ease-in-out;
-`;
-
-export const NavButtonNewText = styled.span`
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(100%);
-  transition: transform 0.4s ease-in-out;
 `;

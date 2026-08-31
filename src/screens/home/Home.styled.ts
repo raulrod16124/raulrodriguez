@@ -1,196 +1,173 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from '../../theme/theme.json';
 
-const fadeInUp = keyframes`
-  0% {
+const fadeIn = keyframes`
+  from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(12px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 `;
 
-const fadeInRight = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
-
 export const HomeSection = styled.section`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: calc(100vh - 85vh);
-  overflow: hidden;
-  @media (max-width: ${theme.responsive.laptops}) {
-    padding-top: calc(100vh - 80vh);
+  min-height: calc(100vh - 100px);
+  padding: 80px 40px;
+
+  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+    padding: 100px 24px 60px;
+    min-height: auto;
   }
 `;
 
-export const TitleContainer = styled.div`
-  margin-left: -150px;
+export const ContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  width: 100%;
+  gap: 64px;
+
+  @media (max-width: ${theme.responsive.tablets}) {
+    flex-direction: column-reverse;
+    gap: 48px;
+    text-align: center;
+  }
+`;
+
+export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  z-index: 1;
+  gap: 24px;
+  animation: ${fadeIn} 0.6s ease-out;
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    margin-left: 0;
-    margin-top: 120px;
-  }
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    margin-left: 0;
+  @media (max-width: ${theme.responsive.tablets}) {
+    align-items: center;
   }
 `;
 
 export const NameText = styled.h1`
   margin: 0;
-  padding-left: 10px;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
-  color: ${theme.colors.neutral.white};
-  animation: ${fadeInUp} 0.5s ease-out forwards;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: ${theme.colors.neutral.grey};
 
-  @media (max-width: ${theme.responsive.laptops}) {
-    font-size: 2rem;
-  }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 1.5rem;
+    font-size: 0.875rem;
   }
 `;
 
-export const RoleText = styled.span`
+export const RoleText = styled.h2`
   margin: 0;
-  font-size: 6rem;
-  font-weight: bolder;
-  color: ${theme.colors.secondary.main};
-  line-height: 1;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 0 ${theme.colors.neutral.white},
-    -1px -1px 0 ${theme.colors.neutral.white},
-    -1px 1px 0 ${theme.colors.neutral.white},
-    1px -1px 0 ${theme.colors.neutral.white};
-  animation: ${fadeInUp} 0.5s ease-out forwards;
+  font-size: ${theme.font.headings.h1.fontSize};
+  font-weight: ${theme.font.headings.h1.fontWeight};
+  color: ${theme.colors.neutral.white};
+  line-height: 1.1;
 
-  @media (max-width: ${theme.responsive.laptops}) {
-    font-size: 5rem;
+  @media (max-width: ${theme.responsive.tablets}) {
+    font-size: 2.25rem;
   }
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 3rem;
+
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    font-size: 1.75rem;
   }
 `;
 
 export const Subtitle = styled.span`
-  margin: 8px 0 0 10px;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  color: ${theme.colors.neutral.grey};
-  letter-spacing: 0.15em;
-  animation: ${fadeInUp} 0.5s ease-out forwards;
+  color: ${theme.colors.secondary.main};
+  letter-spacing: 0.05em;
 
-  @media (max-width: ${theme.responsive.laptops}) {
-    font-size: 1.5rem;
-  }
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 
 export const ValueProp = styled.p`
-  margin: 24px 0 0 10px;
-  font-size: 1.3rem;
+  margin: 0;
+  font-size: 1.0625rem;
   font-weight: 300;
-  line-height: 1.6;
-  color: ${theme.colors.neutral.lightGrey};
-  max-width: 480px;
-  animation: ${fadeInUp} 0.5s ease-out forwards;
+  line-height: 1.7;
+  color: ${theme.colors.neutral.grey};
+  max-width: 420px;
 
-  @media (max-width: ${theme.responsive.laptops}) {
-    font-size: 1.2rem;
-  }
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 1rem;
+  @media (max-width: ${theme.responsive.tablets}) {
     max-width: 100%;
+    font-size: 1rem;
   }
 `;
 
 export const CTAContainer = styled.div`
   display: flex;
-  gap: 16px;
-  margin-top: 32px;
-  animation: ${fadeInUp} 0.5s ease-out forwards;
+  gap: 12px;
+  margin-top: 8px;
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+  @media (max-width: ${theme.responsive.tablets}) {
+    justify-content: center;
+  }
+
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
     flex-direction: column;
-    gap: 12px;
     width: 100%;
+    max-width: 280px;
   }
 `;
 
 export const CTAButton = styled.a`
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 0.875rem;
   font-weight: 500;
+  font-family: ${theme.font.primary.fontFamily};
   color: ${theme.colors.neutral.black};
   background-color: ${theme.colors.secondary.main};
   border: none;
   border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 
   &:hover {
     background-color: ${theme.colors.secondary.dark};
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 
-  &:focus {
+  &:focus-visible {
     outline: 2px solid ${theme.colors.secondary.light};
     outline-offset: 2px;
   }
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
     width: 100%;
-    text-align: center;
   }
 `;
 
 export const Image = styled.img`
-  position: absolute;
-  top: -50px;
-  right: -200px;
-  width: 380px;
-  height: auto;
-  z-index: 0;
-  animation: ${fadeInRight} 0.5s ease-out forwards;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  border: 0.2rem solid ${theme.colors.secondary.main};
-  aspect-ratio: 1/1;
+  object-fit: cover;
+  border: 2px solid ${theme.colors.border};
+  flex-shrink: 0;
+  animation: ${fadeIn} 0.6s ease-out;
 
-  @media (max-width: ${theme.responsive.laptops}) {
-    top: -50px;
-    right: -180px;
-    width: 300px;
+  @media (max-width: ${theme.responsive.tablets}) {
+    width: 220px;
+    height: 220px;
   }
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    top: -100px;
-    right: 50px;
-    width: 200px;
-  }
-`;
 
-export const TextImageContainer = styled.div`
-  position: relative;
-  display: flex;
-  align-items: flex-start;
+  @media (max-width: ${theme.responsive.smallMobileDevices}) {
+    width: 180px;
+    height: 180px;
+  }
 `;

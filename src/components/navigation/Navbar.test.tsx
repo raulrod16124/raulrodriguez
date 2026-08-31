@@ -17,24 +17,24 @@ describe("Navbar tests", () => {
         const navbarTestid = screen.getByTestId("Navbar");
         expect(navbarTestid).toBeInTheDocument();
     })
-    test("should find the text 'home' twice in the document", () => {
-        const homeText = screen.getAllByText("home");
-        expect(homeText).toHaveLength(2);
+    test("should display 'Home' link", () => {
+        const homeText = screen.getByText("Home");
+        expect(homeText).toBeInTheDocument();
     })
-    test("should find the text 'about me' twice in the document", () => {
-        const about_meText = screen.getAllByText("about me");
-        expect(about_meText).toHaveLength(2);
+    test("should display 'Experience' link", () => {
+        const experienceText = screen.getByText("Experience");
+        expect(experienceText).toBeInTheDocument();
     })
-    test("should find the text 'projects' twice in the document", () => {
-        const projectsText = screen.getAllByText("projects");
-        expect(projectsText).toHaveLength(2);
+    test("should display 'About' link", () => {
+        const aboutText = screen.getByText("About");
+        expect(aboutText).toBeInTheDocument();
     })
-    test("should find the text 'contact' twice in the document", () => {
-        const contactText = screen.getAllByText("contact");
-        expect(contactText).toHaveLength(2);
+    test("should display 'Contact' link", () => {
+        const contactText = screen.getByText("Contact");
+        expect(contactText).toBeInTheDocument();
     })
-    test("should find the text 'experience' twice in the document", () => {
-        const experienceText = screen.getAllByText("experience");
-        expect(experienceText).toHaveLength(2);
+    test("should not display 'Projects' link", () => {
+        const projectsText = screen.queryByText("Projects");
+        expect(projectsText).not.toBeInTheDocument();
     })
 })

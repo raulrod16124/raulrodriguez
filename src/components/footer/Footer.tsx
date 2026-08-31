@@ -5,13 +5,23 @@ export const Footer = () => {
   return (
     <FooterContainer data-testid="footer">
       <CopyrightText>
-        © {new Date().getFullYear()} All rights reserved.
+        © {new Date().getFullYear()} Raúl Rodríguez. All rights reserved.
       </CopyrightText>
       <IconContainer>
-        <a href="https://github.com/raulrod16124" target="_blank">
+        <a
+          href="https://github.com/raulrod16124"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+        >
           <FaGithub />
         </a>
-        <a href="https://www.linkedin.com/in/raul-rod/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/raul-rod/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+        >
           <FaLinkedin />
         </a>
       </IconContainer>

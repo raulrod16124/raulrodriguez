@@ -6,21 +6,18 @@ import {
   NameText,
   RoleText,
   Subtitle,
-  TextImageContainer,
-  TitleContainer,
+  TextContainer,
+  ContentWrapper,
   ValueProp,
 } from './Home.styled';
 import avatar from '../../assets/images/me.png';
-import 'animate.css';
-import {GITHUB_PROFILE} from './Home.constants';
+import { GITHUB_PROFILE } from './Home.constants';
 
 export const Home = () => {
   return (
-    <HomeSection
-      className="animate__animated animate__fadeIn"
-      data-testid="home">
-      <TextImageContainer>
-        <TitleContainer>
+    <HomeSection data-testid="home">
+      <ContentWrapper>
+        <TextContainer>
           <NameText>Raúl Rodríguez</NameText>
           <RoleText>Frontend Engineer</RoleText>
           <Subtitle>React · TypeScript</Subtitle>
@@ -34,14 +31,18 @@ export const Home = () => {
             <CTAButton
               href={GITHUB_PROFILE}
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               GitHub
             </CTAButton>
             <CTAButton href="/contact">Contact</CTAButton>
           </CTAContainer>
-        </TitleContainer>
-        <Image src={avatar} alt="Raúl Rodríguez, Frontend Engineer" />
-      </TextImageContainer>
+        </TextContainer>
+        <Image
+          src={avatar}
+          alt="Raúl Rodríguez, Frontend Engineer"
+        />
+      </ContentWrapper>
     </HomeSection>
   );
 };

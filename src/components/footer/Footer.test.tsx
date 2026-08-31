@@ -9,9 +9,16 @@ describe("Footer tests", () => {
         const footerTestid = screen.getByTestId("footer");
         expect(footerTestid).toBeInTheDocument();
     })
-    test("should find the text `© ${new Date().getFullYear()} All rights reserved.`", () => {
+    test("should display copyright text", () => {
         render(<Footer />)
-        const allRightsText = screen.getByText(`© ${new Date().getFullYear()} All rights reserved.`);
+        const allRightsText = screen.getByText(/All rights reserved\./);
         expect(allRightsText).toBeInTheDocument();
+    })
+    test("should display GitHub and LinkedIn links", () => {
+        render(<Footer />)
+        const githubLink = screen.getByLabelText("GitHub Profile");
+        const linkedinLink = screen.getByLabelText("LinkedIn Profile");
+        expect(githubLink).toBeInTheDocument();
+        expect(linkedinLink).toBeInTheDocument();
     })
 })
