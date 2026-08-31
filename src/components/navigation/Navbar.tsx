@@ -22,6 +22,13 @@ export const Navbar = () => {
                         <NavButtonNewText className="text-new">home</NavButtonNewText>
                     </NavButton>
                     <NavButton
+                        to={"experience"}
+                        active={pathname.split("/")[1] === "experience"}
+                    >
+                        <NavButtonCurrentText className="text-current">experience</NavButtonCurrentText>
+                        <NavButtonNewText className="text-new">experience</NavButtonNewText>
+                    </NavButton>
+                    <NavButton
                         to={"about-me"}
                         active={pathname.split("/")[1] === "about-me"}
                     >

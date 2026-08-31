@@ -30,14 +30,14 @@ export const Home = () => {
             and reusable frontend systems.
           </ValueProp>
           <CTAContainer>
-            <CTAButton href="#experience">View experience</CTAButton>
+            <CTAButton href="/experience">View experience</CTAButton>
             <CTAButton
               href={GITHUB_PROFILE}
               target="_blank"
               rel="noopener noreferrer">
               GitHub
             </CTAButton>
-            <CTAButton href="#contact">Contact</CTAButton>
+            <CTAButton href="/contact">Contact</CTAButton>
           </CTAContainer>
         </TitleContainer>
         <Image src={avatar} alt="Raúl Rodríguez, Frontend Engineer" />

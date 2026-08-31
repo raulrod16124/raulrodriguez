@@ -6,6 +6,7 @@ import { Root } from "./Root";
 import "@testing-library/jest-dom";
 
 vi.mock("../screens/home/Home", () => ({ Home: () => <div>Home Page</div> }));
+vi.mock("../screens/experience/Experience", () => ({ Experience: () => <div>Experience Page</div> }));
 vi.mock("../screens/about/AboutMe", () => ({ AboutMe: () => <div>About Me Page</div> }));
 vi.mock("../screens/projects/Projects", () => ({ Projects: () => <div>Projects Page</div> }));
 vi.mock("../screens/contact/Contact", () => ({ Contact: () => <div>Contact Page</div> }));
@@ -25,6 +26,11 @@ describe("Root Component Routing", () => {
   test("should render the About Me page when at /about-me", () => {
     render(RootWrapper("/about-me"));
     expect(screen.getByText("About Me Page")).toBeInTheDocument();
+  });
+
+  test("should render the Experience page when at /experience", () => {
+    render(RootWrapper("/experience"));
+    expect(screen.getByText("Experience Page")).toBeInTheDocument();
   });
 
   test("should render the Projects page when at /projects", () => {

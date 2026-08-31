@@ -33,4 +33,8 @@ describe("Navbar tests", () => {
         const contactText = screen.getAllByText("contact");
         expect(contactText).toHaveLength(2);
     })
+    test("should find the text 'experience' twice in the document", () => {
+        const experienceText = screen.getAllByText("experience");
+        expect(experienceText).toHaveLength(2);
+    })
 })
