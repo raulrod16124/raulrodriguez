@@ -1,44 +1,66 @@
 // Root.test.tsx
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, test, expect } from "vitest";
 import { Root } from "./Root";
 import "@testing-library/jest-dom";
 
-vi.mock("../screens/home/Home", () => ({ Home: () => <div>Home Page</div> }));
-vi.mock("../screens/experience/Experience", () => ({ Experience: () => <div>Experience Page</div> }));
-vi.mock("../screens/expertise/Expertise", () => ({ Expertise: () => <div>Expertise Page</div> }));
-vi.mock("../screens/contact/Contact", () => ({ Contact: () => <div>Contact Page</div> }));
+vi.mock("../screens/home/Home", () => ({
+  default: { Home: () => <div>Home Page</div> },
+  Home: () => <div>Home Page</div>,
+}));
+vi.mock("../screens/experience/Experience", () => ({
+  default: { Experience: () => <div>Experience Page</div> },
+  Experience: () => <div>Experience Page</div>,
+}));
+vi.mock("../screens/expertise/Expertise", () => ({
+  default: { Expertise: () => <div>Expertise Page</div> },
+  Expertise: () => <div>Expertise Page</div>,
+}));
+vi.mock("../screens/contact/Contact", () => ({
+  default: { Contact: () => <div>Contact Page</div> },
+  Contact: () => <div>Contact Page</div>,
+}));
 
-const RootWrapper = (path:string) => (
+const RootWrapper = (path: string) => (
   <MemoryRouter initialEntries={[path]}>
     <Root />
   </MemoryRouter>
-)
+);
 
 describe("Root Component Routing", () => {
-  test("should render the Home page when at root path", () => {
+  test("should render the Home page when at root path", async () => {
     render(RootWrapper("/"));
-    expect(screen.getByText("Home Page")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Home Page")).toBeInTheDocument();
+    });
   });
 
-  test("should render the Experience page when at /experience", () => {
+  test("should render the Experience page when at /experience", async () => {
     render(RootWrapper("/experience"));
-    expect(screen.getByText("Experience Page")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Experience Page")).toBeInTheDocument();
+    });
   });
 
-  test("should render the Expertise page when at /expertise", () => {
+  test("should render the Expertise page when at /expertise", async () => {
     render(RootWrapper("/expertise"));
-    expect(screen.getByText("Expertise Page")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Expertise Page")).toBeInTheDocument();
+    });
   });
 
-  test("should render the Contact page when at /contact", () => {
+  test("should render the Contact page when at /contact", async () => {
     render(RootWrapper("/contact"));
-    expect(screen.getByText("Contact Page")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Contact Page")).toBeInTheDocument();
+    });
   });
 
-  test("should redirect to Home when an unknown path is entered", () => {
+  test("should redirect to Home when an unknown path is entered", async () => {
     render(RootWrapper("/unknown-path"));
-    expect(screen.getByText("Home Page")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Home Page")).toBeInTheDocument();
+    });
   });
 });

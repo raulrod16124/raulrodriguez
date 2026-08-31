@@ -10,7 +10,8 @@ import {
   ContentWrapper,
   ValueProp,
 } from './Home.styled';
-import avatar from '../../assets/images/me.png';
+import avatarWebp from '../../assets/images/me.webp';
+import avatarPng from '../../assets/images/me.png';
 import { GITHUB_PROFILE } from './Home.constants';
 
 export const Home = () => {
@@ -38,10 +39,15 @@ export const Home = () => {
             <CTAButton href="/contact">Contact</CTAButton>
           </CTAContainer>
         </TextContainer>
-        <Image
-          src={avatar}
-          alt="Raúl Rodríguez, Frontend Engineer"
-        />
+        <picture>
+          <source srcSet={avatarWebp} type="image/webp" />
+          <Image
+            src={avatarPng}
+            alt="Raúl Rodríguez, Frontend Engineer"
+            width={280}
+            height={280}
+          />
+        </picture>
       </ContentWrapper>
     </HomeSection>
   );
