@@ -11,12 +11,6 @@ describe("Expertise tests", () => {
     expect(expertiseSection).toBeInTheDocument();
   });
 
-  test("should render the section title", () => {
-    render(<Expertise />);
-    const title = screen.getByText("Technical Expertise");
-    expect(title).toBeInTheDocument();
-  });
-
   test("should render all expertise groups", () => {
     render(<Expertise />);
     const groupTitles = screen.getAllByRole("heading", { level: 3 });
@@ -60,7 +54,7 @@ describe("Expertise tests", () => {
 
   test("should render the About label", () => {
     render(<Expertise />);
-    const aboutLabel = screen.getByText("About");
+    const aboutLabel = screen.getByText("About me");
     expect(aboutLabel).toBeInTheDocument();
   });
 

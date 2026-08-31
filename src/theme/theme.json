@@ -115,5 +115,25 @@
     "largeMobileDevices": "768px",
     "tablets": "1024px",
     "laptops": "1366px"
+  },
+  "media": {
+    "mobile": "@media (min-width: 480px)",
+    "tablet": "@media (min-width: 768px)",
+    "desktop": "@media (min-width: 1024px)",
+    "wide": "@media (min-width: 1366px)"
+  },
+  "borderRadius": {
+    "sm": "4px",
+    "md": "8px",
+    "pill": "100px"
+  },
+  "transition": {
+    "fast": "0.15s ease",
+    "normal": "0.2s ease"
+  },
+  "maxWidth": {
+    "content": "720px",
+    "hero": "960px",
+    "about": "560px"
   }
 }

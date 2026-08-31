@@ -16,27 +16,29 @@ export const HomeSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 100px);
-  padding: ${theme.spacing['4xl']} ${theme.spacing['3xl']};
+  min-height: auto;
+  padding: 100px ${theme.spacing['lg']} 60px;
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    padding: 100px ${theme.spacing['lg']} 60px;
-    min-height: auto;
+  ${theme.media.tablet} {
+    min-height: calc(100vh - 100px);
+    padding: ${theme.spacing['4xl']} ${theme.spacing['3xl']};
   }
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: space-between;
-  max-width: 960px;
+  max-width: ${theme.maxWidth.hero};
   width: 100%;
-  gap: ${theme.spacing['3xl']};
+  gap: ${theme.spacing['2xl']};
+  text-align: center;
 
-  @media (max-width: ${theme.responsive.tablets}) {
-    flex-direction: column-reverse;
-    gap: ${theme.spacing['2xl']};
-    text-align: center;
+  ${theme.media.desktop} {
+    flex-direction: row;
+    gap: ${theme.spacing['3xl']};
+    text-align: left;
   }
 `;
 
@@ -45,80 +47,84 @@ export const TextContainer = styled.div`
   flex-direction: column;
   gap: ${theme.spacing['lg']};
   animation: ${fadeIn} 0.6s ease-out;
+  align-items: center;
 
-  @media (max-width: ${theme.responsive.tablets}) {
-    align-items: center;
+  ${theme.media.desktop} {
+    align-items: flex-start;
   }
 `;
 
 export const NameText = styled.h1`
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: ${theme.colors.neutral.grey};
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 0.875rem;
+  ${theme.media.tablet} {
+    font-size: 1rem;
   }
 `;
 
 export const RoleText = styled.h2`
   margin: 0;
-  font-size: ${theme.font.headings.h1.fontSize};
+  font-size: 1.75rem;
   font-weight: ${theme.font.headings.h1.fontWeight};
   line-height: ${theme.font.headings.h1.lineHeight};
   letter-spacing: ${theme.font.headings.h1.letterSpacing};
   color: ${theme.colors.neutral.white};
 
-  @media (max-width: ${theme.responsive.tablets}) {
+  ${theme.media.tablet} {
     font-size: 2.25rem;
   }
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    font-size: 1.75rem;
+  ${theme.media.desktop} {
+    font-size: ${theme.font.headings.h1.fontSize};
   }
 `;
 
 export const Subtitle = styled.span`
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
   color: ${theme.colors.accent.main};
   letter-spacing: ${theme.font.letterSpacing.wider};
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    font-size: 1rem;
+  ${theme.media.tablet} {
+    font-size: 1.125rem;
   }
 `;
 
 export const ValueProp = styled.p`
   margin: 0;
-  font-size: ${theme.font.body.fontSize};
+  font-size: 1rem;
   font-weight: 300;
   line-height: ${theme.font.lineHeight.relaxed};
   color: ${theme.colors.neutral.grey};
-  max-width: 420px;
+  max-width: 100%;
 
-  @media (max-width: ${theme.responsive.tablets}) {
-    max-width: 100%;
-    font-size: 1rem;
+  ${theme.media.desktop} {
+    max-width: 420px;
   }
 `;
 
 export const CTAContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 280px;
   gap: ${theme.spacing['sm']};
   margin-top: ${theme.spacing['xs']};
 
-  @media (max-width: ${theme.responsive.tablets}) {
+  ${theme.media.tablet} {
+    flex-direction: row;
+    width: auto;
+    max-width: none;
     justify-content: center;
   }
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    flex-direction: column;
-    width: 100%;
-    max-width: 280px;
+  ${theme.media.desktop} {
+    justify-content: flex-start;
   }
 `;
 
@@ -133,10 +139,16 @@ export const CTAButton = styled.a`
   color: ${theme.colors.neutral.black};
   background-color: ${theme.colors.accent.main};
   border: none;
-  border-radius: 4px;
+  border-radius: ${theme.borderRadius.sm};
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color ${theme.transition.normal},
+    transform ${theme.transition.fast};
+
+  ${theme.media.tablet} {
+    width: auto;
+  }
 
   &:hover {
     background-color: ${theme.colors.accent.dark};
@@ -147,28 +159,24 @@ export const CTAButton = styled.a`
     outline: 2px solid ${theme.colors.accent.light};
     outline-offset: 2px;
   }
-
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    width: 100%;
-  }
 `;
 
 export const Image = styled.img`
-  width: 280px;
-  height: 280px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid ${theme.colors.border};
   flex-shrink: 0;
   animation: ${fadeIn} 0.6s ease-out;
 
-  @media (max-width: ${theme.responsive.tablets}) {
+  ${theme.media.tablet} {
     width: 220px;
     height: 220px;
   }
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    width: 180px;
-    height: 180px;
+  ${theme.media.desktop} {
+    width: 280px;
+    height: 280px;
   }
 `;

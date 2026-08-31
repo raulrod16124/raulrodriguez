@@ -7,8 +7,12 @@ export const ContactContainer = styled.section`
   align-items: center;
   justify-content: center;
   min-height: 60vh;
-  padding: ${theme.spacing['3xl']} ${theme.spacing['lg']};
+  padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
   text-align: center;
+
+  ${theme.media.tablet} {
+    padding: ${theme.spacing['3xl']} ${theme.spacing['lg']};
+  }
 `;
 
 export const ContactTitle = styled.h2`
@@ -26,9 +30,9 @@ export const ContactLinks = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    flex-direction: column;
-    gap: ${theme.spacing['lg']};
+  ${theme.media.tablet} {
+    flex-direction: row;
+    gap: ${theme.spacing['xl']};
   }
 `;
 
@@ -42,7 +46,7 @@ export const ContactLink = styled.a`
   font-size: ${theme.font.body.fontSize};
   font-weight: ${theme.font.body.fontWeight};
   line-height: ${theme.font.body.lineHeight};
-  transition: color 0.2s ease;
+  transition: color ${theme.transition.normal};
 
   svg {
     font-size: 1.75rem;
@@ -55,6 +59,6 @@ export const ContactLink = styled.a`
   &:focus-visible {
     outline: 2px solid ${theme.colors.accent.main};
     outline-offset: 4px;
-    border-radius: 2px;
+    border-radius: ${theme.borderRadius.sm};
   }
 `;

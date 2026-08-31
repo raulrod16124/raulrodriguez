@@ -4,16 +4,17 @@ import theme from '../../theme/theme.json';
 export const FooterContainer = styled.footer`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: ${theme.spacing['lg']};
-  padding: ${theme.spacing['lg']} ${theme.spacing['3xl']};
+  gap: ${theme.spacing['sm']};
+  padding: ${theme.spacing['lg']};
   border-top: 1px solid ${theme.colors.border};
 
-  @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    flex-direction: column;
-    gap: ${theme.spacing['sm']};
-    padding: ${theme.spacing['lg']} ${theme.spacing['lg']};
+  ${theme.media.tablet} {
+    flex-direction: row;
+    gap: ${theme.spacing['lg']};
+    padding: ${theme.spacing['lg']} ${theme.spacing['3xl']};
   }
 `;
 
@@ -33,7 +34,7 @@ export const IconContainer = styled.div`
   a {
     color: ${theme.colors.neutral.grey};
     font-size: ${theme.font.icons.fontSize};
-    transition: color 0.2s ease;
+    transition: color ${theme.transition.normal};
 
     &:hover {
       color: ${theme.colors.neutral.white};

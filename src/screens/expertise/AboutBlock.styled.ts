@@ -5,26 +5,26 @@ export const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${theme.spacing['2xl']} 0 0;
+  padding: ${theme.spacing['xl']} 0 0;
   width: 100%;
-  max-width: 720px;
+  max-width: ${theme.maxWidth.content};
   margin: 0 auto;
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    padding: ${theme.spacing['xl']} 0 0;
+  ${theme.media.tablet} {
+    padding: ${theme.spacing['2xl']} 0 0;
   }
 `;
 
 export const Divider = styled.hr`
   width: 100%;
-  max-width: 720px;
+  max-width: ${theme.maxWidth.content};
   height: 1px;
   background-color: ${theme.colors.semantic.divider};
   border: none;
-  margin: 0 auto ${theme.spacing['2xl']};
+  margin: 0 auto ${theme.spacing['xl']};
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    margin-bottom: ${theme.spacing['xl']};
+  ${theme.media.tablet} {
+    margin-bottom: ${theme.spacing['2xl']};
   }
 `;
 
@@ -39,16 +39,16 @@ export const AboutLabel = styled.span`
 
 export const AboutText = styled.p`
   margin: 0;
-  font-size: ${theme.font.body.fontSize};
+  font-size: 0.9375rem;
   font-weight: ${theme.font.body.fontWeight};
   line-height: ${theme.font.lineHeight.relaxed};
   color: ${theme.colors.neutral.lightGrey};
   text-align: center;
-  max-width: 560px;
+  max-width: 100%;
 
-  @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    font-size: 0.9375rem;
-    max-width: 100%;
+  ${theme.media.tablet} {
+    font-size: ${theme.font.body.fontSize};
+    max-width: ${theme.maxWidth.about};
   }
 `;
 
@@ -64,13 +64,13 @@ export const CVLink = styled.a`
   color: ${theme.colors.accent.main};
   background-color: transparent;
   border: 1px solid ${theme.colors.semantic.accentBorder};
-  border-radius: 4px;
+  border-radius: ${theme.borderRadius.sm};
   text-decoration: none;
   cursor: pointer;
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.15s ease;
+    background-color ${theme.transition.normal},
+    border-color ${theme.transition.normal},
+    transform ${theme.transition.fast};
 
   &:hover {
     background-color: ${theme.colors.semantic.accentBackgroundHover};
@@ -81,6 +81,11 @@ export const CVLink = styled.a`
   &:focus-visible {
     outline: 2px solid ${theme.colors.accent.light};
     outline-offset: 2px;
+  }
+
+  ${theme.media.tablet} {
+    width: auto;
+    max-width: none;
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {

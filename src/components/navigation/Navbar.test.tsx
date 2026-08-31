@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, test, expect, beforeEach } from "vitest"
 import { Navbar } from "./Navbar";
 import { MemoryRouter } from 'react-router-dom';
@@ -36,5 +36,22 @@ describe("Navbar tests", () => {
     test("should not display 'Projects' link", () => {
         const projectsText = screen.queryByText("Projects");
         expect(projectsText).not.toBeInTheDocument();
+    })
+    test("should render hamburger button", () => {
+        const hamburger = screen.getByLabelText("Open menu");
+        expect(hamburger).toBeInTheDocument();
+        expect(hamburger.tagName).toBe("BUTTON");
+    })
+    test("should toggle menu on hamburger click", () => {
+        const hamburger = screen.getByLabelText("Open menu");
+        fireEvent.click(hamburger);
+        expect(screen.getByLabelText("Close menu")).toBeInTheDocument();
+    })
+    test("should close menu on Escape key", () => {
+        const hamburger = screen.getByLabelText("Open menu");
+        fireEvent.click(hamburger);
+        expect(screen.getByLabelText("Close menu")).toBeInTheDocument();
+        fireEvent.keyDown(document, { key: "Escape" });
+        expect(screen.getByLabelText("Open menu")).toBeInTheDocument();
     })
 })
