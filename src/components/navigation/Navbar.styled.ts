@@ -8,12 +8,12 @@ export const NavbarWrapper = styled.div`
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 16px 40px;
+  padding: ${theme.spacing['md']} ${theme.spacing['3xl']};
   display: flex;
   justify-content: center;
 
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    padding: 12px 16px;
+    padding: ${theme.spacing['sm']} ${theme.spacing['md']};
   }
 `;
 
@@ -26,7 +26,7 @@ export const NavbarContainer = styled.div`
   background-color: rgba(17, 17, 17, 0.8);
   border: 1px solid ${theme.colors.border};
   border-radius: 100px;
-  padding: 4px;
+  padding: ${theme.spacing['xxs']};
 `;
 
 export const NavButtons = styled.div`
@@ -41,7 +41,7 @@ export const NavButton = styled(Link)<{ active: boolean }>`
   font-weight: ${props => (props.active ? '500' : `${theme.font.navText.fontWeight}`)};
   line-height: ${theme.font.navText.lineHeight};
   letter-spacing: ${theme.font.navText.letterSpacing};
-  padding: 8px 16px;
+  padding: ${theme.spacing['xs']} ${theme.spacing['md']};
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -67,6 +67,6 @@ export const NavButton = styled(Link)<{ active: boolean }>`
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     font-size: 0.75rem;
-    padding: 6px 12px;
+    padding: ${theme.spacing['xs']} ${theme.spacing['sm']};
   }
 `;

@@ -6,14 +6,14 @@ export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  padding: 24px 40px;
+  gap: ${theme.spacing['lg']};
+  padding: ${theme.spacing['lg']} ${theme.spacing['3xl']};
   border-top: 1px solid ${theme.colors.border};
 
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
     flex-direction: column;
-    gap: 12px;
-    padding: 20px 24px;
+    gap: ${theme.spacing['sm']};
+    padding: ${theme.spacing['lg']} ${theme.spacing['lg']};
   }
 `;
 
@@ -28,7 +28,7 @@ export const CopyrightText = styled.p`
 
 export const IconContainer = styled.div`
   display: flex;
-  gap: 16px;
+  gap: ${theme.spacing['md']};
 
   a {
     color: ${theme.colors.neutral.grey};

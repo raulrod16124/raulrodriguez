@@ -5,13 +5,13 @@ export const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 48px 0 0;
+  padding: ${theme.spacing['2xl']} 0 0;
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    padding: 32px 0 0;
+    padding: ${theme.spacing['xl']} 0 0;
   }
 `;
 
@@ -21,10 +21,10 @@ export const Divider = styled.hr`
   height: 1px;
   background-color: rgba(255, 255, 255, 0.08);
   border: none;
-  margin: 0 auto 48px;
+  margin: 0 auto ${theme.spacing['2xl']};
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    margin-bottom: 32px;
+    margin-bottom: ${theme.spacing['xl']};
   }
 `;
 
@@ -34,7 +34,7 @@ export const AboutLabel = styled.span`
   letter-spacing: ${theme.font.letterSpacing.wider};
   text-transform: uppercase;
   color: ${theme.colors.neutral.grey};
-  margin-bottom: 16px;
+  margin-bottom: ${theme.spacing['md']};
 `;
 
 export const AboutText = styled.p`
@@ -56,8 +56,8 @@ export const CVLink = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 24px;
-  padding: 10px 20px;
+  margin-top: ${theme.spacing['lg']};
+  padding: ${theme.spacing['xs']} ${theme.spacing['lg']};
   font-size: ${theme.font.small.fontSize};
   font-weight: 500;
   font-family: ${theme.font.primary.fontFamily};

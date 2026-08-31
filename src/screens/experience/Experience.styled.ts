@@ -16,32 +16,32 @@ export const ExperienceSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 64px 24px;
+  padding: ${theme.spacing['3xl']} ${theme.spacing['lg']};
   animation: ${fadeInUp} 0.4s ease-out;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    padding: 48px 16px;
+    padding: ${theme.spacing['2xl']} ${theme.spacing['md']};
   }
 `;
 
 export const ExperienceList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: ${theme.spacing['xl']};
   max-width: 720px;
   width: 100%;
   margin-top: 50px;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    gap: 24px;
+    gap: ${theme.spacing['lg']};
   }
 `;
 
 export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 24px;
+  gap: ${theme.spacing['sm']};
+  padding: ${theme.spacing['lg']};
   border-radius: 8px;
   background-color: rgba(69, 77, 93, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -66,8 +66,8 @@ export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
   }
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    padding: 20px 16px;
-    gap: 10px;
+    padding: ${theme.spacing['lg']} ${theme.spacing['md']};
+    gap: ${theme.spacing['xs']};
   }
 `;
 
@@ -87,7 +87,7 @@ export const RoleTitle = styled.h3`
 export const CompanyInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: ${theme.spacing['xs']};
   font-size: ${theme.font.navText.fontSize};
   font-weight: ${theme.font.navText.fontWeight};
   line-height: ${theme.font.navText.lineHeight};
@@ -115,21 +115,21 @@ export const DescriptionList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: ${theme.spacing['xs']};
 `;
 
 export const DescriptionItem = styled.li`
   font-size: ${theme.font.navText.fontSize};
   line-height: ${theme.font.navText.lineHeight};
   color: ${theme.colors.neutral.lightGrey};
-  padding-left: 16px;
+  padding-left: ${theme.spacing['md']};
   position: relative;
 
   &::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 8px;
+    top: ${theme.spacing['xs']};
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -151,8 +151,8 @@ export const DescriptionItem = styled.li`
 export const TechTags = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
+  gap: ${theme.spacing['xs']};
+  margin-top: ${theme.spacing['xxs']};
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     gap: 6px;
@@ -166,7 +166,7 @@ export const TechTag = styled.span`
   line-height: ${theme.font.tagText.lineHeight};
   letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
-  padding: 4px 10px;
+  padding: ${theme.spacing['xxs']} ${theme.spacing['xs']};
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.05);

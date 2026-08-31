@@ -7,7 +7,7 @@ export const ContactContainer = styled.section`
   align-items: center;
   justify-content: center;
   min-height: 60vh;
-  padding: 4rem 1.5rem;
+  padding: ${theme.spacing['3xl']} ${theme.spacing['lg']};
   text-align: center;
 `;
 
@@ -17,18 +17,18 @@ export const ContactTitle = styled.h2`
   line-height: ${theme.font.headings.h2.lineHeight};
   letter-spacing: ${theme.font.headings.h2.letterSpacing};
   color: ${theme.colors.neutral.white};
-  margin-bottom: 2.5rem;
+  margin-bottom: ${theme.spacing['2xl']};
 `;
 
 export const ContactLinks = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: ${theme.spacing['lg']};
   flex-wrap: wrap;
   justify-content: center;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: ${theme.spacing['lg']};
   }
 `;
 
@@ -36,7 +36,7 @@ export const ContactLink = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: ${theme.spacing['xs']};
   color: ${theme.colors.neutral.grey};
   text-decoration: none;
   font-size: ${theme.font.body.fontSize};

@@ -17,10 +17,10 @@ export const HomeSection = styled.section`
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 100px);
-  padding: 80px 40px;
+  padding: ${theme.spacing['4xl']} ${theme.spacing['3xl']};
 
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
-    padding: 100px 24px 60px;
+    padding: 100px ${theme.spacing['lg']} 60px;
     min-height: auto;
   }
 `;
@@ -31,11 +31,11 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
   max-width: 960px;
   width: 100%;
-  gap: 64px;
+  gap: ${theme.spacing['3xl']};
 
   @media (max-width: ${theme.responsive.tablets}) {
     flex-direction: column-reverse;
-    gap: 48px;
+    gap: ${theme.spacing['2xl']};
     text-align: center;
   }
 `;
@@ -43,7 +43,7 @@ export const ContentWrapper = styled.div`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: ${theme.spacing['lg']};
   animation: ${fadeIn} 0.6s ease-out;
 
   @media (max-width: ${theme.responsive.tablets}) {
@@ -108,8 +108,8 @@ export const ValueProp = styled.p`
 
 export const CTAContainer = styled.div`
   display: flex;
-  gap: 12px;
-  margin-top: 8px;
+  gap: ${theme.spacing['sm']};
+  margin-top: ${theme.spacing['xs']};
 
   @media (max-width: ${theme.responsive.tablets}) {
     justify-content: center;
@@ -126,7 +126,7 @@ export const CTAButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: ${theme.spacing['xs']} ${theme.spacing['lg']};
   font-size: ${theme.font.small.fontSize};
   font-weight: 500;
   font-family: ${theme.font.primary.fontFamily};
