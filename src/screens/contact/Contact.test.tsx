@@ -1,64 +1,48 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, test, expect, vi, Mock } from 'vitest';
-import { Contact } from './Contact';
-import { sendFormDataByEmail } from './sendEmail';
-import "@testing-library/jest-dom";
-
-vi.mock('./sendEmail', () => ({
-  sendFormDataByEmail: vi.fn(),
-}));
+import {render, screen} from '@testing-library/react';
+import {describe, test, expect} from 'vitest';
+import {Contact} from './Contact';
+import '@testing-library/jest-dom';
 
 describe('Contact Component', () => {
-  const mockSendFormDataByEmail = sendFormDataByEmail as Mock;
-
-  test('should render the form with input fields and submit button', () => {
+  test('should render the contact title', () => {
     render(<Contact />);
 
-    expect(screen.getByText('Name')).toBeInTheDocument();
-    expect(screen.getByText('Email')).toBeInTheDocument();
-    expect(screen.getByText('Message')).toBeInTheDocument();
-    expect(screen.getByText('Send')).toBeInTheDocument();
+    expect(
+      screen.getByText('Interested in working together?'),
+    ).toBeInTheDocument();
   });
 
-  test('should display an error when trying to submit an empty form', async () => {
+  test('should render email link with mailto', () => {
     render(<Contact />);
-    
-    fireEvent.click(screen.getByText('Send'));
-    
-    await waitFor(() => {
-      expect(screen.getByText(/Empty text error, fill in the fields/i)).toBeInTheDocument();
-    });
+
+    const emailLink = screen.getByLabelText('Send email');
+    expect(emailLink).toHaveAttribute(
+      'href',
+      'mailto:raul.rod16124@gmail.com',
+    );
   });
 
-  test('should show success message after successful form submission', async () => {
-    mockSendFormDataByEmail.mockResolvedValue('SUCCESS');
-    
+  test('should render GitHub link', () => {
     render(<Contact />);
-    
-    fireEvent.change(screen.getByTestId('Name'), { target: { value: 'John Doe' } });
-    fireEvent.change(screen.getByTestId('Email'), { target: { value: 'john@example.com' } });
-    fireEvent.change(screen.getByTestId('Message'), { target: { value: 'Hello!' } });
-    
-    fireEvent.click(screen.getByText('Send'));
-    
-    await waitFor(() => {
-        expect(screen.getByText(/Form submitted successfully!/i)).toBeInTheDocument();
-    });
+
+    const githubLink = screen.getByLabelText('GitHub Profile');
+    expect(githubLink).toHaveAttribute(
+      'href',
+      'https://github.com/raulrod16124',
+    );
+    expect(githubLink).toHaveAttribute('target', '_blank');
+    expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
-  test('should display loading spinner when sending email', async () => {
-    mockSendFormDataByEmail.mockImplementation(() => new Promise(() => {}));
-
+  test('should render LinkedIn link', () => {
     render(<Contact />);
-    
-    fireEvent.change(screen.getByTestId('Name'), { target: { value: 'John Doe' } });
-    fireEvent.change(screen.getByTestId('Email'), { target: { value: 'john@example.com' } });
-    fireEvent.change(screen.getByTestId('Message'), { target: { value: 'Hello!' } });
-    
-    fireEvent.click(screen.getByText('Send'));
-    
-    await waitFor(() => {
-      expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
-    });
+
+    const linkedinLink = screen.getByLabelText('LinkedIn Profile');
+    expect(linkedinLink).toHaveAttribute(
+      'href',
+      'https://www.linkedin.com/in/raul-rod/',
+    );
+    expect(linkedinLink).toHaveAttribute('target', '_blank');
+    expect(linkedinLink).toHaveAttribute('rel', 'noopener noreferrer');
   });
 });

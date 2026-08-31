@@ -1,76 +1,56 @@
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import theme from '../../theme/theme.json';
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
 export const ContactContainer = styled.section`
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: calc(100vh - 90vh);
-  overflow: hidden;
+  min-height: 60vh;
+  padding: 4rem 1.5rem;
+  text-align: center;
 `;
 
-export const Form = styled.form<{formSent?: boolean}>`
-  position: relative;
+export const ContactTitle = styled.h2`
+  font-size: ${theme.font.headings.h2.fontSize};
+  font-weight: ${theme.font.headings.h2.fontWeight};
+  color: ${theme.colors.neutral.white};
+  margin-bottom: 2.5rem;
+`;
+
+export const ContactLinks = styled.div`
   display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  min-height: 300px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: ${props =>
-    props.formSent ? 'transparent' : 'rgba(69, 77, 93, 0.2)'};
-  padding: 20px;
-  border-radius: 5px;
-  border: ${props =>
-    props.formSent ? 'none' : `0.1rem solid ${theme.colors.neutral.white}`};
-  box-shadow: ${props =>
-    props.formSent ? 'none' : `0 10px 20px rgba(0, 0, 0, 0.1)`};
-  animation: ${fadeIn} 0.5s ease-in-out;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 
   @media (max-width: ${theme.responsive.smallMobileDevices}) {
-    max-width: 80%;
-    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 `;
 
-export const Button = styled.button`
-  padding: 15px 20px;
-  font-size: ${theme.font.text.fontSize};
-  background-color: ${theme.colors.secondary.main};
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+export const ContactLink = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: ${theme.colors.neutral.grey};
+  text-decoration: none;
+  font-size: ${theme.font.fontSize};
+  transition: color 0.2s ease;
+
+  svg {
+    font-size: 1.75rem;
+  }
+
   &:hover {
-    background-color: ${theme.colors.secondary.light};
+    color: ${theme.colors.primary.main};
   }
-`;
 
-export const ContactInfo = styled.div`
-  animation: ${fadeIn} 1s ease-in-out;
-
-  & p {
-    color: ${theme.colors.neutral.white};
+  &:focus-visible {
+    outline: 2px solid ${theme.colors.primary.main};
+    outline-offset: 4px;
+    border-radius: 2px;
   }
-`;
-
-export const ErrorText = styled.p`
-  font-size: 1rem;
-  padding-bottom: 10px;
-  color: red;
 `;
