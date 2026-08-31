@@ -1,4 +1,4 @@
-import{d as e,t as n,j as t,F as o,h as a,i as r}from"./index-CFO4EJe2.js";import"./vendor-jt5FKzEF.js";const s=e.section`
+import{d as e,t as n,j as t,F as o,h as a,i as r}from"./index-jc_1gygL.js";import"./vendor-jt5FKzEF.js";const s=e.section`
   display: flex;
   flex-direction: column;
   align-items: center;
