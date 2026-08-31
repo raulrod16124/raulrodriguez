@@ -1,6 +1,5 @@
 import {
   ExperienceSection,
-  SectionTitle,
   ExperienceList,
   ExperienceCard,
   RoleTitle,
@@ -11,35 +10,36 @@ import {
   DescriptionItem,
   TechTags,
   TechTag,
-} from "./Experience.styled";
-import { EXPERIENCES } from "./Experience.constants";
+} from './Experience.styled';
+import {EXPERIENCES} from './Experience.constants';
 
 export const Experience = () => {
   return (
     <ExperienceSection
-      className="animate__animated animate__fadeIn"
       data-testid="experience"
       id="experience"
-    >
-      <SectionTitle>Experience</SectionTitle>
+      aria-labelledby="experience-title">
       <ExperienceList>
-        {EXPERIENCES.map((exp) => (
-          <ExperienceCard key={exp.id}>
+        {EXPERIENCES.map((exp, index) => (
+          <ExperienceCard
+            key={exp.id}
+            $isLatest={index === 0}
+            aria-label={`${exp.role} at ${exp.company}`}>
             <RoleTitle>{exp.role}</RoleTitle>
             <CompanyInfo>
               <CompanyName>{exp.company}</CompanyName>
-              <Separator>·</Separator>
+              <Separator aria-hidden="true">·</Separator>
               <span>{exp.location}</span>
-              <Separator>·</Separator>
+              <Separator aria-hidden="true">·</Separator>
               <span>{exp.dates}</span>
             </CompanyInfo>
             <DescriptionList>
-              {exp.description.map((text, index) => (
-                <DescriptionItem key={index}>{text}</DescriptionItem>
+              {exp.description.map((text, idx) => (
+                <DescriptionItem key={idx}>{text}</DescriptionItem>
               ))}
             </DescriptionList>
-            <TechTags>
-              {exp.technologies.map((tech) => (
+            <TechTags aria-label="Technologies used">
+              {exp.technologies.map(tech => (
                 <TechTag key={tech}>{tech}</TechTag>
               ))}
             </TechTags>
