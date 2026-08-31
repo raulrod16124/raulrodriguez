@@ -14,7 +14,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: "Frontend Engineer",
     company: "Fintech Company",
     location: "Remote",
-    dates: "2022 — Present",
+    dates: "February 2025 — Currently",
     description: [
       "Developed and maintained fintech products for different programs and countries using React, TypeScript, and styled-components, focusing on scalable and maintainable solutions.",
       "Worked with microfrontend and hexagonal architecture, making sure applications could adapt to different deployment environments. Developed and maintained shared internal libraries used across multiple microfrontends.",
@@ -37,7 +37,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: "Frontend Engineer",
     company: "Web & Mobile Company",
     location: "Remote",
-    dates: "2021 — 2022",
+    dates: "April 2022 — May 2024",
     description: [
       "Developed and maintained web and mobile applications using React, React Native, and TypeScript, focusing on maintainable and reusable solutions.",
       "Successfully contributed to the migration from AWS to Firebase, helping adapt and deploy applications to the new infrastructure. Developed and maintained shared internal libraries used across both web and mobile applications.",
@@ -60,7 +60,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: "Frontend Developer",
     company: "E-mobility Company",
     location: "On-site",
-    dates: "2020 — 2021",
+    dates: "July 2021 — April 2022",
     description: [
       "Built a frontend application from scratch for the e-mobility sector, processing vehicle telemetry to generate reports and statistics on performance and energy efficiency.",
       "Worked closely with backend and design teams to develop new features and prepare product demos for potential customers. Followed Scrum practices and used Jira to plan and track development.",
@@ -83,11 +83,11 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: "Frontend Developer",
     company: "Freelance",
     location: "Remote",
-    dates: "2019 — 2020",
+    dates: "February 2021 — July 2021",
     description: [
       "Developed web applications and landing pages for small businesses using React, adapting solutions to different client needs and projects.",
       "Worked independently on complete web projects and collaborated with other freelance developers to build and improve web products.",
     ],
-    technologies: ["React", "JavaScript", "HTML", "CSS"],
+    technologies: ["React", "TypeScript", "JavaScript", "Jest", "HTML", "CSS", "styled-components"],
   },
 ];
