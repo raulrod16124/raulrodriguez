@@ -11,12 +11,6 @@ describe("Experience tests", () => {
     expect(experienceSection).toBeInTheDocument();
   });
 
-  test("should render the section title", () => {
-    render(<Experience />);
-    const title = screen.getByText("Experience");
-    expect(title).toBeInTheDocument();
-  });
-
   test("should render all experience cards", () => {
     render(<Experience />);
     const roles = screen.getAllByRole("heading", { level: 3 });

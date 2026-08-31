@@ -25,9 +25,9 @@ describe("Navbar tests", () => {
         const experienceText = screen.getByText("Experience");
         expect(experienceText).toBeInTheDocument();
     })
-    test("should display 'About' link", () => {
-        const aboutText = screen.getByText("About");
-        expect(aboutText).toBeInTheDocument();
+    test("should display 'Expertise' link", () => {
+        const expertiseText = screen.getByText("Expertise");
+        expect(expertiseText).toBeInTheDocument();
     })
     test("should display 'Contact' link", () => {
         const contactText = screen.getByText("Contact");

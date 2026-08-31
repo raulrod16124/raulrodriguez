@@ -26,10 +26,10 @@ export const Navbar = () => {
             Experience
           </NavButton>
           <NavButton
-            to="about-me"
-            active={pathname.split('/')[1] === 'about-me'}
+            to="expertise"
+            active={pathname.split('/')[1] === 'expertise'}
           >
-            About
+            Expertise
           </NavButton>
           <NavButton
             to="contact"

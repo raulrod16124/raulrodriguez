@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom"
 import { Home } from "../screens/home/Home"
 import { Experience } from "../screens/experience/Experience"
-import { AboutMe } from "../screens/about/AboutMe"
+import { Expertise } from "../screens/expertise/Expertise"
 import { Projects } from "../screens/projects/Projects"
 import { Contact } from "../screens/contact/Contact"
 
@@ -9,7 +9,7 @@ export const pages = [
   "",
   "home",
   "experience",
-  "about-me",
+  "expertise",
   "projects",
   "contact",
 ];
@@ -20,7 +20,7 @@ export const Root = () => {
             <Route path={"/"} element={<Home />} />
             <Route path={"/home"} element={<Home />} />
             <Route path={"/experience"} element={<Experience />} />
-            <Route path={"/about-me"} element={<AboutMe />} />
+            <Route path={"/expertise"} element={<Expertise />} />
             <Route path={"/projects"} element={<Projects />} />
             <Route path={"/contact"} element={<Contact />} />
             <Route path="*" element={<Navigate to="/" replace={true} />} />
