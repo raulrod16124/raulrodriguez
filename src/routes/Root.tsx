@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react"
 import { Route, Routes, Navigate, useLocation } from "react-router-dom"
-import { PageSkeleton } from "../components/shared/skeleton"
 
 const Home = lazy(() => import("../screens/home/Home").then(m => ({ default: m.Home })))
 const Experience = lazy(() => import("../screens/experience/Experience").then(m => ({ default: m.Experience })))
@@ -11,7 +10,7 @@ export const Root = () => {
     const location = useLocation()
 
     return (
-        <Suspense fallback={<PageSkeleton pathname={location.pathname} />}>
+        <Suspense>
             <div className="page-container" key={location.pathname}>
                 <Routes location={location}>
                     <Route path={"/"} element={<Home />} />
