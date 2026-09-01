@@ -66,8 +66,13 @@ export const GroupContainer = styled.article`
 
   &:hover {
     border-color: ${theme.colors.semantic.cardBorderHover};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(88, 161, 143, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(88, 161, 143, 0.15);
+  }
+
+  &:focus-within {
+    outline: 2px solid ${theme.colors.accent.main};
+    outline-offset: 2px;
   }
 
   ${theme.media.tablet} {

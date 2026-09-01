@@ -41,7 +41,6 @@ export const HomeSection = styled.section`
   overflow: hidden;
 
   ${theme.media.tablet} {
-    min-height: calc(100vh - 100px);
     padding: ${theme.spacing['4xl']} ${theme.spacing['3xl']};
   }
 `;

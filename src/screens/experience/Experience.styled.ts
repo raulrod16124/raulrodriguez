@@ -68,12 +68,17 @@ export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
     css`
       background-color: ${theme.colors.semantic.cardBackgroundHighlight};
       border-color: ${theme.colors.semantic.cardBorderHighlight};
+      box-shadow: 0 0 20px rgba(88, 161, 143, 0.1);
+
+      &:hover {
+        box-shadow: 0 8px 30px rgba(88, 161, 143, 0.2);
+      }
     `}
 
   &:hover {
     border-color: ${theme.colors.semantic.cardBorderHover};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(88, 161, 143, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(88, 161, 143, 0.15);
   }
 
   &:focus-within {
