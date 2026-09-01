@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export const VisuallyHidden = styled.span`
   position: absolute;
@@ -81,7 +81,7 @@ export const HamburgerButton = styled.button`
   }
 `;
 
-export const NavButtons = styled.div<{ $isOpen: boolean }>`
+export const NavButtons = styled.div<{$isOpen: boolean}>`
   display: flex;
   align-items: center;
   gap: 2px;
@@ -99,22 +99,31 @@ export const NavButtons = styled.div<{ $isOpen: boolean }>`
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid ${theme.colors.border};
     border-radius: ${theme.borderRadius.md};
-    padding: ${({ $isOpen }) => ($isOpen ? theme.spacing['xs'] : '0')};
-    max-height: ${({ $isOpen }) => ($isOpen ? '400px' : '0')};
+    padding: ${({$isOpen}) => ($isOpen ? theme.spacing['xs'] : '0')};
+    max-height: ${({$isOpen}) => ($isOpen ? '400px' : '0')};
     overflow: hidden;
-    opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
+    opacity: ${({$isOpen}) => ($isOpen ? '1' : '0')};
+    transform: translateY(${({$isOpen}) => ($isOpen ? '0' : '-8px')});
     transition:
       max-height 0.3s ease,
-      opacity 0.2s ease,
+      opacity 0.25s ease,
+      transform 0.25s ease,
       padding 0.3s ease;
-    pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
+    pointer-events: ${({$isOpen}) => ($isOpen ? 'auto' : 'none')};
+    z-index: 101;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: opacity 0.15s ease;
+      transform: none;
+    }
   }
 `;
 
-export const NavButton = styled(Link)<{ active: boolean }>`
+export const NavButton = styled(Link)<{active: boolean}>`
   font-family: ${theme.font.primary.fontFamily};
   font-size: ${theme.font.navText.fontSize};
-  font-weight: ${props => (props.active ? '500' : `${theme.font.navText.fontWeight}`)};
+  font-weight: ${props =>
+    props.active ? '500' : `${theme.font.navText.fontWeight}`};
   line-height: ${theme.font.navText.lineHeight};
   letter-spacing: ${theme.font.navText.letterSpacing};
   padding: ${theme.spacing['xs']} ${theme.spacing['md']};
@@ -123,14 +132,11 @@ export const NavButton = styled(Link)<{ active: boolean }>`
   transition: all ${theme.transition.normal};
   text-decoration: none;
   white-space: nowrap;
+  position: relative;
   color: ${props =>
-    props.active
-      ? theme.colors.neutral.white
-      : theme.colors.neutral.grey};
+    props.active ? theme.colors.neutral.white : theme.colors.neutral.grey};
   background-color: ${props =>
-    props.active
-      ? theme.colors.semantic.navActiveBackground
-      : 'transparent'};
+    props.active ? theme.colors.semantic.navActiveBackground : 'transparent'};
 
   &:hover {
     color: ${theme.colors.neutral.white};
@@ -138,8 +144,8 @@ export const NavButton = styled(Link)<{ active: boolean }>`
   }
 
   &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.main};
-    outline-offset: 2px;
+    outline: 3px solid ${theme.colors.accent.main};
+    outline-offset: 3px;
   }
 
   @media (max-width: ${theme.responsive.largeMobileDevices}) {
@@ -148,5 +154,9 @@ export const NavButton = styled(Link)<{ active: boolean }>`
     padding: ${theme.spacing['sm']} ${theme.spacing['md']};
     border-radius: ${theme.borderRadius.sm};
     font-size: ${theme.font.body.fontSize};
+    border-left: ${props =>
+      props.active
+        ? `3px solid ${theme.colors.accent.main}`
+        : '3px solid transparent'};
   }
 `;

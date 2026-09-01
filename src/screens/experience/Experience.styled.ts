@@ -28,7 +28,7 @@ export const ExperienceSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${theme.spacing['2xl']} ${theme.spacing['md']};
+  padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
   animation: ${fadeInUp} 0.4s ease-out;
 
   ${theme.media.tablet} {
