@@ -18,10 +18,6 @@ const ExpertiseSection = styled.div`
   }
 `;
 
-const TitleBlock = styled(SkeletonBlock)`
-  margin-top: ${theme.spacing['2xl']};
-`;
-
 const ExpertiseGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -85,31 +81,56 @@ const AboutSection = styled.div`
 export const ExpertiseSkeleton = () => (
   <SkeletonPageContainer>
     <ExpertiseSection>
-      <TitleBlock $width="220px" $height="32px" $borderRadius={theme.borderRadius.sm} />
       <ExpertiseGrid>
-        {[0, 1, 2, 3].map((i) => (
+        {[0, 1, 2, 3].map(i => (
           <SkeletonCardBlock key={i}>
             <GroupTitleRow>
-              <IconPlaceholder $width="20px" $height="20px" $borderRadius="50%" />
-              <SkeletonBlock $width="140px" $height="20px" $borderRadius={theme.borderRadius.sm} />
+              <IconPlaceholder
+                $width="20px"
+                $height="20px"
+                $borderRadius="50%"
+              />
+              <SkeletonBlock
+                $width="140px"
+                $height="20px"
+                $borderRadius={theme.borderRadius.sm}
+              />
             </GroupTitleRow>
             <TagsRow>
-              {Array.from({ length: i === 0 ? 4 : i === 3 ? 3 : 6 }).map((_, j) => (
-                <SkeletonPillBlock
-                  key={j}
-                  $width={`${50 + ((j * 13) % 30)}px`}
-                />
-              ))}
+              {Array.from({length: i === 0 ? 4 : i === 3 ? 3 : 6}).map(
+                (_, j) => (
+                  <SkeletonPillBlock
+                    key={j}
+                    $width={`${50 + ((j * 13) % 30)}px`}
+                  />
+                ),
+              )}
             </TagsRow>
           </SkeletonCardBlock>
         ))}
       </ExpertiseGrid>
       <Divider $width="100%" $height="1px" $borderRadius="0" />
       <AboutSection>
-        <SkeletonBlock $width="80px" $height="12px" $borderRadius={theme.borderRadius.sm} />
-        <SkeletonBlock $width="320px" $height="16px" $borderRadius={theme.borderRadius.sm} />
-        <SkeletonBlock $width="280px" $height="16px" $borderRadius={theme.borderRadius.sm} />
-        <SkeletonBlock $width="120px" $height="36px" $borderRadius={theme.borderRadius.sm} />
+        <SkeletonBlock
+          $width="80px"
+          $height="12px"
+          $borderRadius={theme.borderRadius.sm}
+        />
+        <SkeletonBlock
+          $width="320px"
+          $height="16px"
+          $borderRadius={theme.borderRadius.sm}
+        />
+        <SkeletonBlock
+          $width="280px"
+          $height="16px"
+          $borderRadius={theme.borderRadius.sm}
+        />
+        <SkeletonBlock
+          $width="120px"
+          $height="36px"
+          $borderRadius={theme.borderRadius.sm}
+        />
       </AboutSection>
     </ExpertiseSection>
   </SkeletonPageContainer>

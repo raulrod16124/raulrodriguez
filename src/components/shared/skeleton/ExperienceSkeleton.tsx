@@ -18,10 +18,6 @@ const ExperienceSection = styled.div`
   }
 `;
 
-const TitleBlock = styled(SkeletonBlock)`
-  margin-top: ${theme.spacing['2xl']};
-`;
-
 const ExperienceList = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,21 +63,48 @@ const TagsRow = styled.div`
 export const ExperienceSkeleton = () => (
   <SkeletonPageContainer>
     <ExperienceSection>
-      <TitleBlock $width="180px" $height="32px" $borderRadius={theme.borderRadius.sm} />
       <ExperienceList>
-        {[0, 1, 2, 3].map((i) => (
+        {[0, 1, 2, 3].map(i => (
           <SkeletonCardBlock key={i} $highlighted={i === 0}>
             <CardContent>
-              <SkeletonBlock $width="200px" $height="20px" $borderRadius={theme.borderRadius.sm} />
+              <SkeletonBlock
+                $width="200px"
+                $height="20px"
+                $borderRadius={theme.borderRadius.sm}
+              />
               <InfoRow>
-                <SkeletonBlock $width="100px" $height="14px" $borderRadius={theme.borderRadius.sm} />
-                <SkeletonBlock $width="80px" $height="14px" $borderRadius={theme.borderRadius.sm} />
-                <SkeletonBlock $width="120px" $height="14px" $borderRadius={theme.borderRadius.sm} />
+                <SkeletonBlock
+                  $width="100px"
+                  $height="14px"
+                  $borderRadius={theme.borderRadius.sm}
+                />
+                <SkeletonBlock
+                  $width="80px"
+                  $height="14px"
+                  $borderRadius={theme.borderRadius.sm}
+                />
+                <SkeletonBlock
+                  $width="120px"
+                  $height="14px"
+                  $borderRadius={theme.borderRadius.sm}
+                />
               </InfoRow>
               <DescriptionLines>
-                <SkeletonBlock $width="100%" $height="14px" $borderRadius={theme.borderRadius.sm} />
-                <SkeletonBlock $width="90%" $height="14px" $borderRadius={theme.borderRadius.sm} />
-                <SkeletonBlock $width="95%" $height="14px" $borderRadius={theme.borderRadius.sm} />
+                <SkeletonBlock
+                  $width="100%"
+                  $height="14px"
+                  $borderRadius={theme.borderRadius.sm}
+                />
+                <SkeletonBlock
+                  $width="90%"
+                  $height="14px"
+                  $borderRadius={theme.borderRadius.sm}
+                />
+                <SkeletonBlock
+                  $width="95%"
+                  $height="14px"
+                  $borderRadius={theme.borderRadius.sm}
+                />
               </DescriptionLines>
               <TagsRow>
                 {[60, 50, 70, 55, 65, 45, 60, 50].map((w, j) => (
