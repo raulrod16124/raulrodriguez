@@ -1,4 +1,4 @@
-import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";import{L as m}from"./vendor-jt5FKzEF.js";const s=o`
+import{m as i,d as n,t,f as s,j as e,H as d,a as p,b as m}from"./index-BzMMM3-T.js";import{L as g}from"./vendor-CdEpWVL-.js";const f=i`
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -7,34 +7,55 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
     opacity: 1;
     transform: translateY(0);
   }
-`,c=o`
+`,h=i`
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`,c=i`
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-`,g=o`
+`,x=i`
   0%, 100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
-`,x=n.section`
+`,l=i`
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`,$=n.section`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: auto;
-  padding: 100px ${t.spacing.lg} 60px;
+  padding: ${t.spacing["4xl"]} ${t.spacing.lg} ${t.spacing["3xl"]};
   overflow: hidden;
 
   ${t.media.tablet} {
-    min-height: calc(100vh - 100px);
     padding: ${t.spacing["4xl"]} ${t.spacing["3xl"]};
   }
-`,f=n.div`
+`,u=n.div`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -49,52 +70,56 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
     gap: ${t.spacing["3xl"]};
     text-align: left;
   }
-`,h=n.div`
+`,b=n.div`
   display: flex;
   flex-direction: column;
   gap: ${t.spacing.lg};
-  animation: ${s} 0.6s ease-out;
+  animation: ${f} 0.6s ease-out;
   align-items: center;
 
   ${t.media.desktop} {
     align-items: flex-start;
   }
-`,$=n.h1`
+`,w=n.h1`
   margin: 0;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${t.colors.neutral.grey};
-
-  ${t.media.tablet} {
-    font-size: 1rem;
-  }
-`,u=n.h2`
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: ${t.font.headings.h1.fontWeight};
-  line-height: ${t.font.headings.h1.lineHeight};
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: ${t.font.headings.h1.letterSpacing};
   color: ${t.colors.neutral.white};
 
   ${t.media.tablet} {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 
   ${t.media.desktop} {
     font-size: ${t.font.headings.h1.fontSize};
   }
-`,b=n.span`
+`,y=n.h2`
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: ${t.font.headings.h2.lineHeight};
+  letter-spacing: ${t.font.headings.h2.letterSpacing};
+  color: ${t.colors.neutral.lightGrey};
+
+  ${t.media.tablet} {
+    font-size: 1.75rem;
+  }
+
+  ${t.media.desktop} {
+    font-size: ${t.font.headings.h2.fontSize};
+  }
+`,k=n.span`
   font-size: 1rem;
-  font-weight: 400;
-  color: ${t.colors.accent.main};
+  font-weight: 500;
+  color: ${t.colors.accent.highContrast};
   letter-spacing: ${t.font.letterSpacing.wider};
 
   ${t.media.tablet} {
     font-size: 1.125rem;
   }
-`,w=n.p`
+`,j=n.p`
   margin: 0;
   font-size: 1rem;
   font-weight: 300;
@@ -105,7 +130,7 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
   ${t.media.desktop} {
     max-width: 420px;
   }
-`,j=n.div`
+`,v=n.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -123,7 +148,7 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
   ${t.media.desktop} {
     justify-content: flex-start;
   }
-`,y=n.a`
+`,z=n.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -156,11 +181,13 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
     transform: translateY(-1px);
   }
 
-  &:focus-visible {
-    outline: 2px solid ${t.colors.accent.light};
-    outline-offset: 2px;
+  &:active {
+    background-color: ${t.colors.accent.dark};
+    transform: translateY(0);
   }
-`,r=n(m)`
+
+  ${s}
+`,r=n(g)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -193,16 +220,19 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
     transform: translateY(-1px);
   }
 
-  &:focus-visible {
-    outline: 2px solid ${t.colors.accent.light};
-    outline-offset: 2px;
+  &:active {
+    background-color: ${t.colors.accent.dark};
+    transform: translateY(0);
   }
-`,k=n.div`
+
+  ${s}
+`,C=n.div`
   position: relative;
   width: 200px;
   height: 200px;
   flex-shrink: 0;
-  animation: ${s} 0.6s ease-out;
+  opacity: 0;
+  animation: ${h} 0.5s ease-out 0.3s both;
 
   ${t.media.tablet} {
     width: 240px;
@@ -213,7 +243,7 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
     width: 300px;
     height: 300px;
   }
-`,v=n.span`
+`,R=n.span`
   position: absolute;
   inset: -6px;
   border-radius: 50%;
@@ -225,15 +255,26 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
     ${t.colors.accent.dark} 70%,
     ${t.colors.accent.main}
   );
-  animation: ${c} ${t.animation.ringSpinDuration} linear infinite;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  opacity: 0;
+  animation:
+    ${l} 0.4s ease-out 0.8s both,
+    ${c} ${t.animation.ringSpinDuration} linear 0.8s infinite;
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
   pointer-events: none;
 
   ${t.media.tablet} {
     inset: -8px;
   }
-`,z=n.span`
+`,S=n.span`
   position: absolute;
   inset: -14px;
   border-radius: 50%;
@@ -245,17 +286,26 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
     transparent 70%,
     rgba(255, 255, 255, 0.12)
   );
-  animation: ${c} 12s linear infinite reverse;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  opacity: 0;
+  animation:
+    ${l} 0.4s ease-out 0.9s both,
+    ${c} 12s linear 0.9s infinite reverse;
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 2px)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 2px)
+  );
   pointer-events: none;
-  opacity: 0.7;
 
   ${t.media.tablet} {
     inset: -16px;
-    opacity: 0.8;
   }
-`,C=n.img`
+`,H=n.img`
   position: relative;
   width: 100%;
   height: 100%;
@@ -269,20 +319,20 @@ import{m as o,d as n,t,j as e,H as l,a as d,b as p}from"./index-jc_1gygL.js";imp
   &:hover {
     box-shadow: 0 0 40px ${t.animation.glowColorHover};
   }
-`,a=n.span`
+`,o=n.span`
   position: absolute;
-  top: ${({$top:i})=>i};
-  left: ${({$left:i})=>i};
-  width: ${({$size:i})=>`${i}px`};
-  height: ${({$size:i})=>`${i}px`};
+  top: ${({$top:a})=>a};
+  left: ${({$left:a})=>a};
+  width: ${({$size:a})=>`${a}px`};
+  height: ${({$size:a})=>`${a}px`};
   border-radius: 50%;
   background-color: ${t.colors.accent.main};
   opacity: 0.08;
-  animation: ${g} ${t.animation.floatDuration} ease-in-out infinite;
-  animation-delay: ${({$delay:i})=>i};
+  animation: ${x} ${t.animation.floatDuration} ease-in-out infinite;
+  animation-delay: ${({$delay:a})=>a};
   pointer-events: none;
 
   ${t.media.tablet} {
     opacity: 0.1;
   }
-`,R="/assets/me-ChUzMmj9.webp",H="/assets/me-BXzSqP_o.png",S="https://github.com/raulrod16124",Y=()=>e.jsxs(x,{"data-testid":"home",children:[e.jsx(a,{$top:"15%",$left:"8%",$size:6,$delay:"0s"}),e.jsx(a,{$top:"70%",$left:"85%",$size:4,$delay:"2s"}),e.jsx(a,{$top:"25%",$left:"92%",$size:5,$delay:"4s"}),e.jsxs(f,{children:[e.jsxs(h,{children:[e.jsx($,{children:"Raúl Rodríguez"}),e.jsx(u,{children:"Frontend Engineer"}),e.jsx(b,{children:"React · TypeScript"}),e.jsxs(w,{children:["Building scalable web applications",e.jsx("br",{}),"and reusable frontend systems."]}),e.jsxs(j,{children:[e.jsxs(r,{to:"/experience",children:[e.jsx(l,{"aria-hidden":"true"}),"View experience"]}),e.jsxs(y,{href:S,target:"_blank",rel:"noopener noreferrer",children:[e.jsx(d,{"aria-hidden":"true"}),"GitHub"]}),e.jsxs(r,{to:"/contact",children:[e.jsx(p,{"aria-hidden":"true"}),"Contact"]})]})]}),e.jsxs(k,{children:[e.jsx(z,{"aria-hidden":"true"}),e.jsx(v,{"aria-hidden":"true"}),e.jsxs("picture",{children:[e.jsx("source",{srcSet:R,type:"image/webp"}),e.jsx(C,{src:H,alt:"Raúl Rodríguez, Frontend Engineer",width:280,height:280})]})]})]})]});export{Y as Home};
+`,T="/assets/me-ChUzMmj9.webp",Y="/assets/me-BXzSqP_o.png",F="https://github.com/raulrod16124",G=()=>e.jsxs($,{"data-testid":"home",children:[e.jsx(o,{$top:"15%",$left:"8%",$size:6,$delay:"0s"}),e.jsx(o,{$top:"70%",$left:"85%",$size:4,$delay:"2s"}),e.jsx(o,{$top:"25%",$left:"92%",$size:5,$delay:"4s"}),e.jsxs(u,{children:[e.jsxs(b,{children:[e.jsx(w,{children:"Raúl Rodríguez"}),e.jsx(y,{children:"Frontend Engineer"}),e.jsx(k,{children:"React · TypeScript"}),e.jsxs(j,{children:["Building scalable web applications",e.jsx("br",{}),"and reusable frontend systems."]}),e.jsxs(v,{children:[e.jsxs(r,{to:"/experience",children:[e.jsx(d,{"aria-hidden":"true"}),"View experience"]}),e.jsxs(z,{href:F,target:"_blank",rel:"noopener noreferrer",children:[e.jsx(p,{"aria-hidden":"true"}),"GitHub"]}),e.jsxs(r,{to:"/contact",children:[e.jsx(m,{"aria-hidden":"true"}),"Contact"]})]})]}),e.jsxs(C,{children:[e.jsx(S,{"aria-hidden":"true"}),e.jsx(R,{"aria-hidden":"true"}),e.jsxs("picture",{children:[e.jsx("source",{srcSet:T,type:"image/webp"}),e.jsx(H,{src:Y,alt:"Raúl Rodríguez, Frontend Engineer",width:280,height:280})]})]})]})]});export{G as Home};
