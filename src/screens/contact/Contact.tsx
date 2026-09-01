@@ -5,8 +5,8 @@ import {
   ContactSubtitle,
   ContactLinks,
   ContactLink,
-  VisuallyHidden,
 } from './Contact.styled';
+import {VisuallyHidden} from '../../components/shared/VisuallyHidden';
 import {ScrollReveal} from '../../components/ScrollReveal';
 
 const EMAIL = 'raul.rod16124@gmail.com';

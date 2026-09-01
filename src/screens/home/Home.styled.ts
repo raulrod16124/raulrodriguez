@@ -64,7 +64,7 @@ export const HomeSection = styled.section`
   justify-content: center;
   align-items: center;
   min-height: auto;
-  padding: 100px ${theme.spacing['lg']} 60px;
+  padding: ${theme.spacing['4xl']} ${theme.spacing['lg']} ${theme.spacing['3xl']};
   overflow: hidden;
 
   ${theme.media.tablet} {

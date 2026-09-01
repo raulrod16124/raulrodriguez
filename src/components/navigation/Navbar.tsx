@@ -7,8 +7,8 @@ import {
   NavbarContainer,
   NavbarWrapper,
   HamburgerButton,
-  VisuallyHidden,
 } from './Navbar.styled';
+import {VisuallyHidden} from '../shared/VisuallyHidden';
 
 export const Navbar = () => {
   const { pathname } = useLocation();

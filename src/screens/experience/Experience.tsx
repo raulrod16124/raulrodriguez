@@ -10,8 +10,8 @@ import {
   DescriptionItem,
   TechTags,
   TechTag,
-  VisuallyHidden,
 } from './Experience.styled';
+import {VisuallyHidden} from '../../components/shared/VisuallyHidden';
 import {EXPERIENCES} from './Experience.constants';
 import {ScrollReveal} from '../../components/ScrollReveal';
 

@@ -7,8 +7,8 @@ import {
   TechList,
   TechTag,
   Divider,
-  VisuallyHidden,
 } from './Expertise.styled';
+import {VisuallyHidden} from '../../components/shared/VisuallyHidden';
 import {EXPERTISE_GROUPS} from './Expertise.constants';
 import {AboutBlock} from './AboutBlock';
 import {ScrollReveal} from '../../components/ScrollReveal';

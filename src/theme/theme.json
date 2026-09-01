@@ -112,16 +112,11 @@
     "4xl": "80px"
   },
   "responsive": {
-    "smallMobileDevices": "480px",
-    "largeMobileDevices": "768px",
-    "tablets": "1024px",
-    "laptops": "1366px"
+    "smallMobileDevices": "480px"
   },
   "media": {
-    "mobile": "@media (min-width: 480px)",
     "tablet": "@media (min-width: 768px)",
-    "desktop": "@media (min-width: 1024px)",
-    "wide": "@media (min-width: 1366px)"
+    "desktop": "@media (min-width: 1024px)"
   },
   "borderRadius": {
     "sm": "4px",

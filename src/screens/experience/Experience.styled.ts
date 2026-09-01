@@ -1,17 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled, {css} from 'styled-components';
 import theme from '../../theme/theme.json';
-
-export const VisuallyHidden = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-`;
 
 export const ExperienceSection = styled.section`
   display: flex;
@@ -30,14 +18,14 @@ export const ExperienceList = styled.div`
   gap: ${theme.spacing['lg']};
   max-width: ${theme.maxWidth.content};
   width: 100%;
-  margin-top: 50px;
+  margin-top: ${theme.spacing['2xl']};
 
   ${theme.media.tablet} {
     gap: ${theme.spacing['xl']};
   }
 `;
 
-export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
+export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing['xs']};
@@ -51,7 +39,7 @@ export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
     transform ${theme.transition.normal},
     box-shadow 0.4s ease;
 
-  ${({ $isLatest }) =>
+  ${({$isLatest}) =>
     $isLatest &&
     css`
       background-color: ${theme.colors.semantic.cardBackgroundHighlight};
@@ -130,7 +118,7 @@ export const DescriptionItem = styled.li`
   font-size: 0.8125rem;
   line-height: ${theme.font.navText.lineHeight};
   color: ${theme.colors.neutral.lightGrey};
-  padding-left: 14px;
+  padding-left: ${theme.spacing['sm']};
   position: relative;
 
   &::before {
@@ -159,8 +147,8 @@ export const DescriptionItem = styled.li`
 export const TechTags = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 2px;
+  gap: ${theme.spacing['xxs']};
+  margin-top: ${theme.spacing['xxs']};
 
   ${theme.media.tablet} {
     gap: ${theme.spacing['xs']};
@@ -174,7 +162,7 @@ export const TechTag = styled.span`
   line-height: ${theme.font.tagText.lineHeight};
   letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
-  padding: 3px ${theme.spacing['xs']};
+  padding: ${theme.spacing['xxs']} ${theme.spacing['xs']};
   border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: ${theme.borderRadius.sm};
   background-color: ${theme.colors.semantic.tagBackground};

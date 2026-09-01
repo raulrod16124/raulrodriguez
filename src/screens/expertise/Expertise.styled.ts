@@ -1,18 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
 
-export const VisuallyHidden = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-`;
-
 export const ExpertiseSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -30,7 +18,7 @@ export const ExpertiseGrid = styled.div`
   gap: ${theme.spacing['lg']};
   max-width: ${theme.maxWidth.content};
   width: 100%;
-  margin-top: 50px;
+  margin-top: ${theme.spacing['2xl']};
 
   ${theme.media.tablet} {
     grid-template-columns: repeat(2, 1fr);
@@ -96,7 +84,7 @@ export const GroupTitle = styled.h3`
 export const TechList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: ${theme.spacing['xxs']};
 
   ${theme.media.tablet} {
     gap: ${theme.spacing['xs']};
@@ -109,7 +97,7 @@ export const TechTag = styled.span`
   line-height: ${theme.font.tagText.lineHeight};
   letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
-  padding: 3px ${theme.spacing['xs']};
+  padding: ${theme.spacing['xxs']} ${theme.spacing['xs']};
   border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: ${theme.borderRadius.sm};
   background-color: ${theme.colors.semantic.tagBackground};
