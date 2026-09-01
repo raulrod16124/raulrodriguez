@@ -3,6 +3,7 @@
     "accent": {
       "light": "#74b49b",
       "main": "#58a18f",
+      "highContrast": "#6db89f",
       "dark": "#3a7d6a"
     },
     "neutral": {

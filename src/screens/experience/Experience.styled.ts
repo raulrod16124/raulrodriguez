@@ -97,7 +97,7 @@ export const CompanyInfo = styled.div`
 `;
 
 export const CompanyName = styled.span`
-  color: ${theme.colors.accent.main};
+  color: ${theme.colors.accent.highContrast};
   font-weight: 500;
 `;
 

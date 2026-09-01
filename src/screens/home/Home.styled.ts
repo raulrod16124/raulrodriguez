@@ -138,7 +138,7 @@ export const RoleText = styled.h2`
 export const Subtitle = styled.span`
   font-size: 1rem;
   font-weight: 500;
-  color: ${theme.colors.accent.main};
+  color: ${theme.colors.accent.highContrast};
   letter-spacing: ${theme.font.letterSpacing.wider};
 
   ${theme.media.tablet} {

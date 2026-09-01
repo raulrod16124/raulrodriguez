@@ -65,7 +65,7 @@ export const GroupTitle = styled.h3`
   font-weight: ${theme.font.headings.h3.fontWeight};
   line-height: ${theme.font.headings.h3.lineHeight};
   letter-spacing: ${theme.font.headings.h3.letterSpacing};
-  color: ${theme.colors.accent.main};
+  color: ${theme.colors.accent.highContrast};
 
   svg {
     font-size: 1.1rem;

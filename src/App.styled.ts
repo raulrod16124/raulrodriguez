@@ -206,8 +206,10 @@ export const SkipLink = styled.a`
   border-radius: ${theme.borderRadius.sm};
   text-decoration: none;
 
-  &:focus {
+  &:focus-visible {
     top: ${theme.spacing['md']};
+    outline: 3px solid ${theme.colors.accent.highContrast};
+    outline-offset: 3px;
   }
 `;
 

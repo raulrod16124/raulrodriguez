@@ -61,6 +61,12 @@ ul {
   }
 }
 
+/* Global focus-visible fallback */
+:focus-visible {
+  outline: 3px solid #6db89f;
+  outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

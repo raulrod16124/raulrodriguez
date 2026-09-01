@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
-import {focusVisibleCompact} from '../shared/focusStyles';
+import {focusVisible} from '../shared/focusStyles';
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -66,6 +66,6 @@ export const IconContainer = styled.div`
       transform: translateY(0);
     }
 
-    ${focusVisibleCompact}
+    ${focusVisible}
   }
 `;

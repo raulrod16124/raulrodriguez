@@ -87,7 +87,7 @@ export const ContactLink = styled.a`
   }
 
   &:hover {
-    color: ${theme.colors.accent.main};
+    color: ${theme.colors.accent.highContrast};
     transform: translateY(-4px);
     background-color: ${theme.colors.semantic.accentBackgroundHover};
     box-shadow: 0 8px 24px rgba(88, 161, 143, 0.15);
@@ -104,7 +104,7 @@ export const ContactLink = styled.a`
   }
 
   &:active {
-    color: ${theme.colors.accent.main};
+    color: ${theme.colors.accent.highContrast};
     transform: translateY(-2px);
     background-color: ${theme.colors.semantic.accentBackgroundHover};
   }

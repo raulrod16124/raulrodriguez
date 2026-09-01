@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
 import {Link} from 'react-router-dom';
+import {focusVisible} from '../shared/focusStyles';
 
 export const NavbarWrapper = styled.nav`
   position: fixed;
@@ -60,10 +61,7 @@ export const HamburgerButton = styled.button`
     color: ${theme.colors.neutral.white};
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.main};
-    outline-offset: 2px;
-  }
+  ${focusVisible}
 
   ${theme.media.tablet} {
     display: none;
@@ -152,10 +150,7 @@ export const NavButton = styled(Link)<{active: boolean}>`
     background-color: ${theme.colors.semantic.navHoverBackground};
   }
 
-  &:focus-visible {
-    outline: 3px solid ${theme.colors.accent.main};
-    outline-offset: 3px;
-  }
+  ${focusVisible}
 
   ${theme.media.tablet} {
     width: auto;

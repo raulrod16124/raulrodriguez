@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
+import {focusVisible} from '../shared/focusStyles';
 
 interface OverlayProps {
   $isOpen: boolean;
@@ -88,10 +89,7 @@ export const IconButton = styled.button`
     color: ${theme.colors.neutral.lightGrey};
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.light};
-    outline-offset: 2px;
-  }
+  ${focusVisible}
 `;
 
 export const PdfContent = styled.div`
@@ -162,8 +160,5 @@ export const DownloadButton = styled.a`
     border-color: ${theme.colors.accent.main};
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.light};
-    outline-offset: 2px;
-  }
+  ${focusVisible}
 `;
