@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled, {keyframes} from 'styled-components';
+import {Link} from 'react-router-dom';
 import theme from '../../theme/theme.json';
 
 const fadeIn = keyframes`
@@ -77,27 +77,14 @@ export const TextContainer = styled.div`
 
 export const NameText = styled.h1`
   margin: 0;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${theme.colors.neutral.grey};
-
-  ${theme.media.tablet} {
-    font-size: 1rem;
-  }
-`;
-
-export const RoleText = styled.h2`
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: ${theme.font.headings.h1.fontWeight};
-  line-height: ${theme.font.headings.h1.lineHeight};
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: ${theme.font.headings.h1.letterSpacing};
   color: ${theme.colors.neutral.white};
 
   ${theme.media.tablet} {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 
   ${theme.media.desktop} {
@@ -105,9 +92,26 @@ export const RoleText = styled.h2`
   }
 `;
 
+export const RoleText = styled.h2`
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: ${theme.font.headings.h2.lineHeight};
+  letter-spacing: ${theme.font.headings.h2.letterSpacing};
+  color: ${theme.colors.neutral.lightGrey};
+
+  ${theme.media.tablet} {
+    font-size: 1.75rem;
+  }
+
+  ${theme.media.desktop} {
+    font-size: ${theme.font.headings.h2.fontSize};
+  }
+`;
+
 export const Subtitle = styled.span`
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   color: ${theme.colors.accent.main};
   letter-spacing: ${theme.font.letterSpacing.wider};
 
@@ -258,8 +262,16 @@ export const GlowRing = styled.span`
     ${theme.colors.accent.main}
   );
   animation: ${spin} ${theme.animation.ringSpinDuration} linear infinite;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
   pointer-events: none;
 
   ${theme.media.tablet} {
@@ -280,8 +292,16 @@ export const GlowRingAlt = styled.span`
     rgba(255, 255, 255, 0.12)
   );
   animation: ${spin} 12s linear infinite reverse;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 2px)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 2px)
+  );
   pointer-events: none;
   opacity: 0.7;
 
@@ -307,17 +327,22 @@ export const Image = styled.img`
   }
 `;
 
-export const FloatingDot = styled.span<{ $top: string; $left: string; $size: number; $delay: string }>`
+export const FloatingDot = styled.span<{
+  $top: string;
+  $left: string;
+  $size: number;
+  $delay: string;
+}>`
   position: absolute;
-  top: ${({ $top }) => $top};
-  left: ${({ $left }) => $left};
-  width: ${({ $size }) => `${$size}px`};
-  height: ${({ $size }) => `${$size}px`};
+  top: ${({$top}) => $top};
+  left: ${({$left}) => $left};
+  width: ${({$size}) => `${$size}px`};
+  height: ${({$size}) => `${$size}px`};
   border-radius: 50%;
   background-color: ${theme.colors.accent.main};
   opacity: 0.08;
   animation: ${float} ${theme.animation.floatDuration} ease-in-out infinite;
-  animation-delay: ${({ $delay }) => $delay};
+  animation-delay: ${({$delay}) => $delay};
   pointer-events: none;
 
   ${theme.media.tablet} {
