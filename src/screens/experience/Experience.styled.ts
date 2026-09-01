@@ -37,24 +37,24 @@ export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
     border-color ${theme.transition.normal},
     background-color ${theme.transition.normal},
     transform ${theme.transition.normal},
-    box-shadow 0.4s ease;
+    box-shadow ${theme.transition.boxShadow};
 
   ${({$isLatest}) =>
     $isLatest &&
     css`
       background-color: ${theme.colors.semantic.cardBackgroundHighlight};
       border-color: ${theme.colors.semantic.cardBorderHighlight};
-      box-shadow: 0 0 20px rgba(88, 161, 143, 0.1);
+      box-shadow: ${theme.boxShadow.cardHighlight};
 
       &:hover {
-        box-shadow: 0 8px 30px rgba(88, 161, 143, 0.2);
+        box-shadow: ${theme.boxShadow.cardHighlightHover};
       }
     `}
 
   &:hover {
     border-color: ${theme.colors.semantic.cardBorderHover};
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(88, 161, 143, 0.15);
+    box-shadow: ${theme.boxShadow.cardHover};
   }
 
   &:focus-within {
@@ -176,7 +176,7 @@ export const TechTag = styled.span`
     background-color: ${theme.colors.semantic.tagBackgroundHover};
     border-color: ${theme.colors.semantic.tagBorderHover};
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(88, 161, 143, 0.1);
+    box-shadow: ${theme.boxShadow.tagHover};
   }
 
   ${theme.media.tablet} {

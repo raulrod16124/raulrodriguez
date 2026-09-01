@@ -9,7 +9,7 @@ interface OverlayProps {
 export const Overlay = styled.div<OverlayProps>`
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: ${theme.boxShadow.modalOverlay};
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;

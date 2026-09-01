@@ -41,6 +41,12 @@
     "secondary": {
       "fontFamily": "'Inter', 'Helvetica Neue', Arial, sans-serif"
     },
+    "weight": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "bold": 700
+    },
     "fontSize": "1rem",
     "lineHeight": {
       "tight": 1.2,
@@ -126,7 +132,9 @@
   },
   "transition": {
     "fast": "0.15s ease",
-    "normal": "0.2s ease"
+    "normal": "0.2s ease",
+    "slow": "0.3s ease",
+    "boxShadow": "0.4s ease"
   },
   "maxWidth": {
     "content": "720px",
@@ -138,5 +146,14 @@
     "floatDuration": "6s",
     "glowColor": "rgba(88, 161, 143, 0.15)",
     "glowColorHover": "rgba(88, 161, 143, 0.25)"
+  },
+  "boxShadow": {
+    "cardHover": "0 8px 30px rgba(88, 161, 143, 0.15)",
+    "cardHighlight": "0 0 20px rgba(88, 161, 143, 0.1)",
+    "cardHighlightHover": "0 8px 30px rgba(88, 161, 143, 0.2)",
+    "tagHover": "0 2px 8px rgba(88, 161, 143, 0.1)",
+    "contactHover": "0 8px 24px rgba(88, 161, 143, 0.15)",
+    "iconGlow": "drop-shadow(0 0 8px rgba(88, 161, 143, 0.4))",
+    "modalOverlay": "rgba(0, 0, 0, 0.85)"
   }
 }

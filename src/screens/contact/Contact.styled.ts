@@ -66,7 +66,7 @@ export const ContactLink = styled.a`
     color ${theme.transition.normal},
     transform ${theme.transition.fast},
     background-color ${theme.transition.normal},
-    box-shadow ${theme.transition.normal};
+    box-shadow ${theme.transition.boxShadow};
 
   &::after {
     content: '';
@@ -90,7 +90,7 @@ export const ContactLink = styled.a`
     color: ${theme.colors.accent.highContrast};
     transform: translateY(-4px);
     background-color: ${theme.colors.semantic.accentBackgroundHover};
-    box-shadow: 0 8px 24px rgba(88, 161, 143, 0.15);
+    box-shadow: ${theme.boxShadow.contactHover};
   }
 
   &:hover::after {
@@ -100,7 +100,7 @@ export const ContactLink = styled.a`
 
   &:hover svg {
     transform: scale(1.2);
-    filter: drop-shadow(0 0 8px rgba(88, 161, 143, 0.4));
+    filter: ${theme.boxShadow.iconGlow};
   }
 
   &:active {
