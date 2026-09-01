@@ -3,6 +3,12 @@ import theme from '../../theme/theme.json';
 import {Link} from 'react-router-dom';
 import {focusVisible} from '../shared/focusStyles';
 
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+`;
+
 export const NavbarWrapper = styled.nav`
   position: fixed;
   top: 0;
@@ -20,7 +26,9 @@ export const NavbarWrapper = styled.nav`
 
 export const NavbarContainer = styled.div`
   width: 100%;
-  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-radius: ${theme.borderRadius.md};
   padding: 0;
   background-color: transparent;
@@ -30,14 +38,12 @@ export const NavbarContainer = styled.div`
 
   ${theme.media.tablet} {
     position: relative;
-    display: flex;
-    align-items: center;
     justify-content: center;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     background-color: ${theme.colors.semantic.navbarBackdrop};
     border: 1px solid ${theme.colors.border};
-    border-radius: ${theme.borderRadius.pill};
+    border-radius: ${theme.borderRadius.xl};
     padding: ${theme.spacing['xxs']};
     width: auto;
   }
@@ -109,7 +115,7 @@ export const NavButtons = styled.div<{$isOpen: boolean}>`
     -webkit-backdrop-filter: none;
     border: none;
     border-radius: 0;
-    padding: 0;
+    padding: 0 0 0 ${theme.spacing['xs']};
     max-height: none;
     overflow: visible;
     opacity: 1;
@@ -156,7 +162,7 @@ export const NavButton = styled(Link)<{active: boolean}>`
     width: auto;
     text-align: center;
     padding: ${theme.spacing['xs']} ${theme.spacing['md']};
-    border-radius: ${theme.borderRadius.pill};
+    border-radius: ${theme.borderRadius.lg};
     font-size: ${theme.font.navText.fontSize};
     border-left: none;
   }

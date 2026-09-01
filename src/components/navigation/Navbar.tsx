@@ -1,17 +1,19 @@
-import { useState, useCallback, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { HiMenu, HiX } from 'react-icons/hi';
+import {useState, useCallback, useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
+import {HiMenu, HiX} from 'react-icons/hi';
 import {
   NavButton,
   NavButtons,
   NavbarContainer,
   NavbarWrapper,
   HamburgerButton,
+  LogoContainer,
 } from './Navbar.styled';
 import {VisuallyHidden} from '../shared/VisuallyHidden';
+import {Logo} from './logo';
 
 export const Navbar = () => {
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = useCallback(() => {
@@ -37,41 +39,43 @@ export const Navbar = () => {
     <NavbarWrapper data-testid="Navbar" aria-label="Main navigation">
       <NavbarContainer>
         <VisuallyHidden>Navigation menu</VisuallyHidden>
+        <LogoContainer>
+          <Logo width={32} height={32} />
+        </LogoContainer>
         <HamburgerButton
           onClick={() => setIsMenuOpen(prev => !prev)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav"
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isMenuOpen ? <HiX size={20} aria-hidden="true" /> : <HiMenu size={20} aria-hidden="true" />}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
+          {isMenuOpen ? (
+            <HiX size={20} aria-hidden="true" />
+          ) : (
+            <HiMenu size={20} aria-hidden="true" />
+          )}
         </HamburgerButton>
         <NavButtons id="mobile-nav" $isOpen={isMenuOpen}>
           <NavButton
             to="home"
             active={pathname === '/home' || pathname === '/'}
-            onClick={closeMenu}
-          >
+            onClick={closeMenu}>
             Home
           </NavButton>
           <NavButton
             to="experience"
             active={pathname.split('/')[1] === 'experience'}
-            onClick={closeMenu}
-          >
+            onClick={closeMenu}>
             Experience
           </NavButton>
           <NavButton
             to="expertise"
             active={pathname.split('/')[1] === 'expertise'}
-            onClick={closeMenu}
-          >
+            onClick={closeMenu}>
             Expertise
           </NavButton>
           <NavButton
             to="contact"
             active={pathname.split('/')[1] === 'contact'}
-            onClick={closeMenu}
-          >
+            onClick={closeMenu}>
             Contact
           </NavButton>
         </NavButtons>
