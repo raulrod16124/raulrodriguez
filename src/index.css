@@ -45,21 +45,7 @@ ul {
   margin: 0;
 }
 
-/* Page transition animation */
-.page-container {
-  animation: pageFadeIn 300ms ease forwards;
-}
-
-@keyframes pageFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* Page transition handled by skeleton fade-in/fade-out in skeleton components */
 
 /* Global focus-visible fallback */
 :focus-visible {
