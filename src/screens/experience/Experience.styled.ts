@@ -1,35 +1,11 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, {css} from 'styled-components';
 import theme from '../../theme/theme.json';
-
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-export const VisuallyHidden = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-`;
 
 export const ExperienceSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${theme.spacing['2xl']} ${theme.spacing['md']};
-  animation: ${fadeInUp} 0.4s ease-out;
+  padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
 
   ${theme.media.tablet} {
     padding: ${theme.spacing['3xl']} ${theme.spacing['lg']};
@@ -42,14 +18,14 @@ export const ExperienceList = styled.div`
   gap: ${theme.spacing['lg']};
   max-width: ${theme.maxWidth.content};
   width: 100%;
-  margin-top: 50px;
+  margin-top: ${theme.spacing['2xl']};
 
   ${theme.media.tablet} {
     gap: ${theme.spacing['xl']};
   }
 `;
 
-export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
+export const ExperienceCard = styled.article<{$isLatest?: boolean}>`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing['xs']};
@@ -61,24 +37,29 @@ export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
     border-color ${theme.transition.normal},
     background-color ${theme.transition.normal},
     transform ${theme.transition.normal},
-    box-shadow 0.4s ease;
+    box-shadow ${theme.transition.boxShadow};
 
-  ${({ $isLatest }) =>
+  ${({$isLatest}) =>
     $isLatest &&
     css`
       background-color: ${theme.colors.semantic.cardBackgroundHighlight};
       border-color: ${theme.colors.semantic.cardBorderHighlight};
+      box-shadow: ${theme.boxShadow.cardHighlight};
+
+      &:hover {
+        box-shadow: ${theme.boxShadow.cardHighlightHover};
+      }
     `}
 
   &:hover {
     border-color: ${theme.colors.semantic.cardBorderHover};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(88, 161, 143, 0.08);
+    transform: translateY(-4px);
+    box-shadow: ${theme.boxShadow.cardHover};
   }
 
   &:focus-within {
-    outline: 2px solid ${theme.colors.accent.main};
-    outline-offset: 2px;
+    outline: 3px solid ${theme.colors.accent.main};
+    outline-offset: 3px;
   }
 
   ${theme.media.tablet} {
@@ -116,7 +97,7 @@ export const CompanyInfo = styled.div`
 `;
 
 export const CompanyName = styled.span`
-  color: ${theme.colors.accent.main};
+  color: ${theme.colors.accent.highContrast};
   font-weight: 500;
 `;
 
@@ -137,7 +118,7 @@ export const DescriptionItem = styled.li`
   font-size: 0.8125rem;
   line-height: ${theme.font.navText.lineHeight};
   color: ${theme.colors.neutral.lightGrey};
-  padding-left: 14px;
+  padding-left: ${theme.spacing['sm']};
   position: relative;
 
   &::before {
@@ -166,8 +147,8 @@ export const DescriptionItem = styled.li`
 export const TechTags = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 2px;
+  gap: ${theme.spacing['xxs']};
+  margin-top: ${theme.spacing['xxs']};
 
   ${theme.media.tablet} {
     gap: ${theme.spacing['xs']};
@@ -181,17 +162,21 @@ export const TechTag = styled.span`
   line-height: ${theme.font.tagText.lineHeight};
   letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
-  padding: 3px ${theme.spacing['xs']};
+  padding: ${theme.spacing['xxs']} ${theme.spacing['xs']};
   border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: ${theme.borderRadius.sm};
   background-color: ${theme.colors.semantic.tagBackground};
   transition:
     background-color ${theme.transition.fast},
-    border-color ${theme.transition.fast};
+    border-color ${theme.transition.fast},
+    transform ${theme.transition.fast},
+    box-shadow ${theme.transition.fast};
 
   &:hover {
     background-color: ${theme.colors.semantic.tagBackgroundHover};
     border-color: ${theme.colors.semantic.tagBorderHover};
+    transform: translateY(-1px);
+    box-shadow: ${theme.boxShadow.tagHover};
   }
 
   ${theme.media.tablet} {

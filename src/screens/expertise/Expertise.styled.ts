@@ -1,35 +1,11 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import theme from '../../theme/theme.json';
-
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-export const VisuallyHidden = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-`;
 
 export const ExpertiseSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${theme.spacing['2xl']} ${theme.spacing['md']};
-  animation: ${fadeInUp} 0.4s ease-out;
+  padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
 
   ${theme.media.tablet} {
     padding: ${theme.spacing['3xl']} ${theme.spacing['lg']};
@@ -39,10 +15,11 @@ export const ExpertiseSection = styled.section`
 export const ExpertiseGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
   gap: ${theme.spacing['lg']};
   max-width: ${theme.maxWidth.content};
   width: 100%;
-  margin-top: 50px;
+  margin-top: ${theme.spacing['2xl']};
 
   ${theme.media.tablet} {
     grid-template-columns: repeat(2, 1fr);
@@ -53,6 +30,7 @@ export const ExpertiseGrid = styled.div`
 export const GroupContainer = styled.article`
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: ${theme.spacing['sm']};
   padding: ${theme.spacing['lg']} ${theme.spacing['md']};
   border-radius: ${theme.borderRadius.md};
@@ -62,12 +40,17 @@ export const GroupContainer = styled.article`
     border-color ${theme.transition.normal},
     background-color ${theme.transition.normal},
     transform ${theme.transition.normal},
-    box-shadow 0.4s ease;
+    box-shadow ${theme.transition.boxShadow};
 
   &:hover {
     border-color: ${theme.colors.semantic.cardBorderHover};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(88, 161, 143, 0.08);
+    transform: translateY(-4px);
+    box-shadow: ${theme.boxShadow.cardHover};
+  }
+
+  &:focus-within {
+    outline: 3px solid ${theme.colors.accent.main};
+    outline-offset: 3px;
   }
 
   ${theme.media.tablet} {
@@ -84,7 +67,7 @@ export const GroupTitle = styled.h3`
   font-weight: ${theme.font.headings.h3.fontWeight};
   line-height: ${theme.font.headings.h3.lineHeight};
   letter-spacing: ${theme.font.headings.h3.letterSpacing};
-  color: ${theme.colors.accent.main};
+  color: ${theme.colors.accent.highContrast};
 
   svg {
     font-size: 1.1rem;
@@ -103,7 +86,7 @@ export const GroupTitle = styled.h3`
 export const TechList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: ${theme.spacing['xxs']};
 
   ${theme.media.tablet} {
     gap: ${theme.spacing['xs']};
@@ -116,17 +99,21 @@ export const TechTag = styled.span`
   line-height: ${theme.font.tagText.lineHeight};
   letter-spacing: ${theme.font.tagText.letterSpacing};
   color: ${theme.colors.neutral.grey};
-  padding: 3px ${theme.spacing['xs']};
+  padding: ${theme.spacing['xxs']} ${theme.spacing['xs']};
   border: 1px solid ${theme.colors.semantic.tagBorder};
   border-radius: ${theme.borderRadius.sm};
   background-color: ${theme.colors.semantic.tagBackground};
   transition:
     background-color ${theme.transition.fast},
-    border-color ${theme.transition.fast};
+    border-color ${theme.transition.fast},
+    transform ${theme.transition.fast},
+    box-shadow ${theme.transition.fast};
 
   &:hover {
     background-color: ${theme.colors.semantic.tagBackgroundHover};
     border-color: ${theme.colors.semantic.tagBorderHover};
+    transform: translateY(-1px);
+    box-shadow: ${theme.boxShadow.tagHover};
   }
 
   ${theme.media.tablet} {

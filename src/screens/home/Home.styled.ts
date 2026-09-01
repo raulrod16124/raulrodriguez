@@ -1,6 +1,7 @@
-import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled, {keyframes} from 'styled-components';
+import {Link} from 'react-router-dom';
 import theme from '../../theme/theme.json';
+import {focusVisible} from '../../components/shared/focusStyles';
 
 const fadeIn = keyframes`
   from {
@@ -10,6 +11,21 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+`;
+
+const imagePulseIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 `;
 
@@ -31,17 +47,27 @@ const float = keyframes`
   }
 `;
 
+const ringReveal = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
 export const HomeSection = styled.section`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: auto;
-  padding: 100px ${theme.spacing['lg']} 60px;
+  padding: ${theme.spacing['4xl']} ${theme.spacing['lg']} ${theme.spacing['3xl']};
   overflow: hidden;
 
   ${theme.media.tablet} {
-    min-height: calc(100vh - 100px);
     padding: ${theme.spacing['4xl']} ${theme.spacing['3xl']};
   }
 `;
@@ -77,27 +103,14 @@ export const TextContainer = styled.div`
 
 export const NameText = styled.h1`
   margin: 0;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${theme.colors.neutral.grey};
-
-  ${theme.media.tablet} {
-    font-size: 1rem;
-  }
-`;
-
-export const RoleText = styled.h2`
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: ${theme.font.headings.h1.fontWeight};
-  line-height: ${theme.font.headings.h1.lineHeight};
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: ${theme.font.headings.h1.letterSpacing};
   color: ${theme.colors.neutral.white};
 
   ${theme.media.tablet} {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 
   ${theme.media.desktop} {
@@ -105,10 +118,27 @@ export const RoleText = styled.h2`
   }
 `;
 
+export const RoleText = styled.h2`
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: ${theme.font.headings.h2.lineHeight};
+  letter-spacing: ${theme.font.headings.h2.letterSpacing};
+  color: ${theme.colors.neutral.lightGrey};
+
+  ${theme.media.tablet} {
+    font-size: 1.75rem;
+  }
+
+  ${theme.media.desktop} {
+    font-size: ${theme.font.headings.h2.fontSize};
+  }
+`;
+
 export const Subtitle = styled.span`
   font-size: 1rem;
-  font-weight: 400;
-  color: ${theme.colors.accent.main};
+  font-weight: 500;
+  color: ${theme.colors.accent.highContrast};
   letter-spacing: ${theme.font.letterSpacing.wider};
 
   ${theme.media.tablet} {
@@ -182,10 +212,12 @@ export const CTAButton = styled.a`
     transform: translateY(-1px);
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.light};
-    outline-offset: 2px;
+  &:active {
+    background-color: ${theme.colors.accent.dark};
+    transform: translateY(0);
   }
+
+  ${focusVisible}
 `;
 
 export const CTALink = styled(Link)`
@@ -221,10 +253,12 @@ export const CTALink = styled(Link)`
     transform: translateY(-1px);
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.light};
-    outline-offset: 2px;
+  &:active {
+    background-color: ${theme.colors.accent.dark};
+    transform: translateY(0);
   }
+
+  ${focusVisible}
 `;
 
 export const ImageContainer = styled.div`
@@ -232,7 +266,8 @@ export const ImageContainer = styled.div`
   width: 200px;
   height: 200px;
   flex-shrink: 0;
-  animation: ${fadeIn} 0.6s ease-out;
+  opacity: 0;
+  animation: ${imagePulseIn} 0.5s ease-out 0.3s both;
 
   ${theme.media.tablet} {
     width: 240px;
@@ -257,9 +292,20 @@ export const GlowRing = styled.span`
     ${theme.colors.accent.dark} 70%,
     ${theme.colors.accent.main}
   );
-  animation: ${spin} ${theme.animation.ringSpinDuration} linear infinite;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  opacity: 0;
+  animation:
+    ${ringReveal} 0.4s ease-out 0.8s both,
+    ${spin} ${theme.animation.ringSpinDuration} linear 0.8s infinite;
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
   pointer-events: none;
 
   ${theme.media.tablet} {
@@ -279,15 +325,24 @@ export const GlowRingAlt = styled.span`
     transparent 70%,
     rgba(255, 255, 255, 0.12)
   );
-  animation: ${spin} 12s linear infinite reverse;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  opacity: 0;
+  animation:
+    ${ringReveal} 0.4s ease-out 0.9s both,
+    ${spin} 12s linear 0.9s infinite reverse;
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 2px)
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 2px)
+  );
   pointer-events: none;
-  opacity: 0.7;
 
   ${theme.media.tablet} {
     inset: -16px;
-    opacity: 0.8;
   }
 `;
 
@@ -307,17 +362,22 @@ export const Image = styled.img`
   }
 `;
 
-export const FloatingDot = styled.span<{ $top: string; $left: string; $size: number; $delay: string }>`
+export const FloatingDot = styled.span<{
+  $top: string;
+  $left: string;
+  $size: number;
+  $delay: string;
+}>`
   position: absolute;
-  top: ${({ $top }) => $top};
-  left: ${({ $left }) => $left};
-  width: ${({ $size }) => `${$size}px`};
-  height: ${({ $size }) => `${$size}px`};
+  top: ${({$top}) => $top};
+  left: ${({$left}) => $left};
+  width: ${({$size}) => `${$size}px`};
+  height: ${({$size}) => `${$size}px`};
   border-radius: 50%;
   background-color: ${theme.colors.accent.main};
   opacity: 0.08;
   animation: ${float} ${theme.animation.floatDuration} ease-in-out infinite;
-  animation-delay: ${({ $delay }) => $delay};
+  animation-delay: ${({$delay}) => $delay};
   pointer-events: none;
 
   ${theme.media.tablet} {

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
+import {focusVisible} from '../../components/shared/focusStyles';
 
 export const AboutContainer = styled.div`
   display: flex;
@@ -84,10 +85,7 @@ export const CVLink = styled.a`
     transform: translateY(-1px);
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.light};
-    outline-offset: 2px;
-  }
+  ${focusVisible}
 
   ${theme.media.tablet} {
     width: auto;

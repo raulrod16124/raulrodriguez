@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
+import {focusVisible} from '../shared/focusStyles';
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -34,15 +35,37 @@ export const IconContainer = styled.div`
   a {
     color: ${theme.colors.neutral.grey};
     font-size: ${theme.font.icons.fontSize};
-    transition: color ${theme.transition.normal};
+    position: relative;
+    transition:
+      color ${theme.transition.normal},
+      transform ${theme.transition.fast};
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: ${theme.colors.accent.main};
+      transition: width ${theme.transition.normal}, left ${theme.transition.normal};
+    }
 
     &:hover {
       color: ${theme.colors.neutral.white};
+      transform: translateY(-2px);
     }
 
-    &:focus-visible {
-      outline: 2px solid ${theme.colors.accent.main};
-      outline-offset: 2px;
+    &:hover::after {
+      width: 100%;
+      left: 0;
     }
+
+    &:active {
+      color: ${theme.colors.accent.main};
+      transform: translateY(0);
+    }
+
+    ${focusVisible}
   }
 `;
