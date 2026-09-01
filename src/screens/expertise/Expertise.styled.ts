@@ -1,16 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import theme from '../../theme/theme.json';
-
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
 
 export const VisuallyHidden = styled.span`
   position: absolute;
@@ -29,7 +18,6 @@ export const ExpertiseSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
-  animation: ${fadeInUp} 0.4s ease-out;
 
   ${theme.media.tablet} {
     padding: ${theme.spacing['3xl']} ${theme.spacing['lg']};

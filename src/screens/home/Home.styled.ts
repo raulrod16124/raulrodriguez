@@ -13,6 +13,21 @@ const fadeIn = keyframes`
   }
 `;
 
+const imagePulseIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
 const spin = keyframes`
   from {
     transform: rotate(0deg);
@@ -28,6 +43,17 @@ const float = keyframes`
   }
   50% {
     transform: translateY(-10px);
+  }
+`;
+
+const ringReveal = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 `;
 
@@ -235,7 +261,8 @@ export const ImageContainer = styled.div`
   width: 200px;
   height: 200px;
   flex-shrink: 0;
-  animation: ${fadeIn} 0.6s ease-out;
+  opacity: 0;
+  animation: ${imagePulseIn} 0.5s ease-out 0.3s both;
 
   ${theme.media.tablet} {
     width: 240px;
@@ -260,7 +287,10 @@ export const GlowRing = styled.span`
     ${theme.colors.accent.dark} 70%,
     ${theme.colors.accent.main}
   );
-  animation: ${spin} ${theme.animation.ringSpinDuration} linear infinite;
+  opacity: 0;
+  animation:
+    ${ringReveal} 0.4s ease-out 0.8s both,
+    ${spin} ${theme.animation.ringSpinDuration} linear 0.8s infinite;
   mask: radial-gradient(
     farthest-side,
     transparent calc(100% - 3px),
@@ -290,7 +320,10 @@ export const GlowRingAlt = styled.span`
     transparent 70%,
     rgba(255, 255, 255, 0.12)
   );
-  animation: ${spin} 12s linear infinite reverse;
+  opacity: 0;
+  animation:
+    ${ringReveal} 0.4s ease-out 0.9s both,
+    ${spin} 12s linear 0.9s infinite reverse;
   mask: radial-gradient(
     farthest-side,
     transparent calc(100% - 2px),
@@ -302,11 +335,9 @@ export const GlowRingAlt = styled.span`
     #000 calc(100% - 2px)
   );
   pointer-events: none;
-  opacity: 0.7;
 
   ${theme.media.tablet} {
     inset: -16px;
-    opacity: 0.8;
   }
 `;
 
