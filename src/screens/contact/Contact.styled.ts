@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../theme/theme.json';
+import {focusVisible} from '../../components/shared/focusStyles';
 
 export const VisuallyHidden = styled.span`
   position: absolute;
@@ -72,11 +73,23 @@ export const ContactLink = styled.a`
   line-height: ${theme.font.body.lineHeight};
   padding: ${theme.spacing['sm']} ${theme.spacing['md']};
   border-radius: ${theme.borderRadius.md};
+  position: relative;
   transition:
     color ${theme.transition.normal},
     transform ${theme.transition.fast},
     background-color ${theme.transition.normal},
     box-shadow ${theme.transition.normal};
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: ${theme.spacing['xs']};
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: ${theme.colors.accent.main};
+    transition: width ${theme.transition.normal}, left ${theme.transition.normal};
+  }
 
   svg {
     font-size: 2rem;
@@ -92,19 +105,34 @@ export const ContactLink = styled.a`
     box-shadow: 0 8px 24px rgba(88, 161, 143, 0.15);
   }
 
+  &:hover::after {
+    width: 60%;
+    left: 20%;
+  }
+
   &:hover svg {
     transform: scale(1.2);
     filter: drop-shadow(0 0 8px rgba(88, 161, 143, 0.4));
   }
 
-  &:focus-visible {
-    outline: 3px solid ${theme.colors.accent.main};
-    outline-offset: 4px;
-    border-radius: ${theme.borderRadius.sm};
+  &:active {
+    color: ${theme.colors.accent.main};
+    transform: translateY(-2px);
+    background-color: ${theme.colors.semantic.accentBackgroundHover};
   }
+
+  &:active svg {
+    transform: scale(1.1);
+  }
+
+  ${focusVisible}
 
   @media (prefers-reduced-motion: reduce) {
     transition: color ${theme.transition.normal};
+
+    &::after {
+      transition: none;
+    }
 
     &:hover {
       transform: none;

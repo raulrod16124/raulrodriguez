@@ -70,8 +70,8 @@ export const ExperienceCard = styled.article<{ $isLatest?: boolean }>`
   }
 
   &:focus-within {
-    outline: 2px solid ${theme.colors.accent.main};
-    outline-offset: 2px;
+    outline: 3px solid ${theme.colors.accent.main};
+    outline-offset: 3px;
   }
 
   ${theme.media.tablet} {
@@ -180,11 +180,15 @@ export const TechTag = styled.span`
   background-color: ${theme.colors.semantic.tagBackground};
   transition:
     background-color ${theme.transition.fast},
-    border-color ${theme.transition.fast};
+    border-color ${theme.transition.fast},
+    transform ${theme.transition.fast},
+    box-shadow ${theme.transition.fast};
 
   &:hover {
     background-color: ${theme.colors.semantic.tagBackgroundHover};
     border-color: ${theme.colors.semantic.tagBorderHover};
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(88, 161, 143, 0.1);
   }
 
   ${theme.media.tablet} {

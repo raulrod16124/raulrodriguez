@@ -1,6 +1,7 @@
 import styled, {keyframes} from 'styled-components';
 import {Link} from 'react-router-dom';
 import theme from '../../theme/theme.json';
+import {focusVisible} from '../../components/shared/focusStyles';
 
 const fadeIn = keyframes`
   from {
@@ -211,10 +212,12 @@ export const CTAButton = styled.a`
     transform: translateY(-1px);
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.light};
-    outline-offset: 2px;
+  &:active {
+    background-color: ${theme.colors.accent.dark};
+    transform: translateY(0);
   }
+
+  ${focusVisible}
 `;
 
 export const CTALink = styled(Link)`
@@ -250,10 +253,12 @@ export const CTALink = styled(Link)`
     transform: translateY(-1px);
   }
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.accent.light};
-    outline-offset: 2px;
+  &:active {
+    background-color: ${theme.colors.accent.dark};
+    transform: translateY(0);
   }
+
+  ${focusVisible}
 `;
 
 export const ImageContainer = styled.div`

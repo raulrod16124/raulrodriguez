@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import theme from './theme/theme.json';
 
 const drift1 = keyframes`
@@ -107,9 +107,16 @@ export const GradientBackground = styled.div`
   position: relative;
   overflow: hidden;
 
-  > * {
+  > main,
+  > footer {
     position: relative;
     z-index: 1;
+  }
+  ${theme.media.tablet} {
+    > * {
+      position: relative;
+      z-index: 1;
+    }
   }
 `;
 
@@ -135,7 +142,12 @@ export const AmbientLayer = styled.div`
     max-height: 800px;
     top: -15%;
     left: -12%;
-    background: radial-gradient(circle, rgba(88, 161, 143, 0.15) 0%, rgba(88, 161, 143, 0.06) 40%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(88, 161, 143, 0.15) 0%,
+      rgba(88, 161, 143, 0.06) 40%,
+      transparent 70%
+    );
     filter: blur(60px);
     animation: ${drift1} 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   }
@@ -147,7 +159,12 @@ export const AmbientLayer = styled.div`
     max-height: 650px;
     bottom: -18%;
     right: -12%;
-    background: radial-gradient(circle, rgba(58, 125, 106, 0.13) 0%, rgba(58, 125, 106, 0.05) 45%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(58, 125, 106, 0.13) 0%,
+      rgba(58, 125, 106, 0.05) 45%,
+      transparent 70%
+    );
     filter: blur(55px);
     animation: ${drift2} 35s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   }
@@ -164,7 +181,12 @@ export const AmbientBlob = styled.div`
   max-height: 500px;
   top: 40%;
   left: 30%;
-  background: radial-gradient(circle, rgba(116, 180, 155, 0.1) 0%, rgba(88, 161, 143, 0.04) 45%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(116, 180, 155, 0.1) 0%,
+    rgba(88, 161, 143, 0.04) 45%,
+    transparent 70%
+  );
   filter: blur(50px);
   will-change: transform, opacity;
   animation: ${drift3} 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
