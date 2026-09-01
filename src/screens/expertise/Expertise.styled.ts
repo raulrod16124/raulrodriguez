@@ -15,6 +15,7 @@ export const ExpertiseSection = styled.section`
 export const ExpertiseGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
   gap: ${theme.spacing['lg']};
   max-width: ${theme.maxWidth.content};
   width: 100%;
@@ -29,6 +30,7 @@ export const ExpertiseGrid = styled.div`
 export const GroupContainer = styled.article`
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: ${theme.spacing['sm']};
   padding: ${theme.spacing['lg']} ${theme.spacing['md']};
   border-radius: ${theme.borderRadius.md};

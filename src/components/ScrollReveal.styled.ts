@@ -31,6 +31,9 @@ export const RevealContainer = styled.div<{
   $delay: number;
   $duration: number;
 }>`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   opacity: 0;
 
   ${({ $isVisible, $animation, $duration, $delay }) =>

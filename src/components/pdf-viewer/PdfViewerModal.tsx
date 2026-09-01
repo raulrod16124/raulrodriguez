@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { Document, Page } from 'react-pdf';
 import { HiX, HiDownload } from 'react-icons/hi';
 import {
@@ -77,7 +78,7 @@ export const PdfViewerModal = ({
     }
   };
 
-  return (
+  return createPortal(
     <Overlay $isOpen={isOpen} onClick={handleOverlayClick} role="dialog" aria-modal="true" aria-label="PDF Viewer">
       <ModalContainer>
         <ModalHeader>
@@ -121,6 +122,7 @@ export const PdfViewerModal = ({
           )}
         </PdfContent>
       </ModalContainer>
-    </Overlay>
+    </Overlay>,
+    document.body
   );
 };
