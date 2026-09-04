@@ -13,6 +13,7 @@ import {
   LoadingContainer,
   ErrorContainer,
   DownloadButton,
+  FallbackPdf,
 } from './PdfViewerModal.styled';
 
 interface PdfViewerModalProps {
@@ -31,6 +32,7 @@ export const PdfViewerModal = ({
   const [numPages, setNumPages] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [useFallback, setUseFallback] = useState(false);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -58,6 +60,7 @@ export const PdfViewerModal = ({
       setNumPages(null);
       setIsLoading(true);
       setError(null);
+      setUseFallback(false);
     }
   }, [isOpen]);
 
@@ -67,9 +70,9 @@ export const PdfViewerModal = ({
   };
 
   const onDocumentLoadError = (err: Error) => {
-    setError('Error loading PDF. Please try downloading instead.');
-    setIsLoading(false);
     console.error('PDF load error:', err);
+    setUseFallback(true);
+    setIsLoading(false);
   };
 
   const handleOverlayClick = (e: React.MouseEvent) => {
@@ -93,7 +96,9 @@ export const PdfViewerModal = ({
           </HeaderActions>
         </ModalHeader>
         <PdfContent>
-          {error ? (
+          {useFallback ? (
+            <FallbackPdf src={pdfUrl} title={`PDF viewer - ${fileName}`} />
+          ) : error ? (
             <ErrorContainer>
               <p>{error}</p>
               <DownloadButton href={pdfUrl} download={fileName}>

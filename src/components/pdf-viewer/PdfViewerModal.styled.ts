@@ -131,6 +131,14 @@ export const ErrorContainer = styled.div`
   font-size: ${theme.font.small.fontSize};
 `;
 
+export const FallbackPdf = styled.iframe`
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  border: none;
+  border-radius: ${theme.borderRadius.sm};
+`;
+
 export const DownloadButton = styled.a`
   display: inline-flex;
   align-items: center;
