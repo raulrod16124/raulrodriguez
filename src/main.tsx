@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { pdfjs } from 'react-pdf'
 import './index.css'
 
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs'
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
