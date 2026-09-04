@@ -1,4 +1,4 @@
-import{d as o,t as e,l as c,j as n,V as l}from"./index-BU29KDoX.js";import{S as d}from"./ScrollReveal-B9l-gEaO.js";import"./vendor-CdEpWVL-.js";const p=o.section`
+import{d as o,t as e,l as c,j as n,V as l}from"./index-DjLqk89H.js";import{S as d}from"./ScrollReveal-CgW8zTMh.js";import"./vendor-CdEpWVL-.js";const p=o.section`
   display: flex;
   flex-direction: column;
   align-items: center;
