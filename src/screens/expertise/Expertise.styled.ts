@@ -5,6 +5,8 @@ export const ExpertiseSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 60vh;
   padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
 
   ${theme.media.tablet} {

@@ -61,10 +61,10 @@ const ringReveal = keyframes`
 export const HomeSection = styled.section`
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: auto;
-  padding: ${theme.spacing['4xl']} ${theme.spacing['lg']} ${theme.spacing['3xl']};
+  justify-content: center;
+  min-height: 60vh;
+  padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
   overflow: hidden;
 
   ${theme.media.tablet} {
