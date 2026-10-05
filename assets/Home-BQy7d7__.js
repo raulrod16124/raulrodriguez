@@ -1,4 +1,4 @@
-import{m as i,d as n,t,f as s,j as e,H as d,a as p,b as m}from"./index-DjLqk89H.js";import{L as g}from"./vendor-CdEpWVL-.js";const f=i`
+import{m as i,d as n,t,f as s,j as e,H as d,a as p,b as m}from"./index-CYi9UTP0.js";import{L as g}from"./vendor-CdEpWVL-.js";const f=i`
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -46,10 +46,10 @@ import{m as i,d as n,t,f as s,j as e,H as d,a as p,b as m}from"./index-DjLqk89H.
 `,$=n.section`
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: auto;
-  padding: ${t.spacing["4xl"]} ${t.spacing.lg} ${t.spacing["3xl"]};
+  justify-content: center;
+  min-height: 60vh;
+  padding: ${t.spacing["3xl"]} ${t.spacing.md};
   overflow: hidden;
 
   ${t.media.tablet} {
