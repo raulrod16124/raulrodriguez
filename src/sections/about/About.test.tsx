@@ -21,7 +21,7 @@ describe('About', () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        /senior frontend engineer with 5\+ years building product frontends/i,
+        /senior frontend engineer with 5\+ years of experience building product frontends/i,
       ),
     ).toBeInTheDocument();
     expect(

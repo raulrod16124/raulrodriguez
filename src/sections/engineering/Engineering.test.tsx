@@ -8,7 +8,7 @@ const EXPECTED_PRINCIPLES = [
   {
     number: '01',
     title: 'Accessibility is a baseline',
-    description: /keyboard, focus, semantics and reduced motion/i,
+    description: /keyboard support, focus, semantics and reduced motion/i,
   },
   {
     number: '02',

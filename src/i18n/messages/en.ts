@@ -2,7 +2,7 @@ export const en = {
   'site.role': 'Senior Frontend Engineer',
   'meta.title': 'Raúl Rodríguez — Senior Frontend Engineer',
   'meta.description':
-    'Senior Frontend Engineer with 5+ years building scalable React products, design systems and frontend architecture. Currently at Openbank · Capgemini.',
+    'Senior Frontend Engineer with 5+ years of experience building scalable React products, design systems and frontend architecture. Currently at Openbank · Capgemini.',
 
   'common.skipToMain': 'Skip to main content',
   'common.current': 'Current',
@@ -26,7 +26,7 @@ export const en = {
 
   'hero.currentStatus': 'Currently at {company}',
   'hero.valueProp':
-    'I build scalable React products, design systems and the frontend architecture that keeps them maintainable.',
+    'I build scalable React products and design systems, along with the frontend architecture that keeps them maintainable.',
   'hero.cta.work': 'View selected work',
   'hero.cta.contact': 'Get in touch',
   'hero.cta.github': 'GitHub',
@@ -78,24 +78,24 @@ export const en = {
   'work.project.raulrod-ui.role': 'Creator & Maintainer',
   'work.project.raulrod-ui.highlight.foundations':
     'Foundations, forms, feedback, overlays and data display',
-  'work.project.raulrod-ui.highlight.react': 'React 18.2+ and 19 verified',
-  'work.project.raulrod-ui.highlight.esm': 'ESM tree-shakeable package',
-  'work.project.raulrod-ui.highlight.css': 'Around 5.5 kB of CSS',
+  'work.project.raulrod-ui.highlight.react': 'Verified with React 18.2+ and 19',
+  'work.project.raulrod-ui.highlight.esm': 'Tree-shakeable ESM package',
+  'work.project.raulrod-ui.highlight.css': 'Only 5.5 kB of CSS',
   'work.project.raulrod-ui.imageAlt': 'RaulRod UI package page on npm',
   'work.project.chicmouse.tagline':
     'A marketing site for my own independent mobile game studio.',
   'work.project.chicmouse.summary':
-    'A personal project for ChicMouse Studio: a visual, motion-led site that presents Stellar Fusion and the studio games.',
+    "A personal project for ChicMouse Studio: a visual, motion-driven site that showcases Stellar Fusion and the studio's games.",
   'work.project.chicmouse.role': 'Creator & Frontend Developer',
   'work.project.chicmouse.highlight.landing': 'Responsive landing page',
   'work.project.chicmouse.highlight.i18n': 'Internationalization',
   'work.project.chicmouse.highlight.cookies': 'Cookie consent',
-  'work.project.chicmouse.highlight.sections': 'Componentized sections',
+  'work.project.chicmouse.highlight.sections': 'Modular sections',
   'work.project.chicmouse.imageAlt':
     'ChicMouse Studio landing page for Stellar Fusion',
   'work.project.stellar-fusion.tagline': 'Merge. Strategize. Compete.',
   'work.project.stellar-fusion.summary':
-    'A competitive merge puzzle game where cosmic tiles evolve through chain reactions. Players battle worldwide in real-time PvP, climb ranked leagues and complete seasonal challenges.',
+    'A competitive merge puzzle game where cosmic tiles evolve through chain reactions. Players face opponents around the world in real-time PvP, climb the ranked leagues and complete seasonal challenges.',
   'work.project.stellar-fusion.role': 'Creator & Developer',
   'work.project.stellar-fusion.highlight.pvp': 'Real-time PvP battles',
   'work.project.stellar-fusion.highlight.ranked':
@@ -121,11 +121,11 @@ export const en = {
   'experience.item.openbank.role': 'Frontend Engineer',
   'experience.item.openbank.location': 'Remote',
   'experience.item.openbank.description.products':
-    'Build fintech products for different programs and countries with React, TypeScript and styled-components.',
+    'Build fintech products for multiple programs and countries using React, TypeScript and styled-components.',
   'experience.item.openbank.description.architecture':
     'Work with microfrontends, hexagonal architecture and shared libraries across teams.',
   'experience.item.openbank.description.quality':
-    'Integrate identity verification and contribute to testing, code quality and delivery practices within an agile team.',
+    'Work on identity verification and contribute to testing, code quality and delivery practices within an agile team.',
   'experience.item.vehnet.role': 'Frontend Engineer',
   'experience.item.vehnet.location': 'Remote',
   'experience.item.vehnet.description.build':
@@ -133,20 +133,20 @@ export const en = {
   'experience.item.vehnet.description.migration':
     'Contribute to the migration from AWS to Firebase and maintain shared libraries across web and mobile.',
   'experience.item.vehnet.description.design':
-    'Implement Figma designs with design and backend teams, writing unit tests to ensure code quality and reliability.',
+    'Implement Figma designs alongside the design and backend teams, and write unit tests to ensure code quality and reliability.',
   'experience.item.advance.role': 'Frontend Developer',
   'experience.item.advance.location': 'On-site',
   'experience.item.advance.description.telemetry':
-    'Build a frontend from scratch for vehicle telemetry and energy efficiency reporting.',
+    'Build a frontend from scratch for vehicle telemetry and energy-efficiency reporting.',
   'experience.item.advance.description.features':
     'Develop new features and product demos alongside backend and design teams.',
   'experience.item.advance.description.storybook':
     'Create reusable UI components documented in Storybook and tested with Jest and Testing Library.',
   'experience.item.freelance.role': 'Frontend Web Developer',
   'experience.item.freelance.location':
-    'Las Palmas de Gran Canaria, Las Palmas province',
+    'Las Palmas de Gran Canaria, Spain',
   'experience.item.freelance.description.clients':
-    'Develop web applications and landing pages for small businesses with React, adapting solutions to different client needs and projects.',
+    "Build web applications and landing pages for small businesses with React, tailoring solutions to each client's needs and projects.",
   'experience.item.freelance.description.collaboration':
     'Work independently on complete web projects and collaborate with other freelance developers to build and improve web products.',
 
@@ -154,22 +154,22 @@ export const en = {
   'engineering.title': 'Engineering',
   'engineering.principle.accessibility.title': 'Accessibility is a baseline',
   'engineering.principle.accessibility.description':
-    'Keyboard, focus, semantics and reduced motion from the start.',
+    'Keyboard support, focus, semantics and reduced motion from the start.',
   'engineering.principle.design-systems.title':
     'Design systems over copy-paste',
   'engineering.principle.design-systems.description':
     'Tokens, reusable components and documentation that scale across teams.',
   'engineering.principle.testing.title': 'Tests are guardrails',
   'engineering.principle.testing.description':
-    'Unit, integration and contract tests around the behavior that matters.',
+    'Unit, integration and contract tests that cover the behavior that matters.',
   'engineering.principle.architecture.title':
     'Architecture should make change cheap',
   'engineering.principle.architecture.description':
-    'Clear boundaries, microfrontends and hexagonal architecture when they earn their cost.',
+    "Clear boundaries, microfrontends and hexagonal architecture when they're worth the cost.",
   'engineering.principle.performance.title':
     'Performance is part of the design',
   'engineering.principle.performance.description':
-    'Bundle budgets, lazy loading and rendering decisions measured, not guessed.',
+    'Bundle budgets, lazy loading and rendering decisions that are measured, not guessed.',
   'engineering.principle.documentation.title': 'Document the why',
   'engineering.principle.documentation.description':
     'Clear APIs, ADRs and Storybook so the next person can move faster.',
@@ -177,14 +177,14 @@ export const en = {
   'about.eyebrow': 'About me',
   'about.title': 'About',
   'about.lead':
-    "I'm a {role} with {years}+ years building product frontends, design systems and the architecture behind them.",
+    "I'm a {role} with {years}+ years of experience building product frontends, design systems and the architecture behind them.",
   'about.body':
-    "I've worked across fintech, e-mobility and web/mobile products, and I care about accessible interfaces, maintainable boundaries and teams that can ship with confidence.",
+    "I've worked across fintech, e-mobility and web/mobile products, and I care about accessible interfaces, maintainable codebases and teams that can ship with confidence.",
 
   'contact.eyebrow': 'Contact',
   'contact.title': "Let's build something useful.",
   'contact.description':
-    "If you're hiring or have a product that needs a senior frontend perspective, I'd like to hear about it.",
+    "If you're hiring or have a product that needs a senior frontend perspective, I'd love to hear from you.",
   'contact.action.email': 'Email',
   'contact.action.github': 'GitHub',
   'contact.action.linkedin': 'LinkedIn',

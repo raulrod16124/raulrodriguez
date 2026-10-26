@@ -51,7 +51,7 @@ describe('I18nProvider', () => {
 
     expect(screen.getByTestId('locale')).toHaveTextContent('es');
     expect(screen.getByTestId('role')).toHaveTextContent(
-      'Ingeniero Frontend Senior',
+      'Senior Frontend Engineer',
     );
     expect(document.documentElement.lang).toBe('es');
     expect(window.localStorage.getItem('rr-locale')).toBe('es');

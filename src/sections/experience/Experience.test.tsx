@@ -64,7 +64,7 @@ const EXPECTED_EXPERIENCES = [
   {
     company: 'Freelancer',
     role: 'Frontend Web Developer',
-    location: 'Las Palmas de Gran Canaria, Las Palmas province',
+    location: 'Las Palmas de Gran Canaria, Spain',
     dates: 'Feb 2021 – Jul 2021',
     description: /landing pages for small businesses/i,
     technologies: ['React', 'TypeScript', 'JavaScript', 'Jest', 'HTML', 'CSS', 'styled-components'],
