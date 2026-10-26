@@ -1,6 +1,7 @@
-import {useState, useCallback, useEffect} from 'react';
-import {useLocation} from 'react-router-dom';
-import {HiMenu, HiX} from 'react-icons/hi';
+import { useState, useCallback, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { IconButton, VisuallyHidden } from '@raulrod/ui';
+import { HiMenu, HiX } from 'react-icons/hi';
 import {
   NavButton,
   NavButtons,
@@ -9,12 +10,29 @@ import {
   HamburgerButton,
   LogoContainer,
 } from './Navbar.styled';
-import {VisuallyHidden} from '../shared/VisuallyHidden';
-import {Logo} from './logo';
+import { Logo } from './logo';
+import { useActiveSection } from '../../hooks/useActiveSection';
+
+const NAV_ITEMS = [
+  { label: 'Work', href: '#work' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Engineering', href: '#engineering' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
+] as const;
+
+const SECTION_BY_HREF: Record<string, string> = {
+  '#work': 'work',
+  '#experience': 'experience',
+  '#engineering': 'engineering',
+  '#about': 'about',
+  '#contact': 'contact',
+};
 
 export const Navbar = () => {
-  const {pathname} = useLocation();
+  const { hash, pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const activeSection = useActiveSection();
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
@@ -22,7 +40,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     closeMenu();
-  }, [pathname, closeMenu]);
+  }, [hash, pathname, closeMenu]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -35,49 +53,53 @@ export const Navbar = () => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isMenuOpen, closeMenu]);
 
+  const isActive = (href: string) => {
+    if (hash === href) {
+      return true;
+    }
+    const sectionId = SECTION_BY_HREF[href];
+    if (!sectionId) {
+      return false;
+    }
+    if (pathname === '/' || pathname === '/home') {
+      return activeSection === sectionId;
+    }
+    return false;
+  };
+
   return (
     <NavbarWrapper data-testid="Navbar" aria-label="Main navigation">
       <NavbarContainer>
         <VisuallyHidden>Navigation menu</VisuallyHidden>
         <LogoContainer>
-          <Logo width={32} height={32} />
+          <Link to="/#home" aria-label="Raúl Rodríguez - Home">
+            <Logo width={32} height={32} />
+          </Link>
         </LogoContainer>
-        <HamburgerButton
-          onClick={() => setIsMenuOpen(prev => !prev)}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-nav"
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
-          {isMenuOpen ? (
-            <HiX size={20} aria-hidden="true" />
-          ) : (
-            <HiMenu size={20} aria-hidden="true" />
-          )}
+        <HamburgerButton as="div">
+          <IconButton
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
+            label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            variant="ghost"
+            size="md"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            {isMenuOpen ? <HiX size={20} aria-hidden="true" /> : <HiMenu size={20} aria-hidden="true" />}
+          </IconButton>
         </HamburgerButton>
         <NavButtons id="mobile-nav" $isOpen={isMenuOpen}>
-          <NavButton
-            to="home"
-            active={pathname === '/home' || pathname === '/'}
-            onClick={closeMenu}>
-            Home
-          </NavButton>
-          <NavButton
-            to="experience"
-            active={pathname.split('/')[1] === 'experience'}
-            onClick={closeMenu}>
-            Experience
-          </NavButton>
-          <NavButton
-            to="expertise"
-            active={pathname.split('/')[1] === 'expertise'}
-            onClick={closeMenu}>
-            Expertise
-          </NavButton>
-          <NavButton
-            to="contact"
-            active={pathname.split('/')[1] === 'contact'}
-            onClick={closeMenu}>
-            Contact
-          </NavButton>
+          {NAV_ITEMS.map((item) => (
+            <NavButton
+              key={item.href}
+              to={`/${item.href}`}
+              active={isActive(item.href)}
+              aria-current={isActive(item.href) ? 'location' : undefined}
+              onClick={closeMenu}
+            >
+              {item.label}
+            </NavButton>
+          ))}
         </NavButtons>
       </NavbarContainer>
     </NavbarWrapper>

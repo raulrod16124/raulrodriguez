@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 
 beforeEach(() => {
     render(
-        <MemoryRouter>
+        <MemoryRouter initialEntries={["/"]}>
             <Navbar />
         </MemoryRouter>
     )
@@ -17,25 +17,25 @@ describe("Navbar tests", () => {
         const navbarTestid = screen.getByTestId("Navbar");
         expect(navbarTestid).toBeInTheDocument();
     })
-    test("should display 'Home' link", () => {
-        const homeText = screen.getByText("Home");
-        expect(homeText).toBeInTheDocument();
+    test("should display 'Work' link", () => {
+        const workText = screen.getByText("Work");
+        expect(workText).toBeInTheDocument();
     })
     test("should display 'Experience' link", () => {
         const experienceText = screen.getByText("Experience");
         expect(experienceText).toBeInTheDocument();
     })
-    test("should display 'Expertise' link", () => {
-        const expertiseText = screen.getByText("Expertise");
-        expect(expertiseText).toBeInTheDocument();
+    test("should display 'Engineering' link", () => {
+        const engineeringText = screen.getByText("Engineering");
+        expect(engineeringText).toBeInTheDocument();
+    })
+    test("should display 'About' link", () => {
+        const aboutText = screen.getByText("About");
+        expect(aboutText).toBeInTheDocument();
     })
     test("should display 'Contact' link", () => {
         const contactText = screen.getByText("Contact");
         expect(contactText).toBeInTheDocument();
-    })
-    test("should not display 'Projects' link", () => {
-        const projectsText = screen.queryByText("Projects");
-        expect(projectsText).not.toBeInTheDocument();
     })
     test("should render hamburger button", () => {
         const hamburger = screen.getByLabelText("Open menu");
