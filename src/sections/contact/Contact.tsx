@@ -20,7 +20,7 @@ export const Contact = () => {
   return (
     <Section
       id="contact"
-      index="06"
+      index="05"
       variant="statement"
       eyebrow={contact.eyebrow}
       title={contact.title}

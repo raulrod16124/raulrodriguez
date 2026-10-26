@@ -13,7 +13,7 @@ export const About = () => {
   return (
     <Section
       id="about"
-      index="05"
+      index="04"
       variant="editorial"
       eyebrow={about.eyebrow}
       title={about.title}

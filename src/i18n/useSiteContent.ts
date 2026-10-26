@@ -4,7 +4,6 @@ import { HERO } from '../sections/hero/Hero.constants';
 import { WHAT_I_DO } from '../sections/what-i-do/WhatIDo.constants';
 import { WORK } from '../sections/work/Work.constants';
 import { EXPERIENCE } from '../sections/experience/Experience.constants';
-import { ENGINEERING } from '../sections/engineering/Engineering.constants';
 import { ABOUT } from '../sections/about/About.constants';
 import { CONTACT } from '../sections/contact/Contact.constants';
 import { FOOTER } from '../components/footer/Footer.constants';
@@ -59,7 +58,6 @@ export const useSiteContent = () => {
       items: [
         { label: t('nav.work'), href: '#work' },
         { label: t('nav.experience'), href: '#experience' },
-        { label: t('nav.engineering'), href: '#engineering' },
         { label: t('nav.about'), href: '#about' },
         { label: t('nav.contact'), href: '#contact' },
       ],
@@ -118,15 +116,6 @@ export const useSiteContent = () => {
         location: t(item.locationId),
         dates: formatDateRange(item.startDate, item.endDate),
         description: item.description.map((description) => t(description)),
-      })),
-    },
-    engineering: {
-      eyebrow: t(ENGINEERING.eyebrowId),
-      title: t(ENGINEERING.titleId),
-      principles: ENGINEERING.principles.map((principle) => ({
-        id: principle.id,
-        title: t(principle.titleId),
-        description: t(principle.descriptionId),
       })),
     },
     about: {

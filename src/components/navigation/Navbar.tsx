@@ -20,7 +20,6 @@ import { useSiteContent } from '../../i18n/useSiteContent';
 const SECTION_BY_HREF: Record<string, string> = {
   '#work': 'work',
   '#experience': 'experience',
-  '#engineering': 'engineering',
   '#about': 'about',
   '#contact': 'contact',
 };
