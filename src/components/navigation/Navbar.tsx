@@ -12,6 +12,7 @@ import {
 } from './Navbar.styled';
 import { Logo } from './logo';
 import { useActiveSection } from '../../hooks/useActiveSection';
+import { useScrolled } from '../../hooks/useScrolled';
 
 const NAV_ITEMS = [
   { label: 'Work', href: '#work' },
@@ -33,6 +34,8 @@ export const Navbar = () => {
   const { hash, pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const activeSection = useActiveSection();
+  const isScrolled = useScrolled();
+  const isElevated = isScrolled || isMenuOpen;
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
@@ -68,8 +71,13 @@ export const Navbar = () => {
   };
 
   return (
-    <NavbarWrapper data-testid="Navbar" aria-label="Main navigation">
-      <NavbarContainer>
+    <NavbarWrapper
+      data-testid="Navbar"
+      data-scrolled={isScrolled}
+      data-elevated={isElevated}
+      aria-label="Main navigation"
+    >
+      <NavbarContainer $elevated={isElevated}>
         <LogoContainer>
           <Logo width={32} height={32} />
         </LogoContainer>

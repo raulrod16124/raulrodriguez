@@ -1,8 +1,20 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, test, expect } from 'vitest';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { describe, test, expect, beforeEach } from 'vitest';
 import { Navbar } from './Navbar';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
+
+const setScrollY = (value: number) => {
+  Object.defineProperty(window, 'scrollY', {
+    configurable: true,
+    writable: true,
+    value,
+  });
+};
+
+beforeEach(() => {
+  setScrollY(0);
+});
 
 const renderNavbar = (path = '/') =>
   render(
@@ -78,6 +90,54 @@ describe('Navbar tests', () => {
     );
     expect(screen.getByRole('link', { name: 'Experience' })).not.toHaveAttribute(
       'aria-current',
+    );
+  });
+
+  test('should not be elevated before the page is scrolled', () => {
+    renderNavbar();
+
+    expect(screen.getByTestId('Navbar')).toHaveAttribute(
+      'data-scrolled',
+      'false',
+    );
+    expect(screen.getByTestId('Navbar')).toHaveAttribute(
+      'data-elevated',
+      'false',
+    );
+  });
+
+  test('should become elevated after scrolling and return to the top state', async () => {
+    renderNavbar();
+
+    setScrollY(120);
+    fireEvent.scroll(window);
+
+    await waitFor(() =>
+      expect(screen.getByTestId('Navbar')).toHaveAttribute(
+        'data-scrolled',
+        'true',
+      ),
+    );
+
+    setScrollY(0);
+    fireEvent.scroll(window);
+
+    await waitFor(() =>
+      expect(screen.getByTestId('Navbar')).toHaveAttribute(
+        'data-scrolled',
+        'false',
+      ),
+    );
+  });
+
+  test('should elevate the navbar while the mobile menu is open', () => {
+    renderNavbar();
+
+    fireEvent.click(screen.getByLabelText('Open menu'));
+
+    expect(screen.getByTestId('Navbar')).toHaveAttribute(
+      'data-elevated',
+      'true',
     );
   });
 });

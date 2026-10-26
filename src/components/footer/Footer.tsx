@@ -1,4 +1,4 @@
-import { Code2, UserRound } from '@raulrod/icons';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import {
   BuiltWithText,
   CopyrightText,
@@ -10,8 +10,8 @@ import {
 import { FOOTER } from './Footer.constants';
 
 const LINK_ICONS = {
-  github: Code2,
-  linkedin: UserRound,
+  github: FaGithub,
+  linkedin: FaLinkedin,
 } as const;
 
 export const Footer = () => {

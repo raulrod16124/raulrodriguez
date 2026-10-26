@@ -1,5 +1,5 @@
 import { Button } from '@raulrod/ui';
-import { Code2, Mail, UserRound } from '@raulrod/icons';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Section } from '../../components/section/Section';
 import { CvDialog } from '../../components/cv-dialog/CvDialog';
 import { SITE } from '../../content/site';
@@ -7,9 +7,9 @@ import { CONTACT } from './Contact.constants';
 import { ContactActions, ContactCvAction } from './Contact.styled';
 
 const ACTION_ICONS = {
-  email: Mail,
-  github: Code2,
-  linkedin: UserRound,
+  email: FaEnvelope,
+  github: FaGithub,
+  linkedin: FaLinkedin,
 } as const;
 
 export const Contact = () => {

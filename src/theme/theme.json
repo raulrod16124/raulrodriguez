@@ -29,6 +29,7 @@
       "navActiveBackground": "rgba(255, 255, 255, 0.08)",
       "navHoverBackground": "rgba(255, 255, 255, 0.05)",
       "navbarBackdrop": "rgba(17, 17, 17, 0.8)",
+      "navbarBackdropStrong": "rgba(17, 17, 17, 0.92)",
       "divider": "rgba(255, 255, 255, 0.08)",
       "accentBorder": "rgba(88, 161, 143, 0.4)",
       "accentBackgroundHover": "rgba(88, 161, 143, 0.1)"
@@ -156,6 +157,7 @@
     "tagHover": "0 2px 8px rgba(88, 161, 143, 0.1)",
     "contactHover": "0 8px 24px rgba(88, 161, 143, 0.15)",
     "iconGlow": "drop-shadow(0 0 8px rgba(88, 161, 143, 0.4))",
+    "navbarScrolled": "0 10px 30px rgba(0, 0, 0, 0.28)",
     "modalOverlay": "rgba(0, 0, 0, 0.85)"
   }
 }

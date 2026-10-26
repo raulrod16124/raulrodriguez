@@ -105,18 +105,11 @@ export const GradientBackground = styled.div`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  overflow: hidden;
 
   > main,
   > footer {
     position: relative;
     z-index: 1;
-  }
-  ${theme.media.tablet} {
-    > * {
-      position: relative;
-      z-index: 1;
-    }
   }
 `;
 
@@ -220,25 +213,4 @@ export const MainContent = styled.main`
 
 export const AppContainer = styled.div`
   width: 100%;
-  overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: ${theme.colors.neutral.grey} ${theme.colors.surface};
-
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: ${theme.colors.surface};
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${theme.colors.neutral.grey};
-    border-radius: 3px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: ${theme.colors.neutral.lightGrey};
-  }
 `;

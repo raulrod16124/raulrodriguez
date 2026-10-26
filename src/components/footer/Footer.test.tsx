@@ -34,6 +34,7 @@ describe('Footer', () => {
     );
     expect(githubLink).toHaveAttribute('target', '_blank');
     expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(githubLink.querySelector('svg')).toBeInTheDocument();
 
     expect(linkedinLink).toHaveAttribute(
       'href',
@@ -41,5 +42,6 @@ describe('Footer', () => {
     );
     expect(linkedinLink).toHaveAttribute('target', '_blank');
     expect(linkedinLink).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(linkedinLink.querySelector('svg')).toBeInTheDocument();
   });
 });
