@@ -1,57 +1,49 @@
 <div align="center">
   <a href="https://raulrodriguez.dev/">
-    <img src="https://github.com/raulrod16124/raulrodriguez/blob/main/src/assets/images/rrLogo.png" alt="raulrodriguez image" style="width: 150px;"/>
+    <img src="https://github.com/raulrod16124/raulrodriguez/blob/main/src/assets/images/rrLogo.png" alt="raulrodriguez logo" style="width: 150px;"/>
   </a>
-  <h1>Raul Rodriguez</h1>
+  <h1>Raúl Rodríguez</h1>
+  <p>Senior Frontend Engineer</p>
 </div>
 
-## 🌟 Description
+## About
 
-This personal portfolio was created to highlight my skills in frontend development, showcase noteworthy projects, and provide an overview of my professional experience. The interface is designed to offer a visually appealing and smooth experience, featuring key projects and ensuring an intuitive browsing experience.
+Personal portfolio of Raúl Rodríguez, a Senior Frontend Engineer with 5+ years building scalable React products, design systems and frontend architecture. Currently at Openbank · Capgemini.
 
-This site also serves as a demonstration of my proficiency with **React** and **TypeScript**, as well as modern tools like **Vite** and **Styled-Components**. Automated tests are included to guarantee the quality and robustness of each component.
+The site is a single page with anchor navigation, real project captures and a focus on accessible, maintainable frontend work.
 
----
+## Tech stack
 
-## 🚀 Tech Stack
+- React 18 and TypeScript
+- Vite 5
+- styled-components
+- `@raulrod/ui`, `@raulrod/tokens` and `@raulrod/icons`
+- React Router
+- react-pdf
+- Vitest and Testing Library
 
-- **Frontend**: [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Styled-Components](https://styled-components.com/)
-- **Development**: [Vite](https://vitejs.dev/) - for fast and efficient builds
-- **Testing**: [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/) - for unit and functional tests
+## Scripts
 
----
+```bash
+yarn dev          # Start the development server
+yarn test --run   # Run the test suite once
+yarn build        # Type-check and build for production
+yarn lint         # Run ESLint
+yarn preview      # Preview the production build
+yarn deploy       # Deploy the build to GitHub Pages
+```
 
-## ✨ Features
+## Development
 
-- **Modern Interface**: A clean, professional design that highlights projects.
-- **Fully Responsive**: Compatible with both mobile and desktop devices.
-- **Automated Testing**: Ensures site reliability across different browsers.
-- **Modular & Scalable Code**: Organized for easy maintenance and future updates.
+```bash
+git clone https://github.com/raulrod16124/raulrodriguez.git
+cd raulrodriguez
+yarn install
+yarn dev
+```
 
----
+## Contact
 
-## 🔧 Installation & Setup
-
-To run the project locally, follow these steps:
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone https://github.com/raulrod16124/raulrodriguez.git
-   cd raulrodriguez
-   ```
-2. **Install dependencies**
-   
-   ```bash
-   npm install
-   ```
-3. **Start the project**
-   
-   ```bash
-   npm run dev
-   ```
-
-## 📬 Contact
-
-Thank you for visiting my portfolio!
-If you have any questions or would like to connect, feel free to find me on [LinkedIn](https://www.linkedin.com/in/raul-rod/) or reach out via email at raulrod16124@gmail.com.
+- [LinkedIn](https://www.linkedin.com/in/raul-rod/)
+- [GitHub](https://github.com/raulrod16124)
+- Email: raul.rod16124@gmail.com

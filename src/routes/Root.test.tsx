@@ -1,44 +1,87 @@
-// Root.test.tsx
-import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { describe, test, expect } from "vitest";
-import { Root } from "./Root";
-import "@testing-library/jest-dom";
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter, useLocation } from 'react-router-dom';
+import { describe, expect, test } from 'vitest';
+import { Root } from './Root';
+import '@testing-library/jest-dom';
 
-const RootWrapper = (path: string) => (
-  <MemoryRouter initialEntries={[path]}>
-    <Root />
-  </MemoryRouter>
-);
+const LocationProbe = () => {
+  const location = useLocation();
 
-describe("Root Component Routing", () => {
-  test("should render HomePage when at root path", () => {
-    render(RootWrapper("/"));
-    expect(screen.getByText("Hero")).toBeInTheDocument();
+  return <div data-testid="location">{`${location.pathname}${location.hash}`}</div>;
+};
+
+const renderRoot = (path: string) =>
+  render(
+    <MemoryRouter initialEntries={[path]}>
+      <Root />
+      <LocationProbe />
+    </MemoryRouter>,
+  );
+
+describe('Root Component Routing', () => {
+  test('renders the home page at the root path', () => {
+    renderRoot('/');
+
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /senior frontend engineer/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('location')).toHaveTextContent(/^\/$/);
   });
 
-  test("should redirect /home to home section", () => {
-    render(RootWrapper("/home"));
-    expect(screen.getByText("Hero")).toBeInTheDocument();
+  test('redirects /home to the home anchor', () => {
+    renderRoot('/home');
+
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /senior frontend engineer/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('location')).toHaveTextContent('/#home');
   });
 
-  test("should redirect /experience to experience section", () => {
-    render(RootWrapper("/experience"));
-    expect(screen.getByText("Experience")).toBeInTheDocument();
+  test('redirects /experience to the experience section', () => {
+    renderRoot('/experience');
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Experience' }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('location')).toHaveTextContent('/#experience');
   });
 
-  test("should redirect /expertise to what-i-do section", () => {
-    render(RootWrapper("/expertise"));
-    expect(screen.getByText("What I do")).toBeInTheDocument();
+  test('redirects /expertise to the what-i-do section', () => {
+    renderRoot('/expertise');
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'What I do' }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('location')).toHaveTextContent('/#what-i-do');
   });
 
-  test("should redirect /contact to contact section", () => {
-    render(RootWrapper("/contact"));
-    expect(screen.getByText("Contact")).toBeInTheDocument();
+  test('redirects /contact to the contact section', () => {
+    renderRoot('/contact');
+
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+        name: /let's build something useful/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('location')).toHaveTextContent('/#contact');
   });
 
-  test("should redirect to Home when an unknown path is entered", () => {
-    render(RootWrapper("/unknown"));
-    expect(screen.getByText("Hero")).toBeInTheDocument();
+  test('redirects an unknown path to the home page', () => {
+    renderRoot('/unknown');
+
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /senior frontend engineer/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('location')).toHaveTextContent(/^\/$/);
   });
 });

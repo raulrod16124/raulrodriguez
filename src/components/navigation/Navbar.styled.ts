@@ -126,19 +126,19 @@ export const NavButtons = styled.div<{$isOpen: boolean}>`
   }
 `;
 
-export const NavButton = styled(Link)<{active: boolean}>`
+export const NavButton = styled(Link)<{$active: boolean}>`
   width: 100%;
   text-align: left;
   padding: ${theme.spacing['sm']} ${theme.spacing['md']};
   border-radius: ${theme.borderRadius.sm};
   font-size: ${theme.font.body.fontSize};
   border-left: ${props =>
-    props.active
+    props.$active
       ? `3px solid ${theme.colors.accent.main}`
       : '3px solid transparent'};
   font-family: ${theme.font.primary.fontFamily};
   font-weight: ${props =>
-    props.active ? '500' : `${theme.font.navText.fontWeight}`};
+    props.$active ? '500' : `${theme.font.navText.fontWeight}`};
   line-height: ${theme.font.navText.lineHeight};
   letter-spacing: ${theme.font.navText.letterSpacing};
   cursor: pointer;
@@ -147,9 +147,9 @@ export const NavButton = styled(Link)<{active: boolean}>`
   white-space: nowrap;
   position: relative;
   color: ${props =>
-    props.active ? theme.colors.neutral.white : theme.colors.neutral.grey};
+    props.$active ? theme.colors.neutral.white : theme.colors.neutral.grey};
   background-color: ${props =>
-    props.active ? theme.colors.semantic.navActiveBackground : 'transparent'};
+    props.$active ? theme.colors.semantic.navActiveBackground : 'transparent'};
 
   &:hover {
     color: ${theme.colors.neutral.white};

@@ -1,4 +1,4 @@
-import { HiBriefcase, HiCode, HiMail } from 'react-icons/hi';
+import { Briefcase, Code2, Mail } from '@raulrod/icons';
 import {
   CTAButton,
   CTALink,
@@ -34,7 +34,7 @@ export const Hero = () => {
           <ValueProp>{HERO.valueProp}</ValueProp>
           <CTAContainer>
             <CTALink to={HERO.ctas.work.href}>
-              <HiBriefcase aria-hidden="true" />
+              <Briefcase aria-hidden="true" />
               {HERO.ctas.work.label}
             </CTALink>
             <CTAButton
@@ -42,11 +42,11 @@ export const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <HiCode aria-hidden="true" />
+              <Code2 aria-hidden="true" />
               {HERO.ctas.github.label}
             </CTAButton>
             <CTALink to={HERO.ctas.contact.href}>
-              <HiMail aria-hidden="true" />
+              <Mail aria-hidden="true" />
               {HERO.ctas.contact.label}
             </CTALink>
           </CTAContainer>
@@ -60,7 +60,6 @@ export const Hero = () => {
               src={avatarPng}
               alt="Raúl Rodríguez - Senior Frontend Engineer"
               loading="eager"
-              fetchPriority="high"
             />
           </picture>
         </ImageContainer>

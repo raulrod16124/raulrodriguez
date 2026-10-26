@@ -14,7 +14,7 @@ export const Logo = ({
   color = theme.colors.accent.main,
   className,
 }: LogoProps) => (
-  <LogoLink to="/home" aria-label="Go to homepage">
+  <LogoLink to="/#home" aria-label="Raúl Rodríguez - Home">
     <LogoSvg
       $width={width}
       $height={height}

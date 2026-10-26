@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { IconButton, VisuallyHidden } from '@raulrod/ui';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { useLocation } from 'react-router-dom';
+import { IconButton } from '@raulrod/ui';
+import { Menu, X } from '@raulrod/icons';
 import {
   NavButton,
   NavButtons,
@@ -70,11 +70,8 @@ export const Navbar = () => {
   return (
     <NavbarWrapper data-testid="Navbar" aria-label="Main navigation">
       <NavbarContainer>
-        <VisuallyHidden>Navigation menu</VisuallyHidden>
         <LogoContainer>
-          <Link to="/#home" aria-label="Raúl Rodríguez - Home">
-            <Logo width={32} height={32} />
-          </Link>
+          <Logo width={32} height={32} />
         </LogoContainer>
         <HamburgerButton as="div">
           <IconButton
@@ -85,7 +82,7 @@ export const Navbar = () => {
             size="md"
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
-            {isMenuOpen ? <HiX size={20} aria-hidden="true" /> : <HiMenu size={20} aria-hidden="true" />}
+            {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
           </IconButton>
         </HamburgerButton>
         <NavButtons id="mobile-nav" $isOpen={isMenuOpen}>
@@ -93,7 +90,7 @@ export const Navbar = () => {
             <NavButton
               key={item.href}
               to={`/${item.href}`}
-              active={isActive(item.href)}
+              $active={isActive(item.href)}
               aria-current={isActive(item.href) ? 'location' : undefined}
               onClick={closeMenu}
             >
