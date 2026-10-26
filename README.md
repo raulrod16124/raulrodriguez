@@ -19,8 +19,8 @@ experience building scalable React products, design systems and frontend
 architecture. Currently at Openbank · Capgemini.
 
 The site is a single-page portfolio available in English and Spanish. It combines
-real project captures, a career timeline, engineering principles and an accessible
-CV preview, with a focus on maintainable frontend work. The years of experience
+real project captures, a career timeline and an accessible CV preview, with a
+focus on maintainable frontend work. The years of experience
 shown in the About section are calculated dynamically from the career start date.
 
 ## Live site
@@ -35,7 +35,6 @@ shown in the About section are calculated dynamically from the career start date
 | What I do      | `#what-i-do`   | Product frontends, design systems and frontend architecture    |
 | Selected Work  | `#work`        | Cachiplunca, raulrod-ui, Chicmouse and Stellar Fusion          |
 | Experience     | `#experience`  | Openbank · Capgemini, Vehnet, Advance Digital Experts and freelance work |
-| Engineering    | `#engineering` | Six principles covering accessibility, testing and architecture |
 | About          | `#about`       | Profile summary and accessible CV dialog                       |
 | Contact        | `#contact`     | Email, GitHub, LinkedIn and CV                                 |
 
@@ -61,7 +60,7 @@ matching anchors. Unknown routes return to the homepage.
 ```text
 src/
   components/     # Navbar, footer, section shell and CV dialog
-  sections/       # Hero, What I do, Work, Experience, Engineering, About, Contact
+  sections/       # Hero, What I do, Work, Experience, About, Contact
   content/        # Global site data
   i18n/           # Locale detection, provider and EN/ES message catalogs
   helpers/        # Experience years calculation

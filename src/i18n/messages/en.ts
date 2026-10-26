@@ -13,7 +13,6 @@ export const en = {
   'nav.mainLabel': 'Main navigation',
   'nav.work': 'Work',
   'nav.experience': 'Experience',
-  'nav.engineering': 'Engineering',
   'nav.about': 'About',
   'nav.contact': 'Contact',
   'nav.openMenu': 'Open menu',
@@ -149,30 +148,6 @@ export const en = {
     "Build web applications and landing pages for small businesses with React, tailoring solutions to each client's needs and projects.",
   'experience.item.freelance.description.collaboration':
     'Work independently on complete web projects and collaborate with other freelance developers to build and improve web products.',
-
-  'engineering.eyebrow': 'Principles',
-  'engineering.title': 'Engineering',
-  'engineering.principle.accessibility.title': 'Accessibility is a baseline',
-  'engineering.principle.accessibility.description':
-    'Keyboard support, focus, semantics and reduced motion from the start.',
-  'engineering.principle.design-systems.title':
-    'Design systems over copy-paste',
-  'engineering.principle.design-systems.description':
-    'Tokens, reusable components and documentation that scale across teams.',
-  'engineering.principle.testing.title': 'Tests are guardrails',
-  'engineering.principle.testing.description':
-    'Unit, integration and contract tests that cover the behavior that matters.',
-  'engineering.principle.architecture.title':
-    'Architecture should make change cheap',
-  'engineering.principle.architecture.description':
-    "Clear boundaries, microfrontends and hexagonal architecture when they're worth the cost.",
-  'engineering.principle.performance.title':
-    'Performance is part of the design',
-  'engineering.principle.performance.description':
-    'Bundle budgets, lazy loading and rendering decisions that are measured, not guessed.',
-  'engineering.principle.documentation.title': 'Document the why',
-  'engineering.principle.documentation.description':
-    'Clear APIs, ADRs and Storybook so the next person can move faster.',
 
   'about.eyebrow': 'About me',
   'about.title': 'About',

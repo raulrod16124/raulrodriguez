@@ -26,7 +26,7 @@ describe('Navbar tests', () => {
     expect(screen.getByTestId('Navbar')).toBeInTheDocument();
   });
 
-  test.each(['Work', 'Experience', 'Engineering', 'About', 'Contact'])(
+  test.each(['Work', 'Experience', 'About', 'Contact'])(
     'should display the %s link',
     (label) => {
       renderNavbar();

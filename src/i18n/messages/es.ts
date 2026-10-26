@@ -15,7 +15,6 @@ export const es: Messages = {
   'nav.mainLabel': 'Navegación principal',
   'nav.work': 'Proyectos',
   'nav.experience': 'Experiencia',
-  'nav.engineering': 'Ingeniería',
   'nav.about': 'Sobre mí',
   'nav.contact': 'Contacto',
   'nav.openMenu': 'Abrir menú',
@@ -153,30 +152,6 @@ export const es: Messages = {
     'Desarrollo aplicaciones web y páginas de aterrizaje para pequeñas empresas con React, adaptando cada solución a las necesidades y proyectos del cliente.',
   'experience.item.freelance.description.collaboration':
     'Trabajo de forma independiente en proyectos web completos y colaboro con otros desarrolladores freelance para construir y mejorar productos web.',
-
-  'engineering.eyebrow': 'Principios',
-  'engineering.title': 'Ingeniería',
-  'engineering.principle.accessibility.title': 'La accesibilidad es la base',
-  'engineering.principle.accessibility.description':
-    'Teclado, foco, semántica y movimiento reducido desde el primer día.',
-  'engineering.principle.design-systems.title':
-    'Sistemas de diseño en lugar de copiar y pegar',
-  'engineering.principle.design-systems.description':
-    'Tokens, componentes reutilizables y documentación que escalan entre equipos.',
-  'engineering.principle.testing.title': 'Las pruebas son una red de seguridad',
-  'engineering.principle.testing.description':
-    'Pruebas unitarias, de integración y de contrato centradas en el comportamiento que importa.',
-  'engineering.principle.architecture.title':
-    'La arquitectura debe facilitar los cambios',
-  'engineering.principle.architecture.description':
-    'Límites claros, microfrontends y arquitectura hexagonal cuando realmente merecen la pena.',
-  'engineering.principle.performance.title':
-    'El rendimiento forma parte del diseño',
-  'engineering.principle.performance.description':
-    'Límites de tamaño del bundle, carga diferida y decisiones de renderizado basadas en datos, no en suposiciones.',
-  'engineering.principle.documentation.title': 'Documenta el porqué de las cosas',
-  'engineering.principle.documentation.description':
-    'APIs claras, ADRs y Storybook para que la siguiente persona avance más rápido.',
 
   'about.eyebrow': 'Perfil',
   'about.title': 'Sobre mí',
