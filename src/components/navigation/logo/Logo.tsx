@@ -6,6 +6,7 @@ type LogoProps = {
   height?: number;
   color?: string;
   className?: string;
+  label?: string;
 };
 
 export const Logo = ({
@@ -13,8 +14,9 @@ export const Logo = ({
   height = 28,
   color = theme.colors.accent.main,
   className,
+  label = 'Raúl Rodríguez - Home',
 }: LogoProps) => (
-  <LogoLink to="/home" aria-label="Go to homepage">
+  <LogoLink to="/#home" aria-label={label}>
     <LogoSvg
       $width={width}
       $height={height}

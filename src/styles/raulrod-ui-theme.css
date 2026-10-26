@@ -1,0 +1,31 @@
+:root[data-theme='dark'] {
+  --rr-color-background-default: #111111;
+  --rr-color-background-surface: #1a1a1a;
+  --rr-color-background-sunken: #0f0f0f;
+  --rr-color-text-primary: #ffffff;
+  --rr-color-text-muted: #9e9e9e;
+  --rr-color-border-default: rgba(255, 255, 255, 0.08);
+  --rr-color-border-strong: rgba(255, 255, 255, 0.18);
+  --rr-color-action-primary-background: #58a18f;
+  --rr-color-action-primary-background-hover: #6db89f;
+  --rr-color-action-primary-background-active: #74b49b;
+  --rr-color-action-primary-text: #0a0a0a;
+  --rr-color-action-secondary-background: rgba(255, 255, 255, 0.06);
+  --rr-color-action-secondary-background-hover: rgba(255, 255, 255, 0.1);
+  --rr-color-action-secondary-text: #ffffff;
+  --rr-color-focus-ring: #6db89f;
+  --rr-color-link-text: #6db89f;
+  --rr-color-link-text-hover: #74b49b;
+}
+
+.rr-dialog-backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.rr-button:focus-visible,
+.rr-icon-button:focus-visible,
+.rr-dialog-content:focus-visible {
+  outline: 3px solid var(--rr-color-focus-ring);
+  outline-offset: 3px;
+}

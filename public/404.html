@@ -4,28 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=/index.html" />
+    <meta name="robots" content="noindex" />
+    <title>Raúl Rodríguez — Senior Frontend Engineer</title>
     <script type="text/javascript">
-      // This script helps redirect to index.html while preserving the path
-      var pathname = window.location.pathname;
-      var redirectPath = "/index.html";
-      if (pathname !== "/") {
-        redirectPath += "?path=" + encodeURIComponent(pathname);
-      }
-      window.location.replace(redirectPath);
+      var routes = {
+        '/home': '/#home',
+        '/experience': '/#experience',
+        '/expertise': '/#what-i-do',
+        '/contact': '/#contact'
+      };
+      var pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+      var target = routes[pathname] || '/';
+      window.location.replace(target + window.location.search);
     </script>
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-
-    <title>Raul Rodriguez</title>
   </head>
   <body>
-    <p>Redirecting to the homepage...</p>
+    <p>Redirecting to the homepage…</p>
+    <p><a href="/">Continue to raulrodriguez.dev</a></p>
   </body>
 </html>

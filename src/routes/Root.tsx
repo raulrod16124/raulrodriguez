@@ -1,26 +1,18 @@
-import { lazy, Suspense } from "react"
-import { Route, Routes, Navigate, useLocation } from "react-router-dom"
-
-const Home = lazy(() => import("../screens/home/Home").then(m => ({ default: m.Home })))
-const Experience = lazy(() => import("../screens/experience/Experience").then(m => ({ default: m.Experience })))
-const Expertise = lazy(() => import("../screens/expertise/Expertise").then(m => ({ default: m.Expertise })))
-const Contact = lazy(() => import("../screens/contact/Contact").then(m => ({ default: m.Contact })))
+import { Route, Routes, Navigate } from "react-router-dom"
+import { HomePage } from "../screens/home/HomePage"
+import { useHashScroll } from "../hooks/useHashScroll"
 
 export const Root = () => {
-    const location = useLocation()
+    useHashScroll()
 
     return (
-        <Suspense>
-            <div className="page-container" key={location.pathname}>
-                <Routes location={location}>
-                    <Route path={"/"} element={<Home />} />
-                    <Route path={"/home"} element={<Home />} />
-                    <Route path={"/experience"} element={<Experience />} />
-                    <Route path={"/expertise"} element={<Expertise />} />
-                    <Route path={"/contact"} element={<Contact />} />
-                    <Route path="*" element={<Navigate to="/" replace={true} />} />
-                </Routes>
-            </div>
-        </Suspense>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<Navigate to="/#home" replace />} />
+            <Route path="/experience" element={<Navigate to="/#experience" replace />} />
+            <Route path="/expertise" element={<Navigate to="/#what-i-do" replace />} />
+            <Route path="/contact" element={<Navigate to="/#contact" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
     )
 }

@@ -16,15 +16,54 @@ export const NavbarWrapper = styled.nav`
   right: 0;
   z-index: 100;
   padding: ${theme.spacing['sm']} ${theme.spacing['md']};
+  padding-top: calc(
+    ${theme.spacing['sm']} + env(safe-area-inset-top, 0px)
+  );
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color ${theme.transition.normal},
+    border-color ${theme.transition.normal},
+    box-shadow ${theme.transition.normal};
+
+  &[data-elevated='true'] {
+    background-color: ${theme.colors.semantic.navbarBackdropStrong};
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: ${theme.colors.border};
+    box-shadow: ${theme.boxShadow.navbarScrolled};
+  }
+
+  @supports not (
+    (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+  ) {
+    &[data-elevated='true'] {
+      background-color: ${theme.colors.surface};
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 
   ${theme.media.tablet} {
     padding: ${theme.spacing['md']} ${theme.spacing['3xl']};
+    padding-top: calc(
+      ${theme.spacing['md']} + env(safe-area-inset-top, 0px)
+    );
+
+    &[data-elevated='true'] {
+      background-color: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom-color: transparent;
+      box-shadow: none;
+    }
   }
 `;
 
-export const NavbarContainer = styled.div`
+export const NavbarContainer = styled.div<{$elevated: boolean}>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -35,18 +74,41 @@ export const NavbarContainer = styled.div`
   border: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+  transition:
+    background-color ${theme.transition.normal},
+    border-color ${theme.transition.normal},
+    box-shadow ${theme.transition.normal};
 
   ${theme.media.tablet} {
     position: relative;
     justify-content: center;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: ${theme.colors.semantic.navbarBackdrop};
+    gap: ${theme.spacing['xxs']};
+    backdrop-filter: ${({$elevated}) =>
+      $elevated ? 'blur(16px)' : 'blur(12px)'};
+    -webkit-backdrop-filter: ${({$elevated}) =>
+      $elevated ? 'blur(16px)' : 'blur(12px)'};
+    background-color: ${({$elevated}) =>
+      $elevated
+        ? theme.colors.semantic.navbarBackdropStrong
+        : theme.colors.semantic.navbarBackdrop};
     border: 1px solid ${theme.colors.border};
     border-radius: ${theme.borderRadius.xl};
     padding: ${theme.spacing['xxs']};
     width: auto;
+    box-shadow: ${({$elevated}) =>
+      $elevated ? theme.boxShadow.navbarScrolled : 'none'};
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+`;
+
+export const NavbarActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing['xs']};
+  flex-shrink: 0;
 `;
 
 export const HamburgerButton = styled.button`
@@ -76,7 +138,7 @@ export const HamburgerButton = styled.button`
 
 export const NavButtons = styled.div<{$isOpen: boolean}>`
   position: absolute;
-  top: 100%;
+  top: calc(100% + ${theme.spacing['xs']});
   left: 0;
   right: 0;
   display: flex;
@@ -87,6 +149,7 @@ export const NavButtons = styled.div<{$isOpen: boolean}>`
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid ${theme.colors.border};
   border-radius: ${theme.borderRadius.md};
+  box-shadow: ${theme.boxShadow.navbarScrolled};
   padding: ${({$isOpen}) => ($isOpen ? theme.spacing['xs'] : '0')};
   max-height: ${({$isOpen}) => ($isOpen ? '400px' : '0')};
   overflow: hidden;
@@ -115,6 +178,7 @@ export const NavButtons = styled.div<{$isOpen: boolean}>`
     -webkit-backdrop-filter: none;
     border: none;
     border-radius: 0;
+    box-shadow: none;
     padding: 0 0 0 ${theme.spacing['xs']};
     max-height: none;
     overflow: visible;
@@ -126,19 +190,19 @@ export const NavButtons = styled.div<{$isOpen: boolean}>`
   }
 `;
 
-export const NavButton = styled(Link)<{active: boolean}>`
+export const NavButton = styled(Link)<{$active: boolean}>`
   width: 100%;
   text-align: left;
   padding: ${theme.spacing['sm']} ${theme.spacing['md']};
   border-radius: ${theme.borderRadius.sm};
   font-size: ${theme.font.body.fontSize};
   border-left: ${props =>
-    props.active
+    props.$active
       ? `3px solid ${theme.colors.accent.main}`
       : '3px solid transparent'};
   font-family: ${theme.font.primary.fontFamily};
   font-weight: ${props =>
-    props.active ? '500' : `${theme.font.navText.fontWeight}`};
+    props.$active ? '500' : `${theme.font.navText.fontWeight}`};
   line-height: ${theme.font.navText.lineHeight};
   letter-spacing: ${theme.font.navText.letterSpacing};
   cursor: pointer;
@@ -147,9 +211,9 @@ export const NavButton = styled(Link)<{active: boolean}>`
   white-space: nowrap;
   position: relative;
   color: ${props =>
-    props.active ? theme.colors.neutral.white : theme.colors.neutral.grey};
+    props.$active ? theme.colors.neutral.white : theme.colors.neutral.grey};
   background-color: ${props =>
-    props.active ? theme.colors.semantic.navActiveBackground : 'transparent'};
+    props.$active ? theme.colors.semantic.navActiveBackground : 'transparent'};
 
   &:hover {
     color: ${theme.colors.neutral.white};
