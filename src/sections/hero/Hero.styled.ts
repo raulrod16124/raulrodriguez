@@ -1,7 +1,7 @@
-import styled, {keyframes} from 'styled-components';
-import {Link} from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 import theme from '../../theme/theme.json';
-import {focusVisible} from '../../components/shared/focusStyles';
+import { focusVisible } from '../../components/shared/focusStyles';
 
 const fadeIn = keyframes`
   from {
@@ -58,17 +58,25 @@ const ringReveal = keyframes`
   }
 `;
 
-export const HomeSection = styled.section`
+export const HeroSection = styled.section`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
+  min-height: 70vh;
   padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
   overflow: hidden;
 
   ${theme.media.tablet} {
     padding: ${theme.spacing['4xl']} ${theme.spacing['3xl']};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 `;
 
@@ -98,6 +106,18 @@ export const TextContainer = styled.div`
 
   ${theme.media.desktop} {
     align-items: flex-start;
+  }
+`;
+
+export const EyebrowText = styled.span`
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: ${theme.colors.neutral.lightGrey};
+  letter-spacing: ${theme.font.letterSpacing.wider};
+  text-transform: uppercase;
+
+  ${theme.media.tablet} {
+    font-size: 1rem;
   }
 `;
 
@@ -135,7 +155,7 @@ export const RoleText = styled.h2`
   }
 `;
 
-export const Subtitle = styled.span`
+export const StatusText = styled.span`
   font-size: 1rem;
   font-weight: 500;
   color: ${theme.colors.accent.highContrast};
@@ -172,6 +192,7 @@ export const CTAContainer = styled.div`
     width: auto;
     max-width: none;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   ${theme.media.desktop} {
@@ -263,124 +284,97 @@ export const CTALink = styled(Link)`
 
 export const ImageContainer = styled.div`
   position: relative;
-  width: 200px;
-  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  opacity: 0;
-  animation: ${imagePulseIn} 0.5s ease-out 0.3s both;
-
-  ${theme.media.tablet} {
-    width: 240px;
-    height: 240px;
-  }
-
-  ${theme.media.desktop} {
-    width: 300px;
-    height: 300px;
-  }
-`;
-
-export const GlowRing = styled.span`
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    ${theme.colors.accent.main},
-    ${theme.colors.accent.light},
-    transparent 40%,
-    ${theme.colors.accent.dark} 70%,
-    ${theme.colors.accent.main}
-  );
-  opacity: 0;
-  animation:
-    ${ringReveal} 0.4s ease-out 0.8s both,
-    ${spin} ${theme.animation.ringSpinDuration} linear 0.8s infinite;
-  mask: radial-gradient(
-    farthest-side,
-    transparent calc(100% - 3px),
-    #000 calc(100% - 3px)
-  );
-  -webkit-mask: radial-gradient(
-    farthest-side,
-    transparent calc(100% - 3px),
-    #000 calc(100% - 3px)
-  );
-  pointer-events: none;
-
-  ${theme.media.tablet} {
-    inset: -8px;
-  }
-`;
-
-export const GlowRingAlt = styled.span`
-  position: absolute;
-  inset: -14px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 180deg,
-    rgba(255, 255, 255, 0.12),
-    transparent 30%,
-    ${theme.colors.accent.main} 50%,
-    transparent 70%,
-    rgba(255, 255, 255, 0.12)
-  );
-  opacity: 0;
-  animation:
-    ${ringReveal} 0.4s ease-out 0.9s both,
-    ${spin} 12s linear 0.9s infinite reverse;
-  mask: radial-gradient(
-    farthest-side,
-    transparent calc(100% - 2px),
-    #000 calc(100% - 2px)
-  );
-  -webkit-mask: radial-gradient(
-    farthest-side,
-    transparent calc(100% - 2px),
-    #000 calc(100% - 2px)
-  );
-  pointer-events: none;
-
-  ${theme.media.tablet} {
-    inset: -16px;
-  }
+  animation: ${imagePulseIn} 0.8s ease-out;
 `;
 
 export const Image = styled.img`
-  position: relative;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid ${theme.colors.border};
-  z-index: 1;
-  box-shadow: 0 0 30px ${theme.animation.glowColor};
-  transition: box-shadow 0.4s ease;
+  position: relative;
+  z-index: 2;
+  border: 3px solid ${theme.colors.accent.main};
+  box-shadow: 0 0 40px rgba(88, 161, 143, 0.3);
 
-  &:hover {
-    box-shadow: 0 0 40px ${theme.animation.glowColorHover};
+  ${theme.media.tablet} {
+    width: 250px;
+    height: 250px;
+  }
+
+  ${theme.media.desktop} {
+    width: 320px;
+    height: 320px;
   }
 `;
 
-export const FloatingDot = styled.span<{
+export const GlowRing = styled.div`
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid ${theme.colors.accent.main};
+  opacity: 0.3;
+  animation:
+    ${spin} 20s linear infinite,
+    ${ringReveal} 1s ease-out;
+  z-index: 0;
+
+  ${theme.media.tablet} {
+    width: 280px;
+    height: 280px;
+  }
+
+  ${theme.media.desktop} {
+    width: 360px;
+    height: 360px;
+  }
+`;
+
+export const GlowRingAlt = styled.div`
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1px solid ${theme.colors.accent.main};
+  opacity: 0.2;
+  animation:
+    ${spin} 30s linear infinite reverse,
+    ${ringReveal} 1.2s ease-out;
+  z-index: 0;
+
+  ${theme.media.tablet} {
+    width: 300px;
+    height: 300px;
+  }
+
+  ${theme.media.desktop} {
+    width: 380px;
+    height: 380px;
+  }
+`;
+
+export const FloatingDot = styled.div<{
   $top: string;
   $left: string;
   $size: number;
   $delay: string;
 }>`
   position: absolute;
-  top: ${({$top}) => $top};
-  left: ${({$left}) => $left};
-  width: ${({$size}) => `${$size}px`};
-  height: ${({$size}) => `${$size}px`};
+  top: ${({ $top }) => $top};
+  left: ${({ $left }) => $left};
+  width: ${({ $size }) => $size}px;
+  height: ${({ $size }) => $size}px;
   border-radius: 50%;
   background-color: ${theme.colors.accent.main};
-  opacity: 0.08;
-  animation: ${float} ${theme.animation.floatDuration} ease-in-out infinite;
-  animation-delay: ${({$delay}) => $delay};
-  pointer-events: none;
-
-  ${theme.media.tablet} {
-    opacity: 0.1;
-  }
+  opacity: 0.6;
+  animation:
+    ${float} 6s ease-in-out infinite,
+    ${fadeIn} 1s ease-out;
+  animation-delay: ${({ $delay }) => $delay};
+  z-index: 1;
 `;
