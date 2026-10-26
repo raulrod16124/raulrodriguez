@@ -1,27 +1,45 @@
-import {FaGithub, FaLinkedin} from 'react-icons/fa';
-import {CopyrightText, FooterContainer, IconContainer} from './Footer.styled';
+import { Code2, UserRound } from '@raulrod/icons';
+import {
+  BuiltWithText,
+  CopyrightText,
+  FooterContainer,
+  FooterIdentity,
+  IconContainer,
+  RoleText,
+} from './Footer.styled';
+import { FOOTER } from './Footer.constants';
+
+const LINK_ICONS = {
+  github: Code2,
+  linkedin: UserRound,
+} as const;
 
 export const Footer = () => {
   return (
     <FooterContainer data-testid="footer" aria-label="Site footer">
-      <CopyrightText>
-        © {new Date().getFullYear()} Raúl Rodríguez. All rights reserved.
-      </CopyrightText>
+      <FooterIdentity>
+        <RoleText>{FOOTER.role}</RoleText>
+        <CopyrightText>
+          {FOOTER.copyright(new Date().getFullYear())}
+        </CopyrightText>
+        <BuiltWithText>{FOOTER.builtWith}</BuiltWithText>
+      </FooterIdentity>
       <IconContainer>
-        <a
-          href="https://github.com/raulrod16124"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub Profile">
-          <FaGithub aria-hidden="true" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/raul-rod/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn Profile">
-          <FaLinkedin aria-hidden="true" />
-        </a>
+        {FOOTER.links.map(link => {
+          const Icon = LINK_ICONS[link.id];
+
+          return (
+            <a
+              key={link.id}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+            >
+              <Icon size={20} aria-hidden="true" />
+            </a>
+          );
+        })}
       </IconContainer>
     </FooterContainer>
   );
