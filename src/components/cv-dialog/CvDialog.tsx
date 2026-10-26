@@ -2,7 +2,7 @@ import { lazy, Suspense, useCallback, useRef, useState } from 'react';
 import { Button, Dialog, IconButton, VisuallyHidden } from '@raulrod/ui';
 import { Download, Eye, X } from '@raulrod/icons';
 import type { PdfLoadSuccess } from './CvDialog.types';
-import { CV_DIALOG } from './CvDialog.constants';
+import { useSiteContent } from '../../i18n/useSiteContent';
 import {
   CvDialogActions,
   CvDialogBody,
@@ -23,6 +23,7 @@ interface CvDialogProps {
 }
 
 export const CvDialog = ({ cvUrl, fileName = 'CV-Raul.pdf' }: CvDialogProps) => {
+  const { cv } = useSiteContent();
   const [open, setOpen] = useState(false);
   const [numPages, setNumPages] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -61,22 +62,22 @@ export const CvDialog = ({ cvUrl, fileName = 'CV-Raul.pdf' }: CvDialogProps) => 
   }, []);
 
   const statusMessage = isLoading
-    ? CV_DIALOG.loadingStatus
+    ? cv.loadingStatus
     : useFallback
-      ? CV_DIALOG.fallbackStatus
-      : CV_DIALOG.loadedStatus;
+      ? cv.fallbackStatus
+      : cv.loadedStatus;
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <CvTrigger>
         <Eye aria-hidden="true" />
-        {CV_DIALOG.triggerLabel}
+        {cv.trigger}
       </CvTrigger>
       <CvDialogContent>
         <CvDialogHeader>
           <Dialog.Header>
-            <Dialog.Title>{CV_DIALOG.title}</Dialog.Title>
-            <Dialog.Description>{CV_DIALOG.description}</Dialog.Description>
+            <Dialog.Title>{cv.title}</Dialog.Title>
+            <Dialog.Description>{cv.description}</Dialog.Description>
           </Dialog.Header>
           <CvDialogActions>
             <Button
@@ -86,11 +87,11 @@ export const CvDialog = ({ cvUrl, fileName = 'CV-Raul.pdf' }: CvDialogProps) => 
               onClick={handleDownload}
               startIcon={<Download />}
             >
-              {CV_DIALOG.downloadLabel}
+              {cv.downloadLabel}
             </Button>
             <IconButton
               type="button"
-              label={CV_DIALOG.closeLabel}
+              label={cv.closeLabel}
               variant="ghost"
               size="sm"
               onClick={() => handleOpenChange(false)}
@@ -106,7 +107,7 @@ export const CvDialog = ({ cvUrl, fileName = 'CV-Raul.pdf' }: CvDialogProps) => 
           {useFallback ? (
             <CvFallbackFrame
               src={cvUrl}
-              title={`PDF viewer - ${fileName}`}
+              title={cv.viewerTitle(fileName)}
               loading="lazy"
             />
           ) : (

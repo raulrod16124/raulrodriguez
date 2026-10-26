@@ -7,10 +7,15 @@ export const ContactActions = styled.div`
   align-items: flex-start;
   gap: ${theme.spacing.sm};
 
+  [data-variant='statement'] & {
+    align-items: center;
+  }
+
   ${theme.media.tablet} {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: ${theme.spacing.md};
   }
 `;

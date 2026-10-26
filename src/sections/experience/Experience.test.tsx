@@ -1,7 +1,8 @@
-import { render, screen, within } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
 import { Experience } from './Experience';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 const matchMedia = (query: string): MediaQueryList => ({
   matches: true,
@@ -38,7 +39,7 @@ const EXPECTED_EXPERIENCES = [
     company: 'Vehnet',
     role: 'Frontend Engineer',
     location: 'Remote',
-    dates: 'Abr 2022 – May 2024',
+    dates: 'Apr 2022 – May 2024',
     description: /web and mobile applications/i,
     technologies: ['React', 'React Native', 'TypeScript', 'AWS', 'Firebase', 'Figma', 'Testing'],
     current: false,
@@ -47,7 +48,7 @@ const EXPECTED_EXPERIENCES = [
     company: 'Advance Digital Experts',
     role: 'Frontend Developer',
     location: 'On-site',
-    dates: 'Jul 2021 – Abr 2022',
+    dates: 'Jul 2021 – Apr 2022',
     description: /vehicle telemetry/i,
     technologies: [
       'React',
@@ -73,7 +74,7 @@ const EXPECTED_EXPERIENCES = [
 
 describe('Experience', () => {
   it('renders the section heading and four experience entries', () => {
-    render(<Experience />);
+    renderWithProviders(<Experience />);
 
     expect(
       screen.getByRole('heading', { level: 2, name: 'Experience' }),
@@ -83,7 +84,7 @@ describe('Experience', () => {
   });
 
   it('renders each role with its meta, responsibilities and technologies', () => {
-    render(<Experience />);
+    renderWithProviders(<Experience />);
 
     EXPECTED_EXPERIENCES.forEach(
       ({ company, role, location, dates, description, technologies }) => {
@@ -102,7 +103,7 @@ describe('Experience', () => {
   });
 
   it('keeps the confirmed order and highlights only the current role', () => {
-    render(<Experience />);
+    renderWithProviders(<Experience />);
 
     expect(
       screen.getAllByRole('heading', { level: 3 }).map(heading => heading.textContent),

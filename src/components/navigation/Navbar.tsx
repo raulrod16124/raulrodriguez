@@ -5,22 +5,17 @@ import { Menu, X } from '@raulrod/icons';
 import {
   NavButton,
   NavButtons,
+  NavbarActions,
   NavbarContainer,
   NavbarWrapper,
   HamburgerButton,
   LogoContainer,
 } from './Navbar.styled';
 import { Logo } from './logo';
+import { LanguageToggle } from './language-toggle';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { useScrolled } from '../../hooks/useScrolled';
-
-const NAV_ITEMS = [
-  { label: 'Work', href: '#work' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Engineering', href: '#engineering' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-] as const;
+import { useSiteContent } from '../../i18n/useSiteContent';
 
 const SECTION_BY_HREF: Record<string, string> = {
   '#work': 'work',
@@ -36,6 +31,7 @@ export const Navbar = () => {
   const activeSection = useActiveSection();
   const isScrolled = useScrolled();
   const isElevated = isScrolled || isMenuOpen;
+  const { nav } = useSiteContent();
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
@@ -75,26 +71,14 @@ export const Navbar = () => {
       data-testid="Navbar"
       data-scrolled={isScrolled}
       data-elevated={isElevated}
-      aria-label="Main navigation"
+      aria-label={nav.mainLabel}
     >
       <NavbarContainer $elevated={isElevated}>
         <LogoContainer>
-          <Logo width={32} height={32} />
+          <Logo width={32} height={32} label={nav.homeLabel} />
         </LogoContainer>
-        <HamburgerButton as="div">
-          <IconButton
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-nav"
-            label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            variant="ghost"
-            size="md"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-          >
-            {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
-          </IconButton>
-        </HamburgerButton>
         <NavButtons id="mobile-nav" $isOpen={isMenuOpen}>
-          {NAV_ITEMS.map((item) => (
+          {nav.items.map((item) => (
             <NavButton
               key={item.href}
               to={`/${item.href}`}
@@ -106,6 +90,21 @@ export const Navbar = () => {
             </NavButton>
           ))}
         </NavButtons>
+        <NavbarActions>
+          <LanguageToggle />
+          <HamburgerButton as="div">
+            <IconButton
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-nav"
+              label={isMenuOpen ? nav.closeMenu : nav.openMenu}
+              variant="ghost"
+              size="md"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+            >
+              {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+            </IconButton>
+          </HamburgerButton>
+        </NavbarActions>
       </NavbarContainer>
     </NavbarWrapper>
   );

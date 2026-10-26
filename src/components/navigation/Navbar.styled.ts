@@ -82,6 +82,7 @@ export const NavbarContainer = styled.div<{$elevated: boolean}>`
   ${theme.media.tablet} {
     position: relative;
     justify-content: center;
+    gap: ${theme.spacing['xxs']};
     backdrop-filter: ${({$elevated}) =>
       $elevated ? 'blur(16px)' : 'blur(12px)'};
     -webkit-backdrop-filter: ${({$elevated}) =>
@@ -101,6 +102,13 @@ export const NavbarContainer = styled.div<{$elevated: boolean}>`
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
+`;
+
+export const NavbarActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing['xs']};
+  flex-shrink: 0;
 `;
 
 export const HamburgerButton = styled.button`

@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useSiteContent } from '../../i18n/useSiteContent';
 import {
   BuiltWithText,
   CopyrightText,
@@ -7,7 +8,6 @@ import {
   IconContainer,
   RoleText,
 } from './Footer.styled';
-import { FOOTER } from './Footer.constants';
 
 const LINK_ICONS = {
   github: FaGithub,
@@ -15,17 +15,19 @@ const LINK_ICONS = {
 } as const;
 
 export const Footer = () => {
+  const { footer } = useSiteContent();
+
   return (
     <FooterContainer data-testid="footer" aria-label="Site footer">
       <FooterIdentity>
-        <RoleText>{FOOTER.role}</RoleText>
+        <RoleText>{footer.role}</RoleText>
         <CopyrightText>
-          {FOOTER.copyright(new Date().getFullYear())}
+          {footer.copyright(new Date().getFullYear())}
         </CopyrightText>
-        <BuiltWithText>{FOOTER.builtWith}</BuiltWithText>
+        <BuiltWithText>{footer.builtWith}</BuiltWithText>
       </FooterIdentity>
       <IconContainer>
-        {FOOTER.links.map(link => {
+        {footer.links.map(link => {
           const Icon = LINK_ICONS[link.id];
 
           return (

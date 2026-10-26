@@ -1,16 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
 import { Hero } from './Hero';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 describe('Hero', () => {
   it('renders name, senior role and current company', () => {
-    render(
-      <MemoryRouter>
-        <Hero />
-      </MemoryRouter>,
-    );
+    renderWithProviders(<Hero />);
 
     expect(screen.getByText('Raúl Rodríguez')).toBeInTheDocument();
     expect(
@@ -20,11 +16,7 @@ describe('Hero', () => {
   });
 
   it('renders anchor CTAs to work and contact', () => {
-    render(
-      <MemoryRouter>
-        <Hero />
-      </MemoryRouter>,
-    );
+    renderWithProviders(<Hero />);
 
     const workLink = screen.getByRole('link', { name: /view selected work/i });
     expect(workLink.getAttribute('href')).toMatch(/#work$/);
@@ -33,11 +25,7 @@ describe('Hero', () => {
   });
 
   it('renders GitHub link with external attributes', () => {
-    render(
-      <MemoryRouter>
-        <Hero />
-      </MemoryRouter>,
-    );
+    renderWithProviders(<Hero />);
 
     const githubLink = screen.getByRole('link', { name: /github/i });
     expect(githubLink).toHaveAttribute('href', 'https://github.com/raulrod16124');
@@ -46,11 +34,7 @@ describe('Hero', () => {
   });
 
   it('renders avatar with descriptive alt', () => {
-    render(
-      <MemoryRouter>
-        <Hero />
-      </MemoryRouter>,
-    );
+    renderWithProviders(<Hero />);
 
     const img = screen.getByAltText(/senior frontend engineer/i);
     expect(img).toBeInTheDocument();

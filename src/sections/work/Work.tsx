@@ -1,7 +1,7 @@
 import { Badge, Button, Heading, Inline, Stack, Text } from '@raulrod/ui';
 import { Check } from '@raulrod/icons';
 import { Section } from '../../components/section/Section';
-import { WORK } from './Work.constants';
+import { useSiteContent } from '../../i18n/useSiteContent';
 import {
   HighlightItem,
   HighlightList,
@@ -13,10 +13,12 @@ import {
 } from './Work.styled';
 
 export const Work = () => {
+  const { work, common } = useSiteContent();
+
   return (
-    <Section id="work" title={WORK.title}>
+    <Section id="work" index="02" eyebrow={work.eyebrow} title={work.title}>
       <ProjectList>
-        {WORK.projects.map((project, index) => {
+        {work.projects.map((project, index) => {
           const titleId = `work-${project.id}-title`;
 
           return (
@@ -48,7 +50,7 @@ export const Work = () => {
                   <Text color="color.text.muted">{project.summary}</Text>
                 </p>
                 <ProjectRole>
-                  <span>Role: {project.role}</span>
+                  <span>{common.roleValue(project.role)}</span>
                   {project.year ? (
                     <>
                       <span aria-hidden="true">·</span>

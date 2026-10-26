@@ -1,4 +1,4 @@
-import { vi } from 'vitest';
+import { beforeEach, vi } from 'vitest';
 
 const createMediaQueryList = (query: string): MediaQueryList => ({
   matches: false,
@@ -37,3 +37,15 @@ vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 vi.stubGlobal('ResizeObserver', ResizeObserverMock);
 
 Element.prototype.scrollIntoView = vi.fn();
+
+beforeEach(() => {
+  window.localStorage.clear();
+  Object.defineProperty(window.navigator, 'language', {
+    configurable: true,
+    value: 'en-US',
+  });
+  Object.defineProperty(window.navigator, 'languages', {
+    configurable: true,
+    value: ['en-US', 'en'],
+  });
+});

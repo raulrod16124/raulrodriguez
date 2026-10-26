@@ -1,17 +1,18 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import '@testing-library/jest-dom';
 import { Footer } from './Footer';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 describe('Footer', () => {
   test('renders the footer landmark', () => {
-    render(<Footer />);
+    renderWithProviders(<Footer />);
 
     expect(screen.getByTestId('footer')).toBeInTheDocument();
   });
 
   test('displays the role, copyright and built-with line', () => {
-    render(<Footer />);
+    renderWithProviders(<Footer />);
 
     expect(
       screen.getByText('Senior Frontend Engineer'),
@@ -23,7 +24,7 @@ describe('Footer', () => {
   });
 
   test('displays GitHub and LinkedIn links with safe external attributes', () => {
-    render(<Footer />);
+    renderWithProviders(<Footer />);
 
     const githubLink = screen.getByLabelText('GitHub Profile');
     const linkedinLink = screen.getByLabelText('LinkedIn Profile');

@@ -1,0 +1,211 @@
+import type {Messages} from './en';
+
+export const es: Messages = {
+  'site.role': 'Senior Frontend Engineer',
+  'meta.title': 'Raúl Rodríguez — Senior Frontend Engineer',
+  'meta.description':
+    'Senior Frontend Engineer con más de 5 años creando productos React escalables, sistemas de diseño y arquitectura frontend. Actualmente en Openbank · Capgemini.',
+
+  'common.skipToMain': 'Saltar al contenido principal',
+  'common.current': 'Actual',
+  'common.present': 'Actualidad',
+  'common.roleValue': 'Rol: {role}',
+  'common.viewCv': 'Ver CV',
+
+  'nav.mainLabel': 'Navegación principal',
+  'nav.work': 'Trabajo',
+  'nav.experience': 'Experiencia',
+  'nav.engineering': 'Ingeniería',
+  'nav.about': 'Sobre mí',
+  'nav.contact': 'Contacto',
+  'nav.openMenu': 'Abrir menú',
+  'nav.closeMenu': 'Cerrar menú',
+  'nav.homeLabel': 'Raúl Rodríguez - Inicio',
+
+  'language.label': 'Seleccionar idioma',
+  'language.en': 'Inglés',
+  'language.es': 'Español',
+
+  'hero.currentStatus': 'Actualmente en {company}',
+  'hero.valueProp':
+    'Construyo productos React escalables, sistemas de diseño y la arquitectura frontend que los mantiene sostenibles.',
+  'hero.cta.work': 'Ver trabajo seleccionado',
+  'hero.cta.contact': 'Hablemos',
+  'hero.cta.github': 'GitHub',
+  'hero.avatarAlt': 'Raúl Rodríguez - Senior Frontend Engineer',
+
+  'whatIDo.eyebrow': 'Especialidad',
+  'whatIDo.title': 'Qué hago',
+  'whatIDo.card.product.title': 'Productos frontend',
+  'whatIDo.card.product.description':
+    'Interfaces complejas con gran volumen de datos construidas con React y TypeScript, desde el descubrimiento hasta producción.',
+  'whatIDo.card.design-systems.title': 'Sistemas de diseño',
+  'whatIDo.card.design-systems.description':
+    'Componentes accesibles, tokens y documentación que los equipos pueden adoptar sin fricción.',
+  'whatIDo.card.architecture.title': 'Arquitectura frontend',
+  'whatIDo.card.architecture.description':
+    'Límites claros, testing y pipelines de entrega que mantienen los productos sostenibles a medida que crecen.',
+
+  'whatIDo.tag.react': 'React',
+  'whatIDo.tag.typescript': 'TypeScript',
+  'whatIDo.tag.fintech': 'Fintech',
+  'whatIDo.tag.microfrontends': 'Microfrontends',
+  'whatIDo.tag.designTokens': 'Tokens de diseño',
+  'whatIDo.tag.storybook': 'Storybook',
+  'whatIDo.tag.wcag': 'WCAG',
+  'whatIDo.tag.hexagonal': 'Arquitectura hexagonal',
+  'whatIDo.tag.testing': 'Testing',
+  'whatIDo.tag.cicd': 'CI/CD',
+  'whatIDo.tag.performance': 'Rendimiento',
+
+  'work.eyebrow': 'Portafolio',
+  'work.title': 'Trabajo seleccionado',
+  'work.project.cachiplunca.tagline':
+    'De ideas dispersas a planes compartidos.',
+  'work.project.cachiplunca.summary':
+    'Un espacio de trabajo visual y colaborativo con lienzo infinito, presencia en tiempo real, roles, enlaces de invitado y una vista de planificación que convierte notas en planes accionables.',
+  'work.project.cachiplunca.role': 'Creador e ingeniero frontend',
+  'work.project.cachiplunca.highlight.canvas':
+    'Lienzo infinito con colaboración en tiempo real',
+  'work.project.cachiplunca.highlight.guests':
+    'Enlaces de invitado y acceso basado en roles',
+  'work.project.cachiplunca.highlight.planning':
+    'Vista de planificación que convierte notas en tareas',
+  'work.project.cachiplunca.highlight.architecture':
+    'Arquitectura limpia y hexagonal',
+  'work.project.cachiplunca.imageAlt':
+    'Página de inicio de sesión de Cachiplunca en tema claro',
+  'work.project.raulrod-ui.tagline':
+    'Un sistema de diseño React accesible y basado en tokens.',
+  'work.project.raulrod-ui.summary':
+    'Una librería de componentes publicada con TypeScript estricto, theming mediante propiedades personalizadas de CSS y accesibilidad integrada en la API. Impulsa Cachiplunca y este portfolio.',
+  'work.project.raulrod-ui.role': 'Creador y mantenedor',
+  'work.project.raulrod-ui.highlight.foundations':
+    'Fundamentos, formularios, feedback, overlays y visualización de datos',
+  'work.project.raulrod-ui.highlight.react': 'React 18.2+ y 19 verificados',
+  'work.project.raulrod-ui.highlight.esm': 'Paquete ESM tree-shakeable',
+  'work.project.raulrod-ui.highlight.css': 'Alrededor de 5,5 kB de CSS',
+  'work.project.raulrod-ui.imageAlt': 'Página del paquete RaulRod UI en npm',
+  'work.project.chicmouse.tagline':
+    'La web de marketing de mi propio estudio independiente de videojuegos móviles.',
+  'work.project.chicmouse.summary':
+    'Un proyecto personal para ChicMouse Studio: una web visual y centrada en el movimiento que presenta Stellar Fusion y los juegos del estudio.',
+  'work.project.chicmouse.role': 'Creador y desarrollador frontend',
+  'work.project.chicmouse.highlight.landing': 'Landing responsive',
+  'work.project.chicmouse.highlight.i18n': 'Internacionalización',
+  'work.project.chicmouse.highlight.cookies': 'Consentimiento de cookies',
+  'work.project.chicmouse.highlight.sections': 'Secciones componentizadas',
+  'work.project.chicmouse.imageAlt':
+    'Landing de ChicMouse Studio para Stellar Fusion',
+  'work.project.stellar-fusion.tagline': 'Combina. Estrategia. Compite.',
+  'work.project.stellar-fusion.summary':
+    'Un juego competitivo de puzles de fusión en el que fichas cósmicas evolucionan mediante reacciones en cadena. Los jugadores compiten en PvP en tiempo real, suben en ligas clasificatorias y completan desafíos de temporada.',
+  'work.project.stellar-fusion.role': 'Creador y desarrollador',
+  'work.project.stellar-fusion.highlight.pvp': 'Batallas PvP en tiempo real',
+  'work.project.stellar-fusion.highlight.ranked':
+    'Escalafón clasificatorio con progresión ELO',
+  'work.project.stellar-fusion.highlight.seasons':
+    'Ligas y recompensas de temporada',
+  'work.project.stellar-fusion.highlight.levels':
+    'Cientos de niveles creados a mano y desafíos diarios',
+  'work.project.stellar-fusion.highlight.cosmetics':
+    'Personalización del perfil y cosméticos',
+  'work.project.stellar-fusion.imageAlt':
+    'Stellar Fusion: Merge Puzzle en Google Play',
+
+  'work.link.live': 'Ver web',
+  'work.link.github': 'GitHub',
+  'work.link.npm': 'npm',
+  'work.link.storybook': 'Storybook',
+  'work.link.googlePlay': 'Google Play',
+  'work.link.studio': 'Estudio',
+
+  'experience.eyebrow': 'Trayectoria',
+  'experience.title': 'Experiencia',
+  'experience.item.openbank.role': 'Ingeniero Frontend',
+  'experience.item.openbank.location': 'Remoto',
+  'experience.item.openbank.description.products':
+    'Desarrollo productos fintech para distintos programas y países con React, TypeScript y styled-components.',
+  'experience.item.openbank.description.architecture':
+    'Trabajo con microfrontends, arquitectura hexagonal y librerías compartidas entre equipos.',
+  'experience.item.openbank.description.quality':
+    'Integro verificación de identidad y contribuyo a las prácticas de testing, calidad de código y entrega dentro de un equipo ágil.',
+  'experience.item.vehnet.role': 'Ingeniero Frontend',
+  'experience.item.vehnet.location': 'Remoto',
+  'experience.item.vehnet.description.build':
+    'Desarrollo y mantengo aplicaciones web y móviles con React, React Native y TypeScript.',
+  'experience.item.vehnet.description.migration':
+    'Contribuyo a la migración de AWS a Firebase y al mantenimiento de librerías compartidas entre web y móvil.',
+  'experience.item.vehnet.description.design':
+    'Implemento diseños de Figma junto a los equipos de diseño y backend, escribiendo tests unitarios para asegurar la calidad y fiabilidad del código.',
+  'experience.item.advance.role': 'Desarrollador Frontend',
+  'experience.item.advance.location': 'Presencial',
+  'experience.item.advance.description.telemetry':
+    'Construyo desde cero un frontend para telemetría de vehículos y reporting de eficiencia energética.',
+  'experience.item.advance.description.features':
+    'Desarrollo nuevas funcionalidades y demos de producto junto a los equipos de backend y diseño.',
+  'experience.item.advance.description.storybook':
+    'Creo componentes de UI reutilizables documentados en Storybook y testeados con Jest y Testing Library.',
+  'experience.item.freelance.role': 'Desarrollador Web Frontend',
+  'experience.item.freelance.location':
+    'Las Palmas de Gran Canaria, provincia de Las Palmas',
+  'experience.item.freelance.description.clients':
+    'Desarrollo aplicaciones web y landings para pequeñas empresas con React, adaptando las soluciones a las necesidades y proyectos de cada cliente.',
+  'experience.item.freelance.description.collaboration':
+    'Trabajo de forma independiente en proyectos web completos y colaboro con otros desarrolladores freelance para construir y mejorar productos web.',
+
+  'engineering.eyebrow': 'Principios',
+  'engineering.title': 'Ingeniería',
+  'engineering.principle.accessibility.title': 'La accesibilidad es la base',
+  'engineering.principle.accessibility.description':
+    'Teclado, foco, semántica y reducción de movimiento desde el inicio.',
+  'engineering.principle.design-systems.title':
+    'Sistemas de diseño antes que copiar y pegar',
+  'engineering.principle.design-systems.description':
+    'Tokens, componentes reutilizables y documentación que escalan entre equipos.',
+  'engineering.principle.testing.title': 'Los tests son barandillas',
+  'engineering.principle.testing.description':
+    'Tests unitarios, de integración y de contrato alrededor del comportamiento que importa.',
+  'engineering.principle.architecture.title':
+    'La arquitectura debe abaratar el cambio',
+  'engineering.principle.architecture.description':
+    'Límites claros, microfrontends y arquitectura hexagonal cuando compensan su coste.',
+  'engineering.principle.performance.title':
+    'El rendimiento forma parte del diseño',
+  'engineering.principle.performance.description':
+    'Presupuestos de bundle, carga diferida y decisiones de renderizado medidas, no supuestas.',
+  'engineering.principle.documentation.title': 'Documenta el porqué',
+  'engineering.principle.documentation.description':
+    'APIs claras, ADRs y Storybook para que la siguiente persona avance más rápido.',
+
+  'about.eyebrow': 'Sobre mí',
+  'about.title': 'Sobre mí',
+  'about.lead':
+    'Soy {role} con más de {years} años construyendo frontends de producto, sistemas de diseño y la arquitectura que los sostiene.',
+  'about.body':
+    'He trabajado en fintech, e-mobility y productos web/móvil, y me importan las interfaces accesibles, los límites mantenibles y los equipos que pueden entregar con confianza.',
+
+  'contact.eyebrow': 'Contacto',
+  'contact.title': 'Construyamos algo útil.',
+  'contact.description':
+    'Si estás contratando o tienes un producto que necesita una perspectiva frontend senior, me gustaría escucharlo.',
+  'contact.action.email': 'Correo',
+  'contact.action.github': 'GitHub',
+  'contact.action.linkedin': 'LinkedIn',
+
+  'footer.builtWith': 'Creado con React, TypeScript y @raulrod/ui',
+  'footer.copyright': '© {year} {name}. Todos los derechos reservados.',
+  'footer.githubLabel': 'Perfil de GitHub',
+  'footer.linkedinLabel': 'Perfil de LinkedIn',
+
+  'cv.trigger': 'Ver CV',
+  'cv.title': 'CV — {name}',
+  'cv.description': 'Previsualiza o descarga la última versión de mi CV.',
+  'cv.closeLabel': 'Cerrar CV',
+  'cv.downloadLabel': 'Descargar CV',
+  'cv.loadingStatus': 'Cargando CV…',
+  'cv.loadedStatus': 'Vista previa del CV lista.',
+  'cv.fallbackStatus':
+    'Vista previa del CV no disponible. Usa el botón de descarga para abrir el PDF.',
+  'cv.viewerTitle': 'Visor de PDF - {fileName}',
+};

@@ -12,6 +12,18 @@ export const Grid = styled.div`
   }
 `;
 
+export const CardIcon = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: ${theme.borderRadius.md};
+  color: ${theme.colors.accent.highContrast};
+  background-color: ${theme.colors.semantic.accentBackgroundHover};
+  border: 1px solid ${theme.colors.semantic.accentBorder};
+`;
+
 export const Card = styled.article`
   min-width: 0;
   padding: ${theme.spacing.lg};

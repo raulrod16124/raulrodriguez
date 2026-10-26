@@ -1,4 +1,5 @@
-import { Briefcase, Code2, Mail } from '@raulrod/icons';
+import { Briefcase, Mail } from '@raulrod/icons';
+import { FaGithub } from 'react-icons/fa';
 import {
   CTAButton,
   CTALink,
@@ -18,9 +19,11 @@ import {
 } from './Hero.styled';
 import avatarWebp from '../../assets/images/me.webp';
 import avatarPng from '../../assets/images/me.png';
-import { HERO } from './Hero.constants';
+import { useSiteContent } from '../../i18n/useSiteContent';
 
 export const Hero = () => {
+  const { hero } = useSiteContent();
+
   return (
     <HeroSection id="home" data-testid="hero">
       <FloatingDot $top="15%" $left="8%" $size={6} $delay="0s" />
@@ -28,27 +31,28 @@ export const Hero = () => {
       <FloatingDot $top="25%" $left="92%" $size={5} $delay="4s" />
       <ContentWrapper>
         <TextContainer>
-          <EyebrowText>{HERO.eyebrow}</EyebrowText>
-          <NameText>{HERO.role}</NameText>
-          <StatusText>{HERO.currentStatus}</StatusText>
-          <ValueProp>{HERO.valueProp}</ValueProp>
+          <EyebrowText>{hero.eyebrow}</EyebrowText>
+          <NameText>{hero.role}</NameText>
+          <StatusText>{hero.status}</StatusText>
+          <ValueProp>{hero.valueProp}</ValueProp>
           <CTAContainer>
-            <CTALink to={HERO.ctas.work.href}>
-              <Briefcase aria-hidden="true" />
-              {HERO.ctas.work.label}
+            <CTALink to={hero.ctas.work.href} $variant="primary">
+              <Briefcase size={18} aria-hidden="true" />
+              {hero.ctas.work.label}
+            </CTALink>
+            <CTALink to={hero.ctas.contact.href} $variant="secondary">
+              <Mail size={18} aria-hidden="true" />
+              {hero.ctas.contact.label}
             </CTALink>
             <CTAButton
-              href={HERO.ctas.github.href}
+              href={hero.ctas.github.href}
               target="_blank"
               rel="noopener noreferrer"
+              $variant="secondary"
             >
-              <Code2 aria-hidden="true" />
-              {HERO.ctas.github.label}
+              <FaGithub size={18} aria-hidden="true" />
+              {hero.ctas.github.label}
             </CTAButton>
-            <CTALink to={HERO.ctas.contact.href}>
-              <Mail aria-hidden="true" />
-              {HERO.ctas.contact.label}
-            </CTALink>
           </CTAContainer>
         </TextContainer>
         <ImageContainer>
@@ -58,7 +62,7 @@ export const Hero = () => {
             <source srcSet={avatarWebp} type="image/webp" />
             <Image
               src={avatarPng}
-              alt="Raúl Rodríguez - Senior Frontend Engineer"
+              alt={hero.avatarAlt}
               loading="eager"
             />
           </picture>

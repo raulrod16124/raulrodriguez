@@ -1,7 +1,8 @@
-import { render, screen, within } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
 import { Engineering } from './Engineering';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 const EXPECTED_PRINCIPLES = [
   {
@@ -38,7 +39,7 @@ const EXPECTED_PRINCIPLES = [
 
 describe('Engineering', () => {
   it('renders one section heading and an ordered list of six principles', () => {
-    render(<Engineering />);
+    renderWithProviders(<Engineering />);
 
     expect(
       screen.getByRole('heading', { level: 2, name: 'Engineering' }),
@@ -51,7 +52,7 @@ describe('Engineering', () => {
   });
 
   it('renders each principle with its number, title and description', () => {
-    render(<Engineering />);
+    renderWithProviders(<Engineering />);
 
     EXPECTED_PRINCIPLES.forEach(({ number, title, description }) => {
       const principle = screen.getByRole('article', { name: title });

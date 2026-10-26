@@ -1,8 +1,9 @@
 import { createElement, useEffect, type ReactNode } from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import { CvDialog } from './CvDialog';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 const pdfState = vi.hoisted(() => ({
   autoSucceed: true,
@@ -34,7 +35,7 @@ const CV_URL = '/CV-Raul.pdf';
 const CV_FILE_NAME = 'CV-Raul.pdf';
 
 const renderDialog = () =>
-  render(<CvDialog cvUrl={CV_URL} fileName={CV_FILE_NAME} />);
+  renderWithProviders(<CvDialog cvUrl={CV_URL} fileName={CV_FILE_NAME} />);
 
 const openDialog = () => {
   fireEvent.click(screen.getByRole('button', { name: /view cv/i }));

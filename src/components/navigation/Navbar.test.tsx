@@ -1,8 +1,8 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, test, expect, beforeEach } from 'vitest';
 import { Navbar } from './Navbar';
-import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 const setScrollY = (value: number) => {
   Object.defineProperty(window, 'scrollY', {
@@ -17,11 +17,7 @@ beforeEach(() => {
 });
 
 const renderNavbar = (path = '/') =>
-  render(
-    <MemoryRouter initialEntries={[path]}>
-      <Navbar />
-    </MemoryRouter>,
-  );
+  renderWithProviders(<Navbar />, { route: path });
 
 describe('Navbar tests', () => {
   test('should render the Navbar component', () => {

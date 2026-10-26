@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter, useLocation } from 'react-router-dom';
+import { screen } from '@testing-library/react';
+import { useLocation } from 'react-router-dom';
 import { describe, expect, test } from 'vitest';
 import { Root } from './Root';
 import '@testing-library/jest-dom';
+import { renderWithProviders } from '../test/renderWithProviders';
 
 const LocationProbe = () => {
   const location = useLocation();
@@ -11,11 +12,12 @@ const LocationProbe = () => {
 };
 
 const renderRoot = (path: string) =>
-  render(
-    <MemoryRouter initialEntries={[path]}>
+  renderWithProviders(
+    <>
       <Root />
       <LocationProbe />
-    </MemoryRouter>,
+    </>,
+    { route: path },
   );
 
 describe('Root Component Routing', () => {

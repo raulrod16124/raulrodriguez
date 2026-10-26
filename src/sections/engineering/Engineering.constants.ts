@@ -1,51 +1,50 @@
+import type { MessageId } from '../../i18n';
+
 export interface EngineeringPrinciple {
   readonly id: string;
-  readonly title: string;
-  readonly description: string;
+  readonly titleId: MessageId;
+  readonly descriptionId: MessageId;
 }
 
 export interface EngineeringContent {
-  readonly title: string;
+  readonly eyebrowId: MessageId;
+  readonly titleId: MessageId;
   readonly principles: readonly EngineeringPrinciple[];
 }
 
 export const ENGINEERING: EngineeringContent = {
-  title: 'Engineering',
+  eyebrowId: 'engineering.eyebrow',
+  titleId: 'engineering.title',
   principles: [
     {
       id: 'accessibility',
-      title: 'Accessibility is a baseline',
-      description: 'Keyboard, focus, semantics and reduced motion from the start.',
+      titleId: 'engineering.principle.accessibility.title',
+      descriptionId: 'engineering.principle.accessibility.description',
     },
     {
       id: 'design-systems',
-      title: 'Design systems over copy-paste',
-      description:
-        'Tokens, reusable components and documentation that scale across teams.',
+      titleId: 'engineering.principle.design-systems.title',
+      descriptionId: 'engineering.principle.design-systems.description',
     },
     {
       id: 'testing',
-      title: 'Tests are guardrails',
-      description:
-        'Unit, integration and contract tests around the behavior that matters.',
+      titleId: 'engineering.principle.testing.title',
+      descriptionId: 'engineering.principle.testing.description',
     },
     {
       id: 'architecture',
-      title: 'Architecture should make change cheap',
-      description:
-        'Clear boundaries, microfrontends and hexagonal architecture when they earn their cost.',
+      titleId: 'engineering.principle.architecture.title',
+      descriptionId: 'engineering.principle.architecture.description',
     },
     {
       id: 'performance',
-      title: 'Performance is part of the design',
-      description:
-        'Bundle budgets, lazy loading and rendering decisions measured, not guessed.',
+      titleId: 'engineering.principle.performance.title',
+      descriptionId: 'engineering.principle.performance.description',
     },
     {
       id: 'documentation',
-      title: 'Document the why',
-      description:
-        'Clear APIs, ADRs and Storybook so the next person can move faster.',
+      titleId: 'engineering.principle.documentation.title',
+      descriptionId: 'engineering.principle.documentation.description',
     },
   ],
 };

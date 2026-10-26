@@ -1,27 +1,33 @@
 import { Button } from '@raulrod/ui';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Mail } from '@raulrod/icons';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Section } from '../../components/section/Section';
 import { CvDialog } from '../../components/cv-dialog/CvDialog';
 import { SITE } from '../../content/site';
 import { CONTACT } from './Contact.constants';
+import { useSiteContent } from '../../i18n/useSiteContent';
 import { ContactActions, ContactCvAction } from './Contact.styled';
 
 const ACTION_ICONS = {
-  email: FaEnvelope,
+  email: Mail,
   github: FaGithub,
   linkedin: FaLinkedin,
 } as const;
 
 export const Contact = () => {
+  const { contact } = useSiteContent();
+
   return (
     <Section
       id="contact"
-      eyebrow={CONTACT.eyebrow}
-      title={CONTACT.title}
-      description={CONTACT.description}
+      index="06"
+      variant="statement"
+      eyebrow={contact.eyebrow}
+      title={contact.title}
+      description={contact.description}
     >
       <ContactActions>
-        {CONTACT.actions.map(action => {
+        {contact.actions.map(action => {
           const Icon = ACTION_ICONS[action.id];
 
           return (

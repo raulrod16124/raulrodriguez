@@ -1,33 +1,38 @@
+import type { MessageId } from '../../i18n';
+
 export interface ExperienceItem {
   readonly id: string;
   readonly company: string;
-  readonly role: string;
-  readonly location: string;
-  readonly dates: string;
+  readonly roleId: MessageId;
+  readonly locationId: MessageId;
+  readonly startDate: string;
+  readonly endDate?: string;
   readonly current?: boolean;
-  readonly description: readonly string[];
+  readonly description: readonly MessageId[];
   readonly technologies: readonly string[];
 }
 
 export interface ExperienceContent {
-  readonly title: string;
+  readonly eyebrowId: MessageId;
+  readonly titleId: MessageId;
   readonly items: readonly ExperienceItem[];
 }
 
 export const EXPERIENCE: ExperienceContent = {
-  title: 'Experience',
+  eyebrowId: 'experience.eyebrow',
+  titleId: 'experience.title',
   items: [
     {
       id: 'openbank',
       company: 'Openbank · Capgemini',
-      role: 'Frontend Engineer',
-      location: 'Remote',
-      dates: 'Feb 2025 – Present',
+      roleId: 'experience.item.openbank.role',
+      locationId: 'experience.item.openbank.location',
+      startDate: '2025-02',
       current: true,
       description: [
-        'Build fintech products for different programs and countries with React, TypeScript and styled-components.',
-        'Work with microfrontends, hexagonal architecture and shared libraries across teams.',
-        'Integrate identity verification and contribute to testing, code quality and delivery practices within an agile team.',
+        'experience.item.openbank.description.products',
+        'experience.item.openbank.description.architecture',
+        'experience.item.openbank.description.quality',
       ],
       technologies: [
         'React',
@@ -42,26 +47,28 @@ export const EXPERIENCE: ExperienceContent = {
     {
       id: 'vehnet',
       company: 'Vehnet',
-      role: 'Frontend Engineer',
-      location: 'Remote',
-      dates: 'Abr 2022 – May 2024',
+      roleId: 'experience.item.vehnet.role',
+      locationId: 'experience.item.vehnet.location',
+      startDate: '2022-04',
+      endDate: '2024-05',
       description: [
-        'Develop and maintain web and mobile applications with React, React Native and TypeScript.',
-        'Contribute to the migration from AWS to Firebase and maintain shared libraries across web and mobile.',
-        'Implement Figma designs with design and backend teams, writing unit tests to ensure code quality and reliability.',
+        'experience.item.vehnet.description.build',
+        'experience.item.vehnet.description.migration',
+        'experience.item.vehnet.description.design',
       ],
       technologies: ['React', 'React Native', 'TypeScript', 'AWS', 'Firebase', 'Figma', 'Testing'],
     },
     {
       id: 'advance',
       company: 'Advance Digital Experts',
-      role: 'Frontend Developer',
-      location: 'On-site',
-      dates: 'Jul 2021 – Abr 2022',
+      roleId: 'experience.item.advance.role',
+      locationId: 'experience.item.advance.location',
+      startDate: '2021-07',
+      endDate: '2022-04',
       description: [
-        'Build a frontend from scratch for vehicle telemetry and energy efficiency reporting.',
-        'Develop new features and product demos alongside backend and design teams.',
-        'Create reusable UI components documented in Storybook and tested with Jest and Testing Library.',
+        'experience.item.advance.description.telemetry',
+        'experience.item.advance.description.features',
+        'experience.item.advance.description.storybook',
       ],
       technologies: [
         'React',
@@ -76,12 +83,13 @@ export const EXPERIENCE: ExperienceContent = {
     {
       id: 'freelance',
       company: 'Freelancer',
-      role: 'Frontend Web Developer',
-      location: 'Las Palmas de Gran Canaria, Las Palmas province',
-      dates: 'Feb 2021 – Jul 2021',
+      roleId: 'experience.item.freelance.role',
+      locationId: 'experience.item.freelance.location',
+      startDate: '2021-02',
+      endDate: '2021-07',
       description: [
-        'Develop web applications and landing pages for small businesses with React, adapting solutions to different client needs and projects.',
-        'Work independently on complete web projects and collaborate with other freelance developers to build and improve web products.',
+        'experience.item.freelance.description.clients',
+        'experience.item.freelance.description.collaboration',
       ],
       technologies: [
         'React',

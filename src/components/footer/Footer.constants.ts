@@ -1,19 +1,18 @@
+import type { MessageId } from '../../i18n';
 import { SITE } from '../../content/site';
 
 export const FOOTER = {
-  role: SITE.role,
-  builtWith: 'Built with React, TypeScript and @raulrod/ui',
-  copyright: (year: number) =>
-    `© ${year} ${SITE.name}. All rights reserved.`,
+  builtWithId: 'footer.builtWith' satisfies MessageId,
+  copyrightId: 'footer.copyright' satisfies MessageId,
   links: [
     {
       id: 'github',
-      label: 'GitHub Profile',
+      labelId: 'footer.githubLabel' satisfies MessageId,
       href: SITE.github,
     },
     {
       id: 'linkedin',
-      label: 'LinkedIn Profile',
+      labelId: 'footer.linkedinLabel' satisfies MessageId,
       href: SITE.linkedin,
     },
   ] as const,

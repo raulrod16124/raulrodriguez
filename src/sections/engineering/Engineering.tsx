@@ -1,6 +1,6 @@
 import { Badge, Heading, Stack, Text } from '@raulrod/ui';
 import { Section } from '../../components/section/Section';
-import { ENGINEERING } from './Engineering.constants';
+import { useSiteContent } from '../../i18n/useSiteContent';
 import {
   PrincipleCard,
   PrincipleIndex,
@@ -9,10 +9,17 @@ import {
 } from './Engineering.styled';
 
 export const Engineering = () => {
+  const { engineering } = useSiteContent();
+
   return (
-    <Section id="engineering" title={ENGINEERING.title}>
+    <Section
+      id="engineering"
+      index="04"
+      eyebrow={engineering.eyebrow}
+      title={engineering.title}
+    >
       <PrincipleList role="list">
-        {ENGINEERING.principles.map((principle, index) => {
+        {engineering.principles.map((principle, index) => {
           const titleId = `engineering-${principle.id}-title`;
           const number = String(index + 1).padStart(2, '0');
 

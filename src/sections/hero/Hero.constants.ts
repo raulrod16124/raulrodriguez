@@ -1,22 +1,23 @@
 import { SITE } from '../../content/site';
+import type { MessageId } from '../../i18n';
 
 export const HERO = {
   eyebrow: SITE.name,
-  role: SITE.role,
-  currentStatus: `Currently at ${SITE.currentCompany}`,
-  valueProp:
-    'I build scalable React products, design systems and the frontend architecture that keeps them maintainable.',
+  roleId: 'site.role' satisfies MessageId,
+  statusId: 'hero.currentStatus' satisfies MessageId,
+  valuePropId: 'hero.valueProp' satisfies MessageId,
+  avatarAltId: 'hero.avatarAlt' satisfies MessageId,
   ctas: {
     work: {
-      label: 'View selected work',
+      labelId: 'hero.cta.work' satisfies MessageId,
       href: '#work',
     },
     contact: {
-      label: 'Get in touch',
+      labelId: 'hero.cta.contact' satisfies MessageId,
       href: '#contact',
     },
     github: {
-      label: 'GitHub',
+      labelId: 'hero.cta.github' satisfies MessageId,
       href: SITE.github,
     },
   },

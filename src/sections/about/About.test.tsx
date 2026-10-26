@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import { About } from './About';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 vi.mock('../../helpers/experience', () => ({
   getYearsOfExperience: () => 5,
@@ -13,7 +14,7 @@ vi.mock('../../components/cv-dialog/CvDialog', () => ({
 
 describe('About', () => {
   it('renders the section heading and the dynamic experience copy', () => {
-    render(<About />);
+    renderWithProviders(<About />);
 
     expect(
       screen.getByRole('heading', { level: 2, name: 'About' }),
@@ -29,7 +30,7 @@ describe('About', () => {
   });
 
   it('renders the CV trigger', () => {
-    render(<About />);
+    renderWithProviders(<About />);
 
     expect(
       screen.getByRole('button', { name: /view cv/i }),

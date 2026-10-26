@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import theme from '../../theme/theme.json';
 import { focusVisible } from '../../components/shared/focusStyles';
@@ -64,11 +64,14 @@ export const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   min-height: 70vh;
-  padding: ${theme.spacing['3xl']} ${theme.spacing['md']};
+  padding: calc(var(--navbar-height, 68px) + clamp(40px, 7vh, 72px))
+    ${theme.spacing['md']} ${theme.spacing['3xl']};
   overflow: hidden;
+  scroll-margin-top: var(--navbar-height, 68px);
 
   ${theme.media.tablet} {
-    padding: ${theme.spacing['4xl']} ${theme.spacing['3xl']};
+    padding: calc(var(--navbar-height, 76px) + ${theme.spacing['3xl']})
+      ${theme.spacing['3xl']} ${theme.spacing['4xl']};
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -138,23 +141,6 @@ export const NameText = styled.h1`
   }
 `;
 
-export const RoleText = styled.h2`
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: ${theme.font.headings.h2.lineHeight};
-  letter-spacing: ${theme.font.headings.h2.letterSpacing};
-  color: ${theme.colors.neutral.lightGrey};
-
-  ${theme.media.tablet} {
-    font-size: 1.75rem;
-  }
-
-  ${theme.media.desktop} {
-    font-size: ${theme.font.headings.h2.fontSize};
-  }
-`;
-
 export const StatusText = styled.span`
   font-size: 1rem;
   font-weight: 500;
@@ -200,7 +186,9 @@ export const CTAContainer = styled.div`
   }
 `;
 
-export const CTAButton = styled.a`
+type CtaVariant = 'primary' | 'secondary';
+
+const ctaStyles = css<{ $variant: CtaVariant }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -209,14 +197,21 @@ export const CTAButton = styled.a`
   font-size: ${theme.font.small.fontSize};
   font-weight: 500;
   font-family: ${theme.font.primary.fontFamily};
-  color: ${theme.colors.neutral.black};
-  background-color: ${theme.colors.accent.main};
-  border: none;
+  color: ${({ $variant }) =>
+    $variant === 'primary'
+      ? theme.colors.neutral.black
+      : theme.colors.neutral.white};
+  background-color: ${({ $variant }) =>
+    $variant === 'primary' ? theme.colors.accent.main : 'transparent'};
+  border: 1px solid
+    ${({ $variant }) =>
+      $variant === 'primary' ? 'transparent' : theme.colors.border};
   border-radius: ${theme.borderRadius.sm};
   text-decoration: none;
   cursor: pointer;
   transition:
     background-color ${theme.transition.normal},
+    border-color ${theme.transition.normal},
     transform ${theme.transition.fast};
 
   svg {
@@ -229,57 +224,30 @@ export const CTAButton = styled.a`
   }
 
   &:hover {
-    background-color: ${theme.colors.accent.dark};
+    background-color: ${({ $variant }) =>
+      $variant === 'primary'
+        ? theme.colors.accent.dark
+        : theme.colors.semantic.accentBackgroundHover};
+    border-color: ${({ $variant }) =>
+      $variant === 'primary'
+        ? 'transparent'
+        : theme.colors.semantic.accentBorder};
     transform: translateY(-1px);
   }
 
   &:active {
-    background-color: ${theme.colors.accent.dark};
     transform: translateY(0);
   }
 
   ${focusVisible}
 `;
 
-export const CTALink = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: ${theme.spacing['xs']};
-  padding: ${theme.spacing['xs']} ${theme.spacing['lg']};
-  font-size: ${theme.font.small.fontSize};
-  font-weight: 500;
-  font-family: ${theme.font.primary.fontFamily};
-  color: ${theme.colors.neutral.black};
-  background-color: ${theme.colors.accent.main};
-  border: none;
-  border-radius: ${theme.borderRadius.sm};
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background-color ${theme.transition.normal},
-    transform ${theme.transition.fast};
+export const CTAButton = styled.a<{ $variant: CtaVariant }>`
+  ${ctaStyles}
+`;
 
-  svg {
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-
-  ${theme.media.tablet} {
-    width: auto;
-  }
-
-  &:hover {
-    background-color: ${theme.colors.accent.dark};
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    background-color: ${theme.colors.accent.dark};
-    transform: translateY(0);
-  }
-
-  ${focusVisible}
+export const CTALink = styled(Link)<{ $variant: CtaVariant }>`
+  ${ctaStyles}
 `;
 
 export const ImageContainer = styled.div`

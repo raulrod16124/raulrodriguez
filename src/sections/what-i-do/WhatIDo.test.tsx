@@ -1,7 +1,8 @@
-import { render, screen, within } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
 import { WhatIDo } from './WhatIDo';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 const EXPECTED_CARDS = [
   {
@@ -12,7 +13,7 @@ const EXPECTED_CARDS = [
   {
     title: 'Design systems',
     description: /accessible components, tokens and documentation/i,
-    tags: ['@raulrod/ui', 'Design tokens', 'Storybook', 'WCAG'],
+    tags: ['Design tokens', 'Storybook', 'WCAG'],
   },
   {
     title: 'Frontend architecture',
@@ -23,7 +24,7 @@ const EXPECTED_CARDS = [
 
 describe('WhatIDo', () => {
   it('renders one section heading and three capability cards', () => {
-    render(<WhatIDo />);
+    renderWithProviders(<WhatIDo />);
 
     expect(
       screen.getByRole('heading', { level: 2, name: 'What I do' }),
@@ -33,7 +34,7 @@ describe('WhatIDo', () => {
   });
 
   it('renders each capability with its description and tags', () => {
-    render(<WhatIDo />);
+    renderWithProviders(<WhatIDo />);
 
     EXPECTED_CARDS.forEach(({ title, description, tags }) => {
       const card = screen.getByRole('article', { name: title });

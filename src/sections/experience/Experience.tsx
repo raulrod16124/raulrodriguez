@@ -1,7 +1,7 @@
 import { Badge, Heading, Inline, Stack } from '@raulrod/ui';
 import { Section } from '../../components/section/Section';
 import { ScrollReveal } from '../../components/ScrollReveal';
-import { EXPERIENCE } from './Experience.constants';
+import { useSiteContent } from '../../i18n/useSiteContent';
 import {
   CardHeader,
   ExperienceCard,
@@ -15,10 +15,17 @@ import {
 } from './Experience.styled';
 
 export const Experience = () => {
+  const { experience, common } = useSiteContent();
+
   return (
-    <Section id="experience" title={EXPERIENCE.title}>
+    <Section
+      id="experience"
+      index="03"
+      eyebrow={experience.eyebrow}
+      title={experience.title}
+    >
       <Timeline>
-        {EXPERIENCE.items.map((item, index) => {
+        {experience.items.map((item, index) => {
           const titleId = `experience-${item.id}-title`;
           const current = item.current ? 'true' : 'false';
 
@@ -31,7 +38,9 @@ export const Experience = () => {
                       <Heading as="h3" id={titleId}>
                         {item.company}
                       </Heading>
-                      {item.current ? <Badge variant="success">Current</Badge> : null}
+                      {item.current ? (
+                        <Badge variant="success">{common.current}</Badge>
+                      ) : null}
                     </CardHeader>
                     <Meta>
                       <Role>{item.role}</Role>

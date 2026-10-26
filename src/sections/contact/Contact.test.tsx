@@ -1,11 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
 import { Contact } from './Contact';
+import { renderWithProviders } from '../../test/renderWithProviders';
 
 describe('Contact', () => {
   it('renders the section heading and subtitle', () => {
-    render(<Contact />);
+    renderWithProviders(<Contact />);
 
     expect(
       screen.getByRole('heading', {
@@ -19,7 +20,7 @@ describe('Contact', () => {
   });
 
   it('renders the email link with mailto and no external target', () => {
-    render(<Contact />);
+    renderWithProviders(<Contact />);
 
     const emailLink = screen.getByRole('link', { name: /^email$/i });
 
@@ -31,7 +32,7 @@ describe('Contact', () => {
   });
 
   it('renders GitHub and LinkedIn links with safe external attributes', () => {
-    render(<Contact />);
+    renderWithProviders(<Contact />);
 
     const githubLink = screen.getByRole('link', { name: /^github$/i });
     const linkedinLink = screen.getByRole('link', { name: /^linkedin$/i });
@@ -49,7 +50,7 @@ describe('Contact', () => {
   });
 
   it('renders the CV dialog trigger', () => {
-    render(<Contact />);
+    renderWithProviders(<Contact />);
 
     expect(
       screen.getByRole('button', { name: /view cv/i }),
